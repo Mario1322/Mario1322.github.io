@@ -1,7 +1,287 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/gblanco.png" />
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/formacion.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/estrellas.css">
+    <title>Gonzalo Pascual</title>
+    <!-- ICONOS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="cambiocolor">
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="header">
+        <a href="https://mario1322.github.io" class="logo" id="logo_color"><img class="logo"
+                src="imagenes/gblancosinfondo.png" alt="logo"><span class="animate" style="--i:1;"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <nav class="navbar">
+            <a href="#home" class="active" id="casa">Sobre mi</a>
+            <a href="#skills">Skills</a>
+            <a href="#formacion" id="formation">Formación</a>
+            <a href="#contacto" id="contact">Contacto</a>
+            <label for="toggle" id="label_toggle" class="solluna"><i class='bx bx-sun'></i></label>
+            <input type="checkbox" id="toggle">
+            <label for="toggle_idioma" id="idioma_toggle" class="idioma">EN<i class='bx bx-chevron-down'></i></label>
+            <input type="checkbox" id="toggle_idioma">
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+    <main>
+
+        <!-- SOBRE MI -->
+        <section class="home animated-section" id="home">
+            <span class="estrella"></span>
+            <span class="estrella"></span>
+            <span class="estrella"></span>
+            <span class="estrella"></span>
+            <span class="estrella"></span>
+            <span class="estrella"></span>
+            <div class="home-content">
+                <h1 class="sombra">Mario</br>De La Rosa García<span class="animate" style="--i:2;"></span></h1>
+                <div class="rectangulo"></div>
+                <div class="botones">
+                    <a href="Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn" target="_blank">Descargar CV</a>
+                    <a href="#contacto" id="contactarme" class="btn">Contactarme</a>
+                </div>
+                <div class="social">
+                    <a href="https://github.com/Mario1322" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank"><i
+                            class='bx bxl-linkedin-square'></i></a>
+                </div>
+            </div>
+            <div class="home-content">
+                <div class="elguapo">
+                    <div id="imgyo"><img class="imgyo" src="imagenes/foto.jpeg" alt="guapo"></div>
+                    <h3 id="loquesoy">Desarrollador</br>de software</h3>
+                    <span class="animate" style="--i:2;"></span>
+                </div>
+                <div class="texto">
+                    <p id="textosobremi">Soy un joven apasionado con un constante anhelo de
+                        aprender y expresar mi sabiduría. Mi sed de
+                        conocimiento me impulsa a explorar continuamente
+                        nuevas tecnologías y herramientas, buscando mejorar y
+                        perfeccionar mis habilidades en cada paso del camino.
+                    </p>
+                </div>
+                <div class="mas">
+                    <a href="#skills" id="conocermas">Conocer más</a><i class='bx bx-right-arrow-alt'></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills" id="skills">
+            <div class="centrado">
+                <div class="titulo">
+                    <h1>Skills</h1>
+                </div>
+                <div class="contenedorcartas">
+                    <div class="cartas">
+                        <i class='bx bx-code-alt'></i>
+                        <h3>FrontEnd</h3>
+                        <div class="articulos">
+                            <h4>HTML5</h4>
+                            <h4>CSS3</h4>
+                        </div>
+                        <div class="articulos">
+                            <h4>JavaScript</h4>
+                            <h4>jQuery</h4>
+                        </div>
+                    </div>
+                    <div class="cartas">
+                        <i class='bx bxs-server'></i>
+                        <h3>BackEnd</h3>
+                        <div class="articulos">
+                            <h4>Java</h4>
+                            <h4>SQL</h4>
+                            <h4>Python</h4>
+                        </div>
+                        <div class="articulos">
+                            <h4>PHP</h4>
+                            <h4>C</h4>
+                        </div>
+                    </div>
+                    <div class="cartas herramientas">
+                        <i class='bx bxs-cog'></i>
+                        <h3 id="herramientastexto">Herramientas</h3>
+                        <div class="articulos">
+                            <h4>GitHub</h4>
+                            <h4>Linux</h4>
+                        </div>
+                        <div class="articulos">
+                            <h4 id="redes">Redes</h4>
+                            <h4>Android Studio</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMACIÓN -->
+        <section class="education" id="formacion">
+            <div class="titulo">
+                <h1 id="formation1">Formación</h1>
+            </div>
+            <div class="education-row">
+                <div class="education-column">
+                    <h3 class="title" id="formation2">Formación</h3>
+                    <div class="education-box line">
+                        <div class="education-content">
+                            <div class="content">
+                                <div class="anio">
+                                    <p id="anio1">2023-Actualidad</p>
+                                </div>
+                                <h3 id="curso1">Curso en ciberseguridad</h3>
+                                <p id="texto1">Especializandome en ciberseguridad y estudiando a prevenir, detectar y
+                                    solucionar amenazas y problemas.
+                                </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-box line">
+                        <div class="education-content">
+                            <div class="content">
+                                <div class="anio">
+                                    <p>2021-2023</p>
+                                </div>
+                                <h3 id="curso2">Grado en DAM</h3>
+                                <p id="texto2">Aprendiendo a crear aplicaciones desde backend hasta frontend
+                                    mejorando la experiencia de usuario.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-box">
+                        <div class="education-content">
+                            <div class="content">
+                                <div class="anio">
+                                    <p>2016-2020</p>
+                                </div>
+                                <h3 id="curso3">Curso de Robótica</h3>
+                                <p id="texto3"> Desarrollando conocimientos de programación,
+                                    demostrando mi capacidad de trabajar en equipo y organizar
+                                    proyectos.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="education-column">
+                    <h3 class="title" id="proyectos">Proyectos</h3>
+                    <div class="education-box line">
+                        <div class="education-content">
+                            <div class="content">
+                                <a href="https://github.com/Gonzalo-Pascual/DAM/tree/main/TFG" target="_blank" class="link">
+                                    <div class="anio">
+                                        <p>2023</p>
+                                    </div>
+                                    <h3 id="proyect1"><i class='bx bxl-github'></i> Tienda de Guitarras</h3>
+                                    <p id="proyecttext1">Proyecto de e-commerce utilizando HTML, CSS, JS, PHP y SQL
+                                        presentado como TFG del curso de DAM.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-box line">
+                        <div class="education-content">
+                            <div class="content">
+                                <a href="https://github.com/Gonzalo-Pascual/DAM/tree/main/Acceso%20a%20Datos/FinalBBDD-Hibernate_GonzaloPascualRomero"
+                                    target="_blank" class="link">
+                                    <div class="anio">
+                                        <p>2023</p>
+                                    </div>
+                                    <h3 id="proyect3"><i class='bx bxl-github'></i> BBDD Hospital</h3>
+                                    <p id="proyecttext3">Aplicación para gestionar la BBDD de un hospital desarrollada
+                                        en Intelliji con Java, Hibernate y SQL.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-box ">
+                        <div class="education-content">
+                            <div class="content">
+                                <a href="https://github.com/Gonzalo-Pascual/DAM/tree/main/SGE/Odoo-GonzaloPascualRomero"
+                                    target="_blank" class="link">
+                                    <div class="anio">
+                                        <p>2023</p>
+                                    </div>
+                                    <h3 id="proyect2"><i class='bx bxl-github'></i> Replica Odoo</h3>
+                                    <p id="proyecttext2">Trabajo sobre una aplicación lo mas parecida al ERP Odoo y
+                                        alguno de sus modulos desarrollado en VBA.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contacto" id="contacto">
+            <div class="centrado">
+                <div class="titulo">
+                    <h1 id="contact1">Contacto</h1>
+                </div>
+                <div class="contacto-contenido">
+                    <div class="misdatos">
+                        <div class="nombre">
+                            <h3 id="misdatos">Mis datos</h3>
+                        </div>
+                        <div class="contenidodatos">
+                            <div class="centradotexto">
+                                <div class="iconotexto">
+                                    <i class='bx bx-envelope correo'></i>
+                                    <h4>mdlrg1322<br>@gmail.com</h4>
+                                </div>
+                                <div class="iconotexto">
+                                    <i class='bx bx-phone'></i>
+                                    <h4>+34 648052682</h4>
+                                </div>
+                                <div class="iconotexto">
+                                    <i class='bx bx-pin'></i>
+                                    <h4 id="locationtext">Madrid, España</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="misdatos">
+                        <div class="nombre">
+                            <h3 id="contactarme1">Contactarme</h3>
+                        </div>
+                        <form action="https://formspree.io/f/xqkvbzql" method="POST" class="contenidodatos">
+                            <div id="formulario">
+                                <input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre">
+                                <input type="email" name="email" class="inputdatos" placeholder="Correo electronico">
+                                <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30"
+                                    rows="10"></textarea>
+                            </div>
+                            <button id="send" class="botondatos">Enviar</i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
+        <h3>© 2024 Copyright: Mario De La Rosa García</h3>
+    </footer>
+    <!-- ENLACE JS -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>

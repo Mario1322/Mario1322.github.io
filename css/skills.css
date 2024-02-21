@@ -1,0 +1,74 @@
+/* SKILLS */
+
+.skills {
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.centrado {
+    width: 100%;
+    align-items: center;
+
+}
+
+.titulo {
+    text-align: center;
+    margin: 3rem 0 5rem 0;
+}
+
+.titulo h1 {
+    font-size: 5rem;
+    padding: 2rem 0 5rem 0;
+}
+
+.contenedorcartas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.contenedorcartas .cartas {
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 35rem;
+    height: 33rem;
+}
+
+.contenedorcartas .cartas h3,
+.misdatos .nombre {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 3.2rem;
+
+}
+
+.contenedorcartas .cartas i {
+    margin-top: 1rem;
+    font-size: 10rem;
+
+
+}
+
+.cartas .articulos {
+    display: flex;
+    justify-content: center;
+}
+
+.articulos h4 {
+    padding: 1rem 2rem;
+    margin: .5rem;
+    font-size: 2rem;
+    border: 2px solid var(--contraste);
+    border-radius: 8px;
+}
+
+.articulos h4:hover {
+    background-color: var(--contraste);
+    color: var(--fondo-oscuro);
+}
+
