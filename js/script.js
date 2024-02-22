@@ -71,6 +71,7 @@ toggle_idioma.addEventListener('change', (event) => {
         formation.innerHTML = 'Education';
         formation1.innerHTML = 'Education';
         formation2.innerHTML = 'Education';
+        idiomas.innerHTML = 'Lenguajes';
         contact.innerHTML = 'Contact';
         contact1.innerHTML = 'Contact';
         idioma_toggle.innerHTML = "ES<i class='bx bx-chevron-down'></i>"
@@ -116,7 +117,7 @@ toggle_idioma.addEventListener('change', (event) => {
         proyecttext8.innerHTML = "Folder containing all the projects for the Interface Development subject in the DAM degree.";
         proyect9.innerHTML = "Veterinary Clinic";
         proyecttext9.innerHTML = "An application created in C for a real-world veterinary store. It includes a database, user and employee registration and login with encrypted passwords, and a section for pets in case the user has more than one, etc.";
-        idioma.innerHTML = "Languajes"
+        idiomas.innerHTML = "Languajes"
         misdatos.innerHTML = 'My info';
         locationtext.innerHTML = 'Madrid, Spain';
         formulario.innerHTML = '<input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Name"><input type="email" name="email" class="inputdatos" placeholder="Email"><textarea name="message" placeholder="Message" class="textdatos" cols="30" rows="10"></textarea>'
@@ -129,6 +130,7 @@ toggle_idioma.addEventListener('change', (event) => {
         formation.innerHTML = 'Formación';
         formation1.innerHTML = 'Formación';
         formation2.innerHTML = 'Formación';
+        idiomas.innerHTML = 'Idiomas';
         contact.innerHTML = 'Contacto';
         contact1.innerHTML = 'Contacto';
         idioma_toggle.innerHTML = "EN<i class='bx bx-chevron-down'></i>"
@@ -173,7 +175,7 @@ toggle_idioma.addEventListener('change', (event) => {
         proyecttext8.innerHTML = "Se trata de la carpeta donde guardaba todos los trabajos de la asignatura de desarrollo de interfaces en el grado de DAM."
         proyect9.innerHTML = "Veterinario"
         proyecttext9.innerHTML = "Se trata de una aplicacion creada en C, que funcionaria para una tienda de verdad, tiene su base de datos, registro y login para usuarios y empleados, con contraseñas encriptadas, incluye un apartado de mascotas, por si el usuario tiene mas de una, etc."
-idioma.innerHTML = "Idiomas"
+        idiomas.innerHTML = "Idiomas"
 
         misdatos.innerHTML = 'Mis datos';
         locationtext.innerHTML = 'Madrid, España';
