@@ -1,1 +1,15 @@
 /* IDIOMA */
+.bar-container {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.bar {
+    height: 100%;
+    background-color: #4CAF50;
+    text-align: right;
+    line-height: 30px;
+    color: white;
+}
