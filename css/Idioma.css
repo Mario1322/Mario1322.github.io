@@ -14,9 +14,9 @@
     text-align: right;
     line-height: 30px;
     color: white;
-    border-radius: 5px; /* Esquinas redondeadas */
-    transition: width 0.3s ease; /* Transición suave para el cambio de tamaño */
+    border-radius: 15px; /* Ajusta este valor según lo redondeadas que desees las esquinas */
 }
+
 
 .bar-content {
     transition: width 0.3s ease; /* Transición suave para el cambio de tamaño */
