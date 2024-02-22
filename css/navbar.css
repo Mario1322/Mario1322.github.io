@@ -73,40 +73,23 @@ body {
 .header {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 9%;
+    left: 50%; /* Centra la barra de navegación */
+    transform: translateX(-50%); /* Corrige la posición para centrar */
+    width: 80%; /* Ancho deseado */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    padding: 2rem;
     background-color: var(--fondo-oscuro);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-
-}
-
-#toggle,
-#toggle_idioma {
-    display: none;
-}
-
-.header.sticky {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-    transition: .2s;
-}
-
-.logo {
-    position: relative;
-    width: 50px;
-    height: 50px;
-
-}
-
-.imgyo {
-    width: 180px;
+    border-radius: 25px; /* Redondea las esquinas */
 }
 
 .navbar {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .solluna {
