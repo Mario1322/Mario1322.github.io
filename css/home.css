@@ -50,6 +50,7 @@ h1 {
     justify-content: space-between;
     width: 41rem;
     height: 6rem;
+    border-radius: 50px;
 }
 
 .botones .btn {
@@ -63,7 +64,7 @@ h1 {
     height: 100%;
     background-color: var(--contraste);
     border: .2rem solid var(--contraste);
-    border-radius: 1.5rem;
+    border-radius: 50px;
     font-size: 2.2rem;
     font-weight: 800;
     color: var(--fondo-oscuro);
