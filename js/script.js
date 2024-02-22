@@ -97,14 +97,26 @@ toggle_idioma.addEventListener('change', (event) => {
         texto6.innerHTML = "Developing programming skills, demonstrating my ability to work in teams and organize projects.";
         curso6.innerHTML = "Title in Human and Professional Leadership Training";
         texto7.innerHTML = "Developing skills, demonstrating my ability to work in teams and organize projects.";
-
         proyectos.innerHTML = 'Proyects';
-        proyect1.innerHTML = "<i class='bx bxl-github'></i> Guitar store";
-        proyecttext1.innerHTML = "E-commerce project using HTML, CSS, JS, PHP and SQL presented as TFG of the DAM course";
-        proyect2.innerHTML = "<i class='bx bxl-github'></i> Odoo replica";
-        proyecttext2.innerHTML = "Proyect of an application closely resembling the ERP Odoo and some of its modules developed in VBA.";
-        proyect3.innerHTML = "<i class='bx bxl-github'></i> Hospital database";
-        proyecttext3.innerHTML = "Application to manage the database of a hospital developed in Intelliji with Java, Hibernate and SQL.";
+        proyect1.innerHTML = "Arkanoid";
+        proyecttext1.innerHTML = "Project to develop the Arkanoid game in Java, with good ball bounce, brick disappearance, and smooth cursor movement.";
+        proyect2.innerHTML = "Basic Exercises";
+        proyecttext2.innerHTML = "These are some initial exercises for understanding programming. It's an exercise involving squirrels that move if they meet certain objectives.";
+        proyect3.innerHTML = "Calculator";
+        proyecttext3.innerHTML = "This project aims to create a calculator similar to the one found on Apple devices, developed in Java.";
+        proyect4.innerHTML = "Telefónica";
+        proyecttext4.innerHTML = "Collection of different projects completed during the visit to 42Madrid.";
+        proyect5.innerHTML = "Hangman";
+        proyecttext5.innerHTML = "A replica of the Hangman game developed in Java.";
+        proyect6.innerHTML = "iSounds";
+        proyecttext6.innerHTML = "An application created in Java that generates buttons from a list of sounds and videos. When pressed, the buttons play the corresponding sound or video.";
+        proyect7.innerHTML = "Pokedex";
+        proyecttext7.innerHTML = "An application created in C that replicates the iconic Pokedex, providing varied information about Pokémon.";
+        proyect8.innerHTML = "Interface Development";
+        proyecttext8.innerHTML = "Folder containing all the projects for the Interface Development subject in the DAM degree.";
+        proyect9.innerHTML = "Veterinary Clinic";
+        proyecttext9.innerHTML = "An application created in C for a real-world veterinary store. It includes a database, user and employee registration and login with encrypted passwords, and a section for pets in case the user has more than one, etc.";
+
         misdatos.innerHTML = 'My info';
         locationtext.innerHTML = 'Madrid, Spain';
         formulario.innerHTML = '<input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Name"><input type="email" name="email" class="inputdatos" placeholder="Email"><textarea name="message" placeholder="Message" class="textdatos" cols="30" rows="10"></textarea>'
@@ -143,12 +155,26 @@ toggle_idioma.addEventListener('change', (event) => {
         curso6.innerHTML = "Titulo en Formación para el Liderazgo humano y profesional"
         texto7.innerHTML = "Desarrollando conocimientos, demostrando mi capacidad de trabajar en equipo y organizar proyectos."
         proyectos.innerHTML = 'Proyectos';
-        proyect1.innerHTML = "<i class='bx bxl-github'></i> Tienda de Guitarras";
-        proyecttext1.innerHTML = "Proyecto de e-commerce utilizando HTML, CSS, JS, PHP y SQL presentado como TFG del curso de DAM";
-        proyect2.innerHTML = "<i class='bx bxl-github'></i> Replica Odoo";
-        proyecttext2.innerHTML = "Trabajo sobre una aplicación lo mas parecida al ERP Odoo y alguno de sus modulos desarrollado en VBA.";
-        proyect3.innerHTML = "<i class='bx bxl-github'></i> BBDD Hospital";
-        proyecttext3.innerHTML = "Aplicación para gestionar la BBDD de un hospital desarrollada en Intelliji con Java, Hibernate y SQL.";
+        proyect1.innerHTML = "Arkanoid";
+        proyecttext1.innerHTML = "Proyecto para generar el juego de Arkanoid en Java, con un buen rebote de la pelota , la desaparición de los ladrillos y buen movimiento del cursor.";
+        proyect2.innerHTML = "Ejercicios Basicos";
+        proyecttext2.innerHTML = "Se trata de unos primeros ejercicios, para la comprension de la programación. Se trata de un ejercicio sobre Ardillas, las cuales se mueven si cumplen con unos objetivos.";
+        proyect3.innerHTML = "Calculadora";
+        proyecttext3.innerHTML = "Se trata de general una calculadora calcada a la que tiene los dispositivos de Apple , desarrollado en Java.";
+        proyect4.innerHTML = "Telefonica"
+        proyecttext4.innerHTML = "Se trata de los diferentes proyectos realizados en la visita a 42Madrid."
+        proyect5.innerHTML = "Ahorcado"
+        proyecttext5.innerHTML = "Se trata de la replica del juego del Ahorado realizado en Java."
+        proyect6.innerHTML = "iSonidos"
+        proyecttext6.innerHTML = "Se trata de una aplicacion creada en Java que genera botones a  partir de una lista de sonidos y videos y cuando se pulsan se reproducen . En el caso de tocar un boton de un video se genera una reproducción del mismo."
+        proyect7.innerHTML = "Pokedex"
+        proyecttext7.innerHTML = "Se trata de una aplicacion creada en C , que reproduce la mitica Pokedex, con informacion muy variada de los pokemon ."
+        proyect8.innerHTML = "Desarrollo de Interfaces"
+        proyecttext8.innerHTML = "Se trata de la carpeta donde guardaba todos los trabajos de la asignatura de desarrollo de interfaces en el grado de DAM."
+        proyect9.innerHTML = "Veterinario"
+        proyecttext9.innerHTML = "Se trata de una aplicacion creada en C, que funcionaria para una tienda de verdad, tiene su base de datos, registro y login para usuarios y empleados, con contraseñas encriptadas, incluye un apartado de mascotas, por si el usuario tiene mas de una, etc."
+
+
         misdatos.innerHTML = 'Mis datos';
         locationtext.innerHTML = 'Madrid, España';
         formulario.innerHTML = '<input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre"><input type="email" name="email" class="inputdatos" placeholder="Correo electronico"><textarea name="message" placeholder="Mensaje" class="textdatos" cols="30" rows="10"></textarea>'
