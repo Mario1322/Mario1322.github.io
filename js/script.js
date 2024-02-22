@@ -186,5 +186,22 @@ toggle_idioma.addEventListener('change', (event) => {
     }
 
 });
+// Suponiendo que tienes un objeto que contiene los progresos de idioma
+var progresosIdiomas = {
+    espanol: 100,
+    ingles: 75
+};
+
+// Itera sobre cada idioma y actualiza su barra de progreso
+for (let idioma in progresosIdiomas) {
+    if (progresosIdiomas.hasOwnProperty(idioma)) {
+        // Calcula el ancho del contenido de la barra en función del progreso del idioma
+        var barContentWidth = progresosIdiomas[idioma] + "%";
+
+        // Selecciona la barra de progreso correspondiente al idioma y actualiza su ancho y texto
+        document.querySelector(`.${idioma} .bar`).style.width = barContentWidth;
+        document.querySelector(`.${idioma} .bar`).textContent = idioma.charAt(0).toUpperCase() + idioma.slice(1) + ": " + progresosIdiomas[idioma] + "%";
+    }
+}
 
 

@@ -4,6 +4,8 @@
     height: 30px;
     border: 1px solid #000;
     margin-bottom: 10px;
+    border-radius: 5px; /* Esquinas redondeadas */
+    overflow: hidden; /* Asegura que las esquinas redondeadas sean aplicadas correctamente */
 }
 
 .bar {
@@ -12,4 +14,13 @@
     text-align: right;
     line-height: 30px;
     color: white;
+    border-radius: 5px; /* Esquinas redondeadas */
+    transition: width 0.3s ease; /* Transición suave para el cambio de tamaño */
+}
+
+.bar-content {
+    transition: width 0.3s ease; /* Transición suave para el cambio de tamaño */
+    width: 0; /* Ancho inicial */
+    overflow: hidden; /* Evitar que el texto se desborde */
+    white-space: nowrap; /* Evitar que el texto se divida */
 }
