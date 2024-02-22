@@ -47,13 +47,13 @@ toggle.addEventListener('change', (event) => {
     menuIcon.classList.remove('bx-x');
     if (checked) {
         label_toggle.innerHTML = "<i class='bx bx-moon' ></i>";
-        logo_color.innerHTML = '<img class="logo" src="imagenes/gverdesinfondo.png" alt="logo">';
-        imgyo.innerHTML = '<img class="imgyo" src="imagenes/fotoverde.png" alt="guapo">';
+        logo_color.innerHTML = '<img class="logo" src="imagenes/foto.jpeg" alt="logo">';
+        imgyo.innerHTML = '<img class="imgyo" src="imagenes/foto.jpeg" alt="guapo">';
 
     } else {
         label_toggle.innerHTML = "<i class='bx bx-sun' ></i>"
-        logo_color.innerHTML = '<img class="logo" src="imagenes/gblancosinfondo.png" alt="logo">';
-        imgyo.innerHTML = '<img class="imgyo" src="imagenes/foto.png" alt="guapo">';
+        logo_color.innerHTML = '<img class="logo" src="imagenes/foto.jpeg" alt="logo">';
+        imgyo.innerHTML = '<img class="imgyo" src="imagenes/foto.jpeg" alt="guapo">';
     }
 
 });
