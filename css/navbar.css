@@ -14,7 +14,8 @@
 
 :root {
     --fondo-oscuro: #D9DADF;
-    --fondo-mas-oscuro: #CCCDD3;
+    --fondo-oscuro-nvar: #DEBD59;
+    --fondo-mas-oscuro: #DEBD59;
     --contraste: #007663;
     --negro: #fff;
     --blanco: #000;
@@ -24,8 +25,9 @@
 }
 
 .cambiocolor {
-    --fondo-oscuro: #252734;
-    --fondo-mas-oscuro: #252734;
+    --fondo-oscuro: #58595B;
+    --fondo-oscuro-nvar: #4f5052;
+    --fondo-mas-oscuro: #58595B;
     --fondo-claro: #F1F3FF;
     --contraste: #58C39D;
     --negro: #000;
@@ -71,18 +73,18 @@ body {
 
 .header {
     position: fixed;
-    top: 0;
-    left: 50%; /* Centra la barra de navegación */
-    transform: translateX(-50%); /* Corrige la posición para centrar */
-    width: 80%; /* Ancho deseado */
-    max-width: 1200px; /* Ancho máximo para pantallas grandes */
-    padding: 2rem;
-    background-color: var(--fondo-oscuro);
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1200px;
+    padding: 3px 3px;
+    background-color: var(--fondo-oscuro-nvar);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Centra verticalmente los elementos */
     z-index: 100;
-    border-radius: 25px; /* Redondea las esquinas */
+    border-radius: 7px;
 }
 
 #toggle,
@@ -96,11 +98,14 @@ body {
 }
 
 .logo {
-    position: relative;
-    width: 50px;
-    height: 50px;
-
+    margin-top: 5px;
+    width: 90px;
+    height: 80px;
+    display: flex; /* Utiliza flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
+
 
 .imgyo {
     width: 180px;
