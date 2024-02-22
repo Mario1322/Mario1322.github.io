@@ -4,7 +4,7 @@
     height: 30px;
     border: 1px solid #000;
     margin-bottom: 10px;
-    border-radius: 5px; /* Esquinas redondeadas */
+    border-radius: 50px; /* Esquinas redondeadas */
     overflow: hidden; /* Asegura que las esquinas redondeadas sean aplicadas correctamente */
 }
 
