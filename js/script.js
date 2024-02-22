@@ -83,12 +83,21 @@ toggle_idioma.addEventListener('change', (event) => {
         herramientastexto.innerHTML = 'Tools';
         redes.innerHTML = 'Networks';
         anio1.innerHTML = '2023-Present';
-        curso1.innerHTML = 'Cybersecurity course';
-        texto1.innerHTML = "Majoring in cybersecurity and studying how to prevent, detect and solve threats and problems.";
-        curso2.innerHTML = "Degree in DAM";
-        texto2.innerHTML = "Learning to create applications from backend to frontend, improving the user experience.";
-        curso3.innerHTML = "Robotic course";
-        texto3.innerHTML = "Developing programming knowledge, demonstrating my ability to work in a team and organize projects.";
+
+        curso1.innerHTML = 'CYBERSECURITY IN INFORMATION TECHNOLOGY ENVIRONMENTS';
+        texto1.innerHTML = "Specializing in cybersecurity and studying how to prevent, detect, and solve threats and issues.";
+        texto2.innerHTML = "Subjects: Computer Forensic Analysis · Cybersecurity Incidents · Ethical Hacking · Network and System Hardening · Cybersecurity Regulations · Secure Production Deployment";
+        curso2.innerHTML = "Dual Multiplatform Application Development";
+        texto3.innerHTML = "Learning to create applications from backend to frontend, improving user experience.";
+        curso3.innerHTML = "Accenture Spring Courses";
+        texto4.innerHTML = "Developing programming skills, demonstrating my ability to work in teams and organize projects.";
+        curso4.innerHTML = "Salesforce Own Course";
+        texto5.innerHTML = "Developing programming skills, demonstrating my ability to work in teams and organize projects.";
+        curso5.innerHTML = "Own Title in Cybersecurity, Cyberintelligence, Data Analysis, and Disruptive Technologies";
+        texto6.innerHTML = "Developing programming skills, demonstrating my ability to work in teams and organize projects.";
+        curso6.innerHTML = "Title in Human and Professional Leadership Training";
+        texto7.innerHTML = "Developing skills, demonstrating my ability to work in teams and organize projects.";
+
         proyectos.innerHTML = 'Proyects';
         proyect1.innerHTML = "<i class='bx bxl-github'></i> Guitar store";
         proyecttext1.innerHTML = "E-commerce project using HTML, CSS, JS, PHP and SQL presented as TFG of the DAM course";
