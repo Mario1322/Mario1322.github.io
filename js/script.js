@@ -202,7 +202,7 @@ for (let idioma in progresosIdiomas) {
         setTimeout(function() {
             document.querySelector(`.${idioma} .bar`).style.width = barContentWidth;
             document.querySelector(`.${idioma} .bar`).textContent = idioma.charAt(0).toUpperCase() + idioma.slice(1) + ": " + progresosIdiomas[idioma] + "%";
-        }, 1000); // Cambia el valor de 1000 a la cantidad de milisegundos de retraso que desees
+        }, 100000); // Cambia el valor de 1000 a la cantidad de milisegundos de retraso que desees
     }
 }
 
