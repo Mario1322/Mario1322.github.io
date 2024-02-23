@@ -11,11 +11,13 @@
 .bar {
     height: 100%;
     background-color: #DEBD59;
-    text-align: right;
+    text-align: center;
     line-height: 30px;
     color: white;
     border-radius: 50px; /* Ajusta este valor según lo redondeadas que desees las esquinas */
+    font-size: 30px; /* Ajusta el tamaño de la fuente según sea necesario */
 }
+
 
 
 .bar-content {

@@ -32,16 +32,17 @@ h1 {
 
 #loquesoy {
     animation: cambioDeColor 4s forwards infinite alternate-reverse;
-  }
+}
 
-  @keyframes cambioDeColor {
+@keyframes cambioDeColor {
     0% {
-      color: var(--blanco);
+        color: var(--blanco);
     }
+
     100% {
-      color: #DEBD59;
+        color: #DEBD59;
     }
-  }
+}
 
 
 .botones {
@@ -159,4 +160,22 @@ h1 {
     font-size: 2.2rem;
     font-weight: 600;
     margin-right: 5px;
+}
+
+.imgyo {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 100% cover 25%;
+}
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+        translate: 0 200px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
 }

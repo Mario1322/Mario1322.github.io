@@ -190,25 +190,19 @@ toggle_idioma.addEventListener('change', (event) => {
 
 /* Creacion del grafico de barras */
 
-// Suponiendo que tienes un objeto que contiene los progresos de idioma
-var progresosIdiomas = {
-    espanol: 100,
-    ingles: 75
-};
-
 // Itera sobre cada idioma y actualiza su barra de progreso
 for (let idioma in progresosIdiomas) {
     if (progresosIdiomas.hasOwnProperty(idioma)) {
         // Calcula el ancho del contenido de la barra en función del progreso del idioma
         var barContentWidth = progresosIdiomas[idioma] + "%";
 
-        // Selecciona la barra de progreso correspondiente al idioma y actualiza su ancho y texto con un ligero retraso
+        // Selecciona la barra de progreso correspondiente al idioma y actualiza su ancho
         setTimeout(function() {
             document.querySelector(`.${idioma} .bar`).style.width = barContentWidth;
-            document.querySelector(`.${idioma} .bar`).textContent = idioma.charAt(0).toUpperCase() + idioma.slice(1) + ": " + progresosIdiomas[idioma] + "%";
-        }, 100000); // Cambia el valor de 1000 a la cantidad de milisegundos de retraso que desees
+        }, 1000); // Cambia el valor de 1000 a la cantidad de milisegundos de retraso que desees
     }
 }
+
 
 /* Escritrura a maquina */
 const texto = "Soy un joven apasionado con un constante anhelo de aprender y expresar mi sabiduría. Mi sed de conocimiento me impulsa a explorar continuamente nuevas tecnologías y herramientas, buscando mejorar y perfeccionar mis habilidades en cada paso del camino.";
