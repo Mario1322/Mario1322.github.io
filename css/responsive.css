@@ -1,7 +1,9 @@
 /* RESPONSIVE */
 
 @media (max-width: 1300px) {
-
+    .header {
+        padding: 2rem 3%;
+    }
 
     .home {
         padding: 0 3%;
@@ -90,15 +92,24 @@
         height: 35px;
     }
 
-
+    .header {
+        background-color: var(--fondo-oscuro);
+        padding: 1.2rem 3%;
+    }
 
     #menu-icon {
         display: block;
     }
 
     .navbar {
-        top: 100%;
+        position: absolute;
+        overflow: hidden;
+        top: -1000%;
+        
+        width: 100%;
+        padding: 1rem 4%;
         background-color: var(--fondo-mas-oscuro);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         transition: .25s ease;
     }
 
@@ -106,16 +117,18 @@
     .navbar.active {
         transition-delay: 0s;
         left: 0;
-
+        top: 100%;
+        border-radius: 50px;
+        box-shadow: 0 0 20px #DEBD59;
+        text-align: center;
+        justify-content: center;
     }
 
     .navbar a {
         overflow: hidden;
-        display: grid;
+        display: block;
         font-size: 2.5rem;
-        margin: 20px;
-        align-items: center;
-        text-align: center;
+        margin: 3rem 0;
     }
 
     .navbar .solluna {
@@ -126,30 +139,12 @@
         text-align: center;
     }
 
-    .navbar .idioma {
+    .navbar .idioma{
         margin-left: 0rem;
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
         text-align: center;
-    }
-
-    #menu-icon {
-        position: absolute;
-        top: 0;
-        left: 60%;
-        /* Puedes ajustar este valor según sea necesario */
-        transform: translateX(-50%);
-        z-index: 100;
-    }
-
-    .logo {
-        position: absolute;
-        top: 0;
-        left: 40%;
-        /* Puedes ajustar este valor según sea necesario */
-        transform: translateX(-50%);
-        z-index: 100;
     }
 
 
@@ -210,3 +205,4 @@
         width: 100px;
     }
 }
+
