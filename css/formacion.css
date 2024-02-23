@@ -37,10 +37,6 @@
     color: var(--blanco);
 }
 
-.education-column .education-box {
-    border-left: .2rem solid var(--contraste);
-}
-
 .education-column .line {
     padding-bottom: .1rem;
 }
@@ -53,14 +49,14 @@
 .education-content .content {
     position: relative;
     padding: 1.5rem;
-    border: .2rem solid var(--contraste);
+    border: .2rem solid #DEBD59;
     border-radius: 50px;
     margin-bottom: 2rem;
     
 }
 
 .education-content .content:hover {
-    outline: 2px solid var(--contraste);
+    outline: 2px solid #DEBD59;
 }
 
 .education-content .content .anio {

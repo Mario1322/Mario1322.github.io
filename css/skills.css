@@ -63,12 +63,12 @@
     padding: 1rem 2rem;
     margin: .5rem;
     font-size: 2rem;
-    border: 2px solid var(--contraste);
+    border: 2px solid #DEBD59;
     border-radius: 50px;
 }
 
 .articulos h4:hover {
-    background-color: var(--contraste);
+    background-color: #DEBD59;
     color: var(--fondo-oscuro);
 }
 
