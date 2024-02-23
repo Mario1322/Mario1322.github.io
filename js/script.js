@@ -214,7 +214,7 @@ function typeWriter() {
   if (index < texto.length) {
     output.innerHTML += texto.charAt(index);
     index++;
-    setTimeout(typeWriter, Math.floor(Math.random() * 100) + 30); // Ajusta el intervalo de tiempo a tu gusto
+    setTimeout(typeWriter, Math.floor(Math.random() * 100) + 20); // Ajusta el intervalo de tiempo a tu gusto
   }
 }
 
