@@ -59,6 +59,7 @@
     width: 50rem;
     height: 15rem;
     resize: none;
+    
 }
 
 .contenidodatos .inputdatos {
@@ -75,7 +76,7 @@
     margin-bottom: 2rem;
     font-size: 2rem;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 50px;
     outline: none;
     border: none;
 }
@@ -106,7 +107,7 @@
     height: 6rem;
     padding: 1rem 2rem;
     font-size: 2.6rem;
-    border-radius: 8px;
+    border-radius: 50px;
     font-weight: 700;
     margin-bottom: 5rem;
 }
