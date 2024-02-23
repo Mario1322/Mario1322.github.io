@@ -39,7 +39,7 @@ h1 {
       color: var(--blanco);
     }
     100% {
-      color: var(--contraste);
+      color: #DEBD59;
     }
   }
 
@@ -62,8 +62,8 @@ h1 {
     margin-left: 1px;
     width: 19rem;
     height: 100%;
-    background-color: var(--contraste);
-    border: .2rem solid var(--contraste);
+    background-color: #DEBD59;
+    border: .2rem solid #DEBD59;
     border-radius: 50px;
     font-size: 2.2rem;
     font-weight: 800;
@@ -74,12 +74,12 @@ h1 {
 }
 
 .botones .btn:hover {
-    color: var(--contraste);
+    color: #DEBD59;
 }
 
 .botones .btn:nth-child(2) {
     background: transparent;
-    color: var(--contraste);
+    color: #DEBD59;
 }
 
 .botones .btn:nth-child(2):hover {
@@ -87,7 +87,7 @@ h1 {
 }
 
 .botones .btn:nth-child(2)::before {
-    background: var(--contraste);
+    background: #DEBD59;
 
 }
 
@@ -155,7 +155,7 @@ h1 {
 .mas a,
 .mas i {
     text-decoration: none;
-    color: var(--contraste);
+    color: #DEBD59;
     font-size: 2.2rem;
     font-weight: 600;
     margin-right: 5px;

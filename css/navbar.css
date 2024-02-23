@@ -22,6 +22,7 @@
     --opacidad-baja: 0.1;
     --opacidad-alta: 1;
     --estrellas: 51, 54, 70;
+    --fondo-oscuro-letras: white;
 }
 
 .cambiocolor {
@@ -35,6 +36,7 @@
     --opacidad-baja: 0.1;
     --opacidad-alta: 1;
     --estrellas: 204, 205, 211;
+    --fondo-oscuro-letras: #DEBD59;
 }
 
 html {
@@ -80,8 +82,9 @@ body {
     padding: 3px 3px;
     background-color: var(--fondo-oscuro-nvar);
     display: flex;
-    
-    align-items: center; /* Centra verticalmente los elementos */
+
+    align-items: center;
+    /* Centra verticalmente los elementos */
     z-index: 100;
     border-radius: 50px;
 }
@@ -99,13 +102,19 @@ body {
     margin-top: 5px;
     width: 90px;
     height: 80px;
-    display: flex; /* Utiliza flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    /* Utiliza flexbox */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
 }
+
 .logo img {
-    margin-right: 10px; /* Ajusta el margen derecho según sea necesario */
-    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+    margin-right: 10px;
+    /* Ajusta el margen derecho según sea necesario */
+    vertical-align: middle;
+    /* Alinea verticalmente la imagen con el texto */
 }
 
 
@@ -113,9 +122,10 @@ body {
 .imgyo {
     width: 180px;
 }
+
 .navbar {
     position: relative;
-   
+
     align-items: center;
 }
 
@@ -155,8 +165,10 @@ body {
 .navbar a:hover,
 .navbar a.active,
 .navbar label:hover {
-    color: var(--contraste);
+    color: var( --fondo-oscuro-letras);
+
 }
+
 
 #menu-icon {
     position: relative;

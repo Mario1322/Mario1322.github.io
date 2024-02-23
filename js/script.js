@@ -54,6 +54,7 @@ toggle.addEventListener('change', (event) => {
         label_toggle.innerHTML = "<i class='bx bx-sun' ></i>"
         logo_color.innerHTML = '<img class="logo" src="imagenes/blob-removebg-preview.png" alt="logo">';
         imgyo.innerHTML = '<img class="imgyo" src="imagenes/foto.jpeg" alt="guapo">';
+        
     }
 
 });
