@@ -70,6 +70,7 @@
 .articulos h4:hover {
     background-color: #DEBD59;
     color: var(--fondo-oscuro);
+    box-shadow: 0 0 20px #DEBD59;
 }
 
 
@@ -80,7 +81,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #debd59dd;
-    border: 1px solid black;
+    border: 1px solid #DEBD59;
     padding: 20px;
     z-index: 9999;
     display: none;
@@ -95,4 +96,6 @@
     cursor: pointer;
 }
 
-
+.popup-container:hover {
+    box-shadow: 0 0 20px #DEBD59;
+}

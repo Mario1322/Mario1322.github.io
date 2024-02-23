@@ -57,6 +57,7 @@
 
 .education-content .content:hover {
     outline: 2px solid #DEBD59;
+    box-shadow: 0 0 20px #DEBD59;
 }
 
 .education-content .content .anio {

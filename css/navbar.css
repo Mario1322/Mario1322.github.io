@@ -97,7 +97,6 @@ body {
 
 .logo {
     margin-top: 5px;
-    margin-left: 5px;
     width: 90px;
     height: 80px;
     display: flex; /* Utiliza flexbox */
@@ -125,9 +124,10 @@ body {
     color: var(--blanco);
     font-weight: 500;
     align-items: center;
-    margin-left: 4rem;
     transition: .3s;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .navbar .idioma {
@@ -135,19 +135,21 @@ body {
     color: var(--blanco);
     font-weight: 500;
     align-items: center;
-    margin-left: 4rem;
     transition: .3s;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .navbar a {
     font-size: 2.2rem;
     color: var(--blanco);
     font-weight: 500;
-    margin-left: 4rem;
     text-decoration: none;
     transition: .3s;
     align-items: flex-start;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .navbar a:hover,
