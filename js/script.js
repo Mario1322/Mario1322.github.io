@@ -54,23 +54,61 @@ toggle.addEventListener('change', (event) => {
         label_toggle.innerHTML = "<i class='bx bx-sun' ></i>"
         logo_color.innerHTML = '<img class="logo" src="imagenes/blob-removebg-preview.png" alt="logo">';
         imgyo.innerHTML = '<img class="imgyo" src="imagenes/foto.jpeg" alt="guapo">';
-        
+
     }
 
 });
-const texto = "Soy un joven apasionado con un constante anhelo de aprender y expresar mi sabiduría. Mi sed de conocimiento me impulsa a explorar continuamente nuevas tecnologías y herramientas, buscando mejorar y perfeccionar mis habilidades en cada paso del camino.";
-    const output = document.getElementById("textosobremi");
-    let index = 0;
 
-    function typeWriter() {
-      if (index < texto.length) {
+/* Maquina de escribir */
+const texto = "Soy un joven apasionado con un constante anhelo de aprender y expresar mi sabiduría. Mi sed de conocimiento me impulsa a explorar continuamente nuevas tecnologías y herramientas, buscando mejorar y perfeccionar mis habilidades en cada paso del camino.";
+const output = document.getElementById("textosobremi");
+let index = 0;
+
+function typeWriter() {
+    if (index < texto.length) {
         output.innerHTML += texto.charAt(index);
         index++;
         setTimeout(typeWriter, Math.floor(Math.random() * 100) + 20); // Ajusta el intervalo de tiempo a tu gusto
-      }
     }
+}
 
-    typeWriter();
+typeWriter();
+
+/* Pop up */
+document.addEventListener('DOMContentLoaded', function () {
+    const popupContainer = document.createElement('div');
+    popupContainer.classList.add('popup-container');
+    document.body.appendChild(popupContainer);
+
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close');
+    closeButton.innerHTML = '&times;';
+    popupContainer.appendChild(closeButton);
+
+    const popupInfo = document.createElement('p');
+    popupInfo.classList.add('popup-info');
+    popupContainer.appendChild(popupInfo);
+
+    const closePopup = function () {
+        popupContainer.style.display = 'none';
+    };
+
+    closeButton.addEventListener('click', closePopup);
+
+    const popupTriggers = document.querySelectorAll('.popup-trigger');
+
+    popupTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function () {
+            const info = this.dataset.info;
+            popupInfo.textContent = info;
+            popupContainer.style.display = 'block';
+
+            setTimeout(function () {
+                closePopup();
+            }, 15000); // 15 segundos en milisegundos
+        });
+    });
+});
 
 
 /* Cambio de idioma */
@@ -210,46 +248,11 @@ for (let idioma in progresosIdiomas) {
         var barContentWidth = progresosIdiomas[idioma] + "%";
 
         // Selecciona la barra de progreso correspondiente al idioma y actualiza su ancho
-        setTimeout(function() {
+        setTimeout(function () {
             document.querySelector(`.${idioma} .bar`).style.width = barContentWidth;
         }, 1000); // Cambia el valor de 1000 a la cantidad de milisegundos de retraso que desees
     }
 }
 
 
-/* Pop up */
-document.addEventListener('DOMContentLoaded', function () {
-    const popupContainer = document.createElement('div');
-    popupContainer.classList.add('popup-container');
-    document.body.appendChild(popupContainer);
-
-    const closeButton = document.createElement('span');
-    closeButton.classList.add('close');
-    closeButton.innerHTML = '&times;';
-    popupContainer.appendChild(closeButton);
-
-    const popupInfo = document.createElement('p');
-    popupInfo.classList.add('popup-info');
-    popupContainer.appendChild(popupInfo);
-
-    const closePopup = function() {
-        popupContainer.style.display = 'none';
-    };
-
-    closeButton.addEventListener('click', closePopup);
-
-    const popupTriggers = document.querySelectorAll('.popup-trigger');
-
-    popupTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function () {
-            const info = this.dataset.info;
-            popupInfo.textContent = info;
-            popupContainer.style.display = 'block';
-
-            setTimeout(function() {
-                closePopup();
-            }, 15000); // 15 segundos en milisegundos
-        });
-    });
-});
 

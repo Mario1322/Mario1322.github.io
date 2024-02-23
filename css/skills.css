@@ -86,6 +86,7 @@
     z-index: 9999;
     display: none;
     font-size: 20px;
+    box-shadow: 0 0 20px #DEBD59;
 }
 
 .popup-container .close {
@@ -96,6 +97,4 @@
     cursor: pointer;
 }
 
-.popup-container:hover {
-    box-shadow: 0 0 20px #DEBD59;
-}
+
