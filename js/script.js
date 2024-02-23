@@ -186,6 +186,9 @@ toggle_idioma.addEventListener('change', (event) => {
     }
 
 });
+
+/* Creacion del grafico de barras */
+
 // Suponiendo que tienes un objeto que contiene los progresos de idioma
 var progresosIdiomas = {
     espanol: 100,
@@ -206,6 +209,7 @@ for (let idioma in progresosIdiomas) {
     }
 }
 
+/* Escritrura a maquina */
 const texto = "Soy un joven apasionado con un constante anhelo de aprender y expresar mi sabiduría. Mi sed de conocimiento me impulsa a explorar continuamente nuevas tecnologías y herramientas, buscando mejorar y perfeccionar mis habilidades en cada paso del camino.";
 const output = document.getElementById("textosobremi");
 let index = 0;
@@ -219,4 +223,41 @@ function typeWriter() {
 }
 
 typeWriter();
+
+
+/* Pop up */
+document.addEventListener('DOMContentLoaded', function () {
+    const popupContainer = document.createElement('div');
+    popupContainer.classList.add('popup-container');
+    document.body.appendChild(popupContainer);
+
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close');
+    closeButton.innerHTML = '&times;';
+    popupContainer.appendChild(closeButton);
+
+    const popupInfo = document.createElement('p');
+    popupInfo.classList.add('popup-info');
+    popupContainer.appendChild(popupInfo);
+
+    const closePopup = function() {
+        popupContainer.style.display = 'none';
+    };
+
+    closeButton.addEventListener('click', closePopup);
+
+    const popupTriggers = document.querySelectorAll('.popup-trigger');
+
+    popupTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function () {
+            const info = this.dataset.info;
+            popupInfo.textContent = info;
+            popupContainer.style.display = 'block';
+
+            setTimeout(function() {
+                closePopup();
+            }, 15000); // 15 segundos en milisegundos
+        });
+    });
+});
 
