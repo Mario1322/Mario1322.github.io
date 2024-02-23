@@ -76,12 +76,11 @@ body {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
     max-width: 1200px;
     padding: 3px 3px;
     background-color: var(--fondo-oscuro-nvar);
     display: flex;
-    justify-content: space-between;
+    
     align-items: center; /* Centra verticalmente los elementos */
     z-index: 100;
     border-radius: 50px;
@@ -93,18 +92,23 @@ body {
 }
 
 .header.sticky {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
     transition: .2s;
 }
 
 .logo {
     margin-top: 5px;
+    margin-left: 5px;
     width: 90px;
     height: 80px;
     display: flex; /* Utiliza flexbox */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
 }
+.logo img {
+    margin-right: 10px; /* Ajusta el margen derecho según sea necesario */
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+}
+
 
 
 .imgyo {
