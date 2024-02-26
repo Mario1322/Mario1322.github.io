@@ -50,7 +50,7 @@ body {
 }
 
 .logo .animate,
-.navbar .animate,
+.lenguaje .navbar .animate,
 #menu-icon .animate,
 .home.animated-section .animate {
     position: absolute;
@@ -63,15 +63,37 @@ body {
 }
 
 .animate {
-    animation: showRight 1s ease forwards;
+    animation: showUp 1s ease forwards;
     animation-delay: calc(.3s * var(--i));
+    transform-origin: bottom;
 }
 
-@keyframes showRight {
+@keyframes showUp {
+    0% {
+        opacity: 1;
+        transform: translateY(100%);
+    }
+
     100% {
-        width: 0;
+        opacity: 0;
+        transform: translateY(0);
     }
 }
+
+.lenguaje {
+    display: inline-flex;
+    /* Utiliza flexbox con inline */
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    justify-content: end;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    z-index: 100;
+}
+
+
 
 .header {
     position: fixed;
@@ -117,6 +139,10 @@ body {
     /* Alinea verticalmente la imagen con el texto */
 }
 
+.lenguaje img {
+    vertical-align: middle;
+    /* Alinea verticalmente la imagen con el texto */
+}
 
 
 .imgyo {
@@ -165,7 +191,7 @@ body {
 .navbar a:hover,
 .navbar a.active,
 .navbar label:hover {
-    color: var( --fondo-oscuro-letras);
+    color: var(--fondo-oscuro-letras);
 
 }
 

@@ -164,8 +164,7 @@ h1 {
 
 .imgyo {
     animation: reveal linear 1s forwards;
-    animation-timeline: view();
-    animation-range: entry 100% cover 25%;
+    
 }
 @keyframes reveal {
     from {
