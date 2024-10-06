@@ -149,3 +149,18 @@ footer h3 {
     font-weight: 500;
     margin: 1rem;
 }
+
+.copy-btn {
+    margin-left: 10px; /* Espacio entre el texto del correo y el botón */
+    padding: 5px 10px; /* Espaciado interno del botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición para el efecto de hover */
+}
+
+.copy-btn:hover {
+    background-color: #0056b3; /* Color del botón al pasar el ratón */
+}

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/Idioma.css">
     <link rel="stylesheet" href="css/estrellas.css">
     <link rel="stylesheet" href="css/certificado.css">
+    
     <!-- Incluye PDF.js desde su CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="js/pdfscript.js" defer></script>
@@ -36,10 +37,11 @@
             <a href="#formacion" id="formation">Formación</a>
             <a href="#idioma" id="idiomas">Idiomas</a>
             <a href="#contacto" id="contact">Contacto</a>
+            <a href="#certificado" id="cert">Certificados</a>
             <label for="toggle" id="label_toggle" class="solluna"><i class='bx bx-sun'></i></label>
             <input type="checkbox" id="toggle">
             <a href="https://mario1322.github.io" class="lenguaje" id=""><img class="lenguaje"
-                    src="imagenes/español.png" alt="español"><span class="animate" style="--i:1;"></span></a>
+                    src="imagenes/español.png" alt="español"><span class="animate" style="--i:1;"></span></a>
             <a href="https://mario1322.github.io/english" class="lenguaje" id=""><img class="lenguaje"
                     src="imagenes/english.png" alt="ingles"><span class="animate" style="--i:1;"></span></a>
             <span class="animate" style="--i:2;"></span>
@@ -459,7 +461,8 @@
                             <div class="centradotexto">
                                 <div class="iconotexto">
                                     <i class='bx bx-envelope correo'></i>
-                                    <h4>mdlrg1322@gmail.com</h4>
+                                    <h4 id="email-text">mdlrg1322@gmail.com</h4>
+                                    <button class="copy-btn" onclick="copyEmail()">Copiar</button> <!-- Botón para copiar el correo -->
                                 </div>
                                 <div class="iconotexto">
                                     <i class='bx bx-phone'></i>
@@ -499,7 +502,8 @@
     <script src="js/script.js"></script>
     <!--ENLACE BAFFLE-->
     <script src="js/baffle.min.js"></script>
-
+    <!--COPYEMAILSCRIPT-->
+    <script src="js/copymailscript.js" defer></script>
 </body>
 
 </html>
