@@ -1,0 +1,13 @@
+#certificado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+#pdf-render {
+    border: none; /* Sin bordes */
+    width: 100%; /* Ocupa el 100% del ancho de la sección */
+    max-width: 800px; /* Tamaño máximo para no exceder el tamaño del PDF */
+    height: auto; /* Ajusta la altura automáticamente */
+}
