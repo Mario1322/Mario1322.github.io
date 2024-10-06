@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="css/estrellas.css">
     <link rel="stylesheet" href="css/certificado.css">
     <!-- Incluye PDF.js desde su CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-<script src="js/pdfscript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="js/pdfscript.js" defer></script>
     <title>Mario De La Rosa García</title>
     <!-- ICONOS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+
 
 </head>
 
@@ -39,9 +39,9 @@
             <label for="toggle" id="label_toggle" class="solluna"><i class='bx bx-sun'></i></label>
             <input type="checkbox" id="toggle">
             <a href="https://mario1322.github.io" class="lenguaje" id=""><img class="lenguaje"
-                src="imagenes/español.png" alt="español"><span class="animate" style="--i:1;"></span></a>
-        <a href="https://mario1322.github.io/english" class="lenguaje" id=""><img class="lenguaje"
-                src="imagenes/english.png" alt="ingles"><span class="animate" style="--i:1;"></span></a>
+                    src="imagenes/español.png" alt="español"><span class="animate" style="--i:1;"></span></a>
+            <a href="https://mario1322.github.io/english" class="lenguaje" id=""><img class="lenguaje"
+                    src="imagenes/english.png" alt="ingles"><span class="animate" style="--i:1;"></span></a>
             <span class="animate" style="--i:2;"></span>
         </nav>
     </header>
@@ -52,7 +52,7 @@
             <div class="home-content">
                 <h1 class="sombra" id="textoenmi">Mario</br>De La Rosa García<span class="animate"
                         style="--i:2;"></span></h1>
-               
+
                 <div class="botones">
                     <a href="Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn" target="_blank">Descargar
                         CV</a>
@@ -285,7 +285,8 @@
                             <div class="content">
                                 <a href="https://github.com/Mario1322/EjerciciosBasicos_2021" target="_blank"
                                     class="link">
-                                    <img src="imagenes/ejerciciosbasicosjava.jpg" alt="Arkanoid Image" class="project-image"style="max-width: 40%;">
+                                    <img src="imagenes/ejerciciosbasicosjava.jpg" alt="Arkanoid Image"
+                                        class="project-image" style="max-width: 40%;">
                                     <div class="anio">
                                         <p>2021</p>
                                     </div>
@@ -413,7 +414,7 @@
         <section class="idioma" id="idioma">
             <div class="centrado">
                 <div class="titulo">
-                    <h1  style="text-decoration: underline;" id="idiomas1">Idiomas</h1>
+                    <h1 style="text-decoration: underline;" id="idiomas1">Idiomas</h1>
                 </div>
                 <div class="bar-container espanol">
                     <div class="bar" style="width: 100%;">Español</div>
@@ -425,12 +426,22 @@
             </div>
         </section>
 
-<!--CERTIFICADOS-->
+        <!--CERTIFICADOS-->
 
-<section class="certificado" id="certificado">
-    <canvas id="pdf-render"></canvas>
-
-</section>
+        <section class="certificado" id="certificado">
+            <div class="titulo">
+                <h1 style="text-decoration: underline;" id="contact1">Certificados</h1>
+            </div>
+        
+            <div class="navigation">
+                <button id="prevBtn" style="cursor: pointer;">&#10094;</button> <!-- Flecha izquierda -->
+                <canvas id="pdf-render" width="600" height="800"></canvas>
+                <button id="nextBtn" style="cursor: pointer;">&#10095;</button> <!-- Flecha derecha -->
+            </div>
+        
+            <div id="titulo-pdf" style="text-align: center; margin-top: 10px;"></div>
+        </section>
+        
 
 
         <!-- CONTACTO -->

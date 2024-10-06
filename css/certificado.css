@@ -11,3 +11,29 @@
     max-width: 800px; /* Tamaño máximo para no exceder el tamaño del PDF */
     height: auto; /* Ajusta la altura automáticamente */
 }
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar las flechas y el canvas */
+}
+
+button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    font-size: 24px; /* Tamaño de la flecha */
+    margin: 0 20px; /* Espaciado entre el canvas y las flechas */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: color 0.3s; /* Transición para el efecto de hover */
+}
+
+button:hover {
+    color: #007bff; /* Color al pasar el ratón */
+}
+
+#titulo-pdf {
+    margin-top: 20px; /* Espacio entre el canvas y el texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    text-align: center;
+}
