@@ -3,6 +3,10 @@ const pdfFiles = [
     '../certificados/Certificado_Seguridad_y_privacidad.pdf',
     '../certificados/Introducción_a_la_Gestión_Ambiental_Certificado.pdf',
     '../certificados/Seguridad y Privacidad de datos_Certificado Seguridad y Privacidad de Datos .pdf',
+    '../certificados/Teletrabajo y Prevencion de Riesgos Laborales_Certificado Teletrabajo y Prevención de Riesgos Laborales.pdf',
+    '../certificados/Seguridad de la informacion_Certificado Seguridad de la información.pdf',
+    '../certificados/Prevencion de riesgos laborales P.V.D_Descarga_Certificado.pdf',
+
 ];
 
 // Variable global para el índice actual del PDF
