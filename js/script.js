@@ -37,27 +37,7 @@ window.onscroll = () => {
 };
 
 
-/* Cambio de tema */
-let toggle = document.getElementById('toggle');
-toggle.addEventListener('change', (event) => {
-    let checked = event.target.checked;
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-    document.body.classList.toggle('cambiocolor');
-    menuIcon.classList.remove('bx-x');
-    if (checked) {
-        label_toggle.innerHTML = "<i class='bx bx-moon' ></i>";
-        logo_color.innerHTML = '<img class="logo" src="imagenes/blob-removebg-preview.png" alt="logo">';
-        imgyo.innerHTML = '<img class="imgyo" src="imagenes/foto.jpeg" alt="guapo">';
 
-    } else {
-        label_toggle.innerHTML = "<i class='bx bx-sun' ></i>"
-        logo_color.innerHTML = '<img class="logo" src="imagenes/blob-removebg-preview.png" alt="logo">';
-        imgyo.innerHTML = '<img class="imgyo" src="imagenes/foto.jpeg" alt="guapo">';
-
-    }
-
-});
 
 /* Maquina de escribir */
 const texto = "Soy un joven apasionado con un constante anhelo de aprender y expresar mi sabiduría. Mi sed de conocimiento me impulsa a explorar continuamente nuevas tecnologías y herramientas, buscando mejorar y perfeccionar mis habilidades en cada paso del camino.";
@@ -300,33 +280,3 @@ $('document').ready(function(){
     });
 });
 
-
-// URL del PDF
-const url = '../certificados/Certificado_Seguridad_y_privacidad.pdf';
-
-// Carga el PDF utilizando PDF.js
-const pdfjsLib = window['pdfjs-dist/build/pdf'];
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
-
-const loadingTask = pdfjsLib.getDocument(url);
-loadingTask.promise.then(pdf => {
-    // Cargar la primera página del PDF
-    pdf.getPage(1).then(page => {
-        const canvas = document.getElementById('pdf-render');
-        const context = canvas.getContext('2d');
-        
-        // Establece la escala para que el PDF se vea bien
-        const viewport = page.getViewport({ scale: 1.5 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        // Renderiza el PDF en el canvas
-        const renderContext = {
-            canvasContext: context,
-            viewport: viewport
-        };
-        page.render(renderContext);
-    });
-}).catch(error => {
-    console.error('Error al cargar el PDF: ', error);
-});

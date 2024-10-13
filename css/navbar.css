@@ -104,7 +104,6 @@ body {
     padding: 3px 3px;
     background-color: var(--fondo-oscuro-nvar);
     display: flex;
-
     align-items: center;
     /* Centra verticalmente los elementos */
     z-index: 100;

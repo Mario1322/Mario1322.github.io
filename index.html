@@ -11,13 +11,16 @@
     <link rel="stylesheet" href="css/formacion.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/Idioma.css">
-    <link rel="stylesheet" href="css/estrellas.css">
+    <link rel="stylesheet" href="css/idioma.css">
     <link rel="stylesheet" href="css/certificado.css">
-    
+
     <!-- Incluye PDF.js desde su CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="js/pdfscript.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.2.0/baffle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+    
     <title>Mario De La Rosa García</title>
     <!-- ICONOS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -56,7 +59,7 @@
                         style="--i:2;"></span></h1>
 
                 <div class="botones">
-                    <a href="Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn" target="_blank">Descargar
+                    <a href="./certificados/Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn" target="_blank">Descargar
                         CV</a>
                     <a href="#contacto" id="contactarme" class="btn">Contactarme</a>
                 </div>
@@ -69,7 +72,7 @@
             <div class="home-content">
                 <div class="elguapo">
                     <div id="imgyo"><img class="imgyo" src="imagenes/foto.jpeg" alt="guapo"></div>
-                    <h3 id="loquesoy" class="profesion">Desarrollador</br>de software</h3>
+                    <h3 id="loquesoy" class="profesion">Desarrollador de software</h3>
                     <span class="animate" style="--i:2;"></span>
                 </div>
                 <div class="texto">
@@ -95,18 +98,22 @@
                         <div class="articulos">
                             <h4 class="popup-trigger"
                                 data-info="HTML5, o HyperText Markup Language versión 5, es el estándar actual para la estructura y presentación de contenido en la web. Se utiliza para definir la estructura básica de una página web, incluidos elementos como encabezados, párrafos, imágenes, enlaces, formularios, entre otros.">
-                                HTML5</h4>
+                                HTML5
+                            </h4>
                             <h4 class="popup-trigger"
                                 data-info="CSS3, o Cascading Style Sheets versión 3, es el estándar actual para definir el estilo y la presentación de elementos HTML en una página web. Se utiliza para aplicar estilos como colores, fuentes, márgenes, rellenos, animaciones y diseños a los elementos HTML, lo que permite crear interfaces web atractivas y visualmente agradables.">
-                                CSS3</h4>
+                                CSS3
+                            </h4>
                         </div>
                         <div class="articulos">
                             <h4 class="popup-trigger"
                                 data-info="JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Se utiliza principalmente en el desarrollo web para agregar interactividad y dinamismo a las páginas web. Con JavaScript, es posible manipular el contenido HTML, responder a eventos del usuario, validar formularios, crear efectos visuales y mucho más.">
-                                JavaScript</h4>
+                                JavaScript
+                            </h4>
                             <h4 class="popup-trigger"
                                 data-info="jQuery es una biblioteca de JavaScript rápida, pequeña y rica en características. Simplifica la manipulación del DOM (Document Object Model), manejo de eventos, animaciones, llamadas AJAX y otras tareas comunes en JavaScript. jQuery es ampliamente utilizado en el desarrollo web debido a su facilidad de uso y su capacidad para simplificar el código.">
-                                jQuery</h4>
+                                jQuery
+                            </h4>
                         </div>
                     </div>
                     <div class="cartas">
@@ -115,21 +122,26 @@
                         <div class="articulos">
                             <h4 class="popup-trigger"
                                 data-info="Java es un lenguaje de programación de propósito general, orientado a objetos y basado en clases. Es conocido por su portabilidad, ya que los programas escritos en Java pueden ejecutarse en cualquier dispositivo que tenga una máquina virtual Java (JVM). Se utiliza en una variedad de aplicaciones, incluidas aplicaciones web, aplicaciones móviles, sistemas embebidos y grandes sistemas empresariales.">
-                                Java</h4>
+                                Java
+                            </h4>
                             <h4 class="popup-trigger"
                                 data-info="SQL, o Structured Query Language, es un lenguaje de programación diseñado para administrar y manipular bases de datos relacionales. Se utiliza para realizar consultas, inserciones, actualizaciones y eliminaciones de datos en una base de datos, así como para definir y modificar la estructura de la base de datos, como tablas, índices y restricciones.">
-                                SQL</h4>
+                                SQL
+                            </h4>
                             <h4 class="popup-trigger"
                                 data-info="Python es un lenguaje de programación interpretado, de alto nivel y multipropósito. Es conocido por su sintaxis clara y legible, lo que lo hace ideal para principiantes, así como por su amplia gama de aplicaciones, que incluyen desarrollo web, análisis de datos, inteligencia artificial, aprendizaje automático, automatización de tareas y más.">
-                                Python</h4>
+                                Python
+                            </h4>
                         </div>
                         <div class="articulos">
                             <h4 class="popup-trigger"
                                 data-info="PHP es un lenguaje de programación de uso general especialmente adecuado para el desarrollo web. Se utiliza principalmente para crear aplicaciones web dinámicas y sitios web interactivos. PHP se puede integrar fácilmente con HTML y se ejecuta en el servidor, lo que permite generar contenido dinámico y trabajar con bases de datos.">
-                                PHP</h4>
+                                PHP
+                            </h4>
                             <h4 class="popup-trigger"
                                 data-info="C es un lenguaje de programación de propósito general, de nivel medio y estructurado. Es conocido por su eficiencia y su uso en el desarrollo de sistemas operativos, compiladores, intérpretes y otras aplicaciones de bajo nivel donde el rendimiento y el control son críticos. C también ha sido una influencia importante en muchos otros lenguajes de programación modernos.">
-                                C</h4>
+                                C
+                            </h4>
                         </div>
                     </div>
                     <div class="cartas herramientas">
@@ -138,23 +150,37 @@
                         <div class="articulos">
                             <h4 class="popup-trigger"
                                 data-info="GitHub es una plataforma de desarrollo colaborativo de software que permite a los equipos trabajar juntos en proyectos de programación. Proporciona control de versiones utilizando Git, lo que facilita el seguimiento de cambios en el código, la colaboración entre desarrolladores y la gestión de proyectos de software.">
-                                GitHub</h4>
+                                GitHub
+                            </h4>
                             <h4 class="popup-trigger"
                                 data-info="Linux es un sistema operativo de código abierto basado en Unix que se utiliza ampliamente en servidores, dispositivos embebidos, supercomputadoras y otros dispositivos. Es conocido por su estabilidad, seguridad y flexibilidad, así como por su capacidad para ser altamente personalizable según las necesidades del usuario.">
-                                Linux</h4>
+                                Linux
+                            </h4>
                         </div>
                         <div class="articulos">
                             <h4 id="redes" class="popup-trigger"
-                                data-info=" El término 'Redes' generalmente se refiere al campo de las redes informáticas, que abarca el diseño, implementación, mantenimiento y gestión de sistemas de comunicación de datos. Incluye aspectos como el enrutamiento, la seguridad, la configuración de redes, la administración de servidores y la resolución de problemas de conectividad.">
-                                Redes</h4>
+                                data-info="El término 'Redes' generalmente se refiere al campo de las redes informáticas, que abarca el diseño, implementación, mantenimiento y gestión de sistemas de comunicación de datos. Incluye aspectos como el enrutamiento, la seguridad, la configuración de redes, la administración de servidores y la resolución de problemas de conectividad.">
+                                Redes
+                            </h4>
                             <h4 class="popup-trigger"
                                 data-info="Android Studio es el entorno de desarrollo integrado (IDE) oficial para el desarrollo de aplicaciones Android. Proporciona herramientas avanzadas para el desarrollo de aplicaciones móviles, incluido un editor de código, herramientas de depuración, emuladores de dispositivos Android, integración con Git y soporte para múltiples lenguajes de programación como Java y Kotlin.">
-                                Android Studio</h4>
+                                Android Studio
+                            </h4>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- Popup HTML -->
+        <div class="popup-container">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <div class="popup-info">
+                </div>
+            </div>
+        </div>
+        
 
 
         <!-- FORMACIÓN -->
@@ -434,74 +460,79 @@
             <div class="titulo">
                 <h1 style="text-decoration: underline;" id="contact1">Certificados</h1>
             </div>
-        
+
             <div class="navigation">
                 <button id="prevBtn" style="cursor: pointer;">&#10094;</button> <!-- Flecha izquierda -->
                 <canvas id="pdf-render" width="600" height="800"></canvas>
                 <button id="nextBtn" style="cursor: pointer;">&#10095;</button> <!-- Flecha derecha -->
             </div>
-        
+
             <div id="titulo-pdf" style="text-align: center; margin-top: 10px;"></div>
         </section>
-        
+
 
 
         <!-- CONTACTO -->
-        <section class="contacto" id="contacto">
-            <div class="centrado">
-                <div class="titulo">
-                    <h1 style="text-decoration: underline;" id="contact1">Contacto</h1>
+<section class="contacto" id="contacto">
+    <div class="centrado">
+        <div class="titulo">
+            <h1 style="text-decoration: underline;" id="contact1">Contacto</h1>
+        </div>
+        <div class="contacto-contenido">
+            <div class="misdatos">
+                <div class="nombre">
+                    <h3 id="misdatos">Mis datos</h3>
                 </div>
-                <div class="contacto-contenido">
-                    <div class="misdatos">
-                        <div class="nombre">
-                            <h3 id="misdatos">Mis datos</h3>
+                <div class="contenidodatos">
+                    <div class="centradotexto">
+                        <div class="iconotexto">
+                            <i class='bx bx-envelope correo'></i>
+                            <h4 id="email-text">mdlrg1322@gmail.com</h4>
+                            <button class="copy-btn" id="copy-button">Copiar</button>
                         </div>
-                        <div class="contenidodatos">
-                            <div class="centradotexto">
-                                <div class="iconotexto">
-                                    <i class='bx bx-envelope correo'></i>
-                                    <h4 id="email-text">mdlrg1322@gmail.com</h4>
-                                    <button class="copy-btn" onclick="copyEmail()">Copiar</button> <!-- Botón para copiar el correo -->
-                                </div>
-                                <div class="iconotexto">
-                                    <i class='bx bx-phone'></i>
-                                    <h4>+34 667758633</h4>
-                                </div>
-                                <div class="iconotexto">
-                                    <i class='bx bx-pin'></i>
-                                    <h4 id="locationtext">Madrid, España</h4>
-                                </div>
-                            </div>
+                        <div class="iconotexto">
+                            <i class='bx bx-phone'></i>
+                            <h4>+34 667758633</h4>
                         </div>
-                    </div>
-                    <div class="misdatos">
-                        <div class="nombre">
-                            <h3 id="contactarme1">Contactarme</h3>
+                        <div class="iconotexto">
+                            <i class='bx bx-pin'></i>
+                            <h4 id="locationtext">Madrid, España</h4>
                         </div>
-                        <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
-                            <div id="formulario">
-                                <input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre">
-                                <input type="email" name="email" class="inputdatos" placeholder="Correo electronico">
-                                <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30"
-                                    rows="10"></textarea>
-                            </div>
-                            <button id="send" class="botondatos">Enviar</i></button>
-                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="misdatos">
+                <div class="nombre">
+                    <h3 id="contactarme1">Contactarme</h3>
+                </div>
+                <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
+                    <div id="formulario">
+                        <input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre">
+                        <input type="email" name="email" class="inputdatos" placeholder="Correo electrónico">
+                        <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30" rows="10"></textarea>
+                    </div>
+                    <button id="send" class="botondatos">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de correo copiado -->
+    <div class="popup" id="popup1">
+        <div class="popup-content">
+            <span class="close" id="close-popup1">&times;</span> <!-- Botón de cerrar -->
+            <p id="popup-message" class="popup-info">Correo copiado exitosamente!</p> <!-- Mensaje del popup -->
+        </div>
+    </div>
+    
+</section>
+
     <!-- FOOTER -->
     <footer>
         <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
         <h3>© 2024 Copyright: Mario De La Rosa García</h3>
     </footer>
-    <!-- ENLACE JS -->
-    <script src="js/script.js"></script>
-    <!--ENLACE BAFFLE-->
-    <script src="js/baffle.min.js"></script>
+
     <!--COPYEMAILSCRIPT-->
     <script src="js/copymailscript.js" defer></script>
 </body>
