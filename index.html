@@ -17,10 +17,12 @@
     <!-- Incluye PDF.js desde su CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="js/pdfscript.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.2.0/baffle.min.js"></script>
     <script type="module" src="js/main.js"></script>
-    
+
     <title>Mario De La Rosa García</title>
     <!-- ICONOS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -59,7 +61,8 @@
                         style="--i:2;"></span></h1>
 
                 <div class="botones">
-                    <a href="./certificados/Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn" target="_blank">Descargar
+                    <a href="./certificados/Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn"
+                        target="_blank">Descargar
                         CV</a>
                     <a href="#contacto" id="contactarme" class="btn">Contactarme</a>
                 </div>
@@ -171,7 +174,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Popup HTML -->
         <div class="popup-container">
             <div class="popup-content">
@@ -180,7 +183,7 @@
                 </div>
             </div>
         </div>
-        
+
 
 
         <!-- FORMACIÓN -->
@@ -473,68 +476,69 @@
 
 
         <!-- CONTACTO -->
-<section class="contacto" id="contacto">
-    <div class="centrado">
-        <div class="titulo">
-            <h1 style="text-decoration: underline;" id="contact1">Contacto</h1>
-        </div>
-        <div class="contacto-contenido">
-            <div class="misdatos">
-                <div class="nombre">
-                    <h3 id="misdatos">Mis datos</h3>
+        <section class="contacto" id="contacto">
+            <div class="centrado">
+                <div class="titulo">
+                    <h1 style="text-decoration: underline;" id="contact1">Contacto</h1>
                 </div>
-                <div class="contenidodatos">
-                    <div class="centradotexto">
-                        <div class="iconotexto">
-                            <i class='bx bx-envelope correo'></i>
-                            <h4 id="email-text">mdlrg1322@gmail.com</h4>
-                            <button class="copy-btn" id="copy-button">Copiar</button>
+                <div class="contacto-contenido">
+                    <div class="misdatos">
+                        <div class="nombre">
+                            <h3 id="misdatos">Mis datos</h3>
                         </div>
-                        <div class="iconotexto">
-                            <i class='bx bx-phone'></i>
-                            <h4>+34 667758633</h4>
+                        <div class="contenidodatos">
+                            <div class="centradotexto">
+                                <div class="iconotexto">
+                                    <i class='bx bx-envelope correo'></i>
+                                    <h4 id="email-text">mdlrg1322@gmail.com</h4>
+                                    <button class="copy-btn" id="copy-button">Copiar</button>
+                                </div>
+                                <div class="iconotexto">
+                                    <i class='bx bx-phone'></i>
+                                    <h4>+34 667758633</h4>
+                                </div>
+                                <div class="iconotexto">
+                                    <i class='bx bx-pin'></i>
+                                    <h4 id="locationtext">Madrid, España</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="iconotexto">
-                            <i class='bx bx-pin'></i>
-                            <h4 id="locationtext">Madrid, España</h4>
+                    </div>
+                    <div class="misdatos">
+                        <div class="nombre">
+                            <h3 id="contactarme1">Contactarme</h3>
                         </div>
+                        <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
+                            <div id="formulario">
+                                <input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre">
+                                <input type="email" name="email" class="inputdatos" placeholder="Correo electrónico">
+                                <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30"
+                                    rows="10"></textarea>
+                            </div>
+                            <button id="send" class="botondatos">Enviar</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="misdatos">
-                <div class="nombre">
-                    <h3 id="contactarme1">Contactarme</h3>
+
+            <!-- Popup de correo copiado -->
+            <div class="popup" id="popup1">
+                <div class="popup-content">
+                    <span class="close" id="close-popup1">&times;</span> <!-- Botón de cerrar -->
+                    <p id="popup-message" class="popup-info">Correo copiado exitosamente!</p> <!-- Mensaje del popup -->
                 </div>
-                <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
-                    <div id="formulario">
-                        <input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre">
-                        <input type="email" name="email" class="inputdatos" placeholder="Correo electrónico">
-                        <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30" rows="10"></textarea>
-                    </div>
-                    <button id="send" class="botondatos">Enviar</button>
-                </form>
             </div>
-        </div>
-    </div>
 
-    <!-- Popup de correo copiado -->
-    <div class="popup" id="popup1">
-        <div class="popup-content">
-            <span class="close" id="close-popup1">&times;</span> <!-- Botón de cerrar -->
-            <p id="popup-message" class="popup-info">Correo copiado exitosamente!</p> <!-- Mensaje del popup -->
-        </div>
-    </div>
-    
-</section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
-        <h3>© 2024 Copyright: Mario De La Rosa García</h3>
-    </footer>
+        <!-- FOOTER -->
+        <footer>
+            <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
+            <h3>© 2024 Copyright: Mario De La Rosa García</h3>
+        </footer>
 
-    <!--COPYEMAILSCRIPT-->
-    <script src="js/copymailscript.js" defer></script>
+        <!--COPYEMAILSCRIPT-->
+        <script src="js/copymailscript.js" defer></script>
 </body>
 
 </html>
