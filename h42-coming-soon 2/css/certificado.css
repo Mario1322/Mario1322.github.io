@@ -1,0 +1,55 @@
+#certificado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+#pdf-render {
+    border: none;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    position: relative;
+  z-index: 10; /* Encima del fondo */
+  background: #fff; /* Opcional, para que se vea mejor */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Opcional */
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: #EFBF04;  /* dorado */
+    color: #CBCBCB;             /* gris claro */
+    border: none;
+    font-size: 24px;
+    margin: 0 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 10;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #EFBF04;
+}
+
+#titulo-pdf {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #003366; /* Azul marino */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.certificado,
+.navigation,
+#download-pdf {
+    position: relative;
+    z-index: 10;
+}
