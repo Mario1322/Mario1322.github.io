@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mario De La Rosa García</title>
+    <meta name="description"
+        content="Portfolio de Mario De La Rosa García, un desarrollador de software especializado en ciberseguridad y desarrollo de aplicaciones multiplataforma. Explora mis habilidades, formación y proyectos.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" /> -->
+    <!--<link rel="apple-touch-icon" href="assets/webclip.png" />-->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/formacion.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/idioma.css">
+    <link rel="stylesheet" href="css/certificado.css">
+    <script src="js/pdfscript.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.2.0/baffle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <!-- ICONOS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="color-scheme-3">
+    <div id="particles-js" class="particle-wrapper"></div>
+    <header class="header">
+        <a href="https://mario1322.github.io" class="logo" id="logo_color"><img class="logo"
+                src="imagenes/blob-removebg-preview.png" alt="logo"><span class="animate" style="--i:1;"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <nav class="navbar">
+            <a href="#home" class="active" id="casa">Sobre mi</a>
+            <a href="#skills">Skills</a>
+            <a href="#formacion" id="formation">Formación</a>
+            <a href="#idioma" id="idiomas">Idiomas</a>
+            <a href="#contacto" id="contact">Contacto</a>
+            <a href="#certificado" id="cert">Certificados</a>
+            <label for="toggle" id="label_toggle" class="solluna"><i class='bx bx-sun'></i></label>
+            <input type="checkbox" id="toggle">
+            <a href="index.html" class="lenguaje" id=""><img class="lenguaje" src="imagenes/español.png"
+                    alt="español"><span class="animate" style="--i:1;"></span></a>
+            <a href="indexen.html" class="lenguaje" id=""><img class="lenguaje" src="imagenes/english.png"
+                    alt="ingles"><span class="animate" style="--i:1;"></span></a>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+    <div class="page-wrapper navbar-on-page">
+        <main class="main-wrapper max-width-full">
+
+            <!-- SOBRE MI -->
+            <section class="home animated-section" id="home">
+                <div class="home-content">
+                    <h1 class="sombra" id="textoenmi">Mario</br>De La Rosa García<span class="animate"
+                            style="--i:2;"></span></h1>
+
+                    <div class="botones">
+                        <a href="./certificados/Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn"
+                            target="_blank">Descargar
+                            CV</a>
+                        <a href="#contacto" id="contactarme" class="btn">Contactarme</a>
+                    </div>
+                    <div class="social">
+                        <a href="https://github.com/Mario1322" target="_blank"><i class='bx bxl-github'></i></a>
+                        <a href="https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank"><i
+                                class='bx bxl-linkedin-square'></i></a>
+                    </div>
+                </div>
+                <div class="home-content">
+                    <div class="elguapo">
+                        <div id="imgyo"><img class="imgyo" src="imagenes/foto.jpeg" alt="guapo"></div>
+                        <h3 id="loquesoy" class="profesion">Desarrollador de software</h3>
+                        <span class="animate" style="--i:2;"></span>
+                    </div>
+                    <div class="texto">
+                        <p id="textosobremi">
+                        </p>
+                    </div>
+                    <div class="mas">
+                        <a href="#skills" id="conocermas">Conocer más</a><i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                </div>
+            </section>
+            <!-- SKILLS -->
+            <section class="skills" id="skills">
+                <div class="centrado">
+                    <div class="titulo">
+                        <h1 style="text-decoration: underline;">Skills</h1>
+                    </div>
+                    <div class="contenedorcartas">
+                        <div class="cartas">
+                            <i class='bx bx-code-alt'></i>
+                            <h3>FrontEnd</h3>
+                            <div class="articulos">
+                                <h4 class="popup-trigger"
+                                    data-info="HTML5, o HyperText Markup Language versión 5, es el estándar actual para la estructura y presentación de contenido en la web. Se utiliza para definir la estructura básica de una página web, incluidos elementos como encabezados, párrafos, imágenes, enlaces, formularios, entre otros.">
+                                    HTML5
+                                </h4>
+                                <h4 class="popup-trigger"
+                                    data-info="CSS3, o Cascading Style Sheets versión 3, es el estándar actual para definir el estilo y la presentación de elementos HTML en una página web. Se utiliza para aplicar estilos como colores, fuentes, márgenes, rellenos, animaciones y diseños a los elementos HTML, lo que permite crear interfaces web atractivas y visualmente agradables.">
+                                    CSS3
+                                </h4>
+                            </div>
+                            <div class="articulos">
+                                <h4 class="popup-trigger"
+                                    data-info="JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Se utiliza principalmente en el desarrollo web para agregar interactividad y dinamismo a las páginas web. Con JavaScript, es posible manipular el contenido HTML, responder a eventos del usuario, validar formularios, crear efectos visuales y mucho más.">
+                                    JavaScript
+                                </h4>
+                                <h4 class="popup-trigger"
+                                    data-info="jQuery es una biblioteca de JavaScript rápida, pequeña y rica en características. Simplifica la manipulación del DOM (Document Object Model), manejo de eventos, animaciones, llamadas AJAX y otras tareas comunes en JavaScript. jQuery es ampliamente utilizado en el desarrollo web debido a su facilidad de uso y su capacidad para simplificar el código.">
+                                    jQuery
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="cartas">
+                            <i class='bx bxs-server'></i>
+                            <h3>BackEnd</h3>
+                            <div class="articulos">
+                                <h4 class="popup-trigger"
+                                    data-info="Java es un lenguaje de programación de propósito general, orientado a objetos y basado en clases. Es conocido por su portabilidad, ya que los programas escritos en Java pueden ejecutarse en cualquier dispositivo que tenga una máquina virtual Java (JVM). Se utiliza en una variedad de aplicaciones, incluidas aplicaciones web, aplicaciones móviles, sistemas embebidos y grandes sistemas empresariales.">
+                                    Java
+                                </h4>
+                                <h4 class="popup-trigger"
+                                    data-info="SQL, o Structured Query Language, es un lenguaje de programación diseñado para administrar y manipular bases de datos relacionales. Se utiliza para realizar consultas, inserciones, actualizaciones y eliminaciones de datos en una base de datos, así como para definir y modificar la estructura de la base de datos, como tablas, índices y restricciones.">
+                                    SQL
+                                </h4>
+                                <h4 class="popup-trigger"
+                                    data-info="Python es un lenguaje de programación interpretado, de alto nivel y multipropósito. Es conocido por su sintaxis clara y legible, lo que lo hace ideal para principiantes, así como por su amplia gama de aplicaciones, que incluyen desarrollo web, análisis de datos, inteligencia artificial, aprendizaje automático, automatización de tareas y más.">
+                                    Python
+                                </h4>
+                            </div>
+                            <div class="articulos">
+                                <h4 class="popup-trigger"
+                                    data-info="PHP es un lenguaje de programación de uso general especialmente adecuado para el desarrollo web. Se utiliza principalmente para crear aplicaciones web dinámicas y sitios web interactivos. PHP se puede integrar fácilmente con HTML y se ejecuta en el servidor, lo que permite generar contenido dinámico y trabajar con bases de datos.">
+                                    PHP
+                                </h4>
+                                <h4 class="popup-trigger"
+                                    data-info="C es un lenguaje de programación de propósito general, de nivel medio y estructurado. Es conocido por su eficiencia y su uso en el desarrollo de sistemas operativos, compiladores, intérpretes y otras aplicaciones de bajo nivel donde el rendimiento y el control son críticos. C también ha sido una influencia importante en muchos otros lenguajes de programación modernos.">
+                                    C
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="cartas herramientas">
+                            <i class='bx bxs-cog'></i>
+                            <h3 id="herramientastexto">Herramientas</h3>
+                            <div class="articulos">
+                                <h4 class="popup-trigger"
+                                    data-info="GitHub es una plataforma de desarrollo colaborativo de software que permite a los equipos trabajar juntos en proyectos de programación. Proporciona control de versiones utilizando Git, lo que facilita el seguimiento de cambios en el código, la colaboración entre desarrolladores y la gestión de proyectos de software.">
+                                    GitHub
+                                </h4>
+                                <h4 class="popup-trigger"
+                                    data-info="Linux es un sistema operativo de código abierto basado en Unix que se utiliza ampliamente en servidores, dispositivos embebidos, supercomputadoras y otros dispositivos. Es conocido por su estabilidad, seguridad y flexibilidad, así como por su capacidad para ser altamente personalizable según las necesidades del usuario.">
+                                    Linux
+                                </h4>
+                            </div>
+                            <div class="articulos">
+                                <h4 id="redes" class="popup-trigger"
+                                    data-info="El término 'Redes' generalmente se refiere al campo de las redes informáticas, que abarca el diseño, implementación, mantenimiento y gestión de sistemas de comunicación de datos. Incluye aspectos como el enrutamiento, la seguridad, la configuración de redes, la administración de servidores y la resolución de problemas de conectividad.">
+                                    Redes
+                                </h4>
+                                <h4 class="popup-trigger"
+                                    data-info="Android Studio es el entorno de desarrollo integrado (IDE) oficial para el desarrollo de aplicaciones Android. Proporciona herramientas avanzadas para el desarrollo de aplicaciones móviles, incluido un editor de código, herramientas de depuración, emuladores de dispositivos Android, integración con Git y soporte para múltiples lenguajes de programación como Java y Kotlin.">
+                                    Android Studio
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FORMACIÓN -->
+            <section class="education" id="formacion">
+                <div class="titulo">
+                    <h1 style="text-decoration: underline;" id="formation1">Formación</h1>
+                </div>
+                <div class="education-row">
+                    <div class="education-column">
+                        <h3 class="title" id="formation2">Formación</h3>
+                        <div class="education-box">
+                            <div class="education-content">
+                                <div class="content">
+                                    <div class="anio">
+                                        <p id="anio1">2023-Actualidad</p>
+                                    </div>
+                                    <h3 id="curso1">CIBERSEGURIDAD EN
+                                        ENTORNOS DE LAS TECNOLOGÍAS Y LA
+                                        INFORMACIÓN</h3>
+                                    <p id="texto1">Especializandome en ciberseguridad y estudiando a prevenir, detectar
+                                        y
+                                        solucionar amenazas y problemas.
+                                    </p>
+                                    <p id="texto2">Asignaturas: Análisis Forense Informatico · Incidentes de
+                                        Ciberseguridad · Haking Etico · Bastionado de Redes Y
+                                        Sistemas · Normativas de Ciberseguridad · Puesta En
+                                        Producción Segura</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-content">
+                                <div class="content">
+                                    <div class="anio">
+                                        <p>2021-2023</p>
+                                    </div>
+                                    <h3 id="curso2">Desarrollo de Aplicaciones
+                                        Multiplataforma Dual</h3>
+                                    <p id="texto3">Aprendiendo a crear aplicaciones desde backend hasta frontend
+                                        mejorando la experiencia de usuario.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-content">
+                                <div class="content">
+                                    <div class="anio">
+                                        <p>2021-2022</p>
+                                    </div>
+                                    <h3 id="curso3">Cursos de Accenture Primavera</h3>
+                                    <p id="texto4"> Desarrollando conocimientos de programación,
+                                        demostrando mi capacidad de trabajar en equipo y organizar
+                                        proyectos.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-content">
+                                <div class="content">
+                                    <div class="anio">
+                                        <p>2021-2022</p>
+                                    </div>
+                                    <h3 id="curso4">Curso Propio de Salesforce</h3>
+                                    <p id="texto5"> Desarrollando conocimientos de programación,
+                                        demostrando mi capacidad de trabajar en equipo y organizar
+                                        proyectos.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-content">
+                                <div class="content">
+                                    <div class="anio">
+                                        <p>2021-2022</p>
+                                    </div>
+                                    <h3 id="curso5">Titulo Propio de Esp. En Ciberseguridad,
+                                        Ciberinteligencia, análisis de datos y
+                                        tecnologías disruptivas.</h3>
+                                    <p id="texto6"> Desarrollando conocimientos de programación,
+                                        demostrando mi capacidad de trabajar en equipo y organizar
+                                        proyectos.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-content">
+                                <div class="content">
+                                    <div class="anio">
+                                        <p>2021-2022</p>
+                                    </div>
+                                    <h3 id="curso6">Titulo en Formación para el Liderazgo
+                                        humano y profesional</h3>
+                                    <p id="texto7"> Desarrollando conocimientos,
+                                        demostrando mi capacidad de trabajar en equipo y organizar
+                                        proyectos.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-column">
+                        <h3 class="title" id="proyectos">Proyectos</h3>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/Arkanoid_2021" target="_blank" class="link">
+                                        <img src="imagenes/arkanoid.webp" alt="Arkanoid Image" class="project-image">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect1"><i class='bx bxl-github'></i>Arkanoid</h3>
+                                        <p id="proyecttext1">Proyecto para generar el juego de Arkanoid en Java, con un
+                                            buen
+                                            rebote de la pelota , la desaparición de los ladrillos y buen movimiento del
+                                            cursor.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/EjerciciosBasicos_2021" target="_blank"
+                                        class="link">
+                                        <img src="imagenes/ejerciciosbasicosjava.jpg" alt="Arkanoid Image"
+                                            class="project-image" style="max-width: 40%;">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect2"><i class='bx bxl-github'></i> Ejercicios Basicos</h3>
+                                        <p id="proyecttext2">Se trata de unos primeros ejercicios, para la comprension
+                                            de la
+                                            programación. Se trata de un ejercicio sobre Ardillas, las cuales se mueven
+                                            si
+                                            cumplen con unos objetivos.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/Calculadora_2021_Java" target="_blank"
+                                        class="link">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect3"><i class='bx bxl-github'></i> Calculadora</h3>
+                                        <p id="proyecttext3">Se trata de general una calculadora calcada a la que tiene
+                                            los
+                                            dispositivos de Apple , desarrollado en Java.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/Telefonica_2021" target="_blank" class="link">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect4"><i class='bx bxl-github'></i>Telefonica</h3>
+                                        <p id="proyecttext4">Se trata de los diferentes proyectos realizados en la
+                                            visita a
+                                            42Madrid.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/Ahorcado" target="_blank" class="link">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect5"><i class='bx bxl-github'></i>Ahorcado</h3>
+                                        <p id="proyecttext5">Se trata de la replica del juego del Ahorado realizado en
+                                            Java.
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/iSonidos" target="_blank" class="link">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect6"><i class='bx bxl-github'></i>iSonidos</h3>
+                                        <p id="proyecttext6">Se trata de una aplicacion creada en Java que genera
+                                            botones a
+                                            partir de una lista de sonidos y videos y cuando se pulsan se reproducen .
+                                            En el
+                                            caso de tocar un boton de un video se genera una reproducción del mismo.
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/Pokedex" target="_blank" class="link">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect7"><i class='bx bxl-github'></i>Pokedex</h3>
+                                        <p id="proyecttext7">Se trata de una aplicacion creada en C , que reproduce la
+                                            mitica Pokedex, con informacion muy variada de los pokemon .
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/Desarrollo-de-Interfaces" target="_blank"
+                                        class="link">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect8"><i class='bx bxl-github'></i>Desarrollo de Interfaces</h3>
+                                        <p id="proyecttext8">Se trata de la carpeta donde guardaba todos los trabajos de
+                                            la
+                                            asignatura de desarrollo de interfaces en el grado de DAM.
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education-box line">
+                            <div class="education-content">
+                                <div class="content">
+                                    <a href="https://github.com/Mario1322/Veterinario" target="_blank" class="link">
+                                        <div class="anio">
+                                            <p>2021</p>
+                                        </div>
+                                        <h3 id="proyect9"><i class='bx bxl-github'></i>Veterinario</h3>
+                                        <p id="proyecttext9">Se trata de una aplicacion creada en C, que funcionaria
+                                            para
+                                            una tienda de verdad, tiene su base de datos, registro y login para usuarios
+                                            y
+                                            empleados, con contraseñas encriptadas, incluye un apartado de mascotas, por
+                                            si
+                                            el usuario tiene mas de una, etc.
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--IDIOMAS-->
+
+            <section class="idioma" id="idioma">
+                <div class="centrado">
+                    <div class="titulo">
+                        <h1 style="text-decoration: underline;" id="idiomas1">Idiomas</h1>
+                    </div>
+                    <div class="bar-container espanol">
+                        <div class="bar" style="width: 100%;">Español</div>
+                    </div>
+
+                    <div class="bar-container ingles">
+                        <div class="bar" style="width: 75%;">Inglés</div>
+                    </div>
+                </div>
+            </section>
+            <!--CERTIFICADOS-->
+
+            <section class="certificado" id="certificado">
+                <div class="titulo">
+                    <h1 style="text-decoration: underline;" id="contact1">Certificados</h1>
+                </div>
+
+                <div class="navigation">
+                    <button id="prevBtn" style="cursor: pointer;">&#10094;</button> <!-- Flecha izquierda -->
+                    <canvas id="pdf-render" width="600" height="800"></canvas>
+                    <button id="nextBtn" style="cursor: pointer;">&#10095;</button> <!-- Flecha derecha -->
+                </div>
+
+                <div id="titulo-pdf" style="text-align: center; margin-top: 10px;"></div>
+            </section>
+            <!-- CONTACTO -->
+            <section class="contacto" id="contacto">
+                <div class="centrado">
+                    <div class="titulo">
+                        <h1 style="text-decoration: underline;" id="contact1">Contacto</h1>
+                    </div>
+                    <div class="contacto-contenido">
+                        <div class="misdatos">
+                            <div class="nombre">
+                                <h3 id="misdatos">Mis datos</h3>
+                            </div>
+                            <div class="contenidodatos">
+                                <div class="centradotexto">
+                                    <div class="iconotexto">
+                                        <i class='bx bx-envelope correo'></i>
+                                        <h4 id="email-text">mdlrg1322@gmail.com</h4>
+                                        <button class="copy-btn" id="copy-button">Copiar</button>
+                                    </div>
+                                    <div class="iconotexto">
+                                        <i class='bx bx-phone'></i>
+                                        <h4>+34 667758633</h4>
+                                    </div>
+                                    <div class="iconotexto">
+                                        <i class='bx bx-pin'></i>
+                                        <h4 id="locationtext">Madrid, España</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="misdatos">
+                            <div class="nombre">
+                                <h3 id="contactarme1">Contactarme</h3>
+                            </div>
+                            <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
+                                <div id="formulario">
+                                    <input type="text" name="name" id="nomretexto" class="inputdatos"
+                                        placeholder="Nombre">
+                                    <input type="email" name="email" class="inputdatos"
+                                        placeholder="Correo electrónico">
+                                    <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30"
+                                        rows="10"></textarea>
+                                </div>
+                                <button id="send" class="botondatos">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Popup de correo copiado -->
+                <div class="popup" id="popup1">
+                    <div class="popup-content">
+                        <span class="close" id="close-popup1">&times;</span> <!-- Botón de cerrar -->
+                        <p id="popup-message" class="popup-info">Correo copiado exitosamente!</p>
+                        <!-- Mensaje del popup -->
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- FOOTER -->
+            <footer>
+                <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
+                <h3>© 2024 Copyright: Mario De La Rosa García</h3>
+            </footer>
+
+            <!--COPYEMAILSCRIPT-->
+            <script src="js/copymailscript.js" defer></script>
+        </main>
+    </div>
+</body>
+
+</html>
