@@ -41,7 +41,7 @@ h1 {
     }
 
     100% {
-        color: #DEBD59;
+        color: #EFBF04;
     }
 }
 
@@ -64,8 +64,8 @@ h1 {
     margin-left: 1px;
     width: 19rem;
     height: 100%;
-    background-color: #DEBD59;
-    border: .2rem solid #DEBD59;
+    background-color: #EFBF04;
+    border: .2rem solid #EFBF04;
     border-radius: 50px;
     font-size: 2.2rem;
     font-weight: 800;
@@ -76,12 +76,12 @@ h1 {
 }
 
 .botones .btn:hover {
-    color: #DEBD59;
+    color: #EFBF04;
 }
 
 .botones .btn:nth-child(2) {
     background: transparent;
-    color: #DEBD59;
+    color: #EFBF04;
 }
 
 .botones .btn:nth-child(2):hover {
@@ -89,7 +89,7 @@ h1 {
 }
 
 .botones .btn:nth-child(2)::before {
-    background: #DEBD59;
+    background: #EFBF04;
 
 }
 
@@ -111,14 +111,15 @@ h1 {
 
 .social {
     margin-top: 85px;
-
+z-index: 2;
     position: relative;
     display: inline-flex;
 }
 
 .social i {
     text-decoration: none;
-    font-size: 4.5rem;
+    font-size: 5rem;      /* Iconos más grandes */
+    margin-bottom: 10px;  /* Más espacio debajo del icono */
     margin-right: 45px;
     color: var(--blanco);
 
@@ -157,7 +158,7 @@ h1 {
 .mas a,
 .mas i {
     text-decoration: none;
-    color: #DEBD59;
+    color: #EFBF04;
     font-size: 2.2rem;
     font-weight: 600;
     margin-right: 5px;
@@ -177,4 +178,26 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.social a {
+    display: inline-block;
+    text-align: center;
+    margin: 0 15px;
+}
+
+.social i {
+    display: block;
+    font-size: 5rem;      /* Iconos más grandes */
+    margin-bottom: 10px;  /* Más espacio debajo del icono */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social div {
+    display: block;
+    font-size: 2rem;      /* Texto más grande */
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
 }

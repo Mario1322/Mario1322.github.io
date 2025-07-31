@@ -14,15 +14,16 @@
 
 :root {
     --fondo-oscuro: #D9DADF;
-    --fondo-oscuro-nvar: #DEBD59;
-    --fondo-mas-oscuro: #DEBD59;
-    --contraste: #007663;
+    --fondo-oscuro-nvar: #EFBF04; /* cambiado a dorado */
+    --fondo-mas-oscuro: #EFBF04;  /* cambiado a dorado */
+    --contraste: #001F3F; /* azul diplomático */
     --negro: #fff;
     --blanco: #000;
+    --gris-claro: #CBCBCB;
     --opacidad-baja: 0.1;
     --opacidad-alta: 1;
     --estrellas: 51, 54, 70;
-    --fondo-oscuro-letras: white;
+    --fondo-oscuro-letras: --blanco;
 }
 
 .cambiocolor {
@@ -33,10 +34,11 @@
     --contraste: #58C39D;
     --negro: #000;
     --blanco: #FFF;
+    --gris-claro: #CBCBCB;
     --opacidad-baja: 0.1;
     --opacidad-alta: 1;
     --estrellas: 204, 205, 211;
-    --fondo-oscuro-letras: #DEBD59;
+    --fondo-oscuro-letras: #EFBF04;
 }
 
 html {
@@ -82,18 +84,13 @@ body {
 
 .lenguaje {
     display: inline-flex;
-    /* Utiliza flexbox con inline */
     margin-top: 5px;
     width: 30px;
     height: 30px;
     justify-content: end;
-    /* Centra horizontalmente */
     align-items: center;
-    /* Centra verticalmente */
     z-index: 100;
 }
-
-
 
 .header {
     position: fixed;
@@ -102,10 +99,9 @@ body {
     transform: translateX(-50%);
     max-width: 1200px;
     padding: 3px 3px;
-    background-color: var(--fondo-oscuro-nvar);
+    background-color: var(--fondo-oscuro-nvar); /* dorado */
     display: flex;
     align-items: center;
-    /* Centra verticalmente los elementos */
     z-index: 100;
     border-radius: 50px;
 }
@@ -124,25 +120,18 @@ body {
     width: 90px;
     height: 80px;
     display: flex;
-    /* Utiliza flexbox */
     justify-content: center;
-    /* Centra horizontalmente */
     align-items: center;
-    /* Centra verticalmente */
 }
 
 .logo img {
     margin-right: 10px;
-    /* Ajusta el margen derecho según sea necesario */
     vertical-align: middle;
-    /* Alinea verticalmente la imagen con el texto */
 }
 
 .lenguaje img {
     vertical-align: middle;
-    /* Alinea verticalmente la imagen con el texto */
 }
-
 
 .imgyo {
     width: 180px;
@@ -150,7 +139,6 @@ body {
 
 .navbar {
     position: relative;
-
     align-items: center;
 }
 
@@ -190,10 +178,8 @@ body {
 .navbar a:hover,
 .navbar a.active,
 .navbar label:hover {
-    color: var(--fondo-oscuro-letras);
-
+    color: var(--fondo-oscuro-letras); /* dorado */
 }
-
 
 #menu-icon {
     position: relative;
@@ -208,5 +194,13 @@ body {
     height: 8px;
     margin-left: 5px;
     flex-shrink: 0;
-    background-color: var(--contraste);
+    background-color: var(--contraste); /* azul diplomático */
+}
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.30);
+    z-index: 2;
 }

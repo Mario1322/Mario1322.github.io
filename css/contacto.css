@@ -16,10 +16,12 @@
     flex-direction: column;
     justify-content: center;
     width: 50rem;
+    z-index: 100;
 }
 
 .nombre h3 {
     text-align: center;
+    z-index: 100;
 }
 
 .misdatos .contenidodatos {
@@ -27,6 +29,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 100;
 }
 
 .contenidodatos .centradotexto {
@@ -78,6 +81,7 @@
     border-radius: 50px;
     outline: none;
     border: none;
+    z-index: 100;
 }
 
 .contenidodatos .inputdatos:hover,
@@ -88,6 +92,7 @@
 .contenidodatos .inputdatos:focus,
 .contenidodatos .textdatos:focus {
     outline: 3px solid var(--contraste);
+    z-index: 100;
 }
 
 .contenidodatos .botondatos {
@@ -96,9 +101,9 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #DEBD59;
-    border: 0.2rem solid #DEBD59;
-    color: var(--fondo-oscuro);
+    background-color: #EFBF04; /* dorado */
+    border: 0.2rem solid #EFBF04;
+    color: #CBCBCB; /* gris claro */
     z-index: 1;
     transition: .5s;
     width: 50rem;
@@ -108,11 +113,12 @@
     font-weight: 700;
     margin-bottom: 5rem;
     border-radius: 50px;
+    
 }
 
 .contenidodatos .botondatos:hover {
     background: transparent;
-    color: #DEBD59;
+    color: #EFBF04;
 }
 
 .contenidodatos .botondatos::before {
@@ -123,7 +129,7 @@
     width: 0%;
     height: 100%;
     background: var(--fondo-oscuro);
-    z-index: -1;
+    z-index: 1;
     transition: .5s;
 }
 
@@ -157,12 +163,12 @@ footer h3 {
     align-items: center;
     width: 15rem;
     height: 100%;
-    background-color: #DEBD59;
-    border: .2rem solid #DEBD59;
+    background-color: #EFBF04;
+    border: .2rem solid #EFBF04;
     border-radius: 50px;
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--fondo-oscuro);
+    color: #CBCBCB;
     z-index: 1;
     overflow: hidden;
     transition: .5s;
@@ -170,7 +176,7 @@ footer h3 {
 
 .copy-btn:hover {
     background: transparent;
-    color: #DEBD59;
+    color: #EFBF04;
 }
 
 /* Efecto de fondo en hover para el botón Copiar */
@@ -187,13 +193,13 @@ footer h3 {
 }
 
 .copy-btn:hover::before {
-    width: 100%; /* Expande el fondo al pasar el ratón */
+    width: 100%;
 }
 
 
 .mas {
     position: relative;
-    z-index: 10;
+    z-index: 1;
 }
 
 .mas a:hover {
@@ -202,54 +208,50 @@ footer h3 {
 
 /* Estilos del Popup de Correo Copiado */
 .popup {
-    display: none; /* Ocultar por defecto */
-    position: fixed; /* Posicionar el popup de forma fija */
-    inset: 0; /* Ocupa toda la pantalla */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    z-index: 9999; /* Asegurarse de que esté por encima de otros elementos */
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
 }
-
 
 .popup-content {
-    background-color: rgba(222, 189, 89, 0.95); /* Fondo del popup */
-    border: 1px solid #DEBD59; /* Bordes */
-    padding: 20px; /* Espaciado interno */
-    text-align: center; /* Alinear texto al centro */
-    width: 300px; /* Ancho fijo inicial */
-    max-width: 80%; /* Ancho máximo como porcentaje de la pantalla */
-    box-shadow: 0 0 20px rgba(222, 189, 89, 0.5); /* Sombra */
-    border-radius: 10px; /* Bordes redondeados */
-    max-height: 80vh; /* Limitar la altura máxima al 80% de la altura de la pantalla */
-    overflow-y: auto; /* Permitir desplazamiento vertical si el contenido es muy largo */
-    transition: transform 0.3s ease; /* Suavizar la entrada y salida */
+    background-color: rgba(222, 189, 89, 0.95);
+    border: 1px solid #DEBD59;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    max-width: 80%;
+    box-shadow: 0 0 20px rgba(222, 189, 89, 0.5);
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
 }
 
-
-/* Estilos para el texto dentro del popup */
 .popup-info {
-    font-size: 18px; /* Tamaño del texto */
-    line-height: 1.6; /* Espaciado entre líneas */
-    color: #000; /* Color del texto más oscuro para contraste */
-    text-align: center; /* Alinear el texto al centro */
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000;
+    text-align: center;
 }
 
-/* Estilos del botón de cerrar */
 .close {
-    position: absolute; /* Posición del botón de cerrar */
-    top: 10px; /* Espaciado superior */
-    right: 15px; /* Espaciado derecho */
-    font-size: 50px; /* Tamaño del botón de cerrar (aumentado) */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
-    color: #ff0000; /* Color del botón de cerrar */
-    padding: 10px; /* Espaciado interno para hacerlo más grande */
-    border: none; /* Eliminar bordes si los hay */
-    background: none; /* Eliminar fondo si hay */
-    transition: transform 0.3s; /* Suavizar el efecto al pasar el ratón */
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 50px;
+    cursor: pointer;
+    color: #ff0000;
+    padding: 10px;
+    border: none;
+    background: none;
+    transition: transform 0.3s;
 }
 
 .close:hover {
-    transform: scale(1.2); /* Aumentar tamaño al pasar el ratón */
-    color: #ffcccc; /* Color más claro al pasar el ratón */
+    transform: scale(1.2);
+    color: #ffcccc;
 }
