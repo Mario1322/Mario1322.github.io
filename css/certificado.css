@@ -1,56 +1,119 @@
 #certificado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: transparent;
-}
-
-#pdf-render {
-    border: none;
-    width: 100%;
-    max-width: 100000px;
-    height: auto;
-    position: relative;
-  z-index: 10; /* Encima del fondo */
-  background: #fff; /* Opcional, para que se vea mejor */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Opcional */
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    background-color: #EFBF04;  /* dorado */
-    color: #CBCBCB;             /* gris claro */
-    border: none;
-    font-size: 24px;
-    margin: 0 20px;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 50px;
-    transition: background-color 0.3s, color 0.3s;
-    z-index: 10;
-}
-
-button:hover {
-    background-color: transparent;
-    color: #EFBF04;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: visible;
 }
 
 #titulo-pdf {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #003366; /* Azul marino */
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #003366; /* Azul marino */
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-align: center;
 }
-.certificado,
-.navigation,
-#download-pdf {
-    position: relative;
-    z-index: 10;
-    font-size: 5rem;
+
+#pdf-render {
+  border: none;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.navigation button {
+  background-color: #EFBF04;
+  color: #CBCBCB;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 10;
+}
+
+.navigation button:hover {
+  background-color: transparent;
+  color: #EFBF04;
+  border: 1px solid #EFBF04;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.botones .btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;              /* antes: 400px */
+  padding: 25px 40px;            /* antes: 15px 30px */
+  background-color: #EFBF04;
+  border: .2rem solid #EFBF04;
+  border-radius: 50px;
+  font-size: 2.8rem;             /* antes: 2rem */
+  font-weight: 800;
+  color: var(--fondo-oscuro);
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.botones .btn:hover {
+  color: #EFBF04;
+}
+
+.botones .btn:nth-child(2) {
+  background: transparent;
+  color: #EFBF04;
+}
+
+.botones .btn:nth-child(2):hover {
+  color: var(--fondo-oscuro);
+}
+
+.botones .btn:nth-child(2)::before {
+  background: #EFBF04;
+}
+
+.botones .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--fondo-oscuro);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.botones .btn:hover::before {
+  width: 100%;
 }

@@ -21,11 +21,11 @@
     <script src="js/pdfscript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="js/maquinaescribir.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.2.0/baffle.min.js"></script>
-    <script type="module" src="js/main.js"></script>
+
     <!-- ICONOS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -37,12 +37,13 @@
                 src="imagenes/blob-removebg-preview.png" alt="logo"><span class="animate" style="--i:1;"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
         <nav class="navbar">
-            <a href="#home" class="active" id="casa">Sobre mi</a>
+            <a href="#home" class="active" id="casa">About me</a>
             <a href="#skills">Skills</a>
-            <a href="#formacion" id="formation">Formación</a>
-            <a href="#idioma" id="idiomas">Idiomas</a>
-            <a href="#contacto" id="contact">Contacto</a>
-            <a href="#certificado" id="cert">Certificados</a>
+            <a href="#formacion" id="formation">Education</a>
+            <a href="#idioma" id="idiomas">Languages</a>
+            <a href="#certificado" id="cert">Certificates</a>
+            <a href="#contacto" id="contact">Contact</a>
+
             <label for="toggle" id="label_toggle" class="solluna"><i class='bx bx-sun'></i></label>
             <input type="checkbox" id="toggle">
             <a href="index.html" class="lenguaje" id=""><img class="lenguaje" src="imagenes/español.png"
@@ -62,21 +63,34 @@
                             style="--i:2;"></span></h1>
 
                     <div class="botones">
-                        <a href="./certificados/Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn"
-                            target="_blank">Descargar
-                            CV</a>
-                        <a href="#contacto" id="contactarme" class="btn">Contactarme</a>
+                        <a href="./certificados/Mario De La Rosa Garcia CV.pdf" id="curriculum" class="btn" download>
+                            Download CV
+                        </a>
+                        <a href="#contacto" id="contactarme" class="btn">Contact me</a>
                     </div>
-                    <div class="social">
-                        <a href="https://github.com/Mario1322" target="_blank"><i class='bx bxl-github'></i></a>
-                        <a href="https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank"><i
-                                class='bx bxl-linkedin-square'></i></a>
+                    <div class="social" style="text-align:center;">
+                        <a href="https://github.com/Mario1322" target="_blank">
+                            <i class='bx bxl-github'></i>
+                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">GitHub</div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank">
+                            <i class='bx bxl-linkedin-square'></i>
+                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">LinkedIn</div>
+                        </a>
+                        <a href="https://www.instagram.com/tu_usuario" target="_blank">
+                            <i class='bx bxl-instagram'></i>
+                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">Instagram</div>
+                        </a>
+                        <a href="https://x.com/tu_usuario" target="_blank">
+                            <i class='bx bxl-twitter'></i>
+                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">X</div>
+                        </a>
                     </div>
                 </div>
                 <div class="home-content">
                     <div class="elguapo">
                         <div id="imgyo"><img class="imgyo" src="imagenes/foto.jpeg" alt="guapo"></div>
-                        <h3 id="loquesoy" class="profesion">Desarrollador de software</h3>
+                        <h3 id="loquesoy" class="profesion">Software Developer and Cybersecurity Specialist</h3>
                         <span class="animate" style="--i:2;"></span>
                     </div>
                     <div class="texto">
@@ -84,7 +98,7 @@
                         </p>
                     </div>
                     <div class="mas">
-                        <a href="#skills" id="conocermas">Conocer más</a><i class='bx bx-right-arrow-alt'></i>
+                        <a href="#skills" id="conocermas">Learn more</a><i class='bx bx-right-arrow-alt'></i>
                     </div>
                 </div>
             </section>
@@ -100,21 +114,21 @@
                             <h3>FrontEnd</h3>
                             <div class="articulos">
                                 <h4 class="popup-trigger"
-                                    data-info="HTML5, o HyperText Markup Language versión 5, es el estándar actual para la estructura y presentación de contenido en la web. Se utiliza para definir la estructura básica de una página web, incluidos elementos como encabezados, párrafos, imágenes, enlaces, formularios, entre otros.">
+                                    data-info="HTML5, or HyperText Markup Language version 5, is the current standard for structuring and presenting content on the web. It is used to define the basic structure of a web page, including elements such as headings, paragraphs, images, links, forms, and more.">
                                     HTML5
                                 </h4>
                                 <h4 class="popup-trigger"
-                                    data-info="CSS3, o Cascading Style Sheets versión 3, es el estándar actual para definir el estilo y la presentación de elementos HTML en una página web. Se utiliza para aplicar estilos como colores, fuentes, márgenes, rellenos, animaciones y diseños a los elementos HTML, lo que permite crear interfaces web atractivas y visualmente agradables.">
+                                    data-info="CSS3, or Cascading Style Sheets version 3, is the current standard for defining the style and presentation of HTML elements on a web page. It is used to apply styles such as colors, fonts, margins, padding, animations, and layouts to HTML elements, allowing for the creation of attractive and visually appealing web interfaces.">
                                     CSS3
                                 </h4>
                             </div>
                             <div class="articulos">
                                 <h4 class="popup-trigger"
-                                    data-info="JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Se utiliza principalmente en el desarrollo web para agregar interactividad y dinamismo a las páginas web. Con JavaScript, es posible manipular el contenido HTML, responder a eventos del usuario, validar formularios, crear efectos visuales y mucho más.">
+                                    data-info="JavaScript is a high-level, interpreted, object-oriented programming language. It is primarily used in web development to add interactivity and dynamism to web pages. With JavaScript, you can manipulate HTML content, respond to user events, validate forms, create visual effects, and much more.">
                                     JavaScript
                                 </h4>
                                 <h4 class="popup-trigger"
-                                    data-info="jQuery es una biblioteca de JavaScript rápida, pequeña y rica en características. Simplifica la manipulación del DOM (Document Object Model), manejo de eventos, animaciones, llamadas AJAX y otras tareas comunes en JavaScript. jQuery es ampliamente utilizado en el desarrollo web debido a su facilidad de uso y su capacidad para simplificar el código.">
+                                    data-info="jQuery is a fast, small, and feature-rich JavaScript library. It simplifies DOM (Document Object Model) manipulation, event handling, animations, AJAX calls, and other common tasks in JavaScript. jQuery is widely used in web development due to its ease of use and ability to simplify code.">
                                     jQuery
                                 </h4>
                             </div>
@@ -124,49 +138,49 @@
                             <h3>BackEnd</h3>
                             <div class="articulos">
                                 <h4 class="popup-trigger"
-                                    data-info="Java es un lenguaje de programación de propósito general, orientado a objetos y basado en clases. Es conocido por su portabilidad, ya que los programas escritos en Java pueden ejecutarse en cualquier dispositivo que tenga una máquina virtual Java (JVM). Se utiliza en una variedad de aplicaciones, incluidas aplicaciones web, aplicaciones móviles, sistemas embebidos y grandes sistemas empresariales.">
+                                    data-info="Java is a general-purpose, object-oriented programming language. It is known for its portability, as programs written in Java can run on any device that has a Java Virtual Machine (JVM). It is used in a variety of applications, including web applications, mobile applications, embedded systems, and large enterprise systems.">
                                     Java
                                 </h4>
                                 <h4 class="popup-trigger"
-                                    data-info="SQL, o Structured Query Language, es un lenguaje de programación diseñado para administrar y manipular bases de datos relacionales. Se utiliza para realizar consultas, inserciones, actualizaciones y eliminaciones de datos en una base de datos, así como para definir y modificar la estructura de la base de datos, como tablas, índices y restricciones.">
+                                    data-info="SQL, or Structured Query Language, is a programming language designed for managing and manipulating relational databases. It is used to perform queries, insertions, updates, and deletions of data in a database, as well as to define and modify the structure of the database, such as tables, indexes, and constraints.">
                                     SQL
                                 </h4>
                                 <h4 class="popup-trigger"
-                                    data-info="Python es un lenguaje de programación interpretado, de alto nivel y multipropósito. Es conocido por su sintaxis clara y legible, lo que lo hace ideal para principiantes, así como por su amplia gama de aplicaciones, que incluyen desarrollo web, análisis de datos, inteligencia artificial, aprendizaje automático, automatización de tareas y más.">
+                                    data-info="Python is an interpreted, high-level, and multipurpose programming language. It is known for its clear and readable syntax, making it ideal for beginners, as well as for its wide range of applications, including web development, data analysis, artificial intelligence, machine learning, task automation, and more.">
                                     Python
                                 </h4>
                             </div>
                             <div class="articulos">
                                 <h4 class="popup-trigger"
-                                    data-info="PHP es un lenguaje de programación de uso general especialmente adecuado para el desarrollo web. Se utiliza principalmente para crear aplicaciones web dinámicas y sitios web interactivos. PHP se puede integrar fácilmente con HTML y se ejecuta en el servidor, lo que permite generar contenido dinámico y trabajar con bases de datos.">
+                                    data-info="PHP is a general-purpose programming language especially suited for web development. It is mainly used to create dynamic web applications and interactive websites. PHP can be easily integrated with HTML and runs on the server, allowing for the generation of dynamic content and interaction with databases.">
                                     PHP
                                 </h4>
                                 <h4 class="popup-trigger"
-                                    data-info="C es un lenguaje de programación de propósito general, de nivel medio y estructurado. Es conocido por su eficiencia y su uso en el desarrollo de sistemas operativos, compiladores, intérpretes y otras aplicaciones de bajo nivel donde el rendimiento y el control son críticos. C también ha sido una influencia importante en muchos otros lenguajes de programación modernos.">
+                                    data-info="C is a general-purpose, mid-level, and structured programming language. It is known for its efficiency and its use in the development of operating systems, compilers, interpreters, and other low-level applications where performance and control are critical. C has also been an important influence on many other modern programming languages.">
                                     C
                                 </h4>
                             </div>
                         </div>
                         <div class="cartas herramientas">
                             <i class='bx bxs-cog'></i>
-                            <h3 id="herramientastexto">Herramientas</h3>
+                            <h3 id="herramientastexto">Tools</h3>
                             <div class="articulos">
                                 <h4 class="popup-trigger"
-                                    data-info="GitHub es una plataforma de desarrollo colaborativo de software que permite a los equipos trabajar juntos en proyectos de programación. Proporciona control de versiones utilizando Git, lo que facilita el seguimiento de cambios en el código, la colaboración entre desarrolladores y la gestión de proyectos de software.">
+                                    data-info="GitHub is a collaborative software development platform that allows teams to work together on programming projects. It provides version control using Git, making it easier to track code changes, collaborate between developers, and manage software projects.">
                                     GitHub
                                 </h4>
                                 <h4 class="popup-trigger"
-                                    data-info="Linux es un sistema operativo de código abierto basado en Unix que se utiliza ampliamente en servidores, dispositivos embebidos, supercomputadoras y otros dispositivos. Es conocido por su estabilidad, seguridad y flexibilidad, así como por su capacidad para ser altamente personalizable según las necesidades del usuario.">
+                                    data-info="Linux is an open-source operating system based on Unix that is widely used in servers, embedded devices, supercomputers, and other devices. It is known for its stability, security, and flexibility, as well as its ability to be highly customizable according to user needs.">
                                     Linux
                                 </h4>
                             </div>
                             <div class="articulos">
                                 <h4 id="redes" class="popup-trigger"
-                                    data-info="El término 'Redes' generalmente se refiere al campo de las redes informáticas, que abarca el diseño, implementación, mantenimiento y gestión de sistemas de comunicación de datos. Incluye aspectos como el enrutamiento, la seguridad, la configuración de redes, la administración de servidores y la resolución de problemas de conectividad.">
-                                    Redes
+                                    data-info="The term 'Networks' generally refers to the field of computer networks, which encompasses the design, implementation, maintenance, and management of data communication systems. It includes aspects such as routing, security, network configuration, server administration, and troubleshooting connectivity issues.">
+                                    Networks
                                 </h4>
                                 <h4 class="popup-trigger"
-                                    data-info="Android Studio es el entorno de desarrollo integrado (IDE) oficial para el desarrollo de aplicaciones Android. Proporciona herramientas avanzadas para el desarrollo de aplicaciones móviles, incluido un editor de código, herramientas de depuración, emuladores de dispositivos Android, integración con Git y soporte para múltiples lenguajes de programación como Java y Kotlin.">
+                                    data-info="Android Studio is the official integrated development environment (IDE) for Android app development. It provides advanced tools for mobile app development, including a code editor, debugging tools, Android device emulators, Git integration, and support for multiple programming languages such as Java and Kotlin.">
                                     Android Studio
                                 </h4>
                             </div>
@@ -174,32 +188,34 @@
                     </div>
                 </div>
             </section>
-
+            <!-- Bloque necesario para el popup de skills -->
+            <div class="popup-container"
+                style="display:none; position:fixed; z-index:10000; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
+                <span class="close" style="cursor:pointer;float:right;font-size:20px;">&times;</span>
+                <div class="popup-info"></div>
+            </div>
             <!-- FORMACIÓN -->
             <section class="education" id="formacion">
                 <div class="titulo">
-                    <h1 style="text-decoration: underline;" id="formation1">Formación</h1>
+                    <h1 style="text-decoration: underline;" id="formation1">Education</h1>
                 </div>
                 <div class="education-row">
                     <div class="education-column">
-                        <h3 class="title" id="formation2">Formación</h3>
+                        <h3 class="title" id="formation2">Education</h3>
                         <div class="education-box">
                             <div class="education-content">
                                 <div class="content">
                                     <div class="anio">
-                                        <p id="anio1">2023-Actualidad</p>
+                                        <p id="anio1">2023-Present</p>
                                     </div>
-                                    <h3 id="curso1">CIBERSEGURIDAD EN
-                                        ENTORNOS DE LAS TECNOLOGÍAS Y LA
-                                        INFORMACIÓN</h3>
-                                    <p id="texto1">Especializandome en ciberseguridad y estudiando a prevenir, detectar
-                                        y
-                                        solucionar amenazas y problemas.
+                                    <h3 id="curso1">CYBERSECURITY IN
+                                        INFORMATION TECHNOLOGY ENVIRONMENTS</h3>
+                                    <p id="texto1">Specializing in cybersecurity and studying to prevent, detect
+                                        and solve threats and problems.
                                     </p>
-                                    <p id="texto2">Asignaturas: Análisis Forense Informatico · Incidentes de
-                                        Ciberseguridad · Haking Etico · Bastionado de Redes Y
-                                        Sistemas · Normativas de Ciberseguridad · Puesta En
-                                        Producción Segura</p>
+                                    <p id="texto2">Subjects: Computer Forensic Analysis · Cybersecurity Incidents ·
+                                        Ethical Hacking · Network Hardening and
+                                        Systems · Cybersecurity Regulations · Secure Production Deployment</p>
                                     </a>
                                 </div>
                             </div>
@@ -210,10 +226,9 @@
                                     <div class="anio">
                                         <p>2021-2023</p>
                                     </div>
-                                    <h3 id="curso2">Desarrollo de Aplicaciones
-                                        Multiplataforma Dual</h3>
-                                    <p id="texto3">Aprendiendo a crear aplicaciones desde backend hasta frontend
-                                        mejorando la experiencia de usuario.
+                                    <h3 id="curso2">Development of Dual Cross-Platform Applications</h3>
+                                    <p id="texto3">Learning to create applications from backend to frontend
+                                        improving the user experience.
 
                                     </p>
                                 </div>
@@ -225,10 +240,10 @@
                                     <div class="anio">
                                         <p>2021-2022</p>
                                     </div>
-                                    <h3 id="curso3">Cursos de Accenture Primavera</h3>
-                                    <p id="texto4"> Desarrollando conocimientos de programación,
-                                        demostrando mi capacidad de trabajar en equipo y organizar
-                                        proyectos.
+                                    <h3 id="curso3">Accenture Spring Courses</h3>
+                                    <p id="texto4"> Developing programming skills,
+                                        demonstrating my ability to work in a team and organize
+                                        projects.
 
                                     </p>
                                 </div>
@@ -240,10 +255,10 @@
                                     <div class="anio">
                                         <p>2021-2022</p>
                                     </div>
-                                    <h3 id="curso4">Curso Propio de Salesforce</h3>
-                                    <p id="texto5"> Desarrollando conocimientos de programación,
-                                        demostrando mi capacidad de trabajar en equipo y organizar
-                                        proyectos.
+                                    <h3 id="curso4">Salesforce Own Course</h3>
+                                    <p id="texto5"> Developing programming skills,
+                                        demonstrating my ability to work in a team and organize
+                                        projects.
 
                                     </p>
                                 </div>
@@ -255,12 +270,12 @@
                                     <div class="anio">
                                         <p>2021-2022</p>
                                     </div>
-                                    <h3 id="curso5">Titulo Propio de Esp. En Ciberseguridad,
-                                        Ciberinteligencia, análisis de datos y
-                                        tecnologías disruptivas.</h3>
-                                    <p id="texto6"> Desarrollando conocimientos de programación,
-                                        demostrando mi capacidad de trabajar en equipo y organizar
-                                        proyectos.
+                                    <h3 id="curso5">Title of Specialist in Cybersecurity,
+                                        Cyberintelligence, Data Analysis and
+                                        Disruptive Technologies.</h3>
+                                    <p id="texto6"> Developing programming skills,
+                                        demonstrating my ability to work in a team and organize
+                                        projects.
 
                                     </p>
                                 </div>
@@ -272,11 +287,10 @@
                                     <div class="anio">
                                         <p>2021-2022</p>
                                     </div>
-                                    <h3 id="curso6">Titulo en Formación para el Liderazgo
-                                        humano y profesional</h3>
-                                    <p id="texto7"> Desarrollando conocimientos,
-                                        demostrando mi capacidad de trabajar en equipo y organizar
-                                        proyectos.
+                                    <h3 id="curso6">Title in Training for Human and Professional Leadership</h3>
+                                    <p id="texto7"> Developing knowledge,
+                                        demonstrating my ability to work in a team and organize
+                                        projects.
 
                                     </p>
                                 </div>
@@ -284,7 +298,7 @@
                         </div>
                     </div>
                     <div class="education-column">
-                        <h3 class="title" id="proyectos">Proyectos</h3>
+                        <h3 class="title" id="proyectos">Projects</h3>
                         <div class="education-box line">
                             <div class="education-content">
                                 <div class="content">
@@ -294,9 +308,8 @@
                                             <p>2021</p>
                                         </div>
                                         <h3 id="proyect1"><i class='bx bxl-github'></i>Arkanoid</h3>
-                                        <p id="proyecttext1">Proyecto para generar el juego de Arkanoid en Java, con un
-                                            buen
-                                            rebote de la pelota , la desaparición de los ladrillos y buen movimiento del
+                                        <p id="proyecttext1">Project to create the Arkanoid game in Java, with a good
+                                            bounce of the ball, the disappearance of the bricks and good movement of the
                                             cursor.</p>
                                     </a>
                                 </div>
@@ -312,12 +325,11 @@
                                         <div class="anio">
                                             <p>2021</p>
                                         </div>
-                                        <h3 id="proyect2"><i class='bx bxl-github'></i> Ejercicios Basicos</h3>
-                                        <p id="proyecttext2">Se trata de unos primeros ejercicios, para la comprension
-                                            de la
-                                            programación. Se trata de un ejercicio sobre Ardillas, las cuales se mueven
-                                            si
-                                            cumplen con unos objetivos.</p>
+                                        <h3 id="proyect2"><i class='bx bxl-github'></i> Basic Exercises</h3>
+                                        <p id="proyecttext2">These are some initial exercises for understanding
+                                            programming. It is an exercise about Squirrels, which move if they meet
+                                            certain
+                                            objectives.</p>
                                     </a>
                                 </div>
                             </div>
@@ -330,10 +342,9 @@
                                         <div class="anio">
                                             <p>2021</p>
                                         </div>
-                                        <h3 id="proyect3"><i class='bx bxl-github'></i> Calculadora</h3>
-                                        <p id="proyecttext3">Se trata de general una calculadora calcada a la que tiene
-                                            los
-                                            dispositivos de Apple , desarrollado en Java.</p>
+                                        <h3 id="proyect3"><i class='bx bxl-github'></i> Calculator</h3>
+                                        <p id="proyecttext3">This is a replica of the calculator found on Apple devices,
+                                            developed in Java.</p>
                                     </a>
                                 </div>
                             </div>
@@ -346,9 +357,9 @@
                                             <p>2021</p>
                                         </div>
                                         <h3 id="proyect4"><i class='bx bxl-github'></i>Telefonica</h3>
-                                        <p id="proyecttext4">Se trata de los diferentes proyectos realizados en la
-                                            visita a
-                                            42Madrid.</p>
+                                        <p id="proyecttext4">This project involves the various projects carried out
+                                            during the
+                                            visit to 42Madrid.</p>
                                     </a>
                                 </div>
                             </div>
@@ -361,8 +372,7 @@
                                             <p>2021</p>
                                         </div>
                                         <h3 id="proyect5"><i class='bx bxl-github'></i>Ahorcado</h3>
-                                        <p id="proyecttext5">Se trata de la replica del juego del Ahorado realizado en
-                                            Java.
+                                        <p id="proyecttext5">This is a replica of the Hangman game developed in Java.
                                         </p>
                                     </a>
                                 </div>
@@ -376,11 +386,11 @@
                                             <p>2021</p>
                                         </div>
                                         <h3 id="proyect6"><i class='bx bxl-github'></i>iSonidos</h3>
-                                        <p id="proyecttext6">Se trata de una aplicacion creada en Java que genera
-                                            botones a
-                                            partir de una lista de sonidos y videos y cuando se pulsan se reproducen .
-                                            En el
-                                            caso de tocar un boton de un video se genera una reproducción del mismo.
+                                        <p id="proyecttext6">This is an application created in Java that generates
+                                            buttons
+                                            from a list of sounds and videos, and when pressed, they play. In the case
+                                            of
+                                            touching a video button, a playback of the same is generated.
                                         </p>
                                     </a>
                                 </div>
@@ -394,8 +404,8 @@
                                             <p>2021</p>
                                         </div>
                                         <h3 id="proyect7"><i class='bx bxl-github'></i>Pokedex</h3>
-                                        <p id="proyecttext7">Se trata de una aplicacion creada en C , que reproduce la
-                                            mitica Pokedex, con informacion muy variada de los pokemon .
+                                        <p id="proyecttext7">This is an application created in C that reproduces the
+                                            iconic Pokedex, with very varied information about the Pokémon.
                                         </p>
                                     </a>
                                 </div>
@@ -410,9 +420,8 @@
                                             <p>2021</p>
                                         </div>
                                         <h3 id="proyect8"><i class='bx bxl-github'></i>Desarrollo de Interfaces</h3>
-                                        <p id="proyecttext8">Se trata de la carpeta donde guardaba todos los trabajos de
-                                            la
-                                            asignatura de desarrollo de interfaces en el grado de DAM.
+                                        <p id="proyecttext8">This is the folder where I kept all the work for the
+                                            subject of interface development in the DAM degree.
                                         </p>
                                     </a>
                                 </div>
@@ -426,13 +435,11 @@
                                             <p>2021</p>
                                         </div>
                                         <h3 id="proyect9"><i class='bx bxl-github'></i>Veterinario</h3>
-                                        <p id="proyecttext9">Se trata de una aplicacion creada en C, que funcionaria
-                                            para
-                                            una tienda de verdad, tiene su base de datos, registro y login para usuarios
-                                            y
-                                            empleados, con contraseñas encriptadas, incluye un apartado de mascotas, por
-                                            si
-                                            el usuario tiene mas de una, etc.
+                                        <p id="proyecttext9">This is an application created in C that would work for a
+                                            real
+                                            store, it has its database, registration and login for users and employees,
+                                            with encrypted passwords, includes a section for pets, in case the user has
+                                            more than one, etc.
                                         </p>
                                     </a>
                                 </div>
@@ -446,14 +453,14 @@
             <section class="idioma" id="idioma">
                 <div class="centrado">
                     <div class="titulo">
-                        <h1 style="text-decoration: underline;" id="idiomas1">Idiomas</h1>
+                        <h1 style="text-decoration: underline;" id="idiomas1">Languages</h1>
                     </div>
                     <div class="bar-container espanol">
-                        <div class="bar" style="width: 100%;">Español</div>
+                        <div class="bar" style="width: 100%;">Spanish</div>
                     </div>
 
                     <div class="bar-container ingles">
-                        <div class="bar" style="width: 75%;">Inglés</div>
+                        <div class="bar" style="width: 75%;">English</div>
                     </div>
                 </div>
             </section>
@@ -461,34 +468,37 @@
 
             <section class="certificado" id="certificado">
                 <div class="titulo">
-                    <h1 style="text-decoration: underline;" id="contact1">Certificados</h1>
+                    <h1 style="text-decoration: underline;" id="contact1">Certificates</h1>
                 </div>
-
+                <div id="titulo-pdf" style="text-align: center; margin-bottom: 10px;"></div>
                 <div class="navigation">
-                    <button id="prevBtn" style="cursor: pointer;">&#10094;</button> <!-- Flecha izquierda -->
+                    <button id="prevBtn" style="cursor: pointer;">&#10094;</button>
                     <canvas id="pdf-render" width="600" height="800"></canvas>
-                    <button id="nextBtn" style="cursor: pointer;">&#10095;</button> <!-- Flecha derecha -->
+                    <button id="nextBtn" style="cursor: pointer;">&#10095;</button>
                 </div>
-
-                <div id="titulo-pdf" style="text-align: center; margin-top: 10px;"></div>
+                <div class="botones">
+                    <a id="download-pdf" href="#" class="btn" download>Download Certificate</a>
+                </div>
             </section>
             <!-- CONTACTO -->
             <section class="contacto" id="contacto">
                 <div class="centrado">
                     <div class="titulo">
-                        <h1 style="text-decoration: underline;" id="contact1">Contacto</h1>
+                        <h1 style="text-decoration: underline;" id="contact1">Contact</h1>
                     </div>
                     <div class="contacto-contenido">
                         <div class="misdatos">
                             <div class="nombre">
-                                <h3 id="misdatos">Mis datos</h3>
+                                <h3 id="misdatos">My Data</h3>
                             </div>
                             <div class="contenidodatos">
                                 <div class="centradotexto">
                                     <div class="iconotexto">
                                         <i class='bx bx-envelope correo'></i>
                                         <h4 id="email-text">mdlrg1322@gmail.com</h4>
-                                        <button class="copy-btn" id="copy-button">Copiar</button>
+                                        <!-- Reemplaza el botón por este enlace -->
+                                        <a href="mailto:mdlrg1322@gmail.com" id="copy-button" class="copy-btn"
+                                            style="margin-left:10px;">Copy</a>
                                     </div>
                                     <div class="iconotexto">
                                         <i class='bx bx-phone'></i>
@@ -496,25 +506,24 @@
                                     </div>
                                     <div class="iconotexto">
                                         <i class='bx bx-pin'></i>
-                                        <h4 id="locationtext">Madrid, España</h4>
+                                        <h4 id="locationtext">Madrid, Spain</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="misdatos">
                             <div class="nombre">
-                                <h3 id="contactarme1">Contactarme</h3>
+                                <h3 id="contactarme1">Contact Me</h3>
                             </div>
                             <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
                                 <div id="formulario">
                                     <input type="text" name="name" id="nomretexto" class="inputdatos"
-                                        placeholder="Nombre">
-                                    <input type="email" name="email" class="inputdatos"
-                                        placeholder="Correo electrónico">
-                                    <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30"
+                                        placeholder="Name">
+                                    <input type="email" name="email" class="inputdatos" placeholder="Email">
+                                    <textarea name="message" placeholder="Message" class="textdatos" cols="30"
                                         rows="10"></textarea>
                                 </div>
-                                <button id="send" class="botondatos">Enviar</button>
+                                <button id="send" class="botondatos">Send</button>
                             </form>
                         </div>
                     </div>
@@ -523,7 +532,7 @@
                 <div class="popup" id="popup1">
                     <div class="popup-content">
                         <span class="close" id="close-popup1">&times;</span> <!-- Botón de cerrar -->
-                        <p id="popup-message" class="popup-info">Correo copiado exitosamente!</p>
+                        <p id="popup-message" class="popup-info">Email copied successfully!</p>
                         <!-- Mensaje del popup -->
                     </div>
                 </div>
@@ -532,12 +541,13 @@
 
             <!-- FOOTER -->
             <footer>
-                <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
+                <h2 id="gracias">Thank you for visiting my website!</h2>
                 <h3>© 2024 Copyright: Mario De La Rosa García</h3>
             </footer>
-
-            <!--COPYEMAILSCRIPT-->
             <script src="js/copymailscript.js" defer></script>
+            <script src="js/popup.js" defer></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+            <script src="js/pdfscript.js" defer></script>
         </main>
     </div>
 </body>
