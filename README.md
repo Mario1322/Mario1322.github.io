@@ -23,7 +23,7 @@ Este es mi portafolio personal desarrollado con HTML, CSS y JavaScript, donde mu
 ## 🌍 Estructura de la Web
 
 - `index.html`: Página principal (idioma español)
-- `index-en.html`: Versión en inglés del portafolio
+- `indexen.html`: Versión en inglés del portafolio
 - `css/`: Estilos globales y responsive
 - `js/`: Scripts de efectos y funcionalidad
 - `assets/`: Imágenes, íconos y PDF
