@@ -26,21 +26,30 @@ const pdfTitles = [
     'Google: Inteligencia Artificial y productividad'
 ];
 
-// Variable global para el índice actual del PDF
 let currentPage = 0;
 
-// Función para cargar un PDF dado un índice
 function loadPDF(index) {
     const canvas = document.getElementById('pdf-render');
+    if (!canvas) return; // Seguridad si no existe el canvas
+
     const context = canvas.getContext('2d');
+    
+    // Indicador visual de carga
+    context.font = "20px Arial";
+    context.fillStyle = "black";
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fillText("Cargando certificado...", 50, 50);
+
+    // Configuración de PDF.js
     const pdfjsLib = window['pdfjs-dist/build/pdf'];
+    // Asegúrate de que la versión coincida con la del CDN en tu HTML
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
 
     const loadingTask = pdfjsLib.getDocument(pdfFiles[index]);
+
     loadingTask.promise.then(pdf => {
-        // Cargar la primera página del PDF
         pdf.getPage(1).then(page => {
-            const scale = 1.5; // Ajusta la escala según sea necesario
+            const scale = 1.5;
             const viewport = page.getViewport({ scale });
             canvas.height = viewport.height;
             canvas.width = viewport.width;
@@ -51,35 +60,43 @@ function loadPDF(index) {
             };
             page.render(renderContext);
 
-            // Muestra el nombre del certificado
-            document.getElementById('titulo-pdf').innerText = pdfTitles[index];
-            document.getElementById('download-pdf').href = pdfFiles[index];
+            // Actualizar título y enlace de descarga
+            const titleElem = document.getElementById('titulo-pdf');
+            const downloadLink = document.getElementById('download-pdf');
+            
+            if(titleElem) titleElem.innerText = pdfTitles[index];
+            if(downloadLink) downloadLink.href = pdfFiles[index];
+
         }).catch(error => {
             console.error('Error al acceder a la página del PDF: ', error);
+            context.fillText("Error al visualizar la página.", 50, 50);
         });
     }).catch(error => {
         console.error('Error al cargar el PDF: ', error);
+        context.fillText("Error al cargar el archivo PDF.", 50, 50);
     });
 }
 
-// Funciones para manejar la navegación
 function showPrevPDF() {
     if (currentPage > 0) {
-        currentPage--; // Decrementa el índice
-        loadPDF(currentPage); // Carga el PDF anterior
+        currentPage--;
+        loadPDF(currentPage);
     }
 }
 
 function showNextPDF() {
     if (currentPage < pdfFiles.length - 1) {
-        currentPage++; // Incrementa el índice
-        loadPDF(currentPage); // Carga el siguiente PDF
+        currentPage++;
+        loadPDF(currentPage);
     }
 }
 
-// Asignar eventos de clic a los botones de navegación
-document.getElementById('prevBtn').addEventListener('click', showPrevPDF);
-document.getElementById('nextBtn').addEventListener('click', showNextPDF);
+document.addEventListener('DOMContentLoaded', () => {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-// Cargar el primer PDF al iniciar
-loadPDF(currentPage);
+    if (prevBtn) prevBtn.addEventListener('click', showPrevPDF);
+    if (nextBtn) nextBtn.addEventListener('click', showNextPDF);
+
+    loadPDF(currentPage);
+});

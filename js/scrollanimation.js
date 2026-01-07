@@ -1,17 +1,26 @@
-// scrollAnimation.js
+document.addEventListener('DOMContentLoaded', function () {
+    const botonArriba = document.getElementById('boton-arriba');
 
-$(document).ready(function () {
-    $('#boton-arriba').click(function () {
-        $('body, html').animate({
-            scrollTop: '0px'
-        }, 300);
-    });
+    if (botonArriba) {
+        // Evento click para subir suavemente
+        botonArriba.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
-            $('#boton-arriba').slideDown(300);
-        } else {
-            $('#boton-arriba').slideUp(300);
-        }
-    });
+        // Mostrar/Ocultar botón al hacer scroll
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 0) {
+                // Equivalente a slideDown (mostrar)
+                botonArriba.style.display = 'block';
+                botonArriba.style.opacity = '1';
+            } else {
+                // Equivalente a slideUp (ocultar)
+                botonArriba.style.display = 'none';
+                botonArriba.style.opacity = '0';
+            }
+        });
+    }
 });
