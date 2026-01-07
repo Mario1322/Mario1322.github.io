@@ -16,12 +16,12 @@
     flex-direction: column;
     justify-content: center;
     width: 50rem;
-    z-index: 100;
+    z-index: var(--z-normal); /* Variable */
 }
 
 .nombre h3 {
     text-align: center;
-    z-index: 100;
+    z-index: var(--z-normal);
 }
 
 .misdatos .contenidodatos {
@@ -29,7 +29,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: var(--z-normal);
 }
 
 .contenidodatos .centradotexto {
@@ -81,7 +81,7 @@
     border-radius: 50px;
     outline: none;
     border: none;
-    z-index: 100;
+    z-index: var(--z-normal);
 }
 
 .contenidodatos .inputdatos:hover,
@@ -92,7 +92,7 @@
 .contenidodatos .inputdatos:focus,
 .contenidodatos .textdatos:focus {
     outline: 3px solid var(--contraste);
-    z-index: 100;
+    z-index: var(--z-normal);
 }
 
 .contenidodatos .botondatos {
@@ -101,10 +101,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #EFBF04; /* dorado */
+    background-color: #EFBF04;
     border: 0.2rem solid #EFBF04;
-    color: #CBCBCB; /* gris claro */
-    z-index: 1;
+    color: #CBCBCB;
+    z-index: var(--z-normal);
     transition: .5s;
     width: 50rem;
     height: 6rem;
@@ -113,7 +113,7 @@
     font-weight: 700;
     margin-bottom: 5rem;
     border-radius: 50px;
-    
+    cursor: pointer; /* Accesibilidad */
 }
 
 .contenidodatos .botondatos:hover {
@@ -129,7 +129,7 @@
     width: 0%;
     height: 100%;
     background: var(--fondo-oscuro);
-    z-index: 1;
+    z-index: var(--z-fondo);
     transition: .5s;
 }
 
@@ -169,9 +169,10 @@ footer h3 {
     font-size: 2.2rem;
     font-weight: 800;
     color: #CBCBCB;
-    z-index: 1;
+    z-index: var(--z-normal);
     overflow: hidden;
     transition: .5s;
+    cursor: pointer;
 }
 
 .copy-btn:hover {
@@ -179,7 +180,6 @@ footer h3 {
     color: #EFBF04;
 }
 
-/* Efecto de fondo en hover para el botón Copiar */
 .copy-btn::before {
     content: '';
     position: absolute;
@@ -188,7 +188,7 @@ footer h3 {
     width: 0%;
     height: 100%;
     background: var(--fondo-oscuro);
-    z-index: -1;
+    z-index: var(--z-fondo);
     transition: .5s;
 }
 
@@ -196,10 +196,9 @@ footer h3 {
     width: 100%;
 }
 
-
 .mas {
     position: relative;
-    z-index: 1;
+    z-index: var(--z-normal);
 }
 
 .mas a:hover {
@@ -214,7 +213,7 @@ footer h3 {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+    z-index: var(--z-modal); /* Usando variable (2000) */
 }
 
 .popup-content {
@@ -243,7 +242,7 @@ footer h3 {
     top: 10px;
     right: 15px;
     font-size: 50px;
-    cursor: pointer;
+    cursor: pointer; /* Accesibilidad */
     color: #ff0000;
     padding: 10px;
     border: none;

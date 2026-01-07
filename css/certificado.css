@@ -12,7 +12,7 @@
 #titulo-pdf {
   font-size: 3rem;
   font-weight: bold;
-  color: #003366; /* Azul marino */
+  color: #003366;
   margin-bottom: 20px;
   letter-spacing: 1px;
   text-align: center;
@@ -24,7 +24,7 @@
   max-width: 100%;
   height: auto;
   position: relative;
-  z-index: 10;
+  z-index: var(--z-alto); /* Variable (10) */
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   margin-bottom: 2rem;
@@ -47,7 +47,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  z-index: 10;
+  z-index: var(--z-alto); /* Variable (10) */
 }
 
 .navigation button:hover {
@@ -70,15 +70,15 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 600px;              /* antes: 400px */
-  padding: 25px 40px;            /* antes: 15px 30px */
+  max-width: 600px;
+  padding: 25px 40px;
   background-color: #EFBF04;
   border: .2rem solid #EFBF04;
   border-radius: 50px;
-  font-size: 2.8rem;             /* antes: 2rem */
+  font-size: 2.8rem;
   font-weight: 800;
   color: var(--fondo-oscuro);
-  z-index: 1;
+  z-index: var(--z-normal);
   overflow: hidden;
   transition: 0.5s;
   text-align: center;
@@ -110,7 +110,7 @@
   width: 0%;
   height: 100%;
   background: var(--fondo-oscuro);
-  z-index: -1;
+  z-index: var(--z-fondo);
   transition: 0.5s;
 }
 

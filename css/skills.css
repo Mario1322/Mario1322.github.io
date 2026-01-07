@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    z-index: 10000; /* Muy por encima del fondo */
+    z-index: var(--z-normal); /* Corregido */
 }
 
 .centrado {
@@ -26,7 +26,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    z-index: 10000; /* Muy por encima del fondo */
+    z-index: var(--z-normal); /* Corregido */
 }
 
 .contenedorcartas .cartas {
@@ -59,64 +59,63 @@
     font-size: 2rem;
     border: 2px solid #DEBD59;
     border-radius: 50px;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Suavizar la transición */
-    z-index: 10000; /* Muy por encima del fondo */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    z-index: var(--z-normal); /* Corregido */
+    cursor: pointer; /* Añadido para UX */
 }
 
 .articulos h4:hover {
     background-color: #DEBD59;
     color: var(--fondo-oscuro);
     box-shadow: 0 0 20px #DEBD59;
-    z-index: 10000; /* Muy por encima del fondo */
+    z-index: var(--z-alto); /* Corregido (10) */
 }
 
 /* Estilos del Popup */
 .popup-container {
-    display: none; /* Ocultar por defecto */
-    position: fixed; /* Posicionar el popup de forma fija */
-    inset: 0; /* Ocupa toda la pantalla */
-    display: flex; /* Usar flex para centrar */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    z-index: 10000; /* Muy por encima del fondo */
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-modal); /* Corregido (2000) */
 }
 
 .popup-content {
-    background-color: rgba(222, 189, 89, 0.9); /* Fondo del popup */
-    border: 1px solid #DEBD59; /* Bordes */
-    padding: 20px; /* Espaciado interno */
-    text-align: center; /* Alinear texto al centro */
-    width: 300px; /* Ancho fijo inicial */
-    max-width: 80%; /* Ancho máximo como porcentaje de la pantalla */
-    box-shadow: 0 0 20px #DEBD59; /* Sombra */
-    border-radius: 10px; /* Bordes redondeados */
-    max-height: 80vh; /* Limitar la altura máxima al 80% de la altura de la pantalla */
-    overflow-y: auto; /* Permitir desplazamiento vertical si el contenido es muy largo */
+    background-color: rgba(222, 189, 89, 0.9);
+    border: 1px solid #DEBD59;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    max-width: 80%;
+    box-shadow: 0 0 20px #DEBD59;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-/* Estilos para el texto dentro del popup */
 .popup-info {
-    font-size: 18px; /* Tamaño del texto */
-    line-height: 1.6; /* Espaciado entre líneas */
-    color: #ffffff; /* Cambiar el color del texto a blanco */
-    text-align: center; /* Alinear el texto al centro */
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-align: center;
 }
 
 /* Estilos del botón de cerrar */
 .popup-container .close {
-    position: absolute; /* Posición del botón de cerrar */
-    top: 10px; /* Espaciado superior */
-    right: 15px; /* Espaciado derecho */
-    font-size: 50px; /* Tamaño del botón de cerrar (aumentado) */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
-    color: #ff0000; /* Color del botón de cerrar */
-    padding: 10px; /* Espaciado interno para hacerlo más grande */
-    border: none; /* Eliminar bordes si los hay */
-    background: none; /* Eliminar fondo si hay */
-    transition: transform 0.3s; /* Suavizar el efecto al pasar el ratón */
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 50px;
+    cursor: pointer; /* Asegurado */
+    color: #ff0000;
+    padding: 10px;
+    border: none;
+    background: none;
+    transition: transform 0.3s;
 }
 
 .popup-container .close:hover {
-    transform: scale(1.2); /* Aumentar tamaño al pasar el ratón */
+    transform: scale(1.2);
 }

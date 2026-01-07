@@ -13,7 +13,6 @@ body, html {
 
 canvas {
   display: block;
-  
 }
 
 #particles-js {
@@ -22,10 +21,10 @@ canvas {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -2; /* Fondo */
+  z-index: var(--z-atras); /* Usando variable (-2) */
 }
 
 .page-wrapper, .header, main, .main-wrapper {
   position: relative;
-  z-index: 1; /* Encima del fondo */
+  z-index: var(--z-normal); /* Usando variable (1) */
 }

@@ -35,6 +35,7 @@
 .content .link {
     text-decoration: none;
     color: var(--blanco);
+    display: block; /* Asegura área clicable */
 }
 
 .education-column .line {
@@ -52,7 +53,7 @@
     border: .2rem solid #DEBD59;
     border-radius: 50px;
     margin-bottom: 2rem;
-    
+    transition: all 0.3s ease; /* Suaviza efecto hover */
 }
 
 .education-content .content:hover {
@@ -75,21 +76,22 @@
     padding-top: .5rem;
     font-weight: 500;
 }
+
 .project-image {
-    max-width: 100%; /* asegura que la imagen no sea más ancha que su contenedor */
-    height: auto; /* mantiene la proporción de aspecto */
-    display: block; /* asegura que la imagen sea un elemento de bloque */
-    margin: 0 auto; /* centra la imagen horizontalmente */
-    border-radius: 15px; /* redondea las esquinas */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
 }
 
 .education-content .content {
-    text-align: center; /* Centra todo el contenido dentro de .content */
+    text-align: center;
 }
 
 .education-content .content .anio,
 .education-content .content h3,
 .education-content .content p {
-    margin: 0 auto; /* Centra el texto horizontalmente */
-    max-width: 80%; /* Limita el ancho del texto para que no se extienda demasiado */
+    margin: 0 auto;
+    max-width: 80%;
 }

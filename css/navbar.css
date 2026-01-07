@@ -13,10 +13,11 @@
 }
 
 :root {
+    /* Colores */
     --fondo-oscuro: #D9DADF;
-    --fondo-oscuro-nvar: #EFBF04; /* cambiado a dorado */
-    --fondo-mas-oscuro: #EFBF04;  /* cambiado a dorado */
-    --contraste: #001F3F; /* azul diplomático */
+    --fondo-oscuro-nvar: #EFBF04;
+    --fondo-mas-oscuro: #EFBF04;
+    --contraste: #001F3F;
     --negro: #fff;
     --blanco: #000;
     --gris-claro: #CBCBCB;
@@ -24,6 +25,14 @@
     --opacidad-alta: 1;
     --estrellas: 51, 54, 70;
     --fondo-oscuro-letras: --blanco;
+
+    /* Escala Z-Index (Mejora #6) */
+    --z-atras: -2;
+    --z-fondo: -1;
+    --z-normal: 1;
+    --z-alto: 10;
+    --z-menu: 100;
+    --z-modal: 2000;
 }
 
 .cambiocolor {
@@ -89,7 +98,7 @@ body {
     height: 30px;
     justify-content: end;
     align-items: center;
-    z-index: 100;
+    z-index: var(--z-menu); /* Usando variable */
 }
 
 .header {
@@ -99,10 +108,10 @@ body {
     transform: translateX(-50%);
     max-width: 1200px;
     padding: 3px 3px;
-    background-color: var(--fondo-oscuro-nvar); /* dorado */
+    background-color: var(--fondo-oscuro-nvar);
     display: flex;
     align-items: center;
-    z-index: 100;
+    z-index: var(--z-menu); /* Usando variable */
     border-radius: 50px;
 }
 
@@ -142,26 +151,20 @@ body {
     align-items: center;
 }
 
-.navbar .solluna {
-    font-size: 2.7rem;
+.navbar .solluna,
+.navbar .idioma {
+    font-size: 2.7rem; /* Unificado */
     color: var(--blanco);
     font-weight: 500;
     align-items: center;
     transition: .3s;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
+    cursor: pointer; /* Mejora accesibilidad */
 }
 
 .navbar .idioma {
     font-size: 2rem;
-    color: var(--blanco);
-    font-weight: 500;
-    align-items: center;
-    transition: .3s;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .navbar a {
@@ -171,14 +174,13 @@ body {
     text-decoration: none;
     transition: .3s;
     align-items: flex-start;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 .navbar a:hover,
 .navbar a.active,
 .navbar label:hover {
-    color: var(--fondo-oscuro-letras); /* dorado */
+    color: var(--fondo-oscuro-letras);
 }
 
 #menu-icon {
@@ -194,13 +196,14 @@ body {
     height: 8px;
     margin-left: 5px;
     flex-shrink: 0;
-    background-color: var(--contraste); /* azul diplomático */
+    background-color: var(--contraste);
 }
+
 img {
     transition: transform 0.3s ease;
 }
 
 img:hover {
     transform: scale(1.30);
-    z-index: 2;
+    z-index: var(--z-normal); /* Usando variable */
 }

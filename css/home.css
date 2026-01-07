@@ -1,13 +1,12 @@
 section {
     min-height: auto;
     padding: 10rem 9% 2rem;
-    z-index: 1;
+    z-index: var(--z-normal);
     overflow: hidden;
 }
 
 h1 {
     text-shadow: 2px 2px 3px rgba(0, 0, 0, .3);
-    
 }
 
 .home {
@@ -30,21 +29,14 @@ h1 {
     margin-top: 70px;
 }
 
-
 #loquesoy {
     animation: cambioDeColor 4s forwards infinite alternate-reverse;
 }
 
 @keyframes cambioDeColor {
-    0% {
-        color: var(--blanco);
-    }
-
-    100% {
-        color: #EFBF04;
-    }
+    0% { color: var(--blanco); }
+    100% { color: #EFBF04; }
 }
-
 
 .botones {
     position: relative;
@@ -70,7 +62,7 @@ h1 {
     font-size: 2.2rem;
     font-weight: 800;
     color: var(--fondo-oscuro);
-    z-index: 1;
+    z-index: var(--z-normal); /* Variable */
     overflow: hidden;
     transition: .5s;
 }
@@ -88,9 +80,9 @@ h1 {
     color: var(--fondo-oscuro);
 }
 
+/* AQUÍ ESTABA EL ERROR: Corregido de :::before a ::before */
 .botones .btn:nth-child(2)::before {
     background: #EFBF04;
-
 }
 
 .botones .btn::before {
@@ -101,7 +93,7 @@ h1 {
     width: 0%;
     height: 100%;
     background: var(--fondo-oscuro);
-    z-index: -1;
+    z-index: var(--z-fondo); /* Variable (-1) */
     transition: .5s;
 }
 
@@ -111,18 +103,17 @@ h1 {
 
 .social {
     margin-top: 85px;
-z-index: 2;
+    z-index: var(--z-normal); /* Corregido para evitar sintaxis inválida en CSS puro */
     position: relative;
     display: inline-flex;
 }
 
 .social i {
     text-decoration: none;
-    font-size: 5rem;      /* Iconos más grandes */
-    margin-bottom: 10px;  /* Más espacio debajo del icono */
+    font-size: 5rem;
+    margin-bottom: 10px;
     margin-right: 45px;
     color: var(--blanco);
-
 }
 
 .social i:hover {
@@ -155,8 +146,7 @@ z-index: 2;
     align-items: center;
 }
 
-.mas a,
-.mas i {
+.mas a, .mas i {
     text-decoration: none;
     color: #EFBF04;
     font-size: 2.2rem;
@@ -166,18 +156,11 @@ z-index: 2;
 
 .imgyo {
     animation: reveal linear 1s forwards;
-    
 }
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(100%);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(100%); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .social a {
@@ -188,17 +171,16 @@ z-index: 2;
 
 .social i {
     display: block;
-    font-size: 5rem;      /* Iconos más grandes */
-    margin-bottom: 10px;  /* Más espacio debajo del icono */
+    font-size: 5rem;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .social div {
     display: block;
-    font-size: 2rem;      /* Texto más grande */
+    font-size: 2rem;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
 }
-
