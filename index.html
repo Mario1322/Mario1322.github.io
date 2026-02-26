@@ -7,6 +7,12 @@
     <meta name="description"
         content="Portfolio de Mario De La Rosa García, un desarrollador de software especializado en ciberseguridad y desarrollo de aplicaciones multiplataforma. Explora mis habilidades, formación y proyectos.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="Portafolio de Mario De La Rosa - Desarrollador & Ciberseguridad">
+    <meta property="og:description" content="Echa un vistazo a mis proyectos, certificaciones y habilidades en desarrollo de software y seguridad informática.">
+    <meta property="og:image" content="https://mario1322.github.io/imagenes/foto.jpeg">
+    <meta property="og:url" content="https://mario1322.github.io/">
+    <meta property="og:type" content="website">
     
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css">
@@ -17,6 +23,8 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/idioma.css">
     <link rel="stylesheet" href="css/certificado.css">
+
+    <link rel="icon" type="image/png" href="imagenes/blob-removebg-preview.png">
 
     <script src="js/pdfscript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
@@ -227,7 +235,7 @@
                             <div class="education-content">
                                 <div class="content">
                                     <a href="https://github.com/Mario1322/Arkanoid_2021" target="_blank" rel="noopener noreferrer" class="link">
-                                        <img src="imagenes/arkanoid.webp" alt="Captura del juego Arkanoid" class="project-image">
+                                        <img src="imagenes/arkanoid.webp" alt="Captura del juego Arkanoid" loading="lazy" class="project-image">
                                         <div class="anio"><p>2021</p></div>
                                         <h3 id="proyect1"><i class='bx bxl-github'></i>Arkanoid</h3>
                                         <p id="proyecttext1">Proyecto para generar el juego de Arkanoid en Java, con un buen rebote de la pelota, la desaparición de los ladrillos y buen movimiento del cursor.</p>
@@ -239,7 +247,7 @@
                             <div class="education-content">
                                 <div class="content">
                                     <a href="https://github.com/Mario1322/EjerciciosBasicos_2021" target="_blank" rel="noopener noreferrer" class="link">
-                                        <img src="imagenes/ejerciciosbasicosjava.jpg" alt="Captura de ejercicios básicos en Java" class="project-image" style="max-width: 40%;">
+                                        <img src="imagenes/ejerciciosbasicosjava.jpg" alt="Captura de ejercicios básicos en Java" loading="lazy" class="project-image" style="max-width: 40%;">
                                         <div class="anio"><p>2021</p></div>
                                         <h3 id="proyect2"><i class='bx bxl-github'></i> Ejercicios Básicos</h3>
                                         <p id="proyecttext2">Primeros ejercicios para la comprensión de la programación, incluyendo un ejercicio sobre Ardillas y objetivos.</p>
@@ -394,6 +402,8 @@
                                     <input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre" required>
                                     <input type="email" name="email" class="inputdatos" placeholder="Correo electrónico" required>
                                     <textarea name="message" placeholder="Mensaje" class="textdatos" cols="30" rows="10" required></textarea>
+                                    
+                                    <input type="text" name="_gotcha" style="display:none">
                                 </div>
                                 <button id="send" class="botondatos">Enviar</button>
                             </form>
