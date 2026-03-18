@@ -193,18 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const projectButton = projectLink
             ? `<a class="skill-popup-link" href="${escapeHtml(projectLink)}" target="_blank" rel="noopener noreferrer">${isEnglish ? 'View on GitHub' : 'Ver en GitHub'}</a>`
             : '';
+        const pdfUrl = trigger.dataset.pdf;
+        const pdfBlock = pdfUrl
+            ? `<iframe class="popup-pdf" src="${escapeHtml(pdfUrl)}#toolbar=0&navpanes=0&scrollbar=0" title="${escapeHtml(skillName)} PDF preview" loading="lazy"></iframe>`
+            : '';
+        const courseMeta = (trigger.dataset.date || trigger.dataset.issuer)
+            ? `<p class="skill-popup-meta">${trigger.dataset.date ? `<strong>${isEnglish ? 'Date:' : 'Fecha:'}</strong> ${escapeHtml(trigger.dataset.date)} · ` : ''}${trigger.dataset.issuer ? `<strong>${isEnglish ? 'Issuer:' : 'Emisor:'}</strong> ${escapeHtml(trigger.dataset.issuer)}` : ''}</p>`
+            : '';
+        const downloadBtn = trigger.dataset.download
+            ? `<a class="skill-popup-link" href="${escapeHtml(trigger.dataset.download)}" download>${isEnglish ? 'Download PDF' : 'Descargar PDF'}</a>`
+            : '';
 
         const docsBlock = resource?.docs
             ? `<a class="skill-popup-link" href="${resource.docs}" target="_blank" rel="noopener noreferrer">${labels.docs}</a>`
             : '';
 
-        const actions = [docsBlock, projectButton].filter(Boolean).join('');
+        const actions = [docsBlock, downloadBtn, projectButton].filter(Boolean).join('');
 
         popupInfo.innerHTML = `
             <article class="skill-popup-card">
                 <p class="skill-popup-kicker">${labels.category}: ${escapeHtml(category)}</p>
                 <h3 class="skill-popup-title" id="skill-popup-title">${escapeHtml(skillName)}</h3>
                 ${imageBlock}
+                ${courseMeta}
+                ${pdfBlock}
                 <p class="skill-popup-summary">${escapeHtml(summary)}</p>
                 <p class="skill-popup-useful"><strong>${labels.usefulFor}:</strong> ${escapeHtml(usefulText)}</p>
                 <details class="skill-popup-details">

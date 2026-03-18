@@ -149,6 +149,21 @@
     height: auto;
 }
 
+.popup-container .popup-pdf {
+    width: 100%;
+    height: 42rem;
+    border: 1px solid rgba(222, 189, 89, 0.35);
+    border-radius: 14px;
+    margin: 0 0 1.2rem;
+    background: #0f1626;
+}
+
+.popup-container .skill-popup-meta {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: #e8ebf3;
+}
+
 .popup-container .skill-popup-summary,
 .popup-container .skill-popup-useful,
 .popup-container .skill-popup-details p {
