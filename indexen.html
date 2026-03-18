@@ -9,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mario1322.github.io/indexen.html">
+    <link rel="alternate" hreflang="es" href="https://mario1322.github.io/">
+    <link rel="alternate" hreflang="en" href="https://mario1322.github.io/indexen.html">
+    <link rel="alternate" hreflang="x-default" href="https://mario1322.github.io/">
 
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
     <meta property="og:title" content="Mario De La Rosa Portfolio - Software Developer & Cybersecurity">
     <meta property="og:description" content="Explore my software projects, certifications, and technical skills in development and cybersecurity.">
     <meta property="og:image" content="https://mario1322.github.io/imagenes/foto.jpeg">
@@ -20,6 +24,54 @@
     <meta name="twitter:title" content="Mario De La Rosa Portfolio - Software Developer & Cybersecurity">
     <meta name="twitter:description" content="Explore my software projects, certifications, and technical skills in development and cybersecurity.">
     <meta name="twitter:image" content="https://mario1322.github.io/imagenes/foto.jpeg">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "@id": "https://mario1322.github.io/#person",
+                    "name": "Mario De La Rosa Garcia",
+                    "url": "https://mario1322.github.io/",
+                    "image": "https://mario1322.github.io/imagenes/foto.jpeg",
+                    "jobTitle": "Software Developer and Cybersecurity Specialist",
+                    "sameAs": [
+                        "https://github.com/Mario1322",
+                        "https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://mario1322.github.io/#website",
+                    "url": "https://mario1322.github.io/",
+                    "name": "Mario De La Rosa Portfolio",
+                    "inLanguage": [
+                        "es",
+                        "en"
+                    ],
+                    "author": {
+                        "@id": "https://mario1322.github.io/#person"
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "@id": "https://mario1322.github.io/#portfolio-en",
+                    "url": "https://mario1322.github.io/indexen.html",
+                    "name": "Mario De La Rosa Portfolio",
+                    "description": "Portfolio with projects, certifications, and skills in software development and cybersecurity.",
+                    "inLanguage": "en",
+                    "dateModified": "2026-03-18",
+                    "author": {
+                        "@id": "https://mario1322.github.io/#person"
+                    },
+                    "isPartOf": {
+                        "@id": "https://mario1322.github.io/#website"
+                    },
+                    "mainEntityOfPage": "https://mario1322.github.io/indexen.html"
+                }
+            ]
+        }
+    </script>
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css">
@@ -42,12 +94,13 @@
 </head>
 
 <body class="color-scheme-3">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="particles-js" class="particle-wrapper"></div>
     <header class="header">
         <a href="https://mario1322.github.io" class="logo" id="logo_color"><img class="logo"
                 src="imagenes/blob-removebg-preview.png" alt="Mario De La Rosa logo"><span class="animate" style="--i:1;"></span></a>
-        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
-        <nav class="navbar">
+        <button class="bx bx-menu" id="menu-icon" type="button" aria-label="Open navigation menu" aria-controls="main-navigation" aria-expanded="false"><span class="animate" style="--i:2;"></span></button>
+        <nav class="navbar" id="main-navigation" aria-label="Main navigation">
             <a href="#home" class="active" id="casa">About me</a>
             <a href="#skills">Skills</a>
             <a href="#formacion" id="formation">Education</a>
@@ -55,17 +108,16 @@
             <a href="#certificado" id="cert">Certificates</a>
             <a href="#contacto" id="contact">Contact</a>
 
-            <label for="toggle" id="label_toggle" class="solluna"><i class='bx bx-sun'></i></label>
-            <input type="checkbox" id="toggle">
-            <a href="index.html" class="lenguaje"><img class="lenguaje" src="imagenes/español.png"
+            <button id="label_toggle" class="solluna" type="button" aria-label="Toggle theme" aria-pressed="false"><i class='bx bx-sun' aria-hidden="true"></i></button>
+            <a href="index.html" class="lenguaje" aria-label="Cambiar a la version en espanol"><img class="lenguaje" src="imagenes/español.png"
                     alt="Change language to Spanish"><span class="animate" style="--i:1;"></span></a>
-            <a href="indexen.html" class="lenguaje"><img class="lenguaje" src="imagenes/english.png"
+            <a href="indexen.html" class="lenguaje" aria-current="page" aria-label="English version"><img class="lenguaje" src="imagenes/english.png"
                     alt="Current language: English"><span class="animate" style="--i:1;"></span></a>
             <span class="animate" style="--i:2;"></span>
         </nav>
     </header>
     <div class="page-wrapper navbar-on-page">
-        <main class="main-wrapper max-width-full">
+        <main class="main-wrapper max-width-full" id="main-content" tabindex="-1">
 
             <!-- SOBRE MI -->
             <section class="home animated-section" id="home">
@@ -80,21 +132,21 @@
                         <a href="#contacto" id="contactarme" class="btn">Contact me</a>
                     </div>
                     <div class="social" style="text-align:center;">
-                        <a href="https://github.com/Mario1322" target="_blank" rel="noopener noreferrer">
-                            <i class='bx bxl-github'></i>
-                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">GitHub</div>
+                        <a href="https://github.com/Mario1322" target="_blank" rel="noopener noreferrer" aria-label="Mario's GitHub (opens in new tab)">
+                            <i class='bx bxl-github' aria-hidden="true"></i>
+                            <div class="social-label">GitHub</div>
                         </a>
-                        <a href="https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank" rel="noopener noreferrer">
-                            <i class='bx bxl-linkedin-square'></i>
-                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">LinkedIn</div>
+                        <a href="https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank" rel="noopener noreferrer" aria-label="Mario's LinkedIn (opens in new tab)">
+                            <i class='bx bxl-linkedin-square' aria-hidden="true"></i>
+                            <div class="social-label">LinkedIn</div>
                         </a>
-                        <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer">
-                            <i class='bx bxl-instagram'></i>
-                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">Instagram</div>
+                        <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="Mario's Instagram (opens in new tab)">
+                            <i class='bx bxl-instagram' aria-hidden="true"></i>
+                            <div class="social-label">Instagram</div>
                         </a>
-                        <a href="https://x.com/tu_usuario" target="_blank" rel="noopener noreferrer">
-                            <i class='bx bxl-twitter'></i>
-                            <div style="font-size: 1rem; color: #003366; font-weight: bold;">X</div>
+                        <a href="https://x.com/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="Mario's X profile (opens in new tab)">
+                            <i class='bx bxl-twitter' aria-hidden="true"></i>
+                            <div class="social-label">X</div>
                         </a>
                     </div>
                 </div>
@@ -484,9 +536,9 @@
                 </div>
                 <div id="titulo-pdf" style="text-align: center; margin-bottom: 10px;"></div>
                 <div class="navigation">
-                    <button id="prevBtn" type="button" style="cursor: pointer;">&#10094;</button>
-                    <canvas id="pdf-render" width="600" height="800"></canvas>
-                    <button id="nextBtn" type="button" style="cursor: pointer;">&#10095;</button>
+                    <button id="prevBtn" type="button" style="cursor: pointer;" aria-label="View previous certificate">&#10094;</button>
+                    <canvas id="pdf-render" width="600" height="800" aria-label="Certificate preview"></canvas>
+                    <button id="nextBtn" type="button" style="cursor: pointer;" aria-label="View next certificate">&#10095;</button>
                 </div>
                 <div class="botones">
                     <a id="download-pdf" href="#" class="btn" download>Download Certificate</a>
@@ -508,9 +560,8 @@
                                     <div class="iconotexto">
                                         <i class='bx bx-envelope correo'></i>
                                         <h4 id="email-text">mdlrg1322@gmail.com</h4>
-                                        <!-- Reemplaza el botón por este enlace -->
-                                        <a href="mailto:mdlrg1322@gmail.com" id="copy-button" class="copy-btn"
-                                            style="margin-left:10px;">Copy</a>
+                                        <button id="copy-button" class="copy-btn" type="button"
+                                            style="margin-left:10px;">Copy</button>
                                     </div>
                                     <div class="iconotexto">
                                         <i class='bx bx-phone'></i>
@@ -529,11 +580,15 @@
                             </div>
                             <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
                                 <div id="formulario">
+                                    <label class="sr-only" for="nomretexto">Name</label>
                                     <input type="text" name="name" id="nomretexto" class="inputdatos"
-                                        placeholder="Name">
-                                    <input type="email" name="email" class="inputdatos" placeholder="Email">
-                                    <textarea name="message" placeholder="Message" class="textdatos" cols="30"
-                                        rows="10"></textarea>
+                                        placeholder="Name" required>
+                                    <label class="sr-only" for="emailtexto">Email</label>
+                                    <input type="email" name="email" id="emailtexto" class="inputdatos" placeholder="Email" required>
+                                    <label class="sr-only" for="messagetexto">Message</label>
+                                    <textarea name="message" id="messagetexto" placeholder="Message" class="textdatos" cols="30"
+                                        rows="10" required></textarea>
+                                    <input type="hidden" name="_gotcha">
                                 </div>
                                 <button id="send" class="botondatos">Send</button>
                             </form>
@@ -543,9 +598,8 @@
                 <!-- Popup de correo copiado -->
                 <div class="popup" id="popup1">
                     <div class="popup-content">
-                        <span class="close" id="close-popup1">&times;</span> <!-- Botón de cerrar -->
-                        <p id="popup-message" class="popup-info">Email copied successfully!</p>
-                        <!-- Mensaje del popup -->
+                        <button class="close" id="close-popup1" type="button" aria-label="Close email copied message">&times;</button>
+                        <p id="popup-message" class="popup-info" role="status" aria-live="polite">Email copied successfully!</p>
                     </div>
                 </div>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mario1322.github.io/sitemap.xml

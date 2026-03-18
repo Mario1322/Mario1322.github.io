@@ -40,7 +40,7 @@
 
 .navigation button {
   background-color: #EFBF04;
-  color: #CBCBCB;
+  color: #001F3F;
   border: none;
   font-size: 1.5rem;
   padding: 10px 20px;
@@ -51,9 +51,9 @@
 }
 
 .navigation button:hover {
-  background-color: transparent;
+  background-color: #001F3F;
   color: #EFBF04;
-  border: 1px solid #EFBF04;
+  border: 1px solid #001F3F;
 }
 
 .botones {
@@ -77,7 +77,7 @@
   border-radius: 50px;
   font-size: 2.8rem;
   font-weight: 800;
-  color: var(--fondo-oscuro);
+  color: #001F3F;
   z-index: var(--z-normal);
   overflow: hidden;
   transition: 0.5s;
@@ -109,7 +109,7 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background: var(--fondo-oscuro);
+  background: #001F3F;
   z-index: var(--z-fondo);
   transition: 0.5s;
 }

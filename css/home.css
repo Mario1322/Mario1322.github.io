@@ -35,7 +35,7 @@ h1 {
 
 @keyframes cambioDeColor {
     0% { color: var(--blanco); }
-    100% { color: #EFBF04; }
+    100% { color: var(--contraste); }
 }
 
 .botones {
@@ -61,7 +61,7 @@ h1 {
     border-radius: 50px;
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--fondo-oscuro);
+    color: #001F3F;
     z-index: var(--z-normal); /* Variable */
     overflow: hidden;
     transition: .5s;
@@ -73,11 +73,12 @@ h1 {
 
 .botones .btn:nth-child(2) {
     background: transparent;
-    color: #EFBF04;
+    color: var(--blanco);
+    border-color: var(--blanco);
 }
 
 .botones .btn:nth-child(2):hover {
-    color: var(--fondo-oscuro);
+    color: #001F3F;
 }
 
 /* AQUÍ ESTABA EL ERROR: Corregido de :::before a ::before */
@@ -92,7 +93,7 @@ h1 {
     left: 0;
     width: 0%;
     height: 100%;
-    background: var(--fondo-oscuro);
+    background: #001F3F;
     z-index: var(--z-fondo); /* Variable (-1) */
     transition: .5s;
 }
@@ -119,6 +120,11 @@ h1 {
 .social i:hover {
     color: var(--contraste);
     transition: .3s;
+}
+
+.social a:focus-visible i,
+.social a:focus-visible .social-label {
+    color: #DEBD59;
 }
 
 .elguapo {
@@ -148,7 +154,7 @@ h1 {
 
 .mas a, .mas i {
     text-decoration: none;
-    color: #EFBF04;
+    color: var(--blanco);
     font-size: 2.2rem;
     font-weight: 600;
     margin-right: 5px;
@@ -183,4 +189,9 @@ h1 {
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+}
+
+.social .social-label {
+    color: var(--blanco);
+    font-size: 1.6rem;
 }

@@ -103,7 +103,7 @@
     overflow: hidden;
     background-color: #EFBF04;
     border: 0.2rem solid #EFBF04;
-    color: #CBCBCB;
+    color: #001F3F;
     z-index: var(--z-normal);
     transition: .5s;
     width: 50rem;
@@ -128,7 +128,7 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background: var(--fondo-oscuro);
+    background: #001F3F;
     z-index: var(--z-fondo);
     transition: .5s;
 }
@@ -168,7 +168,7 @@ footer h3 {
     border-radius: 50px;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #CBCBCB;
+    color: #001F3F;
     z-index: var(--z-normal);
     overflow: hidden;
     transition: .5s;
@@ -187,7 +187,7 @@ footer h3 {
     left: 0;
     width: 0%;
     height: 100%;
-    background: var(--fondo-oscuro);
+    background: #001F3F;
     z-index: var(--z-fondo);
     transition: .5s;
 }
@@ -242,9 +242,10 @@ footer h3 {
     top: 10px;
     right: 15px;
     font-size: 50px;
+    line-height: 1;
     cursor: pointer; /* Accesibilidad */
     color: #ff0000;
-    padding: 10px;
+    padding: 4px;
     border: none;
     background: none;
     transition: transform 0.3s;

@@ -213,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     popupTriggers.forEach((trigger) => {
-        trigger.setAttribute('role', 'button');
         trigger.setAttribute('tabindex', '0');
         trigger.setAttribute('aria-haspopup', 'dialog');
 
