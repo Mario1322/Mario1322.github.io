@@ -272,7 +272,10 @@
     }
 
     .imgyo {
-        width: 130px;
+        width: 160px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
     }
 }
 
@@ -302,6 +305,9 @@
     }
 
     .imgyo {
-        width: 100px;
+        width: 120px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
     }
 }
