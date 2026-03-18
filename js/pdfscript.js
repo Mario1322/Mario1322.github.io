@@ -1,4 +1,6 @@
-// Lista de PDFs a cargar
+const PDFJS_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js';
+const PDF_WORKER_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
 const pdfFiles = [
     'certificados/Certificado_Seguridad_y_privacidad.pdf',
     'certificados/Introducción_a_la_Gestión_Ambiental_Certificado.pdf',
@@ -12,8 +14,7 @@ const pdfFiles = [
     'certificados/787_mariodelarosagr2003@gmail.com.pdf'
 ];
 
-// Array con los nombres/títulos de los certificados
-const pdfTitles = [
+const pdfTitlesEs = [
     'Seguridad y Privacidad',
     'Gestión Ambiental',
     'Seguridad y Privacidad de Datos',
@@ -26,81 +27,145 @@ const pdfTitles = [
     'Google: Inteligencia Artificial y productividad'
 ];
 
+const pdfTitlesEn = [
+    'Security and Privacy',
+    'Environmental Management',
+    'Data Security and Privacy',
+    'Remote Work and Occupational Risk Prevention',
+    'Information Security',
+    'Occupational Risk Prevention P.V.D',
+    'Generative AI',
+    'Effective and Persuasive Writing',
+    'Copilot',
+    'Google: AI and Productivity'
+];
+
 let currentPage = 0;
+let pdfLibPromise = null;
+let hasInitialRender = false;
 
-function loadPDF(index) {
-    const canvas = document.getElementById('pdf-render');
-    if (!canvas) return; // Seguridad si no existe el canvas
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const existing = document.querySelector(`script[data-dynamic-src="${src}"]`);
+        if (existing) {
+            existing.addEventListener('load', resolve, { once: true });
+            existing.addEventListener('error', reject, { once: true });
+            return;
+        }
 
-    const context = canvas.getContext('2d');
-    
-    // Indicador visual de carga
-    context.font = "20px Arial";
-    context.fillStyle = "black";
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillText("Cargando certificado...", 50, 50);
-
-    // Configuración de PDF.js
-    const pdfjsLib = window['pdfjs-dist/build/pdf'];
-    if (!pdfjsLib) {
-        context.fillText("No se pudo cargar PDF.js.", 50, 50);
-        return;
-    }
-    // Asegúrate de que la versión coincida con la del CDN en tu HTML
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
-
-    const loadingTask = pdfjsLib.getDocument(pdfFiles[index]);
-
-    loadingTask.promise.then(pdf => {
-        pdf.getPage(1).then(page => {
-            const scale = 1.5;
-            const viewport = page.getViewport({ scale });
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-
-            const renderContext = {
-                canvasContext: context,
-                viewport: viewport
-            };
-            page.render(renderContext);
-
-            // Actualizar título y enlace de descarga
-            const titleElem = document.getElementById('titulo-pdf');
-            const downloadLink = document.getElementById('download-pdf');
-            
-            if(titleElem) titleElem.innerText = pdfTitles[index];
-            if(downloadLink) downloadLink.href = pdfFiles[index];
-
-        }).catch(error => {
-            console.error('Error al acceder a la página del PDF: ', error);
-            context.fillText("Error al visualizar la página.", 50, 50);
-        });
-    }).catch(error => {
-        console.error('Error al cargar el PDF: ', error);
-        context.fillText("Error al cargar el archivo PDF.", 50, 50);
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.dataset.dynamicSrc = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
     });
 }
 
-function showPrevPDF() {
-    if (currentPage > 0) {
-        currentPage--;
-        loadPDF(currentPage);
+function getPdfLib() {
+    if (window['pdfjs-dist/build/pdf']) {
+        return Promise.resolve(window['pdfjs-dist/build/pdf']);
+    }
+
+    if (!pdfLibPromise) {
+        pdfLibPromise = loadScript(PDFJS_SRC).then(() => window['pdfjs-dist/build/pdf']);
+    }
+    return pdfLibPromise;
+}
+
+function getPageTitles() {
+    return document.documentElement.lang.toLowerCase().startsWith('en') ? pdfTitlesEn : pdfTitlesEs;
+}
+
+function showCanvasStatus(context, message) {
+    context.font = '20px Arial';
+    context.fillStyle = '#001F3F';
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    context.fillText(message, 30, 50);
+}
+
+async function loadPDF(index) {
+    const canvas = document.getElementById('pdf-render');
+    if (!canvas) return;
+
+    const context = canvas.getContext('2d');
+    const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+    showCanvasStatus(context, isEnglish ? 'Loading certificate...' : 'Cargando certificado...');
+
+    try {
+        const pdfjsLib = await getPdfLib();
+        if (!pdfjsLib) {
+            showCanvasStatus(context, isEnglish ? 'PDF.js could not be loaded.' : 'No se pudo cargar PDF.js.');
+            return;
+        }
+
+        pdfjsLib.GlobalWorkerOptions.workerSrc = PDF_WORKER_SRC;
+        const pdf = await pdfjsLib.getDocument(pdfFiles[index]).promise;
+        const page = await pdf.getPage(1);
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        await page.render({ canvasContext: context, viewport }).promise;
+
+        const titleElem = document.getElementById('titulo-pdf');
+        const downloadLink = document.getElementById('download-pdf');
+        const titles = getPageTitles();
+        if (titleElem) titleElem.innerText = titles[index];
+        if (downloadLink) downloadLink.href = pdfFiles[index];
+    } catch (error) {
+        showCanvasStatus(context, isEnglish ? 'Could not load certificate.' : 'No se pudo cargar el certificado.');
     }
 }
 
-function showNextPDF() {
-    if (currentPage < pdfFiles.length - 1) {
-        currentPage++;
-        loadPDF(currentPage);
+async function showPrevPDF() {
+    await ensureFirstRender();
+    if (currentPage > 0) {
+        currentPage -= 1;
+        await loadPDF(currentPage);
     }
+}
+
+async function showNextPDF() {
+    await ensureFirstRender();
+    if (currentPage < pdfFiles.length - 1) {
+        currentPage += 1;
+        await loadPDF(currentPage);
+    }
+}
+
+async function ensureFirstRender() {
+    if (hasInitialRender) {
+        return;
+    }
+    hasInitialRender = true;
+    await loadPDF(currentPage);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const certificadoSection = document.getElementById('certificado');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    if (prevBtn) prevBtn.addEventListener('click', showPrevPDF);
-    if (nextBtn) nextBtn.addEventListener('click', showNextPDF);
+    if (!certificadoSection || !prevBtn || !nextBtn) {
+        return;
+    }
 
-    loadPDF(currentPage);
+    prevBtn.addEventListener('click', showPrevPDF);
+    nextBtn.addEventListener('click', showNextPDF);
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    ensureFirstRender();
+                    observer.disconnect();
+                }
+            });
+        }, { rootMargin: '300px 0px' });
+        observer.observe(certificadoSection);
+    } else {
+        setTimeout(ensureFirstRender, 1200);
+    }
 });
