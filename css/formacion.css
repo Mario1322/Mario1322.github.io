@@ -36,6 +36,7 @@
     text-decoration: none;
     color: var(--blanco);
     display: block; /* Asegura área clicable */
+    cursor: pointer;
 }
 
 .education-column .line {

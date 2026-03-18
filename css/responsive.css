@@ -218,6 +218,20 @@
         width: 90%;
         height: auto;
     }
+
+    .education-content .content {
+        padding: 1.2rem;
+    }
+
+    .education-content .content h3 {
+        font-size: 2.2rem;
+    }
+
+    .education-content .content p {
+        font-size: 1.8rem;
+        max-width: 95%;
+        line-height: 1.4;
+    }
 }
 
 @media(max-width: 744px) {
@@ -259,6 +273,26 @@
 
     .imgyo {
         width: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .education .education-row {
+        gap: 3rem;
+    }
+
+    .education-content .content {
+        padding: 1rem;
+        border-radius: 35px;
+    }
+
+    .education-content .content h3 {
+        font-size: 2rem;
+    }
+
+    .education-content .content p {
+        font-size: 1.6rem;
+        max-width: 100%;
     }
 }
 
