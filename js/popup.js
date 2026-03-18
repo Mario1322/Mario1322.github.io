@@ -1,31 +1,241 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const popupContainer = document.querySelector('.popup-container');
-    const closeButton = document.querySelector('.close');
-    const popupInfo = document.querySelector('.popup-info');
-
-    // Inicializa el popup como oculto
-    popupContainer.style.display = 'none';
-
-    closeButton.addEventListener('click', function () {
-        popupContainer.style.display = 'none'; // Cerrar el popup
-    });
-
+    const popupDialog = popupContainer?.querySelector('.popup-content');
+    const closeButton = popupContainer?.querySelector('.close');
+    const popupInfo = popupContainer?.querySelector('.popup-info');
     const popupTriggers = document.querySelectorAll('.popup-trigger');
 
-    popupTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function () {
-            const info = this.dataset.info; // Obtiene el texto del atributo data-info
-            if (info) {
-                popupInfo.textContent = info; // Establece el texto en el popup
-                popupContainer.style.display = 'flex'; // Muestra el popup
+    if (!popupContainer || !popupDialog || !closeButton || !popupInfo || popupTriggers.length === 0) {
+        return;
+    }
+
+    const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+
+    const labels = isEnglish ? {
+        category: 'Category',
+        usefulFor: 'Useful for',
+        details: 'Detailed explanation',
+        docs: 'Official docs',
+        noDocs: 'No official docs linked yet',
+        defaultCategory: 'Skill',
+        close: 'Close popup'
+    } : {
+        category: 'Categoria',
+        usefulFor: 'Util para',
+        details: 'Explicacion detallada',
+        docs: 'Documentacion oficial',
+        noDocs: 'Aun no hay documentacion enlazada',
+        defaultCategory: 'Skill',
+        close: 'Cerrar popup'
+    };
+
+    const skillData = {
+        html5: {
+            docs: 'https://developer.mozilla.org/docs/Web/HTML',
+            use: {
+                es: 'Estructurar contenido web semantico y accesible.',
+                en: 'Build semantic and accessible web structure.'
+            }
+        },
+        css3: {
+            docs: 'https://developer.mozilla.org/docs/Web/CSS',
+            use: {
+                es: 'Crear interfaces visuales responsive y modernas.',
+                en: 'Create responsive and modern visual interfaces.'
+            }
+        },
+        javascript: {
+            docs: 'https://developer.mozilla.org/docs/Web/JavaScript',
+            use: {
+                es: 'Dar interactividad, validaciones y logica al front-end.',
+                en: 'Add interactivity, validation, and front-end logic.'
+            }
+        },
+        jquery: {
+            docs: 'https://api.jquery.com/',
+            use: {
+                es: 'Acelerar manipulacion del DOM en proyectos legacy.',
+                en: 'Speed up DOM work in legacy projects.'
+            }
+        },
+        java: {
+            docs: 'https://docs.oracle.com/en/java/',
+            use: {
+                es: 'Desarrollar aplicaciones robustas orientadas a objetos.',
+                en: 'Build robust object-oriented applications.'
+            }
+        },
+        sql: {
+            docs: 'https://www.postgresql.org/docs/',
+            use: {
+                es: 'Consultar, modelar y mantener bases de datos relacionales.',
+                en: 'Query, model, and maintain relational databases.'
+            }
+        },
+        python: {
+            docs: 'https://docs.python.org/3/',
+            use: {
+                es: 'Automatizacion, backend y analisis de datos.',
+                en: 'Automation, back-end, and data analysis.'
+            }
+        },
+        php: {
+            docs: 'https://www.php.net/docs.php',
+            use: {
+                es: 'Construir backends web y APIs del lado servidor.',
+                en: 'Build server-side web backends and APIs.'
+            }
+        },
+        c: {
+            docs: 'https://en.cppreference.com/w/c',
+            use: {
+                es: 'Programar software de alto rendimiento y bajo nivel.',
+                en: 'Develop high-performance low-level software.'
+            }
+        },
+        github: {
+            docs: 'https://docs.github.com/',
+            use: {
+                es: 'Colaborar en equipo y versionar codigo con Git.',
+                en: 'Collaborate and version code with Git.'
+            }
+        },
+        linux: {
+            docs: 'https://www.kernel.org/doc/html/latest/',
+            use: {
+                es: 'Administrar sistemas, servidores y entornos de desarrollo.',
+                en: 'Manage systems, servers, and development environments.'
+            }
+        },
+        redes: {
+            docs: 'https://www.cloudflare.com/learning/network-layer/what-is-a-computer-network/',
+            use: {
+                es: 'Diseñar y proteger comunicaciones entre sistemas.',
+                en: 'Design and secure communication between systems.'
+            }
+        },
+        networks: {
+            docs: 'https://www.cloudflare.com/learning/network-layer/what-is-a-computer-network/',
+            use: {
+                es: 'Disenar y proteger comunicaciones entre sistemas.',
+                en: 'Design and secure communication between systems.'
+            }
+        },
+        androidstudio: {
+            docs: 'https://developer.android.com/studio',
+            use: {
+                es: 'Crear y depurar apps Android de forma productiva.',
+                en: 'Build and debug Android apps productively.'
+            }
+        }
+    };
+
+    const skillAliases = {
+        android: 'androidstudio',
+        'androidstudio': 'androidstudio',
+        'redes': 'redes',
+        'networks': 'networks'
+    };
+
+    const escapeHtml = (value) => value
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+
+    const normalizeSkill = (value) => value
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, '');
+
+    const getSkillKey = (skillName) => {
+        const normalized = normalizeSkill(skillName);
+        return skillAliases[normalized] || normalized;
+    };
+
+    const getCategory = (trigger) => {
+        const category = trigger.closest('.cartas')?.querySelector('h3')?.textContent?.trim();
+        return category || labels.defaultCategory;
+    };
+
+    const getSummary = (text) => {
+        const clean = text.replace(/\s+/g, ' ').trim();
+        const sentence = clean.match(/[^.!?]+[.!?]/);
+        return sentence ? sentence[0].trim() : clean;
+    };
+
+    let lastFocusedElement = null;
+
+    const closePopup = () => {
+        popupContainer.classList.remove('is-open');
+        popupContainer.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+    };
+
+    const openPopup = (trigger) => {
+        const skillName = trigger.textContent.trim();
+        const category = getCategory(trigger);
+        const detail = trigger.dataset.info?.trim() || '';
+        const summary = getSummary(detail);
+        const skillKey = getSkillKey(skillName);
+        const resource = skillData[skillKey];
+        const usefulText = resource?.use?.[isEnglish ? 'en' : 'es'] || summary;
+
+        const docsBlock = resource?.docs
+            ? `<a class="skill-popup-link" href="${resource.docs}" target="_blank" rel="noopener noreferrer">${labels.docs}</a>`
+            : `<p class="skill-popup-muted">${labels.noDocs}</p>`;
+
+        popupInfo.innerHTML = `
+            <article class="skill-popup-card">
+                <p class="skill-popup-kicker">${labels.category}: ${escapeHtml(category)}</p>
+                <h3 class="skill-popup-title" id="skill-popup-title">${escapeHtml(skillName)}</h3>
+                <p class="skill-popup-summary">${escapeHtml(summary)}</p>
+                <p class="skill-popup-useful"><strong>${labels.usefulFor}:</strong> ${escapeHtml(usefulText)}</p>
+                <details class="skill-popup-details">
+                    <summary>${labels.details}</summary>
+                    <p>${escapeHtml(detail)}</p>
+                </details>
+                <div class="skill-popup-actions">${docsBlock}</div>
+            </article>
+        `;
+
+        lastFocusedElement = trigger;
+        closeButton.setAttribute('aria-label', labels.close);
+        popupContainer.classList.add('is-open');
+        popupContainer.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+        closeButton.focus();
+    };
+
+    popupTriggers.forEach((trigger) => {
+        trigger.setAttribute('role', 'button');
+        trigger.setAttribute('tabindex', '0');
+        trigger.setAttribute('aria-haspopup', 'dialog');
+
+        trigger.addEventListener('click', () => openPopup(trigger));
+        trigger.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openPopup(trigger);
             }
         });
     });
 
-    // Opcional: cerrar el popup al hacer clic fuera de él
-    window.addEventListener('click', function (e) {
-        if (popupContainer.style.display === 'flex' && !popupContainer.contains(e.target) && !e.target.classList.contains('popup-trigger')) {
-            popupContainer.style.display = 'none';
+    closeButton.addEventListener('click', closePopup);
+    popupContainer.addEventListener('click', (event) => {
+        if (event.target === popupContainer) {
+            closePopup();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && popupContainer.classList.contains('is-open')) {
+            closePopup();
         }
     });
 });
