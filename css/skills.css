@@ -16,7 +16,7 @@
     margin: 3rem 0 5rem;
 }
 
-.titulo h1 {
+.titulo :is(h1, h2) {
     font-size: 5rem;
     padding: 2rem 0 5rem;
 }

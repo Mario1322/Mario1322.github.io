@@ -1,11 +1,10 @@
-// main.js
-
+import './particles.js';
+import './navbar.js';
+import './tema.js';
 import './maquinaescribir.js';
 import './popup.js';
-import './tema.js';
-import './barraidioma.js';
 import './copymailscript.js';
-import './navbar.js';
+import './barraidioma.js';
+import './pdfscript.js';
 import './scrollanimation.js';
 import './baffleEffect.js';
-

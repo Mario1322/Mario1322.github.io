@@ -42,6 +42,10 @@ function loadPDF(index) {
 
     // Configuración de PDF.js
     const pdfjsLib = window['pdfjs-dist/build/pdf'];
+    if (!pdfjsLib) {
+        context.fillText("No se pudo cargar PDF.js.", 50, 50);
+        return;
+    }
     // Asegúrate de que la versión coincida con la del CDN en tu HTML
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
 

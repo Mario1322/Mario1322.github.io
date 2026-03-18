@@ -7,12 +7,19 @@
     <meta name="description"
         content="Portfolio de Mario De La Rosa García, un desarrollador de software especializado en ciberseguridad y desarrollo de aplicaciones multiplataforma. Explora mis habilidades, formación y proyectos.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mario1322.github.io/">
 
+    <meta property="og:locale" content="es_ES">
     <meta property="og:title" content="Portafolio de Mario De La Rosa - Desarrollador & Ciberseguridad">
     <meta property="og:description" content="Echa un vistazo a mis proyectos, certificaciones y habilidades en desarrollo de software y seguridad informática.">
     <meta property="og:image" content="https://mario1322.github.io/imagenes/foto.jpeg">
     <meta property="og:url" content="https://mario1322.github.io/">
     <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portafolio de Mario De La Rosa - Desarrollador & Ciberseguridad">
+    <meta name="twitter:description" content="Echa un vistazo a mis proyectos, certificaciones y habilidades en desarrollo de software y seguridad informática.">
+    <meta name="twitter:image" content="https://mario1322.github.io/imagenes/foto.jpeg">
     
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css">
@@ -21,15 +28,15 @@
     <link rel="stylesheet" href="css/formacion.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/idioma.css">
+    <link rel="stylesheet" href="css/Idioma.css">
     <link rel="stylesheet" href="css/certificado.css">
 
     <link rel="icon" type="image/png" href="imagenes/blob-removebg-preview.png">
 
-    <script src="js/pdfscript.js" defer></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="js/maquinaescribir.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js" defer></script>
+    <script src="js/baffle.min.js" defer></script>
+    <script type="module" src="js/main.js"></script>
     
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -101,7 +108,7 @@
                         <div id="imgyo">
                             <img class="imgyo" src="imagenes/foto.jpeg" alt="Foto de perfil de Mario De La Rosa">
                         </div>
-                        <h3 id="loquesoy" class="profesion">Desarrollador de software y Especialista en Ciberseguridad</h3>
+                        <p id="loquesoy" class="profesion">Desarrollador de software y Especialista en Ciberseguridad</p>
                         <span class="animate" style="--i:2;"></span>
                     </div>
                     <div class="texto">
@@ -116,7 +123,7 @@
             <section class="skills" id="skills">
                 <div class="centrado">
                     <div class="titulo">
-                        <h1 style="text-decoration: underline;">Skills</h1>
+                        <h2 style="text-decoration: underline;">Skills</h2>
                     </div>
                     <div class="contenedorcartas">
                         <div class="cartas">
@@ -167,7 +174,7 @@
 
             <section class="education" id="formacion">
                 <div class="titulo">
-                    <h1 style="text-decoration: underline;" id="formation1">Formación</h1>
+                    <h2 style="text-decoration: underline;" id="formation1">Formación</h2>
                 </div>
                 <div class="education-row">
                     <div class="education-column">
@@ -339,7 +346,7 @@
             <section class="idioma" id="idioma">
                 <div class="centrado">
                     <div class="titulo">
-                        <h1 style="text-decoration: underline;" id="idiomas1">Idiomas</h1>
+                        <h2 style="text-decoration: underline;" id="idiomas1">Idiomas</h2>
                     </div>
                     <div class="bar-container espanol">
                         <div class="bar" style="width: 100%;">Español</div>
@@ -352,7 +359,7 @@
 
             <section class="certificado" id="certificado">
                 <div class="titulo">
-                    <h1 style="text-decoration: underline;" id="contact1">Certificados</h1>
+                    <h2 style="text-decoration: underline;" id="certificados1">Certificados</h2>
                 </div>
                 <div id="titulo-pdf" style="text-align: center; margin-bottom: 10px;"></div>
                 <div class="navigation">
@@ -368,7 +375,7 @@
             <section class="contacto" id="contacto">
                 <div class="centrado">
                     <div class="titulo">
-                        <h1 style="text-decoration: underline;" id="contact1">Contacto</h1>
+                        <h2 style="text-decoration: underline;" id="contact1">Contacto</h2>
                     </div>
                     <div class="contacto-contenido">
                         <div class="misdatos">
@@ -423,11 +430,6 @@
                 <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
                 <h3>© 2024 Copyright: Mario De La Rosa García</h3>
             </footer>
-
-            <script src="js/copymailscript.js" defer></script>
-            <script src="js/popup.js" defer></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-            <script src="js/pdfscript.js" defer></script>
         </main>
     </div>
 </body>

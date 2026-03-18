@@ -1,40 +1,47 @@
-# 🌐 Portafolio Web - Mario De la Rosa
+# Mario De La Rosa - Portfolio
 
-Este es mi portafolio personal desarrollado con HTML, CSS y JavaScript, donde muestro mi experiencia, habilidades, proyectos y certificaciones como programador y experto en ciberseguridad.
+Portfolio personal bilingue (ES/EN) construido con HTML, CSS y JavaScript vanilla.
 
-## 📌 Características
+## Demo
 
-- Diseño responsive y minimalista
-- Soporte para múltiples idiomas (español e inglés)
-- Animaciones personalizadas con JavaScript
-- Visualización de certificados en PDF
-- Sección de habilidades y herramientas
-- Enlaces a redes sociales y contacto
-- Efecto máquina de escribir en la presentación
+- Sitio en vivo: [https://mario1322.github.io/](https://mario1322.github.io/)
+- Espanol: `index.html`
+- English: `indexen.html`
 
-## 🛠 Tecnologías utilizadas
+## Caracteristicas
+
+- Diseno responsive para desktop y mobile
+- Version en espanol e ingles
+- Efecto de maquina de escribir y animaciones visuales
+- Visor de certificados PDF con navegacion y descarga
+- Formulario de contacto con Formspree
+- Modo claro/oscuro con persistencia en `localStorage`
+
+## Stack
 
 - HTML5
 - CSS3
-- JavaScript (vanilla)
-- PDF Viewer embebido
-- Tipografía Poppins vía Google Fonts
+- JavaScript (modular)
+- Librerias por CDN: `particles.js`, `pdf.js`, `boxicons`, `baffle.js`
 
-## 🌍 Estructura de la Web
+## Estructura del proyecto
 
-- `index.html`: Página principal (idioma español)
-- `indexen.html`: Versión en inglés del portafolio
-- `css/`: Estilos globales y responsive
-- `js/`: Scripts de efectos y funcionalidad
-- `assets/`: Imágenes, íconos y PDF
+```
+.
+|-- index.html
+|-- indexen.html
+|-- css/
+|-- js/
+|-- imagenes/
+`-- certificados/
+```
 
-## 🚀 Cómo verlo en vivo
+## Desarrollo local
 
-Puedes ver la versión online de mi portafolio aquí:  
-👉 [https://tuusuario.github.io/mi-portafolio](https://tuusuario.github.io/mi-portafolio) *(reemplaza con tu URL real si usas GitHub Pages)*
+Como es un sitio estatico, puedes abrir `index.html` directamente o levantar un servidor local:
 
-## 🧾 Licencia
+```bash
+python3 -m http.server 8000
+```
 
-Este proyecto está bajo la licencia MIT. Puedes usarlo como referencia, pero por favor, respeta el crédito.
-
----
+Luego abre `http://localhost:8000`.
