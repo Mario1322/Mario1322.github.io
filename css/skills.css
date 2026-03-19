@@ -103,6 +103,8 @@
     background: linear-gradient(135deg, rgba(7, 12, 25, 0.8), rgba(23, 37, 65, 0.78));
     transition: opacity 0.22s ease;
     z-index: var(--z-modal); /* Corregido (2000) */
+    font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    font-variant-emoji: emoji;
 }
 
 .popup-container.is-open {
@@ -208,7 +210,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 0.8rem;
+    text-align: center;
 }
 
 .popup-container .skill-popup-link {
@@ -224,6 +228,7 @@
     font-size: 1.45rem;
     font-weight: 700;
     white-space: nowrap;
+    text-align: center;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
@@ -239,6 +244,8 @@
     .popup-container .skill-popup-link {
         font-size: 1.35rem;
         padding: 0.7rem 1.2rem;
+        width: 100%;
+        max-width: 260px;
     }
 }
 
