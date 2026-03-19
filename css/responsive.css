@@ -220,11 +220,13 @@
         box-shadow: var(--nav-shadow);
         backdrop-filter: blur(18px);
         transition: .25s ease;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         gap: 0.2rem;
         overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
     }
 
     .navbar.active {
@@ -235,6 +237,9 @@
         text-align: center;
         justify-content: center;
         overflow: visible;
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .navbar a {
@@ -266,6 +271,7 @@
 
     .titulo {
         padding: 0 1rem;
+        overflow: visible;
     }
 
     .titulo :is(h1, h2) {
@@ -274,10 +280,12 @@
         letter-spacing: -0.01em;
         text-transform: none;
         overflow-wrap: anywhere;
+        hyphens: auto;
+        font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
     }
 
     .social {
-        margin-top: 32px;
+        margin-top: 18px;
         justify-content: center;
         flex-wrap: wrap;
         gap: 14px;
@@ -335,6 +343,11 @@
         margin-top: 60px;
     }
 
+    .home-content {
+        padding: 16px;
+        gap: 1.4rem;
+    }
+
     .titulo :is(h1, h2) {
         font-size: 4rem;
         padding: 1.6rem 0 1.2rem;
@@ -364,7 +377,7 @@
     }
 
     .social {
-        margin-top: 24px;
+        margin-top: 14px;
         justify-content: center;
         flex-wrap: wrap;
         gap: 12px;
