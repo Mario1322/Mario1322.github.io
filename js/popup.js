@@ -208,6 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const courseMeta = (getDataAttr(trigger, 'date') || getDataAttr(trigger, 'issuer'))
             ? `<p class="skill-popup-meta">${getDataAttr(trigger, 'date') ? `<strong>${isEnglish ? 'Date:' : 'Fecha:'}</strong> ${escapeHtml(getDataAttr(trigger, 'date'))} · ` : ''}${getDataAttr(trigger, 'issuer') ? `<strong>${isEnglish ? 'Issuer:' : 'Emisor:'}</strong> ${escapeHtml(getDataAttr(trigger, 'issuer'))}` : ''}</p>`
             : '';
+        const viewPdfBtn = pdfUrl
+            ? `<a class="skill-popup-link" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener noreferrer">${isEnglish ? 'View certificate' : 'Ver certificado'}</a>`
+            : '';
         const downloadBtn = getDataAttr(trigger, 'download')
             ? `<a class="skill-popup-link" href="${escapeHtml(getDataAttr(trigger, 'download'))}" download>${isEnglish ? 'Download PDF' : 'Descargar PDF'}</a>`
             : '';
@@ -216,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ? `<a class="skill-popup-link" href="${resource.docs}" target="_blank" rel="noopener noreferrer">${labels.docs}</a>`
             : '';
 
-        const actions = [docsBlock, downloadBtn, projectButton].filter(Boolean).join('');
+        const actions = [docsBlock, viewPdfBtn, downloadBtn, projectButton].filter(Boolean).join('');
 
         popupInfo.innerHTML = `
             <article class="skill-popup-card">

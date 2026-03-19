@@ -121,17 +121,20 @@
     content: attr(data-issuer-group);
 }
 
+.curso-subtipo[data-issuer-group="Cursos Santander Open Academy"],
 .curso-subtipo[data-issuer-group="Santander"] {
-    background: #EFBF04;
-    color: #001F3F;
-}
-
-.curso-subtipo[data-issuer-group="Anthropic"] {
-    background: #111111;
+    background: #D72638;
     color: #FFFFFF;
 }
 
+.curso-subtipo[data-issuer-group="Cursos Anthropic"],
+.curso-subtipo[data-issuer-group="Anthropic"] {
+    background: #D8C3A5;
+    color: #2B1F14;
+}
+
+.curso-subtipo[data-issuer-group="Curos ViewNext"],
 .curso-subtipo[data-issuer-group="ViewNext"] {
-    background: #00A6D6;
+    background: #1E5AA8;
     color: #FFFFFF;
 }
