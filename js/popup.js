@@ -156,9 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const getCategory = (trigger) => {
-        const category = trigger.closest('.cartas')?.querySelector('h3')?.textContent?.trim();
+        const category =
+            trigger.dataset.category ||
+            trigger.closest('.cartas')?.querySelector('h3')?.textContent?.trim();
         return category || labels.defaultCategory;
     };
+
+    const getDataAttr = (trigger, name) =>
+        trigger.dataset[name] || trigger.querySelector(`[data-${name}]`)?.dataset[name];
 
     const getSummary = (text) => {
         const clean = text.replace(/\s+/g, ' ').trim();
@@ -178,14 +183,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const openPopup = (trigger) => {
-        const skillName = trigger.textContent.trim();
+        const skillName =
+            trigger.dataset.title ||
+            trigger.querySelector('h3')?.textContent?.trim() ||
+            trigger.textContent.trim();
         const category = getCategory(trigger);
-        const detail = trigger.dataset.info?.trim() || '';
+        const detail = getDataAttr(trigger, 'info')?.trim() || '';
         const summary = getSummary(detail);
         const skillKey = getSkillKey(skillName);
         const resource = skillData[skillKey];
         const usefulText = resource?.use?.[isEnglish ? 'en' : 'es'] || summary;
-        const projectLink = trigger.dataset.link || trigger.closest('.link')?.dataset.link;
+        const projectLink = getDataAttr(trigger, 'link') || trigger.closest('.link')?.dataset.link;
         const projectImage = trigger.closest('.content')?.querySelector('.project-image');
         const imageBlock = projectImage
             ? `<figure class="skill-popup-figure"><img src="${projectImage.src}" alt="${escapeHtml(projectImage.alt || skillName)}"></figure>`
@@ -193,15 +201,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const projectButton = projectLink
             ? `<a class="skill-popup-link" href="${escapeHtml(projectLink)}" target="_blank" rel="noopener noreferrer">${isEnglish ? 'View on GitHub' : 'Ver en GitHub'}</a>`
             : '';
-        const pdfUrl = trigger.dataset.pdf;
+        const pdfUrl = getDataAttr(trigger, 'pdf');
         const pdfBlock = pdfUrl
             ? `<iframe class="popup-pdf" src="${escapeHtml(pdfUrl)}#toolbar=0&navpanes=0&scrollbar=0" title="${escapeHtml(skillName)} PDF preview" loading="lazy"></iframe>`
             : '';
-        const courseMeta = (trigger.dataset.date || trigger.dataset.issuer)
-            ? `<p class="skill-popup-meta">${trigger.dataset.date ? `<strong>${isEnglish ? 'Date:' : 'Fecha:'}</strong> ${escapeHtml(trigger.dataset.date)} · ` : ''}${trigger.dataset.issuer ? `<strong>${isEnglish ? 'Issuer:' : 'Emisor:'}</strong> ${escapeHtml(trigger.dataset.issuer)}` : ''}</p>`
+        const courseMeta = (getDataAttr(trigger, 'date') || getDataAttr(trigger, 'issuer'))
+            ? `<p class="skill-popup-meta">${getDataAttr(trigger, 'date') ? `<strong>${isEnglish ? 'Date:' : 'Fecha:'}</strong> ${escapeHtml(getDataAttr(trigger, 'date'))} · ` : ''}${getDataAttr(trigger, 'issuer') ? `<strong>${isEnglish ? 'Issuer:' : 'Emisor:'}</strong> ${escapeHtml(getDataAttr(trigger, 'issuer'))}` : ''}</p>`
             : '';
-        const downloadBtn = trigger.dataset.download
-            ? `<a class="skill-popup-link" href="${escapeHtml(trigger.dataset.download)}" download>${isEnglish ? 'Download PDF' : 'Descargar PDF'}</a>`
+        const downloadBtn = getDataAttr(trigger, 'download')
+            ? `<a class="skill-popup-link" href="${escapeHtml(getDataAttr(trigger, 'download'))}" download>${isEnglish ? 'Download PDF' : 'Descargar PDF'}</a>`
             : '';
 
         const docsBlock = resource?.docs

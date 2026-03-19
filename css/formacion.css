@@ -29,7 +29,8 @@
 
 .education-column .title {
     font-size: 3rem;
-    margin: 0 0 1.5rem 2rem;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
 }
 
 .content .link {
@@ -55,6 +56,10 @@
     border-radius: 50px;
     margin-bottom: 2rem;
     transition: all 0.3s ease; /* Suaviza efecto hover */
+}
+
+.education-content .content.popup-trigger {
+    cursor: pointer;
 }
 
 .education-content .content:hover {
@@ -95,4 +100,38 @@
 .education-content .content p {
     margin: 0 auto;
     max-width: 80%;
+}
+
+.curso-subtipo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.9rem;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin: 0.8rem auto 0;
+    background: #f2f2f2;
+    color: #001F3F;
+}
+
+.curso-subtipo::before {
+    content: attr(data-issuer-group);
+}
+
+.curso-subtipo[data-issuer-group="Santander"] {
+    background: #EFBF04;
+    color: #001F3F;
+}
+
+.curso-subtipo[data-issuer-group="Anthropic"] {
+    background: #111111;
+    color: #FFFFFF;
+}
+
+.curso-subtipo[data-issuer-group="ViewNext"] {
+    background: #00A6D6;
+    color: #FFFFFF;
 }
