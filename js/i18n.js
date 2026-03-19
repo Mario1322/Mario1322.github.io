@@ -51,12 +51,32 @@ function applyTranslations(map, lang) {
   });
 }
 
+
+function updateLangToggle(lang) {
+  const toggle = document.querySelector('[data-lang-toggle]');
+  if (!toggle) return;
+  const nextLang = lang === 'en' ? 'es' : 'en';
+  toggle.dataset.lang = nextLang;
+  toggle.setAttribute('aria-pressed', 'false');
+  toggle.setAttribute('aria-label', nextLang === 'en' ? 'Switch to English version' : 'Cambiar a Español');
+  const img = toggle.querySelector('img');
+  if (!img) return;
+  if (nextLang === 'en') {
+    img.src = 'imagenes/english.png';
+    img.alt = 'Switch to English language';
+  } else {
+    img.src = 'imagenes/espanol-128.png';
+    img.alt = 'Cambiar a idioma Español';
+  }
+}
+
 function updateLangButtons(lang) {
-  document.querySelectorAll('[data-lang]').forEach((btn) => {
+  document.querySelectorAll('[data-lang]:not([data-lang-toggle])').forEach((btn) => {
     const active = btn.dataset.lang === lang;
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     btn.classList.toggle('is-active', active);
   });
+  updateLangToggle(lang);
 }
 
 function setLanguage(lang) {

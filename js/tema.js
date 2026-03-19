@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (temaGuardado === 'oscuro') {
             body.classList.add('cambiocolor');
-            label_toggle.innerHTML = "<i class='bx bx-moon' aria-hidden='true'></i>";
+            label_toggle.innerHTML = "<i class='bx bx-sun' aria-hidden='true'></i>";
             label_toggle.setAttribute('aria-pressed', 'true');
         } else {
-            label_toggle.innerHTML = "<i class='bx bx-sun' aria-hidden='true'></i>";
+            label_toggle.innerHTML = "<i class='bx bx-moon' aria-hidden='true'></i>";
             label_toggle.setAttribute('aria-pressed', 'false');
         }
 
@@ -28,13 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isDark) {
                 // Activar modo claro
                 body.classList.remove('cambiocolor');
-                label_toggle.innerHTML = "<i class='bx bx-sun' aria-hidden='true'></i>";
+                label_toggle.innerHTML = "<i class='bx bx-moon' aria-hidden='true'></i>";
                 localStorage.setItem('tema', 'claro'); // Guardar en navegador
                 label_toggle.setAttribute('aria-pressed', 'false');
             } else {
                 // Activar modo oscuro
                 body.classList.add('cambiocolor');
-                label_toggle.innerHTML = "<i class='bx bx-moon' aria-hidden='true'></i>";
+                label_toggle.innerHTML = "<i class='bx bx-sun' aria-hidden='true'></i>";
                 localStorage.setItem('tema', 'oscuro'); // Guardar en navegador
                 label_toggle.setAttribute('aria-pressed', 'true');
             }
@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuIcon.setAttribute('aria-expanded', 'false');
             }
             if (navbar) navbar.classList.remove('active');
+
+            document.dispatchEvent(new CustomEvent('theme:changed', { detail: { isDark: body.classList.contains('cambiocolor') } }));
         });
     }
 });

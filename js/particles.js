@@ -26,6 +26,17 @@ function shouldRenderParticles() {
     return !hasReducedMotion && !saveDataEnabled && !isSmallScreen;
 }
 
+function getParticleColor() {
+    return getComputedStyle(document.body).getPropertyValue('--particle-color').trim() || '#1B365D';
+}
+
+function destroyParticles() {
+    if (window.pJSDom && window.pJSDom.length) {
+        window.pJSDom[0].pJS.fn.vendors.destroypJS();
+        window.pJSDom = [];
+    }
+}
+
 function initParticles() {
     if (typeof particlesJS !== 'function') {
         return;
@@ -34,11 +45,11 @@ function initParticles() {
     particlesJS('particles-js', {
         particles: {
             number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: '#1B365D' },
+            color: { value: getParticleColor() },
             shape: { type: 'edge' },
             opacity: { value: 1, random: true },
             size: { value: 4, random: true },
-            line_linked: { enable: true, distance: 150, color: '#1B365D', opacity: 0.4, width: 1 },
+            line_linked: { enable: true, distance: 150, color: getParticleColor(), opacity: 0.4, width: 1 },
             move: { enable: true, speed: 1, random: true, out_mode: 'out' }
         },
         interactivity: {
@@ -74,6 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 particlesContainer.style.display = 'none';
             });
     };
+
+    document.addEventListener('theme:changed', () => {
+        if (!shouldRenderParticles()) {
+            particlesContainer.style.display = 'none';
+            return;
+        }
+        particlesContainer.style.display = '';
+        if (typeof particlesJS === 'function') {
+            destroyParticles();
+            initParticles();
+        } else {
+            startParticles();
+        }
+    });
 
     if ('requestIdleCallback' in window) {
         window.requestIdleCallback(startParticles, { timeout: 2000 });
