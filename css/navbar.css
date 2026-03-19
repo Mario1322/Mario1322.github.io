@@ -98,6 +98,10 @@ body {
     justify-content: end;
     align-items: center;
     z-index: var(--z-menu); /* Usando variable */
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .header {

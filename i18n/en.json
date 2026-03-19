@@ -10,7 +10,7 @@
   "contact1": "Contact",
   "curriculum": "Download CV",
   "contactarme": "Contact me",
-  "contactarme1": "Contact me",
+  "contactarme1": "Contact Me",
   "loquesoy": "Software Developer and Cybersecurity Specialist",
   "textosobremi": "I am a passionate young person with a constant longing to learn and express my wisdom. My thirst for knowledge drives me to continuously explore new technologies and tools, seeking to improve and refine my skills at every step of the way.",
   "conocermas": "Know more",
@@ -54,8 +54,8 @@
   "misdatos": "My Data",
   "email-text": "mdlrg1322@gmail.com",
   "locationtext": "Madrid, Spain",
-  "contactarme1": "Contact Me",
   "nomretexto": "Name",
   "send": "Send",
-  "gracias": "Thank you for visiting my website!"
+  "gracias": "Thank you for visiting my website!",
+  "download-pdf": "Download certificate"
 }

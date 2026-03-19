@@ -133,7 +133,8 @@
     color: #2B1F14;
 }
 
-.curso-subtipo[data-issuer-group="Curos ViewNext"],
+
+.curso-subtipo[data-issuer-group="Cursos ViewNext"],
 .curso-subtipo[data-issuer-group="ViewNext"] {
     background: #1E5AA8;
     color: #FFFFFF;

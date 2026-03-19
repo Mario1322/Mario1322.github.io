@@ -4,21 +4,36 @@ const textoES = "Soy un joven apasionado con un constante anhelo de aprender y e
 
 const textoEN = "I am a young man passionate about learning and expressing my knowledge. My thirst for knowledge drives me to continuously explore new technologies and tools, seeking to improve and refine my skills every step of the way.";
 
-// Detecta si estás en el index en inglés (por ejemplo: index-en.html)
-const esIngles = window.location.pathname.includes("indexen");
+const getLang = () => {
+    const stored = localStorage.getItem('siteLang');
+    if (stored === 'en' || stored === 'es') return stored;
+    return document.documentElement.lang?.toLowerCase().startsWith('en') ? 'en' : 'es';
+};
 
-const texto = esIngles ? textoEN : textoES;
 const output = document.getElementById("textosobremi");
 let index = 0;
+let timeoutId = null;
 
-function typeWriter() {
+function getTexto() {
+    return getLang() === 'en' ? textoEN : textoES;
+}
+
+function typeWriter(texto) {
+    if (!output) return;
     if (index < texto.length) {
         output.innerHTML += texto.charAt(index);
         index++;
-        setTimeout(typeWriter, Math.floor(Math.random() * 100) + 20);
+        timeoutId = setTimeout(() => typeWriter(texto), Math.floor(Math.random() * 100) + 20);
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    typeWriter();
-});
+function resetTyping() {
+    if (!output) return;
+    if (timeoutId) clearTimeout(timeoutId);
+    output.innerHTML = '';
+    index = 0;
+    typeWriter(getTexto());
+}
+
+document.addEventListener('DOMContentLoaded', resetTyping);
+document.addEventListener('i18n:changed', resetTyping);

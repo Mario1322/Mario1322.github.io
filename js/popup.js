@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!popupContainer || !popupDialog || !closeButton || !popupInfo || popupTriggers.length === 0) {
         return;
     }
+    const getIsEnglish = () => document.documentElement.lang.toLowerCase().startsWith('en');
 
-    const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
-
-    const labels = isEnglish ? {
+    const getLabels = (isEnglish) => isEnglish ? {
         category: 'Category',
         usefulFor: 'Useful for',
         details: 'Detailed explanation',
@@ -154,16 +153,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const normalized = normalizeSkill(skillName);
         return skillAliases[normalized] || normalized;
     };
-
-    const getCategory = (trigger) => {
+    const getCategory = (trigger, labels) => {
         const category =
-            trigger.dataset.category ||
+            getDataAttrLang(trigger, 'category') ||
             trigger.closest('.cartas')?.querySelector('h3')?.textContent?.trim();
         return category || labels.defaultCategory;
     };
 
     const getDataAttr = (trigger, name) =>
         trigger.dataset[name] || trigger.querySelector(`[data-${name}]`)?.dataset[name];
+    const getDataAttrLang = (trigger, name) => {
+        const isEnglish = getIsEnglish();
+        const key = isEnglish ? `${name}En` : `${name}Es`;
+        return trigger.dataset[key] ||
+            trigger.querySelector(`[data-${name}-${isEnglish ? 'en' : 'es'}]`)?.dataset[key] ||
+            getDataAttr(trigger, name);
+    };
 
     const getSummary = (text) => {
         const clean = text.replace(/\s+/g, ' ').trim();
@@ -172,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let lastFocusedElement = null;
+    let lastTrigger = null;
 
     const closePopup = () => {
         popupContainer.classList.remove('is-open');
@@ -183,12 +189,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const openPopup = (trigger) => {
+        const isEnglish = getIsEnglish();
+        const labels = getLabels(isEnglish);
         const skillName =
-            trigger.dataset.title ||
+            getDataAttrLang(trigger, 'title') ||
             trigger.querySelector('h3')?.textContent?.trim() ||
             trigger.textContent.trim();
-        const category = getCategory(trigger);
-        const detail = getDataAttr(trigger, 'info')?.trim() || '';
+        const category = getCategory(trigger, labels);
+        const detail = getDataAttrLang(trigger, 'info')?.trim() || '';
         const summary = getSummary(detail);
         const skillKey = getSkillKey(skillName);
         const resource = skillData[skillKey];
@@ -205,8 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const pdfBlock = pdfUrl
             ? `<iframe class="popup-pdf" src="${escapeHtml(pdfUrl)}#toolbar=0&navpanes=0&scrollbar=0" title="${escapeHtml(skillName)} PDF preview" loading="lazy"></iframe>`
             : '';
-        const courseMeta = (getDataAttr(trigger, 'date') || getDataAttr(trigger, 'issuer'))
-            ? `<p class="skill-popup-meta">${getDataAttr(trigger, 'date') ? `<strong>${isEnglish ? 'Date:' : 'Fecha:'}</strong> ${escapeHtml(getDataAttr(trigger, 'date'))} · ` : ''}${getDataAttr(trigger, 'issuer') ? `<strong>${isEnglish ? 'Issuer:' : 'Emisor:'}</strong> ${escapeHtml(getDataAttr(trigger, 'issuer'))}` : ''}</p>`
+        const courseMeta = (getDataAttrLang(trigger, 'date') || getDataAttrLang(trigger, 'issuer'))
+            ? `<p class="skill-popup-meta">${getDataAttrLang(trigger, 'date') ? `<strong>${isEnglish ? 'Date:' : 'Fecha:'}</strong> ${escapeHtml(getDataAttrLang(trigger, 'date'))} · ` : ''}${getDataAttrLang(trigger, 'issuer') ? `<strong>${isEnglish ? 'Issuer:' : 'Emisor:'}</strong> ${escapeHtml(getDataAttrLang(trigger, 'issuer'))}` : ''}</p>`
             : '';
         const viewPdfBtn = pdfUrl
             ? `<a class="skill-popup-link" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener noreferrer">${isEnglish ? 'View certificate' : 'Ver certificado'}</a>`
@@ -239,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         lastFocusedElement = trigger;
+        lastTrigger = trigger;
         closeButton.setAttribute('aria-label', labels.close);
         popupContainer.classList.add('is-open');
         popupContainer.setAttribute('aria-hidden', 'false');
@@ -269,6 +278,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.stopPropagation();
                 openPopup(trigger);
             });
+        }
+    });
+
+    document.addEventListener('i18n:changed', () => {
+        if (popupContainer.classList.contains('is-open') && lastTrigger) {
+            openPopup(lastTrigger);
         }
     });
 

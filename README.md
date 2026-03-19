@@ -6,7 +6,7 @@ Portfolio personal bilingue (ES/EN) construido con HTML, CSS y JavaScript vanill
 
 - Sitio en vivo: [https://mario1322.github.io/](https://mario1322.github.io/)
 - Espanol: `index.html`
-- English: `indexen.html`
+- English: toggle desde el selector de idioma en la web (JS/i18n)
 
 ## Caracteristicas
 
@@ -29,7 +29,6 @@ Portfolio personal bilingue (ES/EN) construido con HTML, CSS y JavaScript vanill
 ```
 .
 |-- index.html
-|-- indexen.html
 |-- css/
 |-- js/
 |-- imagenes/
