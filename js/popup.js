@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : '';
         const pdfUrl = getDataAttr(trigger, 'pdf');
         const pdfBlock = pdfUrl
-            ? `<iframe class="popup-pdf" src="${escapeHtml(pdfUrl)}#toolbar=0&navpanes=0&scrollbar=0" title="${escapeHtml(skillName)} PDF preview" loading="lazy"></iframe>`
+            ? `<iframe class="popup-pdf" src="${escapeHtml(pdfUrl)}#toolbar=0&navpanes=0&scrollbar=0&zoom=page-width" title="${escapeHtml(skillName)} PDF preview" loading="lazy"></iframe>`
             : '';
         const courseMeta = (getDataAttrLang(trigger, 'date') || getDataAttrLang(trigger, 'issuer'))
             ? `<p class="skill-popup-meta">${getDataAttrLang(trigger, 'date') ? `<strong>${isEnglish ? 'Date:' : 'Fecha:'}</strong> ${escapeHtml(getDataAttrLang(trigger, 'date'))} · ` : ''}${getDataAttrLang(trigger, 'issuer') ? `<strong>${isEnglish ? 'Issuer:' : 'Emisor:'}</strong> ${escapeHtml(getDataAttrLang(trigger, 'issuer'))}` : ''}</p>`

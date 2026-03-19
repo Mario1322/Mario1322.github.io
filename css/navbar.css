@@ -237,6 +237,84 @@ body.cambiocolor {
     box-shadow: inset 0 0 0 1px var(--nav-accent);
 }
 
+.update-banner {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%) translateY(12px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--nav-border);
+    background: var(--nav-pill);
+    color: var(--blanco);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--nav-accent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-size: 1.4rem;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.update-banner.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+    animation: updateFadeIn 0.7s ease-out;
+}
+
+.update-button {
+    border-radius: 999px;
+    border: 1px solid var(--nav-border);
+    background: transparent;
+    color: var(--blanco);
+    font-weight: 600;
+    padding: 6px 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: inset 0 0 0 1px var(--nav-accent);
+}
+
+.update-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18), inset 0 0 0 1px var(--nav-accent);
+}
+
+@media (max-width: 600px) {
+    .update-banner {
+        width: calc(100% - 24px);
+        justify-content: space-between;
+        border-radius: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .update-banner,
+    .update-button {
+        transition: none;
+    }
+
+    .update-banner.is-visible {
+        animation: none;
+    }
+}
+
+@keyframes updateFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 
 .navbar-actions {
     margin-left: 0.4rem;
@@ -268,6 +346,7 @@ body.cambiocolor {
     margin: 0;
     line-height: 1.2;
     letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
 

@@ -1,0 +1,119 @@
+.timeline,
+.services,
+.testimonials {
+    padding: 4rem 2rem 6rem;
+}
+
+.timeline-grid,
+.services-grid,
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-card,
+.service-card,
+.testimonial-card {
+    border: 1px solid #DEBD59;
+    border-radius: 18px;
+    padding: 1.6rem 1.8rem;
+    background: rgba(255, 255, 255, 0.65);
+    color: #001F3F;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+body.cambiocolor .timeline-card,
+body.cambiocolor .service-card,
+body.cambiocolor .testimonial-card {
+    background: rgba(15, 22, 38, 0.72);
+    color: #e8ebf3;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.timeline-card:hover,
+.service-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+    border-color: rgba(222, 189, 89, 0.75);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-card,
+    .service-card,
+    .testimonial-card {
+        transition: none;
+    }
+}
+
+.timeline-year {
+    display: inline-flex;
+    font-size: 1.2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #DEBD59;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-card h3,
+.service-card h3,
+.testimonial-card h3 {
+    margin: 0 0 0.8rem;
+    font-size: 2.1rem;
+    text-wrap: balance;
+}
+
+.timeline-card p,
+.service-card p,
+.testimonial-card p {
+    margin: 0;
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+.stack-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.stack-section h3 {
+    margin: 0 0 0.6rem;
+    font-size: 2.6rem;
+}
+
+.stack-section p {
+    margin: 0 auto 1.6rem;
+    max-width: 720px;
+    font-size: 1.7rem;
+}
+
+.stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.stack-badge {
+    border: 1px solid #DEBD59;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.65);
+    color: #001F3F;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.cambiocolor .stack-badge {
+    background: rgba(15, 22, 38, 0.72);
+    color: #e8ebf3;
+}

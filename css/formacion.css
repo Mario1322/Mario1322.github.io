@@ -55,7 +55,7 @@
     border: .2rem solid #DEBD59;
     border-radius: 50px;
     margin-bottom: 2rem;
-    transition: all 0.3s ease; /* Suaviza efecto hover */
+    transition: transform 0.25s ease, box-shadow 0.25s ease, outline-color 0.25s ease;
 }
 
 .education-content .content.popup-trigger {
@@ -65,6 +65,13 @@
 .education-content .content:hover {
     outline: 2px solid #DEBD59;
     box-shadow: 0 0 20px #DEBD59;
+    transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .education-content .content {
+        transition: none;
+    }
 }
 
 .education-content .content .anio {

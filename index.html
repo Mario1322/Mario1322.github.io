@@ -15,13 +15,20 @@
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:title" content="Portafolio de Mario De La Rosa - Desarrollador & Ciberseguridad">
     <meta property="og:description" content="Echa un vistazo a mis proyectos, certificaciones y habilidades en desarrollo de software y seguridad informática.">
-    <meta property="og:image" content="https://mario1322.github.io/imagenes/foto.jpeg">
+    <meta property="og:image" content="https://mario1322.github.io/imagenes/foto-768.webp">
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:image:width" content="768">
+    <meta property="og:image:height" content="1023">
+    <meta property="og:image" content="https://mario1322.github.io/imagenes/foto-768.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="768">
+    <meta property="og:image:height" content="1023">
     <meta property="og:url" content="https://mario1322.github.io/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portafolio de Mario De La Rosa - Desarrollador & Ciberseguridad">
     <meta name="twitter:description" content="Echa un vistazo a mis proyectos, certificaciones y habilidades en desarrollo de software y seguridad informática.">
-    <meta name="twitter:image" content="https://mario1322.github.io/imagenes/foto.jpeg">
+    <meta name="twitter:image" content="https://mario1322.github.io/imagenes/foto-768.jpg">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -31,7 +38,10 @@
                     "@id": "https://mario1322.github.io/#person",
                     "name": "Mario De La Rosa Garcia",
                     "url": "https://mario1322.github.io/",
-                    "image": "https://mario1322.github.io/imagenes/foto.jpeg",
+                    "image": [
+                        "https://mario1322.github.io/imagenes/foto-768.webp",
+                        "https://mario1322.github.io/imagenes/foto-768.jpg"
+                    ],
                     "jobTitle": "Software Developer and Cybersecurity Specialist",
                     "sameAs": [
                         "https://github.com/Mario1322",
@@ -77,11 +87,17 @@
     <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/formacion.css">
     <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/Idioma.css">
     <link rel="stylesheet" href="css/certificado.css">
 
-    <link rel="icon" type="image/png" href="imagenes/logo-220.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagenes/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b0f1a">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef3ff">
 
     <script type="module" src="js/main.js"></script>
     <script src="js/i18n.js" defer></script>
@@ -94,22 +110,31 @@
     <div id="particles-js" class="particle-wrapper"></div>
     <header class="header">
         <a href="https://mario1322.github.io" class="logo" id="logo_color">
-            <img class="logo" src="imagenes/logo-220.png" alt="Logotipo de Mario De La Rosa" width="220" height="220" decoding="async">
+            <picture>
+                <source type="image/webp" srcset="imagenes/logo-52.webp 52w, imagenes/logo-104.webp 104w" sizes="52px">
+                <img class="logo" src="imagenes/logo-52.png" srcset="imagenes/logo-52.png 52w, imagenes/logo-104.png 104w" sizes="52px" alt="Logotipo de Mario De La Rosa" width="52" height="52" decoding="async">
+            </picture>
             <span class="animate" style="--i:1;"></span>
         </a>
         <button class="bx bx-menu" id="menu-icon" type="button" aria-label="Abrir menu de navegacion" aria-controls="main-navigation" aria-expanded="false"><span class="animate" style="--i:2;"></span></button>
         <nav class="navbar" id="main-navigation" aria-label="Navegacion principal">
             <a href="#home" class="active" id="casa">Sobre mí</a>
+            <a href="#trayectoria" id="timeline-nav">Trayectoria</a>
             <a href="#skills" id="skillsnav">Skills</a>
+            <a href="#servicios" id="servicesnav">Servicios</a>
             <a href="#formacion" id="formation">Formación</a>
             <a href="#idioma" id="idiomas">Idiomas</a>
             <a href="#certificado" id="cert">Certificados</a>
+            <a href="#testimonios" id="testimonialsnav">Testimonios</a>
             <a href="#contacto" id="contact">Contacto</a>
         
             <div class="navbar-actions">
             <button id="label_toggle" class="solluna" type="button" aria-label="Cambiar tema" aria-pressed="false"><i class='bx bx-sun' aria-hidden="true"></i></button>
             <button class="lang-toggle" type="button" data-lang-toggle data-lang="en" aria-label="Switch to English version">
-                <img class="lang-icon" src="imagenes/english.png" alt="Switch to English language" width="24" height="24" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="imagenes/english-24.webp 24w, imagenes/english-48.webp 48w" sizes="24px">
+                    <img class="lang-icon" src="imagenes/english-24.png" srcset="imagenes/english-24.png 24w, imagenes/english-48.png 48w" sizes="24px" alt="Switch to English language" width="24" height="24" decoding="async">
+                </picture>
             </button>
             </div>
             <span class="animate" style="--i:2;"></span>
@@ -150,7 +175,10 @@
                 <div class="home-content">
                     <div class="elguapo">
                         <div id="imgyo">
-                            <img class="imgyo" src="imagenes/SeñorLicenciado.jpg" alt="Foto de perfil de Mario De La Rosa" fetchpriority="high" loading="eager" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="imagenes/senor-licenciado-220.webp 220w, imagenes/senor-licenciado-440.webp 440w, imagenes/senor-licenciado-660.webp 660w" sizes="(max-width: 360px) 120px, (max-width: 600px) 160px, 220px">
+                                <img class="imgyo" src="imagenes/senor-licenciado-220.jpg" srcset="imagenes/senor-licenciado-220.jpg 220w, imagenes/senor-licenciado-440.jpg 440w, imagenes/senor-licenciado-660.jpg 660w" sizes="(max-width: 360px) 120px, (max-width: 600px) 160px, 220px" alt="Foto de perfil de Mario De La Rosa" width="220" height="220" fetchpriority="high" loading="eager" decoding="async">
+                            </picture>
                         </div>
                         <p id="loquesoy" class="profesion">Desarrollador de software y Especialista en Ciberseguridad</p>
                         <span class="animate" style="--i:2;"></span>
@@ -161,6 +189,34 @@
                     <div class="mas">
                         <a href="#skills" id="conocermas">Conocer más</a><i class='bx bx-right-arrow-alt'></i>
                     </div>
+                </div>
+            </section>
+
+            <section class="timeline" id="trayectoria">
+                <div class="titulo">
+                    <h2 style="text-decoration: underline;" id="timeline-title">Trayectoria</h2>
+                </div>
+                <div class="timeline-grid">
+                    <article class="timeline-card">
+                        <span class="timeline-year">2021</span>
+                        <h3 id="timeline-role-1">Primeros proyectos académicos</h3>
+                        <p id="timeline-desc-1">Desarrollé aplicaciones en Java, C y JavaFX para afianzar bases sólidas de programación.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <span class="timeline-year">2023</span>
+                        <h3 id="timeline-role-2">Especialización en ciberseguridad</h3>
+                        <p id="timeline-desc-2">Me enfoqué en análisis forense, hardening y respuesta a incidentes.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <span class="timeline-year">2024</span>
+                        <h3 id="timeline-role-3">Proyectos full stack</h3>
+                        <p id="timeline-desc-3">Integré frontend y backend para crear experiencias completas orientadas a usuario.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <span class="timeline-year">2025</span>
+                        <h3 id="timeline-role-4">Enfoque en producto</h3>
+                        <p id="timeline-desc-4">Priorizo rendimiento, accesibilidad y diseño para entregar productos reales.</p>
+                    </article>
                 </div>
             </section>
 
@@ -208,6 +264,38 @@
                             </div>
                         </div>
                     </div>
+                    <div class="stack-section" id="stack">
+                        <h3 id="stack-title">Stack actual</h3>
+                        <p id="stack-subtitle">Tecnologías que uso ahora mismo en proyectos reales.</p>
+                        <div class="stack-list">
+                            <span class="stack-badge">Flutter</span>
+                            <span class="stack-badge">Dart</span>
+                            <span class="stack-badge">Firebase</span>
+                            <span class="stack-badge">SQL</span>
+                            <span class="stack-badge">GitHub</span>
+                            <span class="stack-badge">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services" id="servicios">
+                <div class="titulo">
+                    <h2 style="text-decoration: underline;" id="services-title">Servicios</h2>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3 id="service-1-title">Desarrollo de aplicaciones</h3>
+                        <p id="service-1-desc">Apps móviles y web con foco en rendimiento, escalabilidad y experiencia de usuario.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 id="service-2-title">Ciberseguridad aplicada</h3>
+                        <p id="service-2-desc">Auditorías básicas, hardening y buenas prácticas para proyectos reales.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 id="service-3-title">Diseño y producto</h3>
+                        <p id="service-3-desc">Prototipos funcionales, UI clara y entregables listos para producción.</p>
+                    </article>
                 </div>
             </section>
             
@@ -279,7 +367,10 @@
                             <div class="education-content">
                                 <div class="content">
                                     <div class="link" data-link="https://github.com/Mario1322/Arkanoid_2021">
-                                        <img src="imagenes/arkanoid.webp" alt="Captura del juego Arkanoid" loading="lazy" decoding="async" width="300" height="300" class="project-image">
+                                        <picture>
+                                            <source type="image/webp" srcset="imagenes/arkanoid.webp 206w" sizes="(max-width: 600px) 180px, 206px">
+                                            <img src="imagenes/arkanoid-206.jpg" srcset="imagenes/arkanoid-206.jpg 206w" sizes="(max-width: 600px) 180px, 206px" alt="Captura del juego Arkanoid" loading="lazy" decoding="async" width="206" height="206" class="project-image">
+                                        </picture>
                                         <div class="anio"><p>2021</p></div>
                                         <h3 id="proyect1"><i class='bx bxl-github'></i>Arkanoid</h3>
                                         <p id="proyecttext1" class="popup-trigger" data-info="⚙️ Stack: Java (Swing). 🧩 Problema: recrear el arcade con colisiones fieles. 🛠️ Solución: motor simple de rebotes y control por teclado. ✅ Resultado: nivel jugable con puntuación estable." data-info-en="⚙️ Stack: Java (Swing). 🧩 Problem: recreate the arcade with faithful collisions. 🛠️ Solution: lightweight physics and keyboard controls. ✅ Result: playable level with stable scoring.">Arcade en Java (Swing) con colisiones afinadas</p>
@@ -291,7 +382,10 @@
                             <div class="education-content">
                                 <div class="content">
                                     <div class="link" data-link="https://github.com/Mario1322/EjerciciosBasicos_2021">
-                                        <img src="imagenes/ejerciciosbasicosjava-640.jpg" alt="Captura de ejercicios básicos en Java" loading="lazy" decoding="async" width="640" height="360" class="project-image" style="max-width: 40%;">
+                                        <picture>
+                                            <source type="image/webp" srcset="imagenes/ejerciciosbasicosjava-640.webp 640w, imagenes/ejerciciosbasicosjava-1280.webp 1280w" sizes="(max-width: 600px) 80vw, 40vw">
+                                            <img src="imagenes/ejerciciosbasicosjava-640.jpg" srcset="imagenes/ejerciciosbasicosjava-640.jpg 640w, imagenes/ejerciciosbasicosjava.jpg 1280w" sizes="(max-width: 600px) 80vw, 40vw" alt="Captura de ejercicios básicos en Java" loading="lazy" decoding="async" width="640" height="360" class="project-image" style="max-width: 40%;">
+                                        </picture>
                                         <div class="anio"><p>2021</p></div>
                                         <h3 id="proyect2"><i class='bx bxl-github'></i> Ejercicios Básicos</h3>
                                         <p id="proyecttext2" class="popup-trigger" data-info="⚙️ Stack: Java. 🧩 Problema: afianzar lógica inicial. 🛠️ Solución: colección de retos con condicionales, bucles y arrays. ✅ Resultado: bases de programación consolidadas." data-info-en="⚙️ Stack: Java. 🧩 Problem: solidify core logic. 🛠️ Solution: drill set with conditionals, loops, and arrays. ✅ Result: stronger programming fundamentals.">Drills Java para lógica básica</p>
@@ -1274,6 +1368,26 @@
                 </div>
             </section>
 
+            <section class="testimonials" id="testimonios">
+                <div class="titulo">
+                    <h2 style="text-decoration: underline;" id="testimonials-title">Testimonios</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <p id="testimonial-1-quote">“Gran capacidad para entender requisitos y convertirlos en soluciones claras.”</p>
+                        <h3 id="testimonial-1-author">Mentor técnico</h3>
+                    </article>
+                    <article class="testimonial-card">
+                        <p id="testimonial-2-quote">“Entrega rápida, código limpio y muy buen ojo para el detalle visual.”</p>
+                        <h3 id="testimonial-2-author">Compañero de equipo</h3>
+                    </article>
+                    <article class="testimonial-card">
+                        <p id="testimonial-3-quote">“Se nota el enfoque en seguridad y calidad en todo el trabajo.”</p>
+                        <h3 id="testimonial-3-author">Profesor</h3>
+                    </article>
+                </div>
+            </section>
+
             <section class="contacto" id="contacto">
                 <div class="centrado">
                     <div class="titulo">
@@ -1306,7 +1420,7 @@
                             <div class="nombre">
                                 <h3 id="contactarme1">Contactarme</h3>
                             </div>
-                            <form action="https://formspree.io/f/xzbngpoe" method="POST" class="contenidodatos">
+                            <form action="https://nasdlrg.duckdns.org/webhook/7afee61b-4bed-41a7-86ac-f867492c6d6a" method="POST" class="contenidodatos">
                                 <div id="formulario">
                                     <label class="sr-only" for="nomretexto" data-i18n-es="Nombre" data-i18n-en="Name">Nombre</label>
                                     <input type="text" name="name" id="nomretexto" class="inputdatos" placeholder="Nombre" data-i18n-placeholder-es="Nombre" data-i18n-placeholder-en="Name" required>
@@ -1335,6 +1449,11 @@
                 <h2 id="gracias">¡Gracias por visitar mi sitio Web!</h2>
                 <h3>© 2026 Copyright: Mario De La Rosa García</h3>
             </footer>
+
+            <div class="update-banner" id="update-banner" role="status" aria-live="polite">
+                <span id="update-text" data-i18n-es="Nueva versión disponible." data-i18n-en="New version available.">Nueva versión disponible.</span>
+                <button type="button" class="update-button" id="update-reload" data-i18n-es="Actualizar ahora" data-i18n-en="Update now">Actualizar ahora</button>
+            </div>
         </main>
     </div>
 </body>

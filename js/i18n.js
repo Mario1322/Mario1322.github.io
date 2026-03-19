@@ -60,13 +60,18 @@ function updateLangToggle(lang) {
   toggle.setAttribute('aria-pressed', 'false');
   toggle.setAttribute('aria-label', nextLang === 'en' ? 'Switch to English version' : 'Cambiar a Español');
   const img = toggle.querySelector('img');
+  const source = toggle.querySelector('source');
   if (!img) return;
   if (nextLang === 'en') {
-    img.src = 'imagenes/english.png';
+    img.src = 'imagenes/english-24.png';
+    img.srcset = 'imagenes/english-24.png 24w, imagenes/english-48.png 48w';
     img.alt = 'Switch to English language';
+    if (source) source.srcset = 'imagenes/english-24.webp 24w, imagenes/english-48.webp 48w';
   } else {
-    img.src = 'imagenes/espanol-128.png';
+    img.src = 'imagenes/espanol-24.png';
+    img.srcset = 'imagenes/espanol-24.png 24w, imagenes/espanol-48.png 48w';
     img.alt = 'Cambiar a idioma Español';
+    if (source) source.srcset = 'imagenes/espanol-24.webp 24w, imagenes/espanol-48.webp 48w';
   }
 }
 

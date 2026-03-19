@@ -35,6 +35,7 @@
     text-align: center;
     width: 35rem;
     height: 33rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .contenedorcartas .cartas h3,
@@ -46,6 +47,17 @@
 .contenedorcartas .cartas i {
     margin-top: 1rem;
     font-size: 10rem;
+}
+
+.contenedorcartas .cartas:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contenedorcartas .cartas {
+        transition: none;
+    }
 }
 
 .cartas .articulos {
@@ -151,7 +163,7 @@
 
 .popup-container .popup-pdf {
     width: 100%;
-    height: 42rem;
+    height: min(42rem, 60vh);
     border: 1px solid rgba(222, 189, 89, 0.35);
     border-radius: 14px;
     margin: 0 0 1.2rem;
@@ -194,7 +206,9 @@
 
 .popup-container .skill-popup-actions {
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
 }
 
 .popup-container .skill-popup-link {
@@ -209,7 +223,23 @@
     text-decoration: none;
     font-size: 1.45rem;
     font-weight: 700;
+    white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+@media (max-width: 600px) {
+    .popup-container .popup-content {
+        padding: 1.8rem 1.4rem 1.6rem;
+    }
+
+    .popup-container .popup-pdf {
+        height: min(28rem, 45vh);
+    }
+
+    .popup-container .skill-popup-link {
+        font-size: 1.35rem;
+        padding: 0.7rem 1.2rem;
+    }
 }
 
 .popup-container .skill-popup-link:hover {
