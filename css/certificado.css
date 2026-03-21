@@ -35,7 +35,16 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-  gap: 1rem;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+#pdf-render {
+  flex: 0 0 75%;
+  max-width: 75%;
 }
 
 .navigation button {
@@ -75,7 +84,7 @@
   background-color: #EFBF04;
   border: .2rem solid #EFBF04;
   border-radius: 50px;
-  font-size: 2.8rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #001F3F;
   z-index: var(--z-normal);
@@ -116,4 +125,25 @@
 
 .botones .btn:hover::before {
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .botones .btn {
+    font-size: 1.6rem;
+    padding: 20px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .botones .btn {
+    font-size: 1.4rem;
+    padding: 18px 30px;
+  }
+}
+
+@media (min-width: 3800px) {
+  .botones .btn {
+    font-size: 1.4rem;
+    padding: 25px 40px;
+  }
 }

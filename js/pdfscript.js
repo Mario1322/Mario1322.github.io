@@ -1,7 +1,7 @@
 const PDFJS_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js';
 const PDF_WORKER_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
-const CANVAS_WIDTH = 1000;
-const CANVAS_MAX_HEIGHT = 1400;
+const CANVAS_WIDTH = 1800;
+const CANVAS_MAX_HEIGHT = 2400;
 
 const pdfPaths = [
     'certificados/Certificado-Mario-De-La-Rosa-Garcia-lpc7vju0.pdf',

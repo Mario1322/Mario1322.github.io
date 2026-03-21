@@ -43,8 +43,7 @@ h1 {
 .botones {
     position: relative;
     display: flex;
-    justify-content: space-between;
-    width: 41rem;
+    justify-content: flex-start; gap: 3rem;
     height: 6rem;
     border-radius: 50px;
 }
@@ -56,18 +55,40 @@ h1 {
     align-items: center;
     margin-top: 45px;
     margin-left: 1px;
-    width: 19rem;
+    padding: 0 4rem; width: auto;
     height: 100%;
     background-color: #EFBF04;
     border: .2rem solid #EFBF04;
     border-radius: 50px;
-    font-size: 2.2rem;
+    font-size: 1.2rem; /* Reducido aún más para mejor proporción */
     font-weight: 800;
     color: #001F3F;
     z-index: var(--z-normal); /* Variable */
     overflow: hidden;
     transition: .5s;
 }
+
+@media (max-width: 1024px) {
+    .botones .btn {
+        font-size: 1.3rem;
+        padding: 0 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .botones .btn {
+        font-size: 1.1rem;
+        padding: 0 2.2rem;
+    }
+}
+
+@media (min-width: 3800px) {
+    .botones .btn {
+        font-size: 1.1rem;
+        padding: 0 4rem;
+    }
+}
+
 
 .botones .btn:hover {
     color: #EFBF04;

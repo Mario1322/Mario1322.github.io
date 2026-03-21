@@ -27,19 +27,39 @@ if (menuIcon && navbar) {
 window.onscroll = () => {
     let sections = document.querySelectorAll('section');
     let navLinks = document.querySelectorAll('header nav a');
-    let fromTop = window.scrollY;
+    let currentSectionId = null;
+    let maxVisibleArea = 0;
+
+    let viewportTop = window.scrollY;
+    let viewportBottom = window.scrollY + window.innerHeight;
 
     sections.forEach(sec => {
-        let sectionId = sec.getAttribute('id');
-        let navLink = document.querySelector(`header nav a[href="#${sectionId}"]`);
-        let offset = sec.offsetTop - 100;
-        let height = sec.offsetHeight;
+        let secTop = sec.offsetTop;
+        let secBottom = secTop + sec.offsetHeight;
 
-        if (fromTop >= offset && fromTop < offset + height) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (navLink) navLink.classList.add('active');
+        // Calculate visible height of the section in the viewport
+        let visibleTop = Math.max(viewportTop, secTop);
+        let visibleBottom = Math.min(viewportBottom, secBottom);
+
+        if (visibleBottom > visibleTop) {
+            let visibleHeight = visibleBottom - visibleTop;
+            
+            // If the section occupies more visible pixels than previous ones, it wins
+            if (visibleHeight > maxVisibleArea) {
+                maxVisibleArea = visibleHeight;
+                currentSectionId = sec.getAttribute('id');
+            }
         }
     });
+
+    // Fallback: If at absolute bottom and no section clearly dominated (rare but possible on weird heights)
+    // We can just rely on the area logic, it naturally highlights whatever takes up the most screen space!
+
+    if (currentSectionId) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        let navLink = document.querySelector(`header nav a[href="#${currentSectionId}"]`);
+        if (navLink) navLink.classList.add('active');
+    }
 
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);

@@ -74,7 +74,7 @@
 
     .titulo :is(h1, h2) {
         padding: 2rem 0 0 0;
-        font-size: 10rem;
+        font-size: 7rem;
         font-weight: 700;
         line-height: 1;
         text-align: center;
@@ -425,5 +425,28 @@
         height: auto;
         aspect-ratio: 1 / 1;
         object-fit: cover;
+    }
+}
+
+/* Pantallas grandes (UltraWide, 4K, etc) */
+@media (min-width: 1600px) {
+    html {
+        font-size: 105%;
+    }
+    
+    section {
+        min-height: 60vh;
+        padding: 12rem 3rem 4rem;
+    }
+    
+    .home {
+        flex-direction: row;
+        min-height: 80vh;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 110%;
     }
 }

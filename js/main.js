@@ -8,6 +8,8 @@ import './barraidioma.js';
 import './pdfscript.js';
 import './scrollanimation.js';
 import './baffleEffect.js';
+import './formscript.js';
+import './formacion_dropdown.js';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
