@@ -37,10 +37,10 @@ Portfolio personal bilingue (ES/EN) construido con HTML, CSS y JavaScript vanill
 
 ## Desarrollo local
 
-Como es un sitio estatico, puedes abrir `index.html` directamente o levantar un servidor local:
+Como usa modulos ES, `fetch` para i18n y service worker, conviene servirlo con un servidor local:
 
 ```bash
-python3 -m http.server 8000
+npm run dev
 ```
 
-Luego abre `http://localhost:8000`.
+Luego abre `http://localhost:4173`.
