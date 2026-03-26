@@ -1,148 +1,154 @@
 /* FORMACIÓN */
 
 .tituloformacion {
-    text-align: center;
-    margin: 10rem 0 5rem 0;
+  text-align: center;
+  margin: 10rem 0 5rem 0;
 }
 
 .tituloformacion :is(h1, h2) {
-    font-size: 5rem;
-    padding: 2rem 0 0rem 0;
+  font-size: 5rem;
+  padding: 2rem 0 0rem 0;
 }
 
 .education {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5rem;
 }
 
 .education .education-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
 }
 
 .education-row .education-column {
-    flex: 1 1 40rem;
+  flex: 1 1 40rem;
 }
 
 .education-column .title {
-    font-size: 3rem;
-    margin: 0 0 1.5rem 0;
-    text-align: center;
+  font-size: 3rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
 }
 
 .content .link {
-    text-decoration: none;
-    color: var(--blanco);
-    display: block; /* Asegura área clicable */
-    cursor: pointer;
+  text-decoration: none;
+  color: var(--blanco);
+  display: block; /* Asegura área clicable */
+  cursor: pointer;
 }
 
 .education-column .line {
-    padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .education-box .education-content {
-    position: relative;
-    padding-left: 2rem;
+  position: relative;
+  padding-left: 2rem;
 }
 
 .education-content .content {
-    position: relative;
-    padding: 1.5rem;
-    border: .2rem solid #DEBD59;
-    border-radius: 50px;
-    margin-bottom: 2rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, outline-color 0.25s ease;
+  position: relative;
+  padding: 1.5rem;
+  border: 0.2rem solid #debd59;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    outline-color 0.25s ease;
 }
 
 .education-content .content.popup-trigger {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .education-content .content:hover {
-    outline: 2px solid #DEBD59;
-    box-shadow: 0 0 20px #DEBD59;
-    transform: translateY(-4px);
+  outline: 2px solid #debd59;
+  box-shadow: 0 0 20px #debd59;
+  transform: translateY(-4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .education-content .content {
-        transition: none;
-    }
+  .education-content .content {
+    transition: none;
+  }
 }
 
 .education-content .content .anio {
-    font-size: 1.5rem;
-    color: var(--blanco);
-    padding-bottom: .5rem;
+  font-size: 1.5rem;
+  color: var(--blanco);
+  padding-bottom: 0.5rem;
 }
 
 .education-content .content h3 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .education-content .content p {
-    font-size: 2rem;
-    padding-top: .5rem;
-    font-weight: 500;
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  font-weight: 500;
 }
 
 .project-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 15px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.project-image-compact {
+  max-width: 40%;
 }
 
 .education-content .content {
-    text-align: center;
+  text-align: center;
 }
 
 .education-content .content .anio,
 .education-content .content h3,
 .education-content .content p {
-    margin: 0 auto;
-    max-width: 80%;
+  margin: 0 auto;
+  max-width: 80%;
 }
 
 .curso-subtipo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.2rem 0.9rem;
-    border-radius: 999px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    margin: 0.8rem auto 0;
-    background: #f2f2f2;
-    color: #001F3F;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.9rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: 0.8rem auto 0;
+  background: #f2f2f2;
+  color: #001f3f;
 }
 
 .curso-subtipo::before {
-    content: attr(data-issuer-group);
+  content: attr(data-issuer-group);
 }
 
 .curso-subtipo[data-issuer-group="Cursos Santander Open Academy"],
 .curso-subtipo[data-issuer-group="Santander"] {
-    background: #D72638;
-    color: #FFFFFF;
+  background: #d72638;
+  color: #ffffff;
 }
 
 .curso-subtipo[data-issuer-group="Cursos Anthropic"],
 .curso-subtipo[data-issuer-group="Anthropic"] {
-    background: #D8C3A5;
-    color: #2B1F14;
+  background: #d8c3a5;
+  color: #2b1f14;
 }
-
 
 .curso-subtipo[data-issuer-group="Cursos ViewNext"],
 .curso-subtipo[data-issuer-group="ViewNext"] {
-    background: #1E5AA8;
-    color: #FFFFFF;
+  background: #1e5aa8;
+  color: #ffffff;
 }

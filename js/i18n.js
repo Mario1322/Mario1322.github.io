@@ -15,6 +15,11 @@ const META_COPY = {
     ogDescription:
       "Echa un vistazo a mis proyectos, certificaciones y habilidades en desarrollo de software y seguridad informática.",
     locale: "es_ES",
+    websiteName: "Portfolio de Mario De La Rosa Garcia",
+    workName: "Portafolio de Mario De La Rosa Garcia",
+    workDescription:
+      "Portfolio de proyectos, certificaciones y habilidades en desarrollo de software y ciberseguridad.",
+    workLanguage: "es",
   },
   en: {
     title: "Mario De La Rosa García",
@@ -24,6 +29,11 @@ const META_COPY = {
     ogDescription:
       "Take a look at my projects, certifications, and skills in software development and cybersecurity.",
     locale: "en_US",
+    websiteName: "Mario De La Rosa Portfolio",
+    workName: "Mario De La Rosa Portfolio",
+    workDescription:
+      "Portfolio of projects, certifications, and skills in software development and cybersecurity.",
+    workLanguage: "en",
   },
 };
 
@@ -46,6 +56,34 @@ function updateMeta(lang) {
   if (twitterDescription) twitterDescription.setAttribute("content", copy.ogDescription);
 }
 
+function updateStructuredData(lang) {
+  const copy = META_COPY[lang] || META_COPY.es;
+  const script = document.getElementById("structured-data");
+  if (!script?.textContent) return;
+
+  try {
+    const data = JSON.parse(script.textContent);
+    const graph = Array.isArray(data["@graph"]) ? data["@graph"] : [];
+    const website = graph.find((entry) => entry["@type"] === "WebSite");
+    const work = graph.find((entry) => entry["@type"] === "CreativeWork");
+
+    if (website) {
+      website.name = copy.websiteName;
+    }
+
+    if (work) {
+      work.name = copy.workName;
+      work.description = copy.workDescription;
+      work.inLanguage = copy.workLanguage;
+      work["@id"] = `https://mario1322.github.io/#portfolio-${copy.workLanguage}`;
+    }
+
+    script.textContent = JSON.stringify(data);
+  } catch (error) {
+    console.warn("i18n: no se pudo actualizar el schema", error);
+  }
+}
+
 function updateAttributeTranslations(lang, attribute) {
   const dataKey = attribute
     .split("-")
@@ -64,6 +102,16 @@ function updateAttributeTranslations(lang, attribute) {
     });
 }
 
+function updatePopupTriggerTitles(lang) {
+  document.querySelectorAll(".popup-trigger[data-title], .popup-trigger[data-title-en]").forEach((el) => {
+    const titleElement = el.querySelector("h3");
+    if (!titleElement) return;
+
+    const nextTitle = lang === "en" ? el.dataset.titleEn || el.dataset.title : el.dataset.title;
+    if (nextTitle) titleElement.textContent = nextTitle;
+  });
+}
+
 async function loadTranslations(nextLang) {
   const lang = nextLang || getPreferredLang();
   document.documentElement.lang = lang;
@@ -74,11 +122,13 @@ async function loadTranslations(nextLang) {
     applyTranslations(translations, lang);
     updateLangButtons(lang);
     updateMeta(lang);
+    updateStructuredData(lang);
     document.dispatchEvent(new CustomEvent("i18n:changed", { detail: { lang } }));
   } catch (error) {
     console.warn("i18n: usando textos por defecto", error);
     updateLangButtons(lang);
     updateMeta(lang);
+    updateStructuredData(lang);
   }
 }
 
@@ -113,6 +163,8 @@ function applyTranslations(map, lang) {
   });
 
   updateAttributeTranslations(lang, "aria-label");
+  updateAttributeTranslations(lang, "alt");
+  updatePopupTriggerTitles(lang);
 }
 
 function updateLangToggle(lang) {

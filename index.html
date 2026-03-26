@@ -50,7 +50,7 @@
       name="twitter:image"
       content="https://mario1322.github.io/imagenes/senor-licenciado-660.jpg"
     />
-    <script type="application/ld+json">
+    <script id="structured-data" type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
@@ -124,10 +124,23 @@
   </head>
 
   <body class="color-scheme-3">
-    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-i18n-es="Saltar al contenido principal"
+      data-i18n-en="Skip to main content"
+      >Saltar al contenido principal</a
+    >
     <div id="particles-js" class="particle-wrapper"></div>
     <header class="header">
-      <a href="https://mario1322.github.io/" class="logo" id="logo_color" aria-label="Ir al inicio">
+      <a
+        href="https://mario1322.github.io/"
+        class="logo"
+        id="logo_color"
+        aria-label="Ir al inicio"
+        data-i18n-aria-label-es="Ir al inicio"
+        data-i18n-aria-label-en="Go to homepage"
+      >
         <picture>
           <source
             type="image/webp"
@@ -138,6 +151,8 @@
             src="imagenes/logo-mrosa-52h.png"
             srcset="imagenes/logo-mrosa-52h.png 1x, imagenes/logo-mrosa-104h.png 2x"
             alt="Logotipo de Mario De La Rosa"
+            data-i18n-alt-es="Logotipo de Mario De La Rosa"
+            data-i18n-alt-en="Mario De La Rosa logo"
             width="98"
             height="52"
             decoding="async"
@@ -157,7 +172,13 @@
       >
         <span class="animate" style="--i: 2"></span>
       </button>
-      <nav class="navbar" id="main-navigation" aria-label="Navegacion principal">
+      <nav
+        class="navbar"
+        id="main-navigation"
+        aria-label="Navegacion principal"
+        data-i18n-aria-label-es="Navegacion principal"
+        data-i18n-aria-label-en="Main navigation"
+      >
         <a href="#home" class="active" id="casa">Sobre mí</a>
         <a href="#trayectoria" id="timeline-nav">Trayectoria</a>
         <a href="#skills" id="skillsnav">Skills</a>
@@ -223,12 +244,14 @@
               </a>
               <a href="#contacto" id="contactarme" class="btn">Contactarme</a>
             </div>
-            <div class="social" style="text-align: center">
+            <div class="social">
               <a
                 href="https://github.com/Mario1322"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-es="GitHub de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-en="Mario's GitHub profile (opens in a new tab)"
               >
                 <i class="bx bxl-github" aria-hidden="true"></i>
                 <div class="social-label">GitHub</div>
@@ -238,6 +261,8 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-es="LinkedIn de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-en="Mario's LinkedIn profile (opens in a new tab)"
               >
                 <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
                 <div class="social-label">LinkedIn</div>
@@ -247,6 +272,8 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-es="Instagram de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-en="Mario's Instagram profile (opens in a new tab)"
               >
                 <i class="bx bxl-instagram" aria-hidden="true"></i>
                 <div class="social-label">Instagram</div>
@@ -256,6 +283,8 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Perfil de X de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-es="Perfil de X de Mario (se abre en una pestaña nueva)"
+                data-i18n-aria-label-en="Mario's X profile (opens in a new tab)"
               >
                 <i class="bx bxl-twitter" aria-hidden="true"></i>
                 <div class="social-label">X</div>
@@ -285,6 +314,8 @@
                     "
                     sizes="(max-width: 360px) 120px, (max-width: 600px) 160px, 220px"
                     alt="Foto de perfil de Mario De La Rosa"
+                    data-i18n-alt-es="Foto de perfil de Mario De La Rosa"
+                    data-i18n-alt-en="Profile photo of Mario De La Rosa"
                     width="220"
                     height="220"
                     fetchpriority="high"
@@ -309,7 +340,7 @@
 
         <section class="timeline" id="trayectoria">
           <div class="titulo">
-            <h2 style="text-decoration: underline" id="timeline-title">Trayectoria</h2>
+            <h2 id="timeline-title">Trayectoria</h2>
           </div>
           <div class="timeline-grid">
             <article class="timeline-card">
@@ -347,7 +378,7 @@
         <section class="skills" id="skills">
           <div class="centrado">
             <div class="titulo">
-              <h2 style="text-decoration: underline">Skills</h2>
+              <h2>Skills</h2>
             </div>
             <div class="contenedorcartas">
               <div class="cartas">
@@ -471,12 +502,111 @@
               <h3 id="stack-title">Stack actual</h3>
               <p id="stack-subtitle">Tecnologías que uso ahora mismo en proyectos reales.</p>
               <div class="stack-list">
-                <span class="stack-badge">Flutter</span>
-                <span class="stack-badge">Dart</span>
-                <span class="stack-badge">Firebase</span>
-                <span class="stack-badge">SQL</span>
-                <span class="stack-badge">GitHub</span>
-                <span class="stack-badge">Figma</span>
+                <button
+                  class="stack-card popup-trigger"
+                  type="button"
+                  data-title="Flutter"
+                  data-title-en="Flutter"
+                  data-category="Stack actual"
+                  data-category-en="Current stack"
+                  data-info="Framework UI de Google que uso para crear apps multiplataforma con una sola base de código, cuidando rendimiento, consistencia visual y entrega rápida."
+                  data-info-en="Google UI framework I use to build cross-platform apps from a single codebase, focusing on performance, visual consistency, and fast delivery."
+                >
+                  <span class="stack-card-title">Flutter</span>
+                  <span
+                    class="stack-card-meta"
+                    data-i18n-es="UI multiplataforma"
+                    data-i18n-en="Cross-platform UI"
+                    >UI multiplataforma</span
+                  >
+                </button>
+                <button
+                  class="stack-card popup-trigger"
+                  type="button"
+                  data-title="Dart"
+                  data-title-en="Dart"
+                  data-category="Stack actual"
+                  data-category-en="Current stack"
+                  data-info="Lenguaje principal con el que estructuro lógica de negocio, estado y componentes en proyectos Flutter modernos."
+                  data-info-en="Primary language I use to structure business logic, state, and components in modern Flutter projects."
+                >
+                  <span class="stack-card-title">Dart</span>
+                  <span
+                    class="stack-card-meta"
+                    data-i18n-es="Lenguaje app"
+                    data-i18n-en="App language"
+                    >Lenguaje app</span
+                  >
+                </button>
+                <button
+                  class="stack-card popup-trigger"
+                  type="button"
+                  data-title="Firebase"
+                  data-title-en="Firebase"
+                  data-category="Stack actual"
+                  data-category-en="Current stack"
+                  data-info="Plataforma backend que aprovecho para autenticación, base de datos en tiempo real, almacenamiento y despliegues rápidos."
+                  data-info-en="Backend platform I rely on for authentication, real-time database features, storage, and fast deployments."
+                >
+                  <span class="stack-card-title">Firebase</span>
+                  <span
+                    class="stack-card-meta"
+                    data-i18n-es="Backend gestionado"
+                    data-i18n-en="Managed backend"
+                    >Backend gestionado</span
+                  >
+                </button>
+                <button
+                  class="stack-card popup-trigger"
+                  type="button"
+                  data-title="SQL"
+                  data-title-en="SQL"
+                  data-category="Stack actual"
+                  data-category-en="Current stack"
+                  data-info="Lo uso para modelar datos, consultar información crítica y mantener integridad en flujos reales de producto."
+                  data-info-en="I use it to model data, query critical information, and maintain integrity in real product flows."
+                >
+                  <span class="stack-card-title">SQL</span>
+                  <span
+                    class="stack-card-meta"
+                    data-i18n-es="Datos relacionales"
+                    data-i18n-en="Relational data"
+                    >Datos relacionales</span
+                  >
+                </button>
+                <button
+                  class="stack-card popup-trigger"
+                  type="button"
+                  data-title="GitHub"
+                  data-title-en="GitHub"
+                  data-category="Stack actual"
+                  data-category-en="Current stack"
+                  data-info="Centro mi trabajo en ramas, revisiones, versionado y documentación técnica para mantener proyectos ordenados y colaborativos."
+                  data-info-en="I center my work around branches, reviews, versioning, and technical documentation to keep projects organized and collaborative."
+                >
+                  <span class="stack-card-title">GitHub</span>
+                  <span
+                    class="stack-card-meta"
+                    data-i18n-es="Workflow y control"
+                    data-i18n-en="Workflow and control"
+                    >Workflow y control</span
+                  >
+                </button>
+                <button
+                  class="stack-card popup-trigger"
+                  type="button"
+                  data-title="Figma"
+                  data-title-en="Figma"
+                  data-category="Stack actual"
+                  data-category-en="Current stack"
+                  data-info="Lo utilizo para estructurar interfaces, validar decisiones visuales y convertir ideas en prototipos antes de implementarlas."
+                  data-info-en="I use it to structure interfaces, validate visual decisions, and turn ideas into prototypes before implementation."
+                >
+                  <span class="stack-card-title">Figma</span>
+                  <span class="stack-card-meta" data-i18n-es="Diseño UI" data-i18n-en="UI design"
+                    >Diseño UI</span
+                  >
+                </button>
               </div>
             </div>
           </div>
@@ -484,22 +614,31 @@
 
         <section class="services" id="servicios">
           <div class="titulo">
-            <h2 style="text-decoration: underline" id="services-title">Servicios</h2>
+            <h2 id="services-title">Servicios</h2>
           </div>
           <div class="services-grid">
             <article class="service-card">
+              <span class="service-card-kicker" data-i18n-es="Servicio" data-i18n-en="Service"
+                >Servicio</span
+              >
               <h3 id="service-1-title">Desarrollo de aplicaciones</h3>
               <p id="service-1-desc">
                 Apps móviles y web con foco en rendimiento, escalabilidad y experiencia de usuario.
               </p>
             </article>
             <article class="service-card">
+              <span class="service-card-kicker" data-i18n-es="Servicio" data-i18n-en="Service"
+                >Servicio</span
+              >
               <h3 id="service-2-title">Ciberseguridad aplicada</h3>
               <p id="service-2-desc">
                 Auditorías básicas, hardening y buenas prácticas para proyectos reales.
               </p>
             </article>
             <article class="service-card">
+              <span class="service-card-kicker" data-i18n-es="Servicio" data-i18n-en="Service"
+                >Servicio</span
+              >
               <h3 id="service-3-title">Diseño y producto</h3>
               <p id="service-3-desc">
                 Prototipos funcionales, UI clara y entregables listos para producción.
@@ -515,7 +654,13 @@
             aria-modal="true"
             aria-labelledby="skill-popup-title"
           >
-            <button class="close" type="button" aria-label="Cerrar ventana emergente">
+            <button
+              class="close"
+              type="button"
+              aria-label="Cerrar ventana emergente"
+              data-i18n-aria-label-es="Cerrar ventana emergente"
+              data-i18n-aria-label-en="Close popup window"
+            >
               &times;
             </button>
             <div class="popup-info"></div>
@@ -524,7 +669,7 @@
 
         <section class="education" id="formacion">
           <div class="titulo">
-            <h2 style="text-decoration: underline" id="formation1">Formación</h2>
+            <h2 id="formation1">Formación</h2>
           </div>
           <div class="education-row">
             <div class="education-column">
@@ -617,6 +762,8 @@
                           srcset="imagenes/arkanoid-206.jpg 206w"
                           sizes="(max-width: 600px) 180px, 206px"
                           alt="Captura del juego Arkanoid"
+                          data-i18n-alt-es="Captura del juego Arkanoid"
+                          data-i18n-alt-en="Screenshot of the Arkanoid game"
                           loading="lazy"
                           decoding="async"
                           width="206"
@@ -661,13 +808,14 @@
                             imagenes/ejerciciosbasicosjava.jpg     1280w
                           "
                           sizes="(max-width: 600px) 80vw, 40vw"
-                          alt="Captura de ejercicios básicos en Java"
+                          alt="Captura de ejercicios basicos en Java"
+                          data-i18n-alt-es="Captura de ejercicios basicos en Java"
+                          data-i18n-alt-en="Screenshot of basic Java exercises"
                           loading="lazy"
                           decoding="async"
                           width="640"
                           height="360"
-                          class="project-image"
-                          style="max-width: 40%"
+                          class="project-image project-image-compact"
                         />
                       </picture>
                       <div class="anio"><p>2021</p></div>
@@ -824,11 +972,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Seguridad y privacidad"
+                    data-title-en="Security and privacy certificate"
                     data-title="Certificado Seguridad y privacidad"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Seguridad y privacidad."
+                    data-info-en="Course certificate: Security and privacy certificate."
                     data-info="Certificado del curso: Certificado Seguridad y privacidad."
                     data-pdf="certificados/Cursos ViewNext/Certificado_Seguridad_y_privacidad.pdf"
                     data-issuer="Cursos ViewNext"
@@ -852,11 +1000,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Introducción a la Gestión Ambiental Certificado"
+                    data-title-en="Introduction to environmental management certificate"
                     data-title="Introducción a la Gestión Ambiental Certificado"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Introducción a la Gestión Ambiental Certificado."
+                    data-info-en="Course certificate: Introduction to environmental management certificate."
                     data-info="Certificado del curso: Introducción a la Gestión Ambiental Certificado."
                     data-pdf="certificados/Cursos ViewNext/Introducción_a_la_Gestión_Ambiental_Certificado.pdf"
                     data-issuer="Cursos ViewNext"
@@ -880,11 +1028,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Prevencion de riesgos laborales P.V.D Descarga Certificado"
+                    data-title-en="Occupational risk prevention P.V.D certificate"
                     data-title="Prevencion de riesgos laborales P.V.D Descarga Certificado"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Prevencion de riesgos laborales P.V.D Descarga Certificado."
+                    data-info-en="Course certificate: Occupational risk prevention P.V.D certificate."
                     data-info="Certificado del curso: Prevencion de riesgos laborales P.V.D Descarga Certificado."
                     data-pdf="certificados/Cursos ViewNext/Prevencion de riesgos laborales P.V.D_Descarga_Certificado.pdf"
                     data-issuer="Cursos ViewNext"
@@ -908,11 +1056,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Seguridad de la informacion Certificado Seguridad de la información"
+                    data-title-en="Information security certificate"
                     data-title="Seguridad de la informacion Certificado Seguridad de la información"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Seguridad de la informacion Certificado Seguridad de la información."
+                    data-info-en="Course certificate: Information security certificate."
                     data-info="Certificado del curso: Seguridad de la informacion Certificado Seguridad de la información."
                     data-pdf="certificados/Cursos ViewNext/Seguridad de la informacion_Certificado Seguridad de la información.pdf"
                     data-issuer="Cursos ViewNext"
@@ -936,11 +1084,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Seguridad y Privacidad de datos Certificado Seguridad y Privacidad de Datos"
+                    data-title-en="Data security and privacy certificate"
                     data-title="Seguridad y Privacidad de datos Certificado Seguridad y Privacidad de Datos"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Seguridad y Privacidad de datos Certificado Seguridad y Privacidad de Datos."
+                    data-info-en="Course certificate: Data security and privacy certificate."
                     data-info="Certificado del curso: Seguridad y Privacidad de datos Certificado Seguridad y Privacidad de Datos."
                     data-pdf="certificados/Cursos ViewNext/Seguridad y Privacidad de datos_Certificado Seguridad y Privacidad de Datos .pdf"
                     data-issuer="Cursos ViewNext"
@@ -966,11 +1114,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Teletrabajo y Prevencion de Riesgos Laborales Certificado Teletrabajo y Prevención de Riesgos Laborales"
+                    data-title-en="Remote work and occupational risk prevention certificate"
                     data-title="Teletrabajo y Prevencion de Riesgos Laborales Certificado Teletrabajo y Prevención de Riesgos Laborales"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Teletrabajo y Prevencion de Riesgos Laborales Certificado Teletrabajo y Prevención de Riesgos Laborales."
+                    data-info-en="Course certificate: Remote work and occupational risk prevention certificate."
                     data-info="Certificado del curso: Teletrabajo y Prevencion de Riesgos Laborales Certificado Teletrabajo y Prevención de Riesgos Laborales."
                     data-pdf="certificados/Cursos ViewNext/Teletrabajo y Prevencion de Riesgos Laborales_Certificado Teletrabajo y Prevención de Riesgos Laborales.pdf"
                     data-issuer="Cursos ViewNext"
@@ -1361,11 +1509,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #10"
+                    data-title-en="Santander Open Academy certificate #10"
                     data-title="Certificado Cursos Santander Open Academy #10"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #10."
+                    data-info-en="Course certificate: Santander Open Academy certificate #10."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #10."
                     data-pdf="certificados/Cursos Santander Open Academy/10_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1392,11 +1540,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #106"
+                    data-title-en="Santander Open Academy certificate #106"
                     data-title="Certificado Cursos Santander Open Academy #106"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #106."
+                    data-info-en="Course certificate: Santander Open Academy certificate #106."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #106."
                     data-pdf="certificados/Cursos Santander Open Academy/106_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1423,11 +1571,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #107"
+                    data-title-en="Santander Open Academy certificate #107"
                     data-title="Certificado Cursos Santander Open Academy #107"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #107."
+                    data-info-en="Course certificate: Santander Open Academy certificate #107."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #107."
                     data-pdf="certificados/Cursos Santander Open Academy/107_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1454,11 +1602,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #109"
+                    data-title-en="Santander Open Academy certificate #109"
                     data-title="Certificado Cursos Santander Open Academy #109"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #109."
+                    data-info-en="Course certificate: Santander Open Academy certificate #109."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #109."
                     data-pdf="certificados/Cursos Santander Open Academy/109_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1485,11 +1633,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #11"
+                    data-title-en="Santander Open Academy certificate #11"
                     data-title="Certificado Cursos Santander Open Academy #11"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #11."
+                    data-info-en="Course certificate: Santander Open Academy certificate #11."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #11."
                     data-pdf="certificados/Cursos Santander Open Academy/11_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1516,11 +1664,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #110"
+                    data-title-en="Santander Open Academy certificate #110"
                     data-title="Certificado Cursos Santander Open Academy #110"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #110."
+                    data-info-en="Course certificate: Santander Open Academy certificate #110."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #110."
                     data-pdf="certificados/Cursos Santander Open Academy/110_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1547,11 +1695,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #12"
+                    data-title-en="Santander Open Academy certificate #12"
                     data-title="Certificado Cursos Santander Open Academy #12"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #12."
+                    data-info-en="Course certificate: Santander Open Academy certificate #12."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #12."
                     data-pdf="certificados/Cursos Santander Open Academy/12_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1578,11 +1726,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #1311"
+                    data-title-en="Santander Open Academy certificate #1311"
                     data-title="Certificado Cursos Santander Open Academy #1311"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #1311."
+                    data-info-en="Course certificate: Santander Open Academy certificate #1311."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #1311."
                     data-pdf="certificados/Cursos Santander Open Academy/1311_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1609,11 +1757,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #148"
+                    data-title-en="Santander Open Academy certificate #148"
                     data-title="Certificado Cursos Santander Open Academy #148"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #148."
+                    data-info-en="Course certificate: Santander Open Academy certificate #148."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #148."
                     data-pdf="certificados/Cursos Santander Open Academy/148_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1640,11 +1788,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #157"
+                    data-title-en="Santander Open Academy certificate #157"
                     data-title="Certificado Cursos Santander Open Academy #157"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #157."
+                    data-info-en="Course certificate: Santander Open Academy certificate #157."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #157."
                     data-pdf="certificados/Cursos Santander Open Academy/157_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1671,11 +1819,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #161"
+                    data-title-en="Santander Open Academy certificate #161"
                     data-title="Certificado Cursos Santander Open Academy #161"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #161."
+                    data-info-en="Course certificate: Santander Open Academy certificate #161."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #161."
                     data-pdf="certificados/Cursos Santander Open Academy/161_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1702,11 +1850,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #166"
+                    data-title-en="Santander Open Academy certificate #166"
                     data-title="Certificado Cursos Santander Open Academy #166"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #166."
+                    data-info-en="Course certificate: Santander Open Academy certificate #166."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #166."
                     data-pdf="certificados/Cursos Santander Open Academy/166_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1733,11 +1881,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #340"
+                    data-title-en="Santander Open Academy certificate #340"
                     data-title="Certificado Cursos Santander Open Academy #340"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #340."
+                    data-info-en="Course certificate: Santander Open Academy certificate #340."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #340."
                     data-pdf="certificados/Cursos Santander Open Academy/340_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1764,11 +1912,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #373"
+                    data-title-en="Santander Open Academy certificate #373"
                     data-title="Certificado Cursos Santander Open Academy #373"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #373."
+                    data-info-en="Course certificate: Santander Open Academy certificate #373."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #373."
                     data-pdf="certificados/Cursos Santander Open Academy/373_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1795,11 +1943,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #508"
+                    data-title-en="Santander Open Academy certificate #508"
                     data-title="Certificado Cursos Santander Open Academy #508"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #508."
+                    data-info-en="Course certificate: Santander Open Academy certificate #508."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #508."
                     data-pdf="certificados/Cursos Santander Open Academy/508_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1826,11 +1974,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #582"
+                    data-title-en="Santander Open Academy certificate #582"
                     data-title="Certificado Cursos Santander Open Academy #582"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #582."
+                    data-info-en="Course certificate: Santander Open Academy certificate #582."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #582."
                     data-pdf="certificados/Cursos Santander Open Academy/582_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1857,11 +2005,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #787"
+                    data-title-en="Santander Open Academy certificate #787"
                     data-title="Certificado Cursos Santander Open Academy #787"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #787."
+                    data-info-en="Course certificate: Santander Open Academy certificate #787."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #787."
                     data-pdf="certificados/Cursos Santander Open Academy/787_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1888,11 +2036,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #8"
+                    data-title-en="Santander Open Academy certificate #8"
                     data-title="Certificado Cursos Santander Open Academy #8"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #8."
+                    data-info-en="Course certificate: Santander Open Academy certificate #8."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #8."
                     data-pdf="certificados/Cursos Santander Open Academy/8_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1919,11 +2067,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Certificado Cursos Santander Open Academy #9"
+                    data-title-en="Santander Open Academy certificate #9"
                     data-title="Certificado Cursos Santander Open Academy #9"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Certificado Cursos Santander Open Academy #9."
+                    data-info-en="Course certificate: Santander Open Academy certificate #9."
                     data-info="Certificado del curso: Certificado Cursos Santander Open Academy #9."
                     data-pdf="certificados/Cursos Santander Open Academy/9_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1950,11 +2098,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Cursor con Python:desarrollo inteligente con IA"
+                    data-title-en="Cursor with Python: intelligent development with AI"
                     data-title="Cursor con Python:desarrollo inteligente con IA"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Cursor con Python:desarrollo inteligente con IA."
+                    data-info-en="Course certificate: Cursor with Python: intelligent development with AI."
                     data-info="Certificado del curso: Cursor con Python:desarrollo inteligente con IA."
                     data-pdf="certificados/Cursos Santander Open Academy/1785_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -1981,11 +2129,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Copilot:domina la IA en Microsoft 365"
+                    data-title-en="Copilot: master AI in Microsoft 365"
                     data-title="Copilot:domina la IA en Microsoft 365"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Copilot:domina la IA en Microsoft 365."
+                    data-info-en="Course certificate: Copilot: master AI in Microsoft 365."
                     data-info="Certificado del curso: Copilot:domina la IA en Microsoft 365."
                     data-pdf="certificados/Cursos Santander Open Academy/1986_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -2012,11 +2160,11 @@
                 <div class="education-content">
                   <div
                     class="content popup-trigger"
-                    data-title-en="Domina la IA con Gemini"
+                    data-title-en="Master AI with Gemini"
                     data-title="Domina la IA con Gemini"
                     data-category="Cursos"
                     data-category-en="Courses"
-                    data-info-en="Course certificate: Domina la IA con Gemini."
+                    data-info-en="Course certificate: Master AI with Gemini."
                     data-info="Certificado del curso: Domina la IA con Gemini."
                     data-pdf="certificados/Cursos Santander Open Academy/2828_mariodelarosagr2003@gmail.com.pdf"
                     data-issuer="Cursos Santander Open Academy"
@@ -2046,27 +2194,26 @@
         <section class="idioma" id="idioma">
           <div class="centrado">
             <div class="titulo">
-              <h2 style="text-decoration: underline" id="idiomas1">Idiomas</h2>
+              <h2 id="idiomas1">Idiomas</h2>
             </div>
             <div class="bar-container espanol">
-              <div class="bar" style="width: 100%">Español</div>
+              <div class="bar" data-i18n-es="Español" data-i18n-en="Spanish">Español</div>
             </div>
             <div class="bar-container ingles">
-              <div class="bar" style="width: 75%">Inglés</div>
+              <div class="bar" data-i18n-es="Inglés" data-i18n-en="English">Inglés</div>
             </div>
           </div>
         </section>
 
         <section class="certificado" id="certificado">
           <div class="titulo">
-            <h2 style="text-decoration: underline" id="certificados1">Certificados</h2>
+            <h2 id="certificados1">Certificados</h2>
           </div>
-          <div id="titulo-pdf" style="text-align: center; margin-bottom: 10px"></div>
+          <div id="titulo-pdf"></div>
           <div class="navigation">
             <button
               id="prevBtn"
               type="button"
-              style="cursor: pointer"
               aria-label="Ver certificado anterior"
               data-i18n-aria-label-es="Ver certificado anterior"
               data-i18n-aria-label-en="View previous certificate"
@@ -2084,7 +2231,6 @@
             <button
               id="nextBtn"
               type="button"
-              style="cursor: pointer"
               aria-label="Ver siguiente certificado"
               data-i18n-aria-label-es="Ver siguiente certificado"
               data-i18n-aria-label-en="View next certificate"
@@ -2099,22 +2245,40 @@
 
         <section class="testimonials" id="testimonios">
           <div class="titulo">
-            <h2 style="text-decoration: underline" id="testimonials-title">Testimonios</h2>
+            <h2 id="testimonials-title">Testimonios</h2>
           </div>
           <div class="testimonials-grid">
             <article class="testimonial-card">
+              <span
+                class="testimonial-card-kicker"
+                data-i18n-es="Testimonio"
+                data-i18n-en="Testimonial"
+                >Testimonio</span
+              >
               <p id="testimonial-1-quote">
                 “Gran capacidad para entender requisitos y convertirlos en soluciones claras.”
               </p>
               <h3 id="testimonial-1-author">Mentor técnico</h3>
             </article>
             <article class="testimonial-card">
+              <span
+                class="testimonial-card-kicker"
+                data-i18n-es="Testimonio"
+                data-i18n-en="Testimonial"
+                >Testimonio</span
+              >
               <p id="testimonial-2-quote">
                 “Entrega rápida, código limpio y muy buen ojo para el detalle visual.”
               </p>
               <h3 id="testimonial-2-author">Compañero de equipo</h3>
             </article>
             <article class="testimonial-card">
+              <span
+                class="testimonial-card-kicker"
+                data-i18n-es="Testimonio"
+                data-i18n-en="Testimonial"
+                >Testimonio</span
+              >
               <p id="testimonial-3-quote">
                 “Se nota el enfoque en seguridad y calidad en todo el trabajo.”
               </p>
@@ -2126,10 +2290,10 @@
         <section class="contacto" id="contacto">
           <div class="centrado">
             <div class="titulo">
-              <h2 style="text-decoration: underline" id="contact1">Contacto</h2>
+              <h2 id="contact1">Contacto</h2>
             </div>
             <div class="contacto-contenido">
-              <div class="misdatos">
+              <div class="misdatos contact-card">
                 <div class="nombre">
                   <h3 id="misdatos">Mis datos</h3>
                 </div>
@@ -2142,7 +2306,6 @@
                         id="copy-button"
                         class="copy-btn"
                         type="button"
-                        style="margin-left: 10px"
                         data-i18n-es="Copiar"
                         data-i18n-en="Copy"
                       >
@@ -2160,7 +2323,7 @@
                   </div>
                 </div>
               </div>
-              <div class="misdatos">
+              <div class="misdatos contact-card">
                 <div class="nombre">
                   <h3 id="contactarme1">Contactarme</h3>
                 </div>

@@ -12,22 +12,24 @@
 #titulo-pdf {
   font-size: 3rem;
   font-weight: bold;
-  color: #003366;
-  margin-bottom: 20px;
+  color: var(--blanco);
+  margin-bottom: 1.6rem;
   letter-spacing: 1px;
   text-align: center;
+  width: min(100%, 1200px);
 }
 
 #pdf-render {
   border: none;
   width: 100%;
-  max-width: 100%;
+  max-width: 920px;
   height: auto;
   position: relative;
   z-index: var(--z-alto); /* Variable (10) */
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  margin-bottom: 2rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+  margin-bottom: 0;
+  border-radius: 24px;
 }
 
 .navigation {
@@ -36,24 +38,32 @@
   justify-content: center;
   margin-bottom: 2rem;
   gap: 1rem;
+  width: min(100%, 1200px);
+  padding: 1.8rem;
+  border: 0.2rem solid #debd59;
+  border-radius: 50px;
 }
 
 .navigation button {
-  background-color: #EFBF04;
-  color: #001F3F;
-  border: none;
+  background-color: #efbf04;
+  color: #001f3f;
+  border: 0.2rem solid #efbf04;
   font-size: 1.5rem;
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.25s ease;
   z-index: var(--z-alto); /* Variable (10) */
 }
 
 .navigation button:hover {
-  background-color: #001F3F;
-  color: #EFBF04;
-  border: 1px solid #001F3F;
+  background-color: #001f3f;
+  color: #efbf04;
+  border: 1px solid #001f3f;
+  transform: translateY(-2px);
 }
 
 .botones {
@@ -64,6 +74,16 @@
   width: 100%;
 }
 
+@media (max-width: 780px) {
+  .navigation {
+    padding: 1.2rem;
+  }
+
+  .navigation button {
+    padding: 0.9rem 1.4rem;
+  }
+}
+
 .botones .btn {
   position: relative;
   display: inline-flex;
@@ -72,12 +92,12 @@
   width: 100%;
   max-width: 600px;
   padding: 25px 40px;
-  background-color: #EFBF04;
-  border: .2rem solid #EFBF04;
+  background-color: #efbf04;
+  border: 0.2rem solid #efbf04;
   border-radius: 50px;
   font-size: 2.8rem;
   font-weight: 800;
-  color: #001F3F;
+  color: #001f3f;
   z-index: var(--z-normal);
   overflow: hidden;
   transition: 0.5s;
@@ -86,12 +106,12 @@
 }
 
 .botones .btn:hover {
-  color: #EFBF04;
+  color: #efbf04;
 }
 
 .botones .btn:nth-child(2) {
   background: transparent;
-  color: #EFBF04;
+  color: #efbf04;
 }
 
 .botones .btn:nth-child(2):hover {
@@ -99,17 +119,17 @@
 }
 
 .botones .btn:nth-child(2)::before {
-  background: #EFBF04;
+  background: #efbf04;
 }
 
 .botones .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background: #001F3F;
+  background: #001f3f;
   z-index: var(--z-fondo);
   transition: 0.5s;
 }

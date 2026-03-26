@@ -1,257 +1,293 @@
 /* CONTACTO */
 .contacto {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contacto .centrado {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .centrado .contacto-contenido {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
 }
 
 .contacto-contenido .misdatos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50rem;
-    z-index: var(--z-normal); /* Variable */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 52rem;
+  z-index: var(--z-normal); /* Variable */
+}
+
+.contact-card {
+  border: 0.2rem solid #debd59;
+  border-radius: 50px;
+  padding: 2.4rem 2.2rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    outline-color 0.25s ease;
+}
+
+.contact-card:hover {
+  outline: 2px solid #debd59;
+  box-shadow: 0 0 20px #debd59;
+  transform: translateY(-4px);
 }
 
 .nombre h3 {
-    text-align: center;
-    z-index: var(--z-normal);
+  text-align: center;
+  z-index: var(--z-normal);
 }
 
 .misdatos .contenidodatos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: var(--z-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-normal);
 }
 
 .contenidodatos .centradotexto {
-    align-items: start;
+  align-items: start;
 }
 
 .centradotexto .iconotexto {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 3.5rem;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .iconotexto {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .iconotexto h4 {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
 .iconotexto i {
-    font-size: 3.5rem;
-    margin-right: 1rem;
+  font-size: 3.5rem;
+  margin-right: 1rem;
 }
 
 .iconotexto .correo {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .contenidodatos .textdatos {
-    width: 50rem;
-    height: 15rem;
-    resize: none;
+  width: 100%;
+  height: 15rem;
+  resize: none;
 }
 
 .contenidodatos .inputdatos {
-    width: 50rem;
-    height: 5rem;
+  width: 100%;
+  height: 5rem;
+}
+
+#formulario {
+  width: 100%;
 }
 
 .contenidodatos .inputdatos,
 .contenidodatos .textdatos {
-    background-color: #fff;
-    color: #000;
-    padding: 1rem 2rem;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 500;
-    border-radius: 50px;
-    outline: none;
-    border: none;
-    z-index: var(--z-normal);
+  background-color: #fff;
+  color: #000;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  z-index: var(--z-normal);
 }
 
 .contenidodatos .inputdatos:hover,
 .contenidodatos .textdatos:hover {
-    outline: 3px solid #fff;
+  outline: 3px solid #fff;
 }
 
 .contenidodatos .inputdatos:focus,
 .contenidodatos .textdatos:focus {
-    outline: 3px solid var(--contraste);
-    z-index: var(--z-normal);
+  outline: 3px solid var(--contraste);
+  z-index: var(--z-normal);
 }
 
 .contenidodatos .botondatos {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: #EFBF04;
-    border: 0.2rem solid #EFBF04;
-    color: #001F3F;
-    z-index: var(--z-normal);
-    transition: .5s;
-    width: 50rem;
-    height: 6rem;
-    padding: 1rem 2rem;
-    font-size: 2.6rem;
-    font-weight: 700;
-    margin-bottom: 5rem;
-    border-radius: 50px;
-    cursor: pointer; /* Accesibilidad */
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #efbf04;
+  border: 0.2rem solid #efbf04;
+  color: #001f3f;
+  z-index: var(--z-normal);
+  transition: 0.5s;
+  width: 100%;
+  height: 6rem;
+  padding: 1rem 2rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+  border-radius: 50px;
+  cursor: pointer; /* Accesibilidad */
 }
 
 .contenidodatos .botondatos:hover {
-    background: transparent;
-    color: #EFBF04;
+  background: transparent;
+  color: #efbf04;
 }
 
 .contenidodatos .botondatos::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: #001F3F;
-    z-index: var(--z-fondo);
-    transition: .5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #001f3f;
+  z-index: var(--z-fondo);
+  transition: 0.5s;
 }
 
 .contenidodatos .botondatos:hover::before {
-    width: 100%;
+  width: 100%;
 }
 
 footer {
-    padding: 2rem 0;
-    align-items: center;
-    text-align: center;
-    background-color: var(--fondo-mas-oscuro);
+  padding: 2rem 0;
+  align-items: center;
+  text-align: center;
+  background-color: var(--fondo-mas-oscuro);
 }
 
 footer h2 {
-    font-size: 2.5rem;
-    margin: 1rem;
+  font-size: 2.5rem;
+  margin: 1rem;
 }
 
 footer h3 {
-    font-size: 1.7rem;
-    font-weight: 500;
-    margin: 1rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 1rem;
 }
 
 /* Estilo para el botón Copiar */
 .copy-btn {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 15rem;
-    height: 100%;
-    background-color: #EFBF04;
-    border: .2rem solid #EFBF04;
-    border-radius: 50px;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #001F3F;
-    z-index: var(--z-normal);
-    overflow: hidden;
-    transition: .5s;
-    cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 100%;
+  background-color: #efbf04;
+  border: 0.2rem solid #efbf04;
+  border-radius: 50px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #001f3f;
+  z-index: var(--z-normal);
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-left: 1rem;
 }
 
 .copy-btn:hover {
-    background: transparent;
-    color: #EFBF04;
+  background: transparent;
+  color: #efbf04;
 }
 
 .copy-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: #001F3F;
-    z-index: var(--z-fondo);
-    transition: .5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #001f3f;
+  z-index: var(--z-fondo);
+  transition: 0.5s;
 }
 
 .copy-btn:hover::before {
-    width: 100%;
+  width: 100%;
 }
 
 .mas {
-    position: relative;
-    z-index: var(--z-normal);
+  position: relative;
+  z-index: var(--z-normal);
 }
 
 .mas a:hover {
-    color: var(--contraste);
+  color: var(--contraste);
 }
 
 /* Estilos del Popup de Correo Copiado */
 .popup {
-    display: none;
-    position: fixed;
-    inset: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: var(--z-modal); /* Usando variable (2000) */
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-modal); /* Usando variable (2000) */
 }
 
 .popup-content {
-    background-color: rgba(222, 189, 89, 0.95);
-    border: 1px solid #DEBD59;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-    max-width: 80%;
-    box-shadow: 0 0 20px rgba(222, 189, 89, 0.5);
-    border-radius: 10px;
-    max-height: 80vh;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
+  background-color: rgba(222, 189, 89, 0.95);
+  border: 1px solid #debd59;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  max-width: 80%;
+  box-shadow: 0 0 20px rgba(222, 189, 89, 0.5);
+  border-radius: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
 }
 
 .popup-info {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #000;
-    text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+  text-align: center;
 }
 
 .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 50px;
-    line-height: 1;
-    cursor: pointer; /* Accesibilidad */
-    color: #ff0000;
-    padding: 4px;
-    border: none;
-    background: none;
-    transition: transform 0.3s;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 50px;
+  line-height: 1;
+  cursor: pointer; /* Accesibilidad */
+  color: #ff0000;
+  padding: 4px;
+  border: none;
+  background: none;
+  transition: transform 0.3s;
 }
 
 .close:hover {
-    transform: scale(1.2);
-    color: #ffcccc;
+  transform: scale(1.2);
+  color: #ffcccc;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card {
+    transition: none;
+  }
 }
