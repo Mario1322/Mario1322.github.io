@@ -28,10 +28,15 @@ window.onscroll = () => {
     let sections = document.querySelectorAll('section');
     let navLinks = document.querySelectorAll('header nav a');
     let fromTop = window.scrollY;
+    let viewportBottom = window.innerHeight + window.scrollY;
+    let documentHeight = document.documentElement.scrollHeight;
+    let isAtPageBottom = viewportBottom >= documentHeight - 4;
 
     sections.forEach(sec => {
         let sectionId = sec.getAttribute('id');
-        let navLink = document.querySelector(`header nav a[href="#${sectionId}"]`);
+        let navLink = document.querySelector(
+            `header nav a[href="#${sectionId}"], header nav a[href$="/#${sectionId}"]`
+        );
         let offset = sec.offsetTop - 100;
         let height = sec.offsetHeight;
 
@@ -40,6 +45,14 @@ window.onscroll = () => {
             if (navLink) navLink.classList.add('active');
         }
     });
+
+    if (isAtPageBottom) {
+        let contactLink = document.querySelector(
+            'header nav a[href="#contacto"], header nav a[href$="/#contacto"]'
+        );
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (contactLink) contactLink.classList.add('active');
+    }
 
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);

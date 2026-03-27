@@ -25,8 +25,8 @@
 :root {
   /* Colores */
   --fondo-oscuro: #d9dadf;
-  --fondo-oscuro-nvar: #efbf04;
-  --fondo-mas-oscuro: #efbf04;
+  --fondo-oscuro-nvar: #d4a63a;
+  --fondo-mas-oscuro: #d4a63a;
   --contraste: #001f3f;
   --negro: #fff;
   --blanco: #000;
@@ -48,10 +48,20 @@
   --nav-border: rgba(255, 255, 255, 0.7);
   --nav-pill: rgba(0, 0, 0, 0.06);
   --nav-shadow: 0 18px 40px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
-  --nav-accent: rgba(222, 189, 89, 0.36);
-  --accent-gold: #debd59;
+  --nav-accent: rgba(212, 166, 58, 0.32);
+  --accent-gold: #d4a63a;
   --accent-ink: #101828;
-  --accent-glow: rgba(222, 189, 89, 0.35);
+  --accent-glow: rgba(212, 166, 58, 0.3);
+  --button-bg: #d4a63a;
+  --button-border: #d4a63a;
+  --button-text: #0f172a;
+  --button-hover-fill: #14213d;
+  --button-hover-text: #d4a63a;
+  --surface-card: rgba(255, 255, 255, 0.08);
+  --surface-card-strong: rgba(255, 255, 255, 0.12);
+  --surface-card-dark: rgba(15, 22, 38, 0.76);
+  --footer-bg: linear-gradient(135deg, rgba(212, 166, 58, 0.95), rgba(177, 130, 36, 0.95));
+  --footer-text: #0f172a;
   --bg-light-start: #eef3ff;
   --bg-light-end: #4563a3;
   --bg-dark-start: var(--bg-light-end);
@@ -75,15 +85,25 @@
   --opacidad-baja: 0.1;
   --opacidad-alta: 1;
   --estrellas: 204, 205, 211;
-  --fondo-oscuro-letras: #efbf04;
+  --fondo-oscuro-letras: #d4a63a;
   --nav-bg: rgba(18, 18, 20, 0.72);
   --nav-border: rgba(255, 255, 255, 0.14);
   --nav-pill: rgba(255, 255, 255, 0.14);
   --nav-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
-  --nav-accent: rgba(222, 189, 89, 0.36);
-  --accent-gold: #debd59;
+  --nav-accent: rgba(212, 166, 58, 0.32);
+  --accent-gold: #d4a63a;
   --accent-ink: #101828;
-  --accent-glow: rgba(222, 189, 89, 0.35);
+  --accent-glow: rgba(212, 166, 58, 0.3);
+  --button-bg: #d4a63a;
+  --button-border: #d4a63a;
+  --button-text: #0f172a;
+  --button-hover-fill: #14213d;
+  --button-hover-text: #d4a63a;
+  --surface-card: rgba(255, 255, 255, 0.06);
+  --surface-card-strong: rgba(255, 255, 255, 0.1);
+  --surface-card-dark: rgba(15, 22, 38, 0.84);
+  --footer-bg: linear-gradient(135deg, rgba(212, 166, 58, 0.94), rgba(151, 108, 28, 0.96));
+  --footer-text: #101828;
   --particle-color: #b9d2ff;
   --bg-dark-start: var(--bg-light-end);
   --bg-dark-end: #0b0f1a;
@@ -421,7 +441,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 label[for]:focus-visible {
-  outline: 3px solid #debd59;
+  outline: 3px solid var(--accent-gold);
   outline-offset: 3px;
   border-radius: 8px;
 }

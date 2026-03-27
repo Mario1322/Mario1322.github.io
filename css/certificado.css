@@ -40,14 +40,16 @@
   gap: 1rem;
   width: min(100%, 1200px);
   padding: 1.8rem;
-  border: 0.2rem solid #debd59;
+  border: 0.2rem solid var(--accent-gold);
   border-radius: 50px;
+  background: var(--surface-card);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
 }
 
 .navigation button {
-  background-color: #efbf04;
-  color: #001f3f;
-  border: 0.2rem solid #efbf04;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 0.2rem solid var(--button-border);
   font-size: 1.5rem;
   padding: 10px 20px;
   border-radius: 50px;
@@ -60,9 +62,9 @@
 }
 
 .navigation button:hover {
-  background-color: #001f3f;
-  color: #efbf04;
-  border: 1px solid #001f3f;
+  background-color: var(--button-hover-fill);
+  color: var(--button-hover-text);
+  border: 1px solid var(--button-hover-fill);
   transform: translateY(-2px);
 }
 
@@ -92,12 +94,12 @@
   width: 100%;
   max-width: 600px;
   padding: 25px 40px;
-  background-color: #efbf04;
-  border: 0.2rem solid #efbf04;
+  background-color: var(--button-bg);
+  border: 0.2rem solid var(--button-border);
   border-radius: 50px;
   font-size: 2.8rem;
   font-weight: 800;
-  color: #001f3f;
+  color: var(--button-text);
   z-index: var(--z-normal);
   overflow: hidden;
   transition: 0.5s;
@@ -106,12 +108,12 @@
 }
 
 .botones .btn:hover {
-  color: #efbf04;
+  color: var(--button-hover-text);
 }
 
 .botones .btn:nth-child(2) {
   background: transparent;
-  color: #efbf04;
+  color: var(--button-hover-text);
 }
 
 .botones .btn:nth-child(2):hover {
@@ -119,7 +121,7 @@
 }
 
 .botones .btn:nth-child(2)::before {
-  background: #efbf04;
+  background: var(--button-bg);
 }
 
 .botones .btn::before {
@@ -129,7 +131,7 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background: #001f3f;
+  background: var(--button-hover-fill);
   z-index: var(--z-fondo);
   transition: 0.5s;
 }

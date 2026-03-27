@@ -27,9 +27,10 @@
 }
 
 .contact-card {
-  border: 0.2rem solid #debd59;
+  border: 0.2rem solid var(--accent-gold);
   border-radius: 50px;
   padding: 2.4rem 2.2rem;
+  background: var(--surface-card);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -37,8 +38,8 @@
 }
 
 .contact-card:hover {
-  outline: 2px solid #debd59;
-  box-shadow: 0 0 20px #debd59;
+  outline: 2px solid var(--accent-gold);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16), 0 0 20px var(--accent-glow);
   transform: translateY(-4px);
 }
 
@@ -130,9 +131,9 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: #efbf04;
-  border: 0.2rem solid #efbf04;
-  color: #001f3f;
+  background-color: var(--button-bg);
+  border: 0.2rem solid var(--button-border);
+  color: var(--button-text);
   z-index: var(--z-normal);
   transition: 0.5s;
   width: 100%;
@@ -147,7 +148,7 @@
 
 .contenidodatos .botondatos:hover {
   background: transparent;
-  color: #efbf04;
+  color: var(--button-hover-text);
 }
 
 .contenidodatos .botondatos::before {
@@ -157,7 +158,7 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background: #001f3f;
+  background: var(--button-hover-fill);
   z-index: var(--z-fondo);
   transition: 0.5s;
 }
@@ -170,18 +171,22 @@ footer {
   padding: 2rem 0;
   align-items: center;
   text-align: center;
-  background-color: var(--fondo-mas-oscuro);
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.16);
 }
 
 footer h2 {
   font-size: 2.5rem;
   margin: 1rem;
+  color: var(--footer-text);
 }
 
 footer h3 {
   font-size: 1.7rem;
   font-weight: 500;
   margin: 1rem;
+  color: rgba(15, 23, 42, 0.78);
 }
 
 /* Estilo para el botón Copiar */
@@ -192,12 +197,12 @@ footer h3 {
   align-items: center;
   width: 15rem;
   height: 100%;
-  background-color: #efbf04;
-  border: 0.2rem solid #efbf04;
+  background-color: var(--button-bg);
+  border: 0.2rem solid var(--button-border);
   border-radius: 50px;
   font-size: 2.2rem;
   font-weight: 800;
-  color: #001f3f;
+  color: var(--button-text);
   z-index: var(--z-normal);
   overflow: hidden;
   transition: 0.5s;
@@ -207,7 +212,7 @@ footer h3 {
 
 .copy-btn:hover {
   background: transparent;
-  color: #efbf04;
+  color: var(--button-hover-text);
 }
 
 .copy-btn::before {
@@ -217,7 +222,7 @@ footer h3 {
   left: 0;
   width: 0%;
   height: 100%;
-  background: #001f3f;
+  background: var(--button-hover-fill);
   z-index: var(--z-fondo);
   transition: 0.5s;
 }
@@ -247,17 +252,18 @@ footer h3 {
 }
 
 .popup-content {
-  background-color: rgba(222, 189, 89, 0.95);
-  border: 1px solid #debd59;
+  background-color: rgba(212, 166, 58, 0.95);
+  border: 1px solid var(--accent-gold);
   padding: 20px;
   text-align: center;
   width: 300px;
   max-width: 80%;
-  box-shadow: 0 0 20px rgba(222, 189, 89, 0.5);
+  box-shadow: 0 0 20px rgba(212, 166, 58, 0.45);
   border-radius: 10px;
   max-height: 80vh;
   overflow-y: auto;
   transition: transform 0.3s ease;
+  color: var(--button-text);
 }
 
 .popup-info {

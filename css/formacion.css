@@ -44,6 +44,13 @@
   padding-bottom: 0.1rem;
 }
 
+.education-group-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 0.2rem 0 2.6rem;
+  padding-left: 2rem;
+}
+
 .education-box .education-content {
   position: relative;
   padding-left: 2rem;
@@ -52,9 +59,10 @@
 .education-content .content {
   position: relative;
   padding: 1.5rem;
-  border: 0.2rem solid #debd59;
+  border: 0.2rem solid var(--accent-gold);
   border-radius: 50px;
   margin-bottom: 2rem;
+  background: var(--surface-card);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -66,14 +74,22 @@
 }
 
 .education-content .content:hover {
-  outline: 2px solid #debd59;
-  box-shadow: 0 0 20px #debd59;
+  outline: 2px solid var(--accent-gold);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16), 0 0 20px var(--accent-glow);
   transform: translateY(-4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .education-content .content {
     transition: none;
+  }
+
+  .education-toggle-btn {
+    transition: none;
+  }
+
+  .course-item-enter {
+    animation: none;
   }
 }
 
@@ -91,6 +107,69 @@
   font-size: 2rem;
   padding-top: 0.5rem;
   font-weight: 500;
+}
+
+.education-toggle-btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: min(100%, 42rem);
+  padding: 1.5rem 2.8rem;
+  background-color: var(--button-bg);
+  border: 0.2rem solid var(--button-border);
+  border-radius: 50px;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--button-text);
+  overflow: hidden;
+  transition:
+    color 0.5s ease,
+    transform 0.25s ease;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.education-toggle-btn:hover {
+  color: var(--button-hover-text);
+  transform: translateY(-2px);
+}
+
+.education-toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--button-hover-fill);
+  z-index: var(--z-fondo);
+  transition: width 0.5s ease;
+}
+
+.education-toggle-btn:hover::before {
+  width: 100%;
+}
+
+.education-toggle-btn {
+  z-index: var(--z-normal);
+}
+
+.course-item-enter {
+  animation: courseReveal 0.55s ease both;
+}
+
+@keyframes courseReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .project-image {

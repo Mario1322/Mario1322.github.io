@@ -1,4 +1,4 @@
-const STATIC_CACHE = "portfolio-static-v8";
+const STATIC_CACHE = "portfolio-static-v10";
 const RUNTIME_CACHE = "portfolio-runtime-v1";
 const IMAGE_CACHE = "portfolio-images-v1";
 const MAX_IMAGE_ENTRIES = 50;
@@ -7,6 +7,9 @@ const MAX_RUNTIME_ENTRIES = 80;
 const CORE_ASSETS = [
   "/",
   "/index.html",
+  "/en/",
+  "/en/index.html",
+  "/en/manifest.json",
   "/manifest.json",
   "/css/Idioma.css",
   "/css/certificado.css",
@@ -20,6 +23,7 @@ const CORE_ASSETS = [
   "/css/style.css",
   "/js/baffle.min.js",
   "/js/baffleEffect.js",
+  "/js/courseGroups.js",
   "/js/barraidioma.js",
   "/js/copymailscript.js",
   "/js/i18n.js",
@@ -57,6 +61,11 @@ const CORE_ASSETS = [
   "/imagenes/senor-licenciado-440.jpg",
   "/imagenes/senor-licenciado-440.webp",
 ];
+
+const getNavigationFallback = (pathname) =>
+  pathname === "/en" || pathname === "/en/" || pathname.startsWith("/en/")
+    ? "/en/"
+    : "/index.html";
 
 const trimCache = async (cacheName, maxItems) => {
   const cache = await caches.open(cacheName);
@@ -108,14 +117,20 @@ self.addEventListener("fetch", (event) => {
   const isImage = request.destination === "image";
 
   if (isNavigate) {
+    const url = new URL(request.url);
+    const fallbackUrl = getNavigationFallback(url.pathname);
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const copy = response.clone();
-          caches.open(STATIC_CACHE).then((cache) => cache.put("/index.html", copy));
+          if (response && response.status === 200) {
+            caches.open(STATIC_CACHE).then((cache) => {
+              cache.put(request, response.clone());
+              cache.put(fallbackUrl, response.clone());
+            });
+          }
           return response;
         })
-        .catch(() => caches.match("/index.html")),
+        .catch(async () => (await caches.match(request)) || (await caches.match(fallbackUrl))),
     );
     return;
   }

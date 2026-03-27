@@ -47,6 +47,7 @@ h1 {
     width: 41rem;
     height: 6rem;
     border-radius: 50px;
+    gap: 1.2rem;
 }
 
 .botones .btn {
@@ -55,22 +56,22 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: 45px;
-    margin-left: 1px;
+    margin-left: 0;
     width: 19rem;
     height: 100%;
-    background-color: #EFBF04;
-    border: .2rem solid #EFBF04;
+    background-color: var(--button-bg);
+    border: .2rem solid var(--button-border);
     border-radius: 50px;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #001F3F;
+    color: var(--button-text);
     z-index: var(--z-normal); /* Variable */
     overflow: hidden;
     transition: .5s;
 }
 
 .botones .btn:hover {
-    color: #EFBF04;
+    color: var(--button-hover-text);
 }
 
 .botones .btn:nth-child(2) {
@@ -80,12 +81,12 @@ h1 {
 }
 
 .botones .btn:nth-child(2):hover {
-    color: #001F3F;
+    color: var(--button-text);
 }
 
 /* AQUÍ ESTABA EL ERROR: Corregido de :::before a ::before */
 .botones .btn:nth-child(2)::before {
-    background: #EFBF04;
+    background: var(--button-bg);
 }
 
 .botones .btn::before {
@@ -95,7 +96,7 @@ h1 {
     left: 0;
     width: 0%;
     height: 100%;
-    background: #001F3F;
+    background: var(--button-hover-fill);
     z-index: var(--z-fondo); /* Variable (-1) */
     transition: .5s;
 }
@@ -105,7 +106,7 @@ h1 {
 }
 
 .social {
-    margin-top: 85px;
+    margin-top: 6rem;
     z-index: var(--z-normal); /* Corregido para evitar sintaxis inválida en CSS puro */
     position: relative;
     display: inline-flex;
@@ -126,7 +127,7 @@ h1 {
 
 .social a:focus-visible i,
 .social a:focus-visible .social-label {
-    color: #DEBD59;
+    color: var(--accent-gold);
 }
 
 .elguapo {
@@ -142,15 +143,16 @@ h1 {
 }
 
 .home-content p {
-    margin-top: 4rem;
+    margin-top: 2.4rem;
     font-weight: 500;
     font-size: 2rem;
+    line-height: 1.65;
 }
 
 .mas {
     display: flex;
     justify-content: flex-start;
-    margin-top: 40px;
+    margin-top: 2.4rem;
     align-items: center;
 }
 

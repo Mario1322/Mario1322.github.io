@@ -8,7 +8,7 @@
   width: 100%;
   max-width: 920px;
   height: 50px;
-  border: 0.2rem solid #debd59;
+  border: 0.2rem solid var(--accent-gold);
   margin: 0 auto 1.6rem;
   border-radius: 50px;
   overflow: hidden;
@@ -21,18 +21,18 @@
 
 .bar {
   height: 100%;
-  background-color: #debd59;
+  background-color: var(--button-bg);
   text-align: center;
   line-height: 50px;
-  color: #001f3f;
+  color: var(--button-text);
   border-radius: 50px;
   font-size: 30px;
   font-weight: 700;
 }
 
 .bar-container:hover {
-  outline: 2px solid #debd59;
-  box-shadow: 0 0 20px #debd59;
+  outline: 2px solid var(--accent-gold);
+  box-shadow: 0 0 20px var(--accent-glow);
   transform: translateY(-2px);
 }
 

@@ -19,10 +19,10 @@
 .testimonial-card,
 .stack-card {
   position: relative;
-  border: 0.2rem solid #debd59;
+  border: 0.2rem solid var(--accent-gold);
   border-radius: 50px;
   padding: 1.8rem 2rem;
-  background: transparent;
+  background: var(--surface-card);
   color: var(--blanco);
   text-align: center;
   transition:
@@ -49,8 +49,8 @@ body.cambiocolor .stack-card {
 .service-card:hover,
 .testimonial-card:hover,
 .stack-card:hover {
-  outline: 2px solid #debd59;
-  box-shadow: 0 0 20px #debd59;
+  outline: 2px solid var(--accent-gold);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18), 0 0 20px var(--accent-glow);
   transform: translateY(-4px);
 }
 
@@ -73,10 +73,10 @@ body.cambiocolor .stack-card {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #debd59;
+  color: var(--accent-gold);
   margin: 0 auto 1.2rem;
-  border: 1px solid rgba(222, 189, 89, 0.55);
-  background: rgba(222, 189, 89, 0.1);
+  border: 1px solid rgba(212, 166, 58, 0.5);
+  background: rgba(212, 166, 58, 0.12);
 }
 
 .timeline-card h3,
@@ -144,8 +144,9 @@ body.cambiocolor .stack-card {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0 auto 1rem;
-  background: #debd59;
-  color: #001f3f;
+  background: var(--button-bg);
+  color: var(--button-text);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.14);
 }
 
 .stack-card-meta {
@@ -184,5 +185,5 @@ body.cambiocolor .stack-card {
   font-size: 1.55rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #debd59;
+  color: var(--accent-gold);
 }

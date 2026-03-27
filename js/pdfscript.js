@@ -5,7 +5,7 @@ const CANVAS_MAX_HEIGHT = 1400;
 
 const STATIC_PDF_ITEMS = [
   {
-    path: "certificados/Certificado-Mario-De-La-Rosa-Garcia-lpc7vju0.pdf",
+    path: "/certificados/Certificado-Mario-De-La-Rosa-Garcia-lpc7vju0.pdf",
     title: "Certificado Mario De La Rosa Garcia",
   },
 ];

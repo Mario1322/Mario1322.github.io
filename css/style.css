@@ -21,8 +21,8 @@ body, html {
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
-  color: #001f3f;
-  background: #efbf04;
+  color: var(--button-text);
+  background: var(--button-bg);
   transform: translateY(-180%);
   transition: transform 0.2s ease;
   z-index: 3000;
@@ -37,7 +37,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #debd59;
+  outline: 2px solid var(--accent-gold);
   outline-offset: 3px;
 }
 

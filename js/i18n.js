@@ -1,9 +1,18 @@
 const LANG_KEY = "siteLang";
+const LANGUAGE_URLS = {
+  es: "/",
+  en: "/en/",
+};
 
-const getPreferredLang = () => {
-  const stored = localStorage.getItem(LANG_KEY);
-  if (stored === "en" || stored === "es") return stored;
-  return document.documentElement.lang?.toLowerCase().startsWith("en") ? "en" : "es";
+const getPageLang = () =>
+  document.documentElement.lang?.toLowerCase().startsWith("en") ? "en" : "es";
+
+const getPreferredLang = () => getPageLang();
+
+const buildLocalizedUrl = (lang) => {
+  const path = LANGUAGE_URLS[lang] || LANGUAGE_URLS.es;
+  const hash = window.location.hash || "";
+  return `${path}${hash}`;
 };
 
 const META_COPY = {
@@ -20,6 +29,8 @@ const META_COPY = {
     workDescription:
       "Portfolio de proyectos, certificaciones y habilidades en desarrollo de software y ciberseguridad.",
     workLanguage: "es",
+    pageUrl: "https://mario1322.github.io/",
+    workId: "https://mario1322.github.io/#portfolio-es",
   },
   en: {
     title: "Mario De La Rosa García",
@@ -34,6 +45,8 @@ const META_COPY = {
     workDescription:
       "Portfolio of projects, certifications, and skills in software development and cybersecurity.",
     workLanguage: "en",
+    pageUrl: "https://mario1322.github.io/en/",
+    workId: "https://mario1322.github.io/#portfolio-en",
   },
 };
 
@@ -45,15 +58,19 @@ function updateMeta(lang) {
   const ogTitle = document.querySelector('meta[property="og:title"]');
   const ogDescription = document.querySelector('meta[property="og:description"]');
   const ogLocale = document.querySelector('meta[property="og:locale"]');
+  const ogUrl = document.querySelector('meta[property="og:url"]');
   const twitterTitle = document.querySelector('meta[name="twitter:title"]');
   const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+  const canonical = document.querySelector('link[rel="canonical"]');
 
   if (description) description.setAttribute("content", copy.description);
   if (ogTitle) ogTitle.setAttribute("content", copy.ogTitle);
   if (ogDescription) ogDescription.setAttribute("content", copy.ogDescription);
   if (ogLocale) ogLocale.setAttribute("content", copy.locale);
+  if (ogUrl) ogUrl.setAttribute("content", copy.pageUrl);
   if (twitterTitle) twitterTitle.setAttribute("content", copy.ogTitle);
   if (twitterDescription) twitterDescription.setAttribute("content", copy.ogDescription);
+  if (canonical) canonical.setAttribute("href", copy.pageUrl);
 }
 
 function updateStructuredData(lang) {
@@ -75,7 +92,9 @@ function updateStructuredData(lang) {
       work.name = copy.workName;
       work.description = copy.workDescription;
       work.inLanguage = copy.workLanguage;
-      work["@id"] = `https://mario1322.github.io/#portfolio-${copy.workLanguage}`;
+      work["@id"] = copy.workId;
+      work.url = copy.pageUrl;
+      work.mainEntityOfPage = copy.pageUrl;
     }
 
     script.textContent = JSON.stringify(data);
@@ -116,7 +135,7 @@ async function loadTranslations(nextLang) {
   const lang = nextLang || getPreferredLang();
   document.documentElement.lang = lang;
   try {
-    const response = await fetch(`./i18n/${lang}.json`);
+    const response = await fetch(`/i18n/${lang}.json`);
     if (!response.ok) throw new Error("No se pudo cargar i18n");
     const translations = await response.json();
     applyTranslations(translations, lang);
@@ -181,15 +200,15 @@ function updateLangToggle(lang) {
   const source = toggle.querySelector("source");
   if (!img) return;
   if (nextLang === "en") {
-    img.src = "imagenes/english-24.png";
-    img.srcset = "imagenes/english-24.png 24w, imagenes/english-48.png 48w";
+    img.src = "/imagenes/english-24.png";
+    img.srcset = "/imagenes/english-24.png 24w, /imagenes/english-48.png 48w";
     img.alt = "Switch to English language";
-    if (source) source.srcset = "imagenes/english-24.webp 24w, imagenes/english-48.webp 48w";
+    if (source) source.srcset = "/imagenes/english-24.webp 24w, /imagenes/english-48.webp 48w";
   } else {
-    img.src = "imagenes/espanol-24.png";
-    img.srcset = "imagenes/espanol-24.png 24w, imagenes/espanol-48.png 48w";
+    img.src = "/imagenes/espanol-24.png";
+    img.srcset = "/imagenes/espanol-24.png 24w, /imagenes/espanol-48.png 48w";
     img.alt = "Cambiar a idioma Español";
-    if (source) source.srcset = "imagenes/espanol-24.webp 24w, imagenes/espanol-48.webp 48w";
+    if (source) source.srcset = "/imagenes/espanol-24.webp 24w, /imagenes/espanol-48.webp 48w";
   }
 }
 
@@ -205,11 +224,13 @@ function updateLangButtons(lang) {
 function setLanguage(lang) {
   if (lang !== "en" && lang !== "es") return;
   localStorage.setItem(LANG_KEY, lang);
-  loadTranslations(lang);
+  window.location.href = buildLocalizedUrl(lang);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadTranslations();
+  const lang = getPreferredLang();
+  localStorage.setItem(LANG_KEY, lang);
+  loadTranslations(lang);
   document.querySelectorAll("[data-lang]").forEach((btn) => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
   });
