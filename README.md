@@ -36,7 +36,6 @@ Un portfolio web interactivo, bilingüe y moderno diseñado para presentar mis p
 └── package.json      # Configuración de dependencias de entorno de desarrollo.
 ```
 
-## 🛠️ Tecnologías Utilizadas
 ## 💻 Instalación y Uso Local
 Al ser un proyecto desarrollado con tecnologías frontend puras (sin frameworks pesados), es muy sencillo de ejecutar:
 Clonar el repositorio:
