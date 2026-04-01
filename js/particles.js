@@ -56,7 +56,7 @@ function initParticles() {
         opacity: 0.4,
         width: 1,
       },
-      move: { enable: true, speed: 1, random: true, out_mode: "out" },
+      move: { enable: true, speed: 1.5, random: true, out_mode: "out" },
     },
     interactivity: {
       detect_on: "window",
@@ -66,7 +66,7 @@ function initParticles() {
         resize: true,
       },
       modes: {
-        repulse: { distance: 120, duration: 0.5 },
+        repulse: { distance: 200, duration: 0.4 },
       },
     },
     retina_detect: true,

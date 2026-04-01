@@ -445,3 +445,27 @@ label[for]:focus-visible {
   outline-offset: 3px;
   border-radius: 8px;
 }
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+  position: absolute;
+  bottom: -2px; /* Justo debajo del borde real */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px); /* Un poco más corta que el ancho total para elegancia */
+  height: 4px;
+  background: rgba(212, 166, 58, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #b88a1a, var(--accent-gold), #f1c40f);
+  box-shadow: 0 0 12px var(--accent-gold), 0 0 4px #f1c40f;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}

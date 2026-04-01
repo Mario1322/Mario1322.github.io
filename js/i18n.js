@@ -10,9 +10,15 @@ const getPageLang = () =>
 const getPreferredLang = () => getPageLang();
 
 const buildLocalizedUrl = (lang) => {
-  const path = LANGUAGE_URLS[lang] || LANGUAGE_URLS.es;
+  const currentPath = window.location.pathname;
+  const filename = currentPath.split("/").pop() || "index.html";
   const hash = window.location.hash || "";
-  return `${path}${hash}`;
+
+  // Directorio base según el idioma
+  const basePath = lang === "en" ? "/en/" : "/";
+
+  // Evitar duplicar /en/ si ya estamos allí o si volvemos a la raíz
+  return `${basePath}${filename}${hash}`;
 };
 
 const META_COPY = {
@@ -159,10 +165,10 @@ function applyTranslations(map, lang) {
     el.innerHTML = text;
   });
 
-  // Elements with explicit per-language text
+  // Elements with explicit per-language text (Support HTML for formatting)
   document.querySelectorAll("[data-i18n-es],[data-i18n-en]").forEach((el) => {
     const nextText = lang === "en" ? el.dataset.i18nEn : el.dataset.i18nEs;
-    if (nextText) el.textContent = nextText;
+    if (nextText) el.innerHTML = nextText;
   });
 
   // Elements with translatable placeholders
@@ -224,10 +230,24 @@ function updateLangButtons(lang) {
 function setLanguage(lang) {
   if (lang !== "en" && lang !== "es") return;
   localStorage.setItem(LANG_KEY, lang);
-  window.location.href = buildLocalizedUrl(lang);
+
+  // Efecto de salida suave
+  document.body.classList.add("page-fade-out");
+
+  setTimeout(() => {
+    window.location.href = buildLocalizedUrl(lang);
+  }, 400); // Coincide con la duración del CSS (0.4s)
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Efecto de entrada suave
+  document.body.classList.add("page-fade-in");
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      document.body.classList.remove("page-fade-in");
+    }, 50);
+  });
+
   const lang = getPreferredLang();
   localStorage.setItem(LANG_KEY, lang);
   loadTranslations(lang);

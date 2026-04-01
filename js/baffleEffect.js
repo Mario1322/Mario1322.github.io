@@ -24,37 +24,40 @@ function prefersReducedMotion() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (prefersReducedMotion()) {
-    return;
-  }
+  if (prefersReducedMotion()) return;
 
-  let baffleInstance = null;
+  const characters = "█▓▓ ░░>██ ▓█▓>▓ ▓<█ ░<▒░▓ █░<█ █▒> ▓░▓< ▒▓░░";
   let isLoaded = false;
 
-  const startEffect = () => {
-    const profesionNode = document.querySelector(".profesion");
-    if (!profesionNode || typeof window.baffle === "undefined") {
-      return;
-    }
+  const applyBaffle = (node, duration = 1200) => {
+    if (typeof window.baffle === "undefined") return;
+    const b = window.baffle(node, { characters, speed: 60 });
+    b.start().reveal(duration);
+  };
 
-    if (baffleInstance) {
-      baffleInstance.stop();
-    }
+  const initSectionBaffle = () => {
+    const titles = document.querySelectorAll('.titulo h2');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          applyBaffle(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-    baffleInstance = window.baffle(profesionNode);
-    baffleInstance.set({
-      characters: "█▓▓ ░░>██ ▓█▓>▓ ▓<█ ░<▒░▓ █░<█ █▒> ▓░▓< ▒▓░░",
-      speed: 90,
-    });
-    baffleInstance.start();
-    baffleInstance.reveal(3000);
+    titles.forEach(t => observer.observe(t));
+    
+    // Also apply to profession line on load
+    const profession = document.querySelector('.profesion');
+    if (profession) applyBaffle(profession, 2000);
   };
 
   const boot = () =>
     loadScript(BAFFLE_SRC)
       .then(() => {
         isLoaded = true;
-        startEffect();
+        initSectionBaffle();
       })
       .catch(() => {});
 
@@ -64,14 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(boot, 500);
   }
 
+  // Support re-trigger on language change for profession only
   document.addEventListener("i18n:changed", () => {
-    if (prefersReducedMotion()) {
-      return;
-    }
-    if (isLoaded) {
-      startEffect();
-    } else {
-      boot();
+    if (isLoaded && !prefersReducedMotion()) {
+      const profession = document.querySelector('.profesion');
+      if (profession) applyBaffle(profession, 1500);
     }
   });
 });

@@ -5,7 +5,7 @@ const CANVAS_MAX_HEIGHT = 1400;
 
 const STATIC_PDF_ITEMS = [
   {
-    path: "/certificados/Certificado-Mario-De-La-Rosa-Garcia-lpc7vju0.pdf",
+    path: "certificados/Certificado-Mario-De-La-Rosa-Garcia-lpc7vju0.pdf",
     title: "Certificado Mario De La Rosa Garcia",
   },
 ];
@@ -84,7 +84,10 @@ function buildPdfItems() {
 
 async function loadPDF(index) {
   const canvas = document.getElementById("pdf-render");
+  const loader = document.getElementById("pdf-loader");
   if (!canvas || !pdfItems.length) return;
+
+  if (loader) loader.style.display = "flex";
 
   const context = canvas.getContext("2d");
   const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
@@ -93,6 +96,7 @@ async function loadPDF(index) {
   try {
     const pdfjsLib = await getPdfLib();
     if (!pdfjsLib) {
+      if (loader) loader.style.display = "none";
       showCanvasStatus(
         context,
         isEnglish ? "PDF.js could not be loaded." : "No se pudo cargar PDF.js.",
@@ -102,7 +106,14 @@ async function loadPDF(index) {
 
     pdfjsLib.GlobalWorkerOptions.workerSrc = PDF_WORKER_SRC;
     const item = pdfItems[index];
-    const pdf = await pdfjsLib.getDocument(item.path).promise;
+
+    const isEnSub = window.location.pathname.includes("/en/");
+    let fullPath = item.path;
+    if (isEnSub && !fullPath.startsWith("http") && !fullPath.startsWith("/") && !fullPath.startsWith("..")) {
+      fullPath = "../" + fullPath;
+    }
+
+    const pdf = await pdfjsLib.getDocument(fullPath).promise;
     const page = await pdf.getPage(1);
     const baseViewport = page.getViewport({ scale: 1 });
     const scaleToWidth = CANVAS_WIDTH / baseViewport.width;
@@ -115,11 +126,14 @@ async function loadPDF(index) {
     context.clearRect(0, 0, canvas.width, canvas.height);
     await page.render({ canvasContext: context, viewport }).promise;
 
+    if (loader) loader.style.display = "none";
+
     const titleElem = document.getElementById("titulo-pdf");
     const downloadLink = document.getElementById("download-pdf");
     if (titleElem) titleElem.innerText = item.title;
-    if (downloadLink) downloadLink.href = item.path;
+    if (downloadLink) downloadLink.href = fullPath;
   } catch (error) {
+    if (loader) loader.style.display = "none";
     showCanvasStatus(
       context,
       isEnglish ? "Could not load certificate." : "No se pudo cargar el certificado.",

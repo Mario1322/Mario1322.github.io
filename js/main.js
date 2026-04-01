@@ -9,6 +9,7 @@ import './pdfscript.js';
 import './scrollanimation.js';
 import './baffleEffect.js';
 import './courseGroups.js';
+import './premiumEffects.js';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {

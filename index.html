@@ -7,6 +7,10 @@
       name="description"
       content="Portfolio de Mario De La Rosa García, un desarrollador de software especializado en ciberseguridad y desarrollo de aplicaciones multiplataforma. Explora mis habilidades, formación y proyectos."
     />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https:; form-action 'self' https://nasdlrg.duckdns.org;"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://mario1322.github.io/" />
@@ -112,6 +116,7 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/Idioma.css" />
     <link rel="stylesheet" href="css/certificado.css" />
+    <link rel="stylesheet" href="css/terminal.css" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon-16.png" />
@@ -122,11 +127,18 @@
 
     <script type="module" src="js/main.js"></script>
     <script src="js/i18n.js" defer></script>
+    <script src="js/contact.js"></script>
+    <script src="js/terminal.js"></script>
 
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+      integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2"
+      crossorigin="anonymous"
+    />
   </head>
 
-  <body class="color-scheme-3">
+  <body class="color-scheme-3 page-fade-in">
     <a
       class="skip-link"
       href="#main-content"
@@ -159,6 +171,8 @@
             width="98"
             height="52"
             decoding="async"
+            fetchpriority="high"
+            loading="eager"
           />
         </picture>
         <span class="animate" style="--i: 1"></span>
@@ -749,7 +763,13 @@
             </div>
 
             <div class="education-column">
-              <h3 class="title" id="proyectos">Proyectos</h3>
+              <h3 class="title" id="proyectos">Proyectos Académicos</h3>
+              <div class="education-box projects-cta" style="border: none; margin-bottom: 3.5rem;">
+                <a href="proyectos.html" class="btn btn-premium-gold" style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                  <i class="bx bxs-rocket-glow bx-tada-hover"></i>
+                  <span data-i18n-es="Ver MIS PROYECTOS PROPIOS" data-i18n-en="View MY OWN PROJECTS">Ver MIS PROYECTOS PROPIOS</span>
+                </a>
+              </div>
               <div class="education-box line">
                 <div class="education-content">
                   <div class="content">
@@ -2200,10 +2220,22 @@
               <h2 id="idiomas1">Idiomas</h2>
             </div>
             <div class="bar-container espanol">
-              <div class="bar" data-i18n-es="Español" data-i18n-en="Spanish">Español</div>
+              <div
+                class="bar"
+                data-i18n-es="Español [NATIVO]"
+                data-i18n-en="Spanish [NATIVE]"
+              >
+                Español [NATIVO]
+              </div>
             </div>
             <div class="bar-container ingles">
-              <div class="bar" data-i18n-es="Inglés" data-i18n-en="English">Inglés</div>
+              <div
+                class="bar"
+                data-i18n-es="Inglés [C1 - AVANZADO]"
+                data-i18n-en="English [C1 - ADVANCED]"
+              >
+                Inglés [C1 - AVANZADO]
+              </div>
             </div>
           </div>
         </section>
@@ -2213,7 +2245,7 @@
             <h2 id="certificados1">Certificados</h2>
           </div>
           <div id="titulo-pdf"></div>
-          <div class="navigation">
+          <div class="navigation" style="position: relative; display: flex; align-items: center; justify-content: center; gap: 1rem; width: 100%; max-width: 1000px; margin: 0 auto;">
             <button
               id="prevBtn"
               type="button"
@@ -2223,14 +2255,18 @@
             >
               &#10094;
             </button>
-            <canvas
-              id="pdf-render"
-              width="600"
-              height="800"
-              aria-label="Vista previa del certificado"
-              data-i18n-aria-label-es="Vista previa del certificado"
-              data-i18n-aria-label-en="Certificate preview"
-            ></canvas>
+            <div class="pdf-wrap" style="position: relative; flex: 1; min-height: 400px; display: flex; align-items: center; justify-content: center;">
+              <div id="pdf-loader" class="pdf-skeleton" style="display: none;"></div>
+              <canvas
+                id="pdf-render"
+                width="600"
+                height="800"
+                style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"
+                aria-label="Vista previa del certificado"
+                data-i18n-aria-label-es="Vista previa del certificado"
+                data-i18n-aria-label-en="Certificate preview"
+              ></canvas>
+            </div>
             <button
               id="nextBtn"
               type="button"
@@ -2303,8 +2339,14 @@
                 <div class="contenidodatos">
                   <div class="centradotexto">
                     <div class="iconotexto">
-                      <i class="bx bx-envelope correo"></i>
-                      <h4 id="email-text">mdlrg1322@gmail.com</h4>
+                      <i class="bx bx-envelope correo" aria-hidden="true"></i>
+                      <h4
+                        id="email-text"
+                        data-user="mdlrg1322"
+                        data-domain="gmail.com"
+                      >
+                        mdlrg1322 [at] gmail.com
+                      </h4>
                       <button
                         id="copy-button"
                         class="copy-btn"
@@ -2388,6 +2430,15 @@
                       rows="10"
                       required
                     ></textarea>
+
+                    <!-- Honeypot (Security measure against spam bots) -->
+                    <input
+                      type="text"
+                      name="_phantom_trap"
+                      style="display: none"
+                      tabindex="-1"
+                      autocomplete="off"
+                    />
 
                     <input type="hidden" name="_gotcha" />
                   </div>

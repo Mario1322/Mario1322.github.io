@@ -1,6 +1,7 @@
-const STATIC_CACHE = "portfolio-static-v10";
+const STATIC_CACHE = "portfolio-static-v11";
 const RUNTIME_CACHE = "portfolio-runtime-v1";
 const IMAGE_CACHE = "portfolio-images-v1";
+const PDF_CACHE = "portfolio-pdfs-v1";
 const MAX_IMAGE_ENTRIES = 50;
 const MAX_RUNTIME_ENTRIES = 80;
 
@@ -9,6 +10,7 @@ const CORE_ASSETS = [
   "/index.html",
   "/en/",
   "/en/index.html",
+// ... (rest of core assets)
   "/en/manifest.json",
   "/manifest.json",
   "/css/Idioma.css",
@@ -96,7 +98,7 @@ self.addEventListener("activate", (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((key) => ![STATIC_CACHE, RUNTIME_CACHE, IMAGE_CACHE].includes(key))
+            .filter((key) => ![STATIC_CACHE, RUNTIME_CACHE, IMAGE_CACHE, PDF_CACHE].includes(key))
             .map((key) => caches.delete(key)),
         ),
       ),
@@ -115,6 +117,7 @@ self.addEventListener("fetch", (event) => {
   const isNavigate = request.mode === "navigate";
   const isSameOrigin = new URL(request.url).origin === self.location.origin;
   const isImage = request.destination === "image";
+  const isPdf = request.url.toLowerCase().endsWith(".pdf");
 
   if (isNavigate) {
     const url = new URL(request.url);
@@ -136,6 +139,24 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (request.method !== "GET") return;
+
+  // Cache First for PDFs
+  if (isPdf && isSameOrigin) {
+    event.respondWith(
+      caches.open(PDF_CACHE).then((cache) =>
+        cache.match(request).then((cached) => {
+          if (cached) return cached;
+          return fetch(request).then((response) => {
+            if (response && response.status === 200) {
+              cache.put(request, response.clone());
+            }
+            return response;
+          });
+        }),
+      ),
+    );
+    return;
+  }
 
   if (isImage && isSameOrigin) {
     event.respondWith(

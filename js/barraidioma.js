@@ -1,25 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Definimos los progresos aquí para evitar errores de referencia
   const progresosIdiomas = {
-    espanol: 100,
-    ingles: 75,
+    espanol: 100, // Nativo
+    ingles: 85,  // C1 Avanzado
   };
 
-  // Itera sobre cada idioma y actualiza su barra de progreso
   for (let idioma in progresosIdiomas) {
     if (Object.prototype.hasOwnProperty.call(progresosIdiomas, idioma)) {
       let barra = document.querySelector(`.${idioma} .bar`);
 
       if (barra) {
-        // Calcula el ancho
-        var barContentWidth = progresosIdiomas[idioma] + "%";
-
-        // Animación simple con setTimeout
+        // Inicialmente a 0 para que la animación suba
+        barra.style.width = "0%";
+        
         setTimeout(function () {
-          barra.style.width = barContentWidth;
-          // Aseguramos que la transición CSS funcione (debe estar en el CSS)
-          barra.style.transition = "width 1s ease-in-out";
-        }, 500);
+          barra.style.transition = "width 1.75s cubic-bezier(0.1, 0.5, 0.2, 1)";
+          barra.style.width = progresosIdiomas[idioma] + "%";
+        }, 300);
       }
     }
   }
