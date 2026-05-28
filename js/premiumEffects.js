@@ -49,11 +49,11 @@ function init3DTilt() {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            // Adjust rotation strength (increase/decrease for different effect)
-            const rotateX = (centerY - y) / 15; 
-            const rotateY = (x - centerX) / 15;
-            
-            card.style.transform = `perspective(1000px) translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            // Softer tilt so project cards feel steadier while keeping a bit of depth.
+            const rotateX = (centerY - y) / 55;
+            const rotateY = (x - centerX) / 55;
+
+            card.style.transform = `perspective(1000px) translateY(-3px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             
             // Subtly move the inner before-gradient
             const before = card.style;

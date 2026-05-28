@@ -1,303 +1,119 @@
-<!DOCTYPE html>
-<html lang="es" class="no-scroll">
+<!doctype html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Proyectos Propios | Mario De La Rosa García</title>
+    <title>Proyectos | Mario De La Rosa García</title>
     <meta
       name="description"
-      content="Explora mis proyectos destacados en ciberseguridad y desarrollo de aplicaciones. Enfoque proactivo y arquitectura segura."
+      content="Proyectos destacados de Mario De La Rosa García con una presentación más visual y cercana al estilo original del portfolio."
     />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https:; form-action 'self' https://nasdlrg.duckdns.org;"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="imagenes/favicon-32.png" />
-    
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mario1322.github.io/proyectos.html" />
+    <link rel="alternate" hreflang="es" href="https://mario1322.github.io/proyectos.html" />
+    <link rel="alternate" hreflang="en" href="https://mario1322.github.io/en/proyectos.html" />
+    <link rel="alternate" hreflang="x-default" href="https://mario1322.github.io/proyectos.html" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/sections.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/formacion.css" />
-    <link rel="stylesheet" href="css/skills.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/terminal.css" />
     <link rel="stylesheet" href="css/Idioma.css" />
 
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-      integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2"
-      crossorigin="anonymous"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="imagenes/apple-touch-icon.png" />
 
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2" crossorigin="anonymous" />
     <style>
-      .projects-page {
-        padding-top: 14rem;
-        min-height: 100vh;
-        background: radial-gradient(circle at top right, rgba(212, 166, 58, 0.05), transparent 40%),
-                    radial-gradient(circle at bottom left, rgba(212, 166, 58, 0.03), transparent 30%);
-      }
-
-      .hero-projects {
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto 6rem;
-        animation: fadeInUp 0.8s ease forwards;
-      }
-
-      .hero-projects h1 {
-        font-size: 5rem;
-        margin-bottom: 2rem;
-        letter-spacing: -1px;
-      }
-
-      .hero-projects h1 span {
-        color: var(--accent-gold);
-        text-shadow: 0 0 20px var(--accent-glow);
-      }
-
-      .hero-projects p {
-        font-size: 1.8rem;
-        color: var(--text-main);
-        opacity: 0.8;
-        line-height: 1.6;
-      }
-
-      .project-showcase {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-        gap: 3rem;
-        margin-bottom: 8rem;
-      }
-
-      .project-card-full {
-        background: var(--surface-card);
-        border: 1px solid var(--nav-border);
-        border-radius: 2.4rem;
-        padding: 3.5rem;
-        backdrop-filter: blur(12px);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .project-card-full::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(135deg, rgba(212, 166, 58, 0.05), transparent);
-        pointer-events: none;
-      }
-
-      .project-card-full:hover {
-        transform: translateY(-10px);
-        border-color: var(--accent-gold);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(212, 166, 58, 0.1);
-      }
-
-      .project-card-full h2 {
-        color: var(--accent-gold);
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        margin-bottom: 2rem;
-      }
-
-      .tech-tag {
-        background: rgba(212, 166, 58, 0.1);
-        padding: 0.4rem 1.2rem;
-        border-radius: 5rem;
-        font-size: 1.2rem;
-        color: var(--accent-gold);
-        border: 1px solid rgba(212, 166, 58, 0.2);
-        font-weight: 600;
-        letter-spacing: 0.05em;
-      }
-
-      .project-desc {
-        font-size: 1.65rem;
-        line-height: 1.6;
-        margin-bottom: 2.5rem;
-        color: var(--text-main);
-      }
-
-      .detail-list {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 3rem 0;
-      }
-
-      .detail-list li {
-        display: flex;
-        gap: 1.5rem;
-        margin-bottom: 1.8rem;
-        font-size: 1.55rem;
-        line-height: 1.5;
-        color: var(--text-main);
-      }
-
-      .detail-list i {
-        color: var(--accent-gold);
-        font-size: 2rem;
-        margin-top: 0.2rem;
-        flex-shrink: 0;
-      }
-
-      .project-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255,255,255,0.05);
-      }
-
-      .project-links a {
-        font-size: 2.8rem;
-        color: var(--blanco);
-        transition: all 0.3s ease;
-      }
-
-      .project-links a:hover {
-        color: var(--accent-gold);
-        transform: scale(1.2);
-      }
-
-      @media (max-width: 768px) {
-        .hero-projects h1 { font-size: 3.5rem; }
-        .project-showcase { grid-template-columns: 1fr; }
-        .project-card-full { padding: 2.5rem; }
-      }
+      .projects-page { width: min(1200px, calc(100% - 32px)); margin: 0 auto; padding: 6rem 0 8rem; }
+      .hero-projects { margin-bottom: 3rem; text-align: center; }
+      .hero-projects .eyebrow { display: inline-block; margin-bottom: 1.2rem; }
+      .hero-projects h1 { font-size: clamp(3.2rem, 5vw, 5.6rem); margin-bottom: 1.6rem; }
+      .hero-projects p { max-width: 760px; margin: 0 auto; font-size: 1.9rem; }
+      .project-showcase { display: grid; gap: 2.8rem; }
+      .project-card-full { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 2.6rem; align-items: center; padding: 2.4rem; border: .2rem solid var(--accent-gold); border-radius: 40px; background: var(--surface-card); box-shadow: 0 18px 32px rgba(0,0,0,.16); }
+      .project-card-full img { width: 100%; border-radius: 24px; display: block; }
+      .project-meta h2 { font-size: 3rem; margin-bottom: 1rem; }
+      .project-meta p { font-size: 1.9rem; margin-bottom: 1.6rem; }
+      .project-meta .tag { display: inline-flex; margin-bottom: 1rem; padding: .5rem 1.2rem; border-radius: 999px; background: rgba(255,255,255,.16); font-size: 1.3rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+      .tech-stack, .detail-list { display: flex; flex-wrap: wrap; gap: 1rem; padding: 0; margin: 0 0 1.6rem; list-style: none; }
+      .tech-stack li, .detail-list li { border: .2rem solid rgba(255,255,255,.18); border-radius: 999px; padding: .8rem 1.2rem; font-size: 1.5rem; }
+      .project-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+      .project-links a { display: inline-flex; align-items: center; gap: .6rem; padding: 1.2rem 1.8rem; border-radius: 999px; border: .2rem solid var(--button-border); background: var(--button-bg); color: var(--button-text); text-decoration: none; font-size: 1.6rem; font-weight: 700; }
+      .project-links a:hover { background: var(--button-hover-fill); color: var(--button-hover-text); }
+      @media (max-width: 900px) { .project-card-full { grid-template-columns: 1fr; } }
     </style>
   </head>
-
   <body class="color-scheme-3">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <div id="particles-js" class="particle-wrapper"></div>
     <header class="header sticky">
-      <a href="index.html" class="logo">
-        <picture>
-          <source type="image/webp" srcset="imagenes/logo-mrosa-52h.webp 1x, imagenes/logo-mrosa-104h.webp 2x" />
-          <img src="imagenes/logo-mrosa-52h.png" alt="Logo" width="98" height="52" />
-        </picture>
-      </a>
-
-      <nav class="navbar">
-        <a href="index.html" class="active"><i class='bx bx-home-alt'></i> <span data-i18n-es="Inicio" data-i18n-en="Home">Inicio</span></a>
-        
+      <a href="/" class="logo" aria-label="Ir al inicio"><picture><source type="image/webp" srcset="imagenes/logo-mrosa-52h.webp 1x, imagenes/logo-mrosa-104h.webp 2x" /><img class="logo-mark" src="imagenes/logo-mrosa-52h.png" srcset="imagenes/logo-mrosa-52h.png 1x, imagenes/logo-mrosa-104h.png 2x" alt="Logotipo de Mario De La Rosa" width="98" height="52" /></picture></a>
+      <button class="bx bx-menu" id="menu-icon" type="button" aria-label="Abrir menu de navegacion" aria-controls="main-navigation" aria-expanded="false"></button>
+      <nav class="navbar" id="main-navigation" aria-label="Navegacion principal">
+        <a href="index.html">Inicio</a>
+        <a href="proyectos.html" class="active" aria-current="page">Proyectos</a>
+        <a href="formacion.html">Formación</a>
+        <a href="certificados.html">Certificados</a>
+        <a href="index.html#contacto">Contacto</a>
         <div class="navbar-actions">
-          <button id="label_toggle" class="solluna" type="button" aria-label="Cambiar tema">
-            <i class="bx bx-moon"></i>
-          </button>
-          
-          <button class="lang-toggle" type="button" data-lang-toggle data-lang="en" aria-label="Switch to English">
-            <picture>
-              <img class="lang-icon" src="imagenes/english-24.png" alt="English" width="24" height="24">
-            </picture>
-          </button>
+          <button id="label_toggle" class="solluna" type="button" aria-label="Cambiar tema" aria-pressed="false"><i class="bx bx-sun" aria-hidden="true"></i></button>
+          <a class="lang-toggle" href="en/proyectos.html" aria-label="Switch to English version"><picture><source type="image/webp" srcset="imagenes/english-24.webp 24w, imagenes/english-48.webp 48w" sizes="24px" /><img class="lang-icon" src="imagenes/english-24.png" srcset="imagenes/english-24.png 24w, imagenes/english-48.png 48w" sizes="24px" alt="Switch to English language" width="24" height="24" /></picture></a>
         </div>
       </nav>
     </header>
 
-    <main class="projects-page container">
+    <main class="projects-page" id="main-content">
       <section class="hero-projects">
-        <h1 class="cyber-glitch" data-text="MIS PROYECTOS PROPIOS" data-i18n-es="MIS <span>PROYECTOS</span> PROPIOS" data-i18n-en="MY <span>OWN</span> PROJECTS">MIS <span>PROYECTOS</span> PROPIOS</h1>
-        <p data-i18n-es="Una selección de trabajos avanzados donde la ciberseguridad no es un añadido, sino la base de cada línea de código."
-           data-i18n-en="A selection of advanced works where cybersecurity is not an add-on, but the foundation of every line of code.">
-          Una selección de trabajos avanzados donde la ciberseguridad no es un añadido, sino la base de cada línea de código.
-        </p>
+        <span class="eyebrow">Portfolio</span>
+        <h1>Proyectos destacados</h1>
+        <p>El contenido sigue fuera de la home, pero recupera una presentación más visual, más amplia y más cercana al estilo que ya tenía tu portfolio.</p>
       </section>
 
-      <div class="project-showcase">
-        <!-- Family Dashboard -->
+      <section class="project-showcase">
         <article class="project-card-full">
-          <div>
-            <h2><i class='bx bxs-shield-quarter'></i> Family Dashboard</h2>
-            <div class="tech-stack">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">Protocolo Fantasma</span>
-              <span class="tech-tag">Hacking Ético</span>
-            </div>
-            <p class="project-desc">
-              Sistema de gobernanza inteligente bajo el <strong>Protocolo "Fantasma"</strong>. Este enfoque de seguridad proactiva garantiza la invisibilidad de los datos sensibles.
-            </p>
-            <ul class="detail-list">
-              <li><i class='bx bx-check-shield'></i> <div><strong>Capa de Abstracción Fantasma:</strong> Ofuscación de metadatos críticos en tiempo real.</div></li>
-              <li><i class='bx bx-check-shield'></i> <div><strong>Integridad Criptográfica:</strong> Firma digital SHA-256 obligatoria para cada transacción.</div></li>
-              <li><i class='bx bx-check-shield'></i> <div><strong>Filosofía Zero Trust:</strong> Hardening de reglas de seguridad que bloquean accesos por defecto.</div></li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="project-links">
-              <a href="https://github.com/Mario1322" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-            </div>
+          <img src="imagenes/ejerciciosbasicosjava-1280.webp" alt="Family Dashboard" />
+          <div class="project-meta">
+            <span class="tag">Proyecto personal</span>
+            <h2>Family Dashboard</h2>
+            <p>Panel pensado para centralizar tareas, rutinas, recordatorios y seguimiento familiar con una jerarquía clara y una interfaz utilizable.</p>
+            <ul class="tech-stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>UX</li></ul>
+            <ul class="detail-list"><li>Panel central</li><li>Diseño modular</li><li>Jerarquía visual</li></ul>
+            <div class="project-links"><a href="https://github.com/Mario1322" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> Ver código</a></div>
           </div>
         </article>
 
-        <!-- Arkanoid -->
         <article class="project-card-full">
-          <div>
-            <h2><i class='bx bx-game'></i> Arkanoid 2021</h2>
-            <div class="tech-stack">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Swing</span>
-              <span class="tech-tag">OOP</span>
-            </div>
-            <p class="project-desc">
-              Recreación del clásico arcade enfocada en el manejo preciso de colisiones y ciclo de vida de objetos.
-            </p>
-            <ul class="detail-list">
-              <li><i class='bx bx-check-circle'></i> <div>Motor de colisiones físicas personalizadas de alta precisión.</div></li>
-              <li><i class='bx bx-check-circle'></i> <div>Arquitectura orientada a objetos modular y extensible.</div></li>
-              <li><i class='bx bx-check-circle'></i> <div>Sistema de niveles y progresión de dificultad calculada.</div></li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="project-links">
-              <a href="https://github.com/Mario1322/Arkanoid_2021" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-            </div>
+          <img src="imagenes/arkanoid.webp" alt="Arkanoid 2021" />
+          <div class="project-meta">
+            <span class="tag">Proyecto académico</span>
+            <h2>Arkanoid 2021</h2>
+            <p>Reinterpretación del clásico arcade para trabajar físicas, rebotes, niveles y organización orientada a objetos con un resultado completamente funcional.</p>
+            <ul class="tech-stack"><li>Java</li><li>Swing</li><li>POO</li><li>Game Logic</li></ul>
+            <ul class="detail-list"><li>Sistema de vidas</li><li>Puntuación</li><li>Gestión de niveles</li></ul>
+            <div class="project-links"><a href="https://github.com/Mario1322/Arkanoid_2021" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> Ver repositorio</a></div>
           </div>
         </article>
 
-        <!-- Gestión Segura -->
         <article class="project-card-full">
-          <div>
-            <h2><i class='bx bx-lock-alt'></i> Gestión Segura</h2>
-            <div class="tech-stack">
-              <span class="tech-tag">C</span>
-              <span class="tech-tag">Cryptography</span>
-              <span class="tech-tag">Systems</span>
-            </div>
-            <p class="project-desc">
-              Aplicación de escritorio para gestión de datos sensibles con almacenamiento local cifrado y persistencia binaria.
-            </p>
-            <ul class="detail-list">
-              <li><i class='bx bx-check-shield'></i> <div>Hashing de contraseñas y sistema de login seguro.</div></li>
-              <li><i class='bx bx-check-shield'></i> <div>Persistencia en ficheros binarios protegidos contra lectura externa.</div></li>
-              <li><i class='bx bx-check-shield'></i> <div>CRUD completo con validación de tipos estricta y control de memoria.</div></li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="project-links">
-              <a href="https://github.com/Mario1322/Veterinario" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-            </div>
+          <img src="imagenes/senor-licenciado-660.webp" alt="Gestión segura" />
+          <div class="project-meta">
+            <span class="tag">Seguridad y producto</span>
+            <h2>Gestión Segura</h2>
+            <p>Concepto de aplicación orientado a organizar información sensible con control de accesos, estructura clara y una base pensada para crecer de forma segura.</p>
+            <ul class="tech-stack"><li>Security</li><li>Architecture</li><li>Data Flow</li><li>UI</li></ul>
+            <ul class="detail-list"><li>Control de accesos</li><li>Estructura escalable</li><li>Diseño limpio</li></ul>
+            <div class="project-links"><a href="index.html#contacto"><i class="bx bx-message-dots"></i> Hablar sobre este proyecto</a></div>
           </div>
         </article>
-      </div>
+      </section>
     </main>
 
     <script type="module" src="js/main.js"></script>
-    <script src="js/i18n.js" defer></script>
-    <script src="js/terminal.js"></script>
   </body>
 </html>

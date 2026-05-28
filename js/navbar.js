@@ -45,6 +45,7 @@ const handleScroll = () => {
   let viewportBottom = window.innerHeight + window.scrollY;
   let documentHeight = document.documentElement.scrollHeight;
   let isAtPageBottom = viewportBottom >= documentHeight - 4;
+  let matchedLink = null;
 
   sections.forEach((sec) => {
     let sectionId = sec.getAttribute("id");
@@ -54,15 +55,8 @@ const handleScroll = () => {
     let offset = sec.offsetTop - 150; // Ajustado para un trigger más natural
     let height = sec.offsetHeight;
 
-    if (fromTop >= offset && fromTop < offset + height) {
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        link.removeAttribute("aria-current");
-      });
-      if (navLink) {
-        navLink.classList.add("active");
-        navLink.setAttribute("aria-current", "page");
-      }
+    if (fromTop >= offset && fromTop < offset + height && navLink) {
+      matchedLink = navLink;
     }
   });
 
@@ -70,14 +64,18 @@ const handleScroll = () => {
     let contactLink = document.querySelector(
       'header nav a[href="#contacto"], header nav a[href$="/#contacto"]',
     );
+    if (contactLink) {
+      matchedLink = contactLink;
+    }
+  }
+
+  if (matchedLink) {
     navLinks.forEach((link) => {
       link.classList.remove("active");
       link.removeAttribute("aria-current");
     });
-    if (contactLink) {
-      contactLink.classList.add("active");
-      contactLink.setAttribute("aria-current", "page");
-    }
+    matchedLink.classList.add("active");
+    matchedLink.setAttribute("aria-current", "page");
   }
 
   let header = document.querySelector("header");
