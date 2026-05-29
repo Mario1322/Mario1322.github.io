@@ -43,6 +43,21 @@ body {
   scrollbar-color: #d4a63a #0b0f1a;
 }
 
+/* Scrollbar en modo claro */
+body:not(.cambiocolor)::-webkit-scrollbar-track {
+  background: #dde5f5;
+}
+body:not(.cambiocolor)::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9B7A00 0%, #7A5600 100%);
+  border-color: #dde5f5;
+}
+body:not(.cambiocolor)::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b88a1a 0%, #9B7A00 100%);
+}
+body:not(.cambiocolor) {
+  scrollbar-color: #9B7A00 #dde5f5;
+}
+
 body.page-fade-out {
   opacity: 0;
 }
@@ -197,4 +212,16 @@ canvas {
 .page-wrapper, .header, main, .main-wrapper {
   position: relative;
   z-index: var(--z-normal); /* Usando variable (1) */
+}
+
+/* Respetar "Reducir movimiento" del sistema operativo */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

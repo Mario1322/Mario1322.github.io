@@ -1,4 +1,4 @@
-const STATIC_CACHE = "portfolio-static-v11";
+const STATIC_CACHE = "portfolio-static-v15";
 const RUNTIME_CACHE = "portfolio-runtime-v1";
 const IMAGE_CACHE = "portfolio-images-v1";
 const PDF_CACHE = "portfolio-pdfs-v1";
@@ -22,6 +22,7 @@ const CORE_ASSETS = [
   "/css/responsive.css",
   "/css/sections.css",
   "/css/skills.css",
+  "/css/proyectos.css",
   "/css/style.css",
   "/js/baffle.min.js",
   "/js/baffleEffect.js",

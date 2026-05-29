@@ -1,4 +1,4 @@
-const PARTICLES_SRC = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
+const PARTICLES_SRC = "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js";
 
 function loadScript(src) {
   return new Promise((resolve, reject) => {

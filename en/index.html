@@ -9,7 +9,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https:; form-action 'self' https://nasdlrg.duckdns.org;"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https:; worker-src https://cdnjs.cloudflare.com blob:; form-action 'self' https://nasdlrg.duckdns.org;"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
@@ -88,7 +88,7 @@
             "name": "Mario De La Rosa Portfolio",
             "description": "Portfolio of projects, certifications, and skills in software development and cybersecurity.",
             "inLanguage": "en",
-            "dateModified": "2026-03-26",
+            "dateModified": "2026-05-28",
             "author": {
               "@id": "https://mario1322.github.io/#person"
             },
@@ -137,8 +137,8 @@
 
     <script type="module" src="../js/main.js"></script>
     <script src="../js/i18n.js" defer></script>
-    <script src="../js/contact.js"></script>
-    <script src="../js/terminal.js"></script>
+    <script src="../js/contact.js" defer></script>
+    <script src="../js/terminal.js" defer></script>
 
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -214,7 +214,6 @@
         <a href="/en/formacion.html" id="formation">Formación</a>
         <a href="/en/#idioma" id="idiomas">Idiomas</a>
         <a href="/en/certificados.html" id="cert">Certificados</a>
-        <a href="/en/#testimonios" id="testimonialsnav">Testimonios</a>
         <a href="/en/#contacto" id="contact">Contacto</a>
 
         <div class="navbar-actions">
@@ -267,7 +266,7 @@
             </h1>
 
             <div class="botones">
-              <a href="./certificados/Mario dlr CV.pdf" id="curriculum" class="btn" download>
+              <a href="../certificados/Mario_DLR_CV.pdf" id="curriculum" class="btn" download>
                 Descargar CV
               </a>
               <a href="/en/#contacto" id="contactarme" class="btn">Contactarme</a>
@@ -401,6 +400,13 @@
                 Priorizo rendimiento, accesibilidad y diseño para entregar productos reales.
               </p>
             </article>
+            <article class="timeline-card">
+              <span class="timeline-year">2026</span>
+              <h3 id="timeline-role-5">Flutter, Firebase & applied AI</h3>
+              <p id="timeline-desc-5">
+                15+ certifications earned, 2 cross-platform apps in active development with Flutter and Firebase, integrating AI tooling into real workflows.
+              </p>
+            </article>
           </div>
         </section>
 
@@ -413,6 +419,7 @@
               <div class="cartas">
                 <i class="bx bx-code-alt"></i>
                 <h3>FrontEnd</h3>
+                <span class="skill-level-label level-alto" data-i18n-es="Avanzado" data-i18n-en="Advanced">Advanced</span>
                 <div class="articulos">
                   <h4
                     class="popup-trigger"
@@ -429,6 +436,7 @@
                     CSS3
                   </h4>
                 </div>
+                <span class="skill-level-label level-medio" data-i18n-es="Intermedio" data-i18n-en="Intermediate">Intermediate</span>
                 <div class="articulos">
                   <h4
                     class="popup-trigger"
@@ -449,6 +457,7 @@
               <div class="cartas">
                 <i class="bx bxs-server"></i>
                 <h3>BackEnd</h3>
+                <span class="skill-level-label level-alto" data-i18n-es="Avanzado" data-i18n-en="Advanced">Advanced</span>
                 <div class="articulos">
                   <h4
                     class="popup-trigger"
@@ -459,11 +468,21 @@
                   </h4>
                   <h4
                     class="popup-trigger"
+                    data-info="C es un lenguaje de programación de propósito general, eficiente y usado en sistemas de bajo nivel."
+                    data-info-en="C is a general-purpose programming language, efficient and used for low-level systems."
+                  >
+                    C
+                  </h4>
+                  <h4
+                    class="popup-trigger"
                     data-info="SQL es un lenguaje diseñado para administrar y manipular bases de datos relacionales."
                     data-info-en="SQL is a language designed to manage and manipulate relational databases."
                   >
                     SQL
                   </h4>
+                </div>
+                <span class="skill-level-label level-medio" data-i18n-es="Intermedio" data-i18n-en="Intermediate">Intermediate</span>
+                <div class="articulos">
                   <h4
                     class="popup-trigger"
                     data-info="Python es un lenguaje interpretado y multipropósito, conocido por su sintaxis clara y versatilidad."
@@ -471,8 +490,6 @@
                   >
                     Python
                   </h4>
-                </div>
-                <div class="articulos">
                   <h4
                     class="popup-trigger"
                     data-info="PHP es un lenguaje de uso general adecuado para el desarrollo web y generación de contenido dinámico."
@@ -480,18 +497,12 @@
                   >
                     PHP
                   </h4>
-                  <h4
-                    class="popup-trigger"
-                    data-info="C es un lenguaje de programación de propósito general, eficiente y usado en sistemas de bajo nivel."
-                    data-info-en="C is a general-purpose programming language, efficient and used for low-level systems."
-                  >
-                    C
-                  </h4>
                 </div>
               </div>
               <div class="cartas herramientas">
                 <i class="bx bxs-cog"></i>
                 <h3 id="herramientastexto">Herramientas</h3>
+                <span class="skill-level-label level-alto" data-i18n-es="Avanzado" data-i18n-en="Advanced">Advanced</span>
                 <div class="articulos">
                   <h4
                     class="popup-trigger"
@@ -508,6 +519,7 @@
                     Linux
                   </h4>
                 </div>
+                <span class="skill-level-label level-medio" data-i18n-es="Intermedio" data-i18n-en="Intermediate">Intermediate</span>
                 <div class="articulos">
                   <h4
                     id="redes"
@@ -517,6 +529,9 @@
                   >
                     Redes
                   </h4>
+                </div>
+                <span class="skill-level-label level-dev" data-i18n-es="En desarrollo" data-i18n-en="Learning">Learning</span>
+                <div class="articulos">
                   <h4
                     class="popup-trigger"
                     data-info="Android Studio es el IDE oficial para el desarrollo de aplicaciones Android."
@@ -914,51 +929,7 @@
           </div>
         </section>
 
-        <section class="testimonials" id="testimonios">
-          <div class="titulo">
-            <h2 id="testimonials-title">Testimonios</h2>
-          </div>
-          <div class="testimonials-grid">
-            <article class="testimonial-card">
-              <span
-                class="testimonial-card-kicker"
-                data-i18n-es="Testimonio"
-                data-i18n-en="Testimonial"
-                >Testimonio</span
-              >
-              <p id="testimonial-1-quote">
-                “Gran capacidad para entender requisitos y convertirlos en soluciones claras.”
-              </p>
-              <h3 id="testimonial-1-author">Mentor técnico</h3>
-            </article>
-            <article class="testimonial-card">
-              <span
-                class="testimonial-card-kicker"
-                data-i18n-es="Testimonio"
-                data-i18n-en="Testimonial"
-                >Testimonio</span
-              >
-              <p id="testimonial-2-quote">
-                “Entrega rápida, código limpio y muy buen ojo para el detalle visual.”
-              </p>
-              <h3 id="testimonial-2-author">Compañero de equipo</h3>
-            </article>
-            <article class="testimonial-card">
-              <span
-                class="testimonial-card-kicker"
-                data-i18n-es="Testimonio"
-                data-i18n-en="Testimonial"
-                >Testimonio</span
-              >
-              <p id="testimonial-3-quote">
-                “Se nota el enfoque en seguridad y calidad en todo el trabajo.”
-              </p>
-              <h3 id="testimonial-3-author">Profesor</h3>
-            </article>
-          </div>
-        </section>
-
-        <section class="contacto" id="contacto">
+        <section class=”contacto” id=”contacto”>
           <div class="centrado">
             <div class="titulo">
               <h2 id="contact1">Contacto</h2>
@@ -984,10 +955,6 @@
                       >
                         Copy
                       </button>
-                    </div>
-                    <div class="iconotexto">
-                      <i class="bx bx-phone"></i>
-                      <h4>+34 667758633</h4>
                     </div>
                     <div class="iconotexto">
                       <i class="bx bx-pin"></i>

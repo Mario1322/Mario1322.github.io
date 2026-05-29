@@ -1,22 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
   const progresosIdiomas = {
-    espanol: 100, // Nativo
-    ingles: 85,  // C1 Avanzado
+    espanol: 100,
+    ingles: 85,
   };
 
-  for (let idioma in progresosIdiomas) {
-    if (Object.prototype.hasOwnProperty.call(progresosIdiomas, idioma)) {
-      let barra = document.querySelector(`.${idioma} .bar`);
+  const barras = Object.entries(progresosIdiomas).map(([idioma, pct]) => {
+    const container = document.querySelector(`.bar-container.${idioma}`);
+    const bar = container?.querySelector(".bar");
+    return { container, bar, pct, animated: false };
+  }).filter((b) => b.container && b.bar);
 
-      if (barra) {
-        // Inicialmente a 0 para que la animación suba
-        barra.style.width = "0%";
-        
-        setTimeout(function () {
-          barra.style.transition = "width 1.75s cubic-bezier(0.1, 0.5, 0.2, 1)";
-          barra.style.width = progresosIdiomas[idioma] + "%";
-        }, 300);
-      }
-    }
-  }
+  if (barras.length === 0) return;
+
+  // Empezar en 0 para que la animación sea visible
+  barras.forEach((b) => { b.bar.style.width = "0%"; });
+
+  // Disparar cuando el contenedor entre en el viewport
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const barra = barras.find((b) => b.container === entry.target);
+        if (!barra || barra.animated) return;
+        barra.animated = true;
+        observer.unobserve(entry.target);
+        requestAnimationFrame(() => {
+          barra.bar.style.transition = "width 1.75s cubic-bezier(0.1, 0.5, 0.2, 1)";
+          barra.bar.style.width = barra.pct + "%";
+        });
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  barras.forEach((b) => observer.observe(b.container));
 });

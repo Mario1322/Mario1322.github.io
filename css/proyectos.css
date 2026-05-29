@@ -1,0 +1,293 @@
+/* =========================================
+   proyectos.css — Página de proyectos
+   ========================================= */
+
+/* Layout principal */
+.projects-page {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 6rem 0 8rem;
+}
+
+/* Hero */
+.hero-projects { margin-bottom: 3rem; text-align: center; }
+.hero-projects .eyebrow { display: inline-block; margin-bottom: 1.2rem; }
+.hero-projects h1 { font-size: clamp(3.2rem, 5vw, 5.6rem); margin-bottom: 1.6rem; }
+.hero-projects p { max-width: 760px; margin: 0 auto; font-size: 1.9rem; }
+
+/* Tarjetas destacadas */
+.project-showcase { display: grid; gap: 2.8rem; }
+.project-card-full {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: 2.6rem;
+  align-items: center;
+  padding: 2.4rem;
+  border: .2rem solid var(--accent-gold);
+  border-radius: 40px;
+  background: var(--surface-card);
+  box-shadow: 0 18px 32px rgba(0,0,0,.16);
+}
+.project-card-full > img {
+  width: 100%;
+  border-radius: 24px;
+  display: block;
+  aspect-ratio: 600 / 460;
+  object-fit: cover;
+}
+.project-meta h2 { font-size: 3rem; margin-bottom: 1rem; }
+.project-meta p { font-size: 1.9rem; margin-bottom: 1.6rem; }
+.project-meta .tag {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  padding: .5rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.tech-stack,
+.detail-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 1.6rem;
+  list-style: none;
+}
+.tech-stack li,
+.detail-list li {
+  border: .2rem solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  padding: .8rem 1.2rem;
+  font-size: 1.5rem;
+}
+.project-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 1.2rem 1.8rem;
+  border-radius: 999px;
+  border: .2rem solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--button-text);
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.project-links a:hover {
+  background: var(--button-hover-fill);
+  color: var(--button-hover-text);
+}
+
+/* Sección de repositorios */
+.section-header { margin: 5.5rem 0 2.4rem; text-align: center; }
+.section-header h2 { font-size: clamp(2.4rem, 3.5vw, 3.6rem); }
+.section-header p { font-size: 1.7rem; margin-top: 0.8rem; opacity: 0.72; }
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+.repo-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 0.15rem solid rgba(212,166,58,0.22);
+  border-radius: 20px;
+  background: var(--surface-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.repo-card:hover {
+  border-color: var(--accent-gold);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+}
+.repo-icon {
+  font-size: 2.8rem;
+  flex-shrink: 0;
+  width: 5.4rem;
+  height: 5.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212,166,58,0.1);
+  border-radius: 14px;
+}
+.repo-content { flex: 1; min-width: 0; }
+.repo-content .tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-gold-text);
+}
+.repo-content h3 { font-size: 2rem; margin: 0 0 0.7rem; line-height: 1.2; }
+.repo-content p { font-size: 1.5rem; line-height: 1.55; margin: 0 0 1rem; opacity: 0.8; }
+.repo-content .tech-stack { margin: 0 0 1.1rem; }
+.repo-content .tech-stack li { padding: 0.35rem 0.9rem; font-size: 1.2rem; }
+.repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-gold-text);
+  text-decoration: none;
+  border: 1px solid rgba(212,166,58,0.35);
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  transition: background 0.2s;
+}
+.repo-link:hover { background: rgba(212,166,58,0.12); }
+
+.repo-category-header { margin: 3.5rem 0 1.5rem; }
+.repo-category-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-gold-text);
+  letter-spacing: 0.01em;
+}
+.repo-category-desc {
+  margin: 0.5rem 0 0;
+  font-size: 1.4rem;
+  color: var(--text-secondary, #7a90b0);
+  opacity: 0.85;
+}
+
+/* Carousel */
+.img-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #0a1422;
+  aspect-ratio: 600 / 460;
+  width: 100%;
+}
+.img-carousel .carousel-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-carousel .carousel-slide.active { display: block; }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(11,22,40,0.75);
+  border: 1px solid rgba(212,166,58,0.45);
+  color: #D4A63A;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background 0.2s;
+  padding: 0;
+}
+.carousel-btn:hover { background: rgba(212,166,58,0.18); }
+.carousel-prev { left: 12px; }
+.carousel-next { right: 12px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 3;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(212,166,58,0.35);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.dot.active { background: #D4A63A; }
+
+/* Badge "En desarrollo" */
+.wip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #28CA42;
+  background: rgba(40,202,66,0.08);
+  border: 1px solid rgba(40,202,66,0.28);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Botón volver arriba */
+#back-to-top {
+  position: fixed;
+  bottom: 2.4rem;
+  right: 2.4rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent-gold, #D4A63A);
+  color: #0B1628;
+  border: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 99;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#back-to-top:hover { transform: translateY(-3px); }
+
+/* ── Ajustes modo claro (sin .cambiocolor = modo claro) ─────────────────────── */
+/* En modo claro el fondo es azul claro, así que reforzamos la visibilidad
+   de las tarjetas y el carousel */
+:root body:not(.cambiocolor) .project-card-full {
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.10);
+}
+:root body:not(.cambiocolor) .repo-card {
+  background: rgba(255, 255, 255, 0.50);
+  border-color: rgba(212, 166, 58, 0.35);
+}
+:root body:not(.cambiocolor) .img-carousel {
+  background: rgba(11, 20, 34, 0.08);
+}
+:root body:not(.cambiocolor) #back-to-top {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-card-full { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .repo-grid { grid-template-columns: 1fr; }
+  .repo-card { flex-direction: column; }
+}

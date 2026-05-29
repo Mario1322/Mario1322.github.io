@@ -249,7 +249,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const lang = getPreferredLang();
-  localStorage.setItem(LANG_KEY, lang);
+
+  // ─── Auto-detección de idioma en primera visita ──────────────────────────────
+  // Solo actúa si el usuario nunca ha elegido idioma manualmente.
+  // Si el navegador/sistema está en inglés y estamos en la versión española → redirigir.
+  const savedLang = localStorage.getItem(LANG_KEY);
+  if (!savedLang) {
+    const browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+    if (browserLang.startsWith("en") && lang === "es") {
+      // Guardamos 'en' antes de redirigir para que la elección se respete en siguientes visitas
+      localStorage.setItem(LANG_KEY, "en");
+      window.location.href = buildLocalizedUrl("en");
+      return; // Detenemos ejecución — la página va a cambiar
+    }
+  }
+
+  // Nota: NO guardamos en localStorage aquí al cargar.
+  // El guardado solo ocurre cuando el usuario elige manualmente (en setLanguage()).
   loadTranslations(lang);
   document.querySelectorAll("[data-lang]").forEach((btn) => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));

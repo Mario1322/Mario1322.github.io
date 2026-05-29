@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460">
+  <defs>
+    <linearGradient id="bga" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1628"/>
+      <stop offset="100%" stop-color="#0F1E3A"/>
+    </linearGradient>
+    <filter id="blura"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="blura2"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="460" fill="url(#bga)"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="300" cy="190" rx="170" ry="120" fill="#D4A63A" opacity="0.07" filter="url(#blura)"/>
+
+  <!-- Gold border -->
+  <rect x="1" y="1" width="598" height="458" fill="none" stroke="#D4A63A" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- iPhone frame -->
+  <rect x="180" y="48" width="160" height="290" rx="28" fill="#0E1A2F" stroke="#D4A63A" stroke-width="2" stroke-opacity="0.55"/>
+  <!-- Screen area -->
+  <rect x="188" y="68" width="144" height="252" rx="18" fill="#0A1422"/>
+  <!-- Dynamic island -->
+  <rect x="244" y="72" width="32" height="10" rx="5" fill="#0B1628"/>
+
+  <!-- Status bar -->
+  <text x="196" y="86" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">9:41</text>
+  <text x="316" y="86" text-anchor="end" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">●●●</text>
+
+  <!-- App title bar -->
+  <text x="260" y="103" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#FFFFFF" font-weight="700">Mi Armario</text>
+
+  <!-- Clothing grid (2x3) -->
+  <!-- Row 1 -->
+  <rect x="195" y="110" width="58" height="68" rx="10" fill="#142038"/>
+  <text x="224" y="148" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="26">👔</text>
+  <text x="224" y="172" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Camisa</text>
+
+  <rect x="261" y="110" width="58" height="68" rx="10" fill="#142038"/>
+  <text x="290" y="148" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="26">👖</text>
+  <text x="290" y="172" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Pantalón</text>
+
+  <!-- Row 2 -->
+  <rect x="195" y="184" width="58" height="68" rx="10" fill="#142038"/>
+  <text x="224" y="222" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="26">👟</text>
+  <text x="224" y="246" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Zapatillas</text>
+
+  <!-- AI stylist card -->
+  <rect x="261" y="184" width="58" height="68" rx="10" fill="#1A2840" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="290" y="214" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="18">✨</text>
+  <text x="290" y="230" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#D4A63A" font-weight="700">Estilista</text>
+  <text x="290" y="242" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="6" fill="#D4A63A" opacity="0.7">IA</text>
+
+  <!-- Bottom tab bar -->
+  <rect x="188" y="296" width="144" height="26" rx="0" fill="#0E1A2F"/>
+  <rect x="188" y="318" width="144" height="2" rx="0" fill="#0A1422"/>
+  <text x="210" y="313" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">👗</text>
+  <text x="245" y="313" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">🤝</text>
+  <text x="278" y="313" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">🔍</text>
+  <text x="311" y="313" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">⚙️</text>
+
+  <!-- Home indicator -->
+  <rect x="236" y="328" width="48" height="4" rx="2" fill="#3A5070" opacity="0.6"/>
+
+  <!-- Share bubble - right side -->
+  <rect x="368" y="110" width="170" height="76" rx="12" fill="#112035" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="378" y="132" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#D4A63A" font-weight="700">✨ Estilista IA</text>
+  <text x="378" y="147" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#7A90B0">«Para mañana te sugiero</text>
+  <text x="378" y="159" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#7A90B0">la camisa azul con el</text>
+  <text x="378" y="171" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#7A90B0">pantalón gris...»</text>
+  <text x="528" y="181" text-anchor="end" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#D4A63A" opacity="0.6">Gemini</text>
+
+  <!-- .armario format card -->
+  <rect x="368" y="200" width="170" height="62" rx="12" fill="#112035" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="378" y="220" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#D4A63A" font-weight="700">📦 Formato .armario</text>
+  <text x="378" y="235" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#7A90B0">Comparte prendas por</text>
+  <text x="378" y="248" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#7A90B0">WhatsApp · AirDrop</text>
+
+  <!-- Backup card -->
+  <rect x="368" y="276" width="170" height="52" rx="12" fill="#112035" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="378" y="296" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#D4A63A" font-weight="700">🗄️ Backup ZIP</text>
+  <text x="378" y="311" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#7A90B0">SQLite · Export/Import</text>
+
+  <!-- Tech badges -->
+  <rect x="108" y="382" width="66" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="141" y="397" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">Flutter</text>
+
+  <rect x="182" y="382" width="46" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="205" y="397" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">Dart</text>
+
+  <rect x="236" y="382" width="64" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="268" y="397" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">SQLite</text>
+
+  <rect x="308" y="382" width="82" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="349" y="397" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">Gemini AI</text>
+
+  <rect x="398" y="382" width="94" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="445" y="397" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">iOS · iPadOS</text>
+
+  <!-- Title -->
+  <text x="300" y="430" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="24" fill="#FFFFFF" font-weight="800" letter-spacing="-0.5">Mi Armario Digital</text>
+  <text x="300" y="450" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#7A90B0">App iOS · Flutter · Estilista con Gemini AI</text>
+</svg>

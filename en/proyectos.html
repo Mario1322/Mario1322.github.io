@@ -9,7 +9,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https:; form-action 'self' https://nasdlrg.duckdns.org;"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https:; worker-src https://cdnjs.cloudflare.com blob:; form-action 'self' https://nasdlrg.duckdns.org;"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
@@ -17,6 +17,16 @@
     <link rel="alternate" hreflang="es" href="https://mario1322.github.io/proyectos.html" />
     <link rel="alternate" hreflang="en" href="https://mario1322.github.io/en/proyectos.html" />
     <link rel="alternate" hreflang="x-default" href="https://mario1322.github.io/proyectos.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mario1322.github.io/en/proyectos.html" />
+    <meta property="og:title" content="Projects | Mario De La Rosa García" />
+    <meta property="og:description" content="Personal and academic projects by Mario De La Rosa García: Flutter, Python, C# apps and more." />
+    <meta property="og:image" content="https://mario1322.github.io/imagenes/family-dashboard-app-opt.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Projects | Mario De La Rosa García" />
+    <meta name="twitter:description" content="Personal and academic projects by Mario De La Rosa García: Flutter, Python, C# apps and more." />
+    <meta name="twitter:image" content="https://mario1322.github.io/imagenes/family-dashboard-app-opt.jpg" />
 
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
@@ -29,25 +39,30 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../imagenes/apple-touch-icon.png" />
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2" crossorigin="anonymous" />
-    <style>
-      .projects-page { width: min(1200px, calc(100% - 32px)); margin: 0 auto; padding: 6rem 0 8rem; }
-      .hero-projects { margin-bottom: 3rem; text-align: center; }
-      .hero-projects .eyebrow { display: inline-block; margin-bottom: 1.2rem; }
-      .hero-projects h1 { font-size: clamp(3.2rem, 5vw, 5.6rem); margin-bottom: 1.6rem; }
-      .hero-projects p { max-width: 760px; margin: 0 auto; font-size: 1.9rem; }
-      .project-showcase { display: grid; gap: 2.8rem; }
-      .project-card-full { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 2.6rem; align-items: center; padding: 2.4rem; border: .2rem solid var(--accent-gold); border-radius: 40px; background: var(--surface-card); box-shadow: 0 18px 32px rgba(0,0,0,.16); }
-      .project-card-full img { width: 100%; border-radius: 24px; display: block; }
-      .project-meta h2 { font-size: 3rem; margin-bottom: 1rem; }
-      .project-meta p { font-size: 1.9rem; margin-bottom: 1.6rem; }
-      .project-meta .tag { display: inline-flex; margin-bottom: 1rem; padding: .5rem 1.2rem; border-radius: 999px; background: rgba(255,255,255,.16); font-size: 1.3rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-      .tech-stack, .detail-list { display: flex; flex-wrap: wrap; gap: 1rem; padding: 0; margin: 0 0 1.6rem; list-style: none; }
-      .tech-stack li, .detail-list li { border: .2rem solid rgba(255,255,255,.18); border-radius: 999px; padding: .8rem 1.2rem; font-size: 1.5rem; }
-      .project-links { display: flex; flex-wrap: wrap; gap: 1rem; }
-      .project-links a { display: inline-flex; align-items: center; gap: .6rem; padding: 1.2rem 1.8rem; border-radius: 999px; border: .2rem solid var(--button-border); background: var(--button-bg); color: var(--button-text); text-decoration: none; font-size: 1.6rem; font-weight: 700; }
-      .project-links a:hover { background: var(--button-hover-fill); color: var(--button-hover-text); }
-      @media (max-width: 900px) { .project-card-full { grid-template-columns: 1fr; } }
-    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ItemList",
+          "@id": "https://mario1322.github.io/en/proyectos.html#projects",
+          "name": "Projects by Mario De La Rosa García",
+          "description": "Personal and academic projects by Mario De La Rosa García: Flutter, Python, C# apps and more.",
+          "url": "https://mario1322.github.io/en/proyectos.html",
+          "author": { "@type": "Person", "@id": "https://mario1322.github.io/#person", "name": "Mario De La Rosa García" },
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Family Dashboard", "url": "https://github.com/Mario1322/Dashboard_Familiar_App", "description": "Cross-platform Flutter app for managing daily family life with biometric auth and user roles." },
+            { "@type": "ListItem", "position": 2, "name": "My Digital Wardrobe", "url": "https://github.com/Mario1322/Armario_Digital", "description": "iOS Flutter app to manage your wardrobe intelligently with an AI stylist powered by Gemini." },
+            { "@type": "ListItem", "position": 3, "name": "Family Dashboard Web", "url": "https://github.com/Mario1322/Dashboard_Familiar_Web", "description": "PWA with Kanban, shopping list, calendar and admin panel. Plain HTML, CSS and vanilla JS." },
+            { "@type": "ListItem", "position": 4, "name": "My Stream Deck", "url": "https://github.com/Mario1322/Mi_Stream_Deck", "description": "Turn your phone into a Stream Deck with Python, Flask and PyAutoGUI." },
+            { "@type": "ListItem", "position": 5, "name": "Arkanoid 2021", "url": "https://github.com/Mario1322/Arkanoid_2021", "description": "Classic arcade reinterpretation in Java with Swing." },
+            { "@type": "ListItem", "position": 6, "name": "Secure Management", "url": "https://github.com/Mario1322/Veterinario", "description": "C# WinForms desktop app for veterinary clinic management with MetroFramework." }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../css/proyectos.css" />
   </head>
   <body class="color-scheme-3">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -72,48 +87,293 @@
       <section class="hero-projects">
         <span class="eyebrow">Portfolio</span>
         <h1>Featured projects</h1>
-        <p>The content still lives outside the home page, but it now gets a wider, more visual presentation that feels much closer to the original portfolio style.</p>
+        <p>Each project reflects a real problem I set out to solve. From design to deployment, I build solo and with purpose.</p>
       </section>
 
       <section class="project-showcase">
         <article class="project-card-full">
-          <img src="../imagenes/ejerciciosbasicosjava-1280.webp" alt="Family Dashboard" />
+          <div class="img-carousel" data-carousel role="region" aria-label="Project image gallery">
+            <img class="carousel-slide active" src="../imagenes/placeholder-family-dashboard.svg" alt="Family Dashboard — project illustration" width="600" height="460" />
+            <img class="carousel-slide" src="../imagenes/family-dashboard-app-opt.jpg" alt="Family Dashboard — real app screenshot" loading="lazy" width="1400" height="978" />
+            <button class="carousel-btn carousel-prev" aria-label="Previous image">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="Next image">&#8250;</button>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
           <div class="project-meta">
-            <span class="tag">Personal project</span>
+            <span class="tag">Personal project · 2025-2026</span>
             <h2>Family Dashboard</h2>
-            <p>Dashboard designed to centralize tasks, routines, reminders and family tracking with a clear hierarchy and a usable interface.</p>
-            <ul class="tech-stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>UX</li></ul>
-            <ul class="detail-list"><li>Central dashboard</li><li>Modular design</li><li>Visual hierarchy</li></ul>
-            <div class="project-links"><a href="https://github.com/Mario1322" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View code</a></div>
+            <span class="wip-badge">🔨 In development</span>
+            <p>Cross-platform Flutter app for managing daily family life: user roles (Admin, Editor, Viewer), biometric authentication with fingerprint/Face ID, shared calendar, token-based reward system, and an admin portal. No external backend — fully local storage with JSON backup. Runs on iOS, Android, Web, Windows and macOS.</p>
+            <ul class="tech-stack"><li>Flutter</li><li>Dart</li><li>local_auth</li><li>SharedPreferences</li></ul>
+            <ul class="detail-list"><li>Biometric authentication</li><li>Roles: Admin / Editor / Viewer</li><li>Shared calendar + token system</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/Mario1322/Dashboard_Familiar_App" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+              <a href="mailto:mdlrg1322@gmail.com?subject=Demo%20request%20%E2%80%94%20Family%20Dashboard&body=Hi%20Mario%2C%0A%0AI%E2%80%99d%20like%20to%20request%20a%20demo%20of%20Family%20Dashboard.%0A%0AName%3A%20%0ACompany%20%2F%20Project%3A%20%0APhone%20%28optional%29%3A%20%0AAvailability%3A%20%0A%0ABest%20regards."><i class="bx bx-message-dots"></i> Request demo</a>
+            </div>
           </div>
         </article>
 
         <article class="project-card-full">
-          <img src="../imagenes/arkanoid.webp" alt="Arkanoid 2021" />
+          <img src="../imagenes/placeholder-armario-digital.svg" alt="My Digital Wardrobe — iOS Flutter app with AI stylist" loading="lazy" width="600" height="460" />
           <div class="project-meta">
-            <span class="tag">Academic project</span>
+            <span class="tag">Personal project · 2025-2026</span>
+            <h2>My Digital Wardrobe</h2>
+            <span class="wip-badge">🔨 In development</span>
+            <p>iOS Flutter app to manage your wardrobe intelligently: photograph your clothing with metadata (brand, size, price, season), build outfits, filter by category, and get AI-powered styling suggestions via Gemini. Custom <code>.armario</code> file format to share garments over WhatsApp or AirDrop. Local SQLite database with full ZIP backup and restore.</p>
+            <ul class="tech-stack"><li>Flutter</li><li>Dart</li><li>SQLite</li><li>Gemini AI</li></ul>
+            <ul class="detail-list"><li>AI stylist powered by Gemini</li><li>.armario format for sharing</li><li>ZIP backup / restore</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/Mario1322/Armario_Digital" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card-full">
+          <img src="../imagenes/placeholder-dashboard-web.svg" alt="Family Dashboard Web — PWA with Kanban and admin panel" loading="lazy" width="600" height="460" />
+          <div class="project-meta">
+            <span class="tag">Personal project · 2025-2026</span>
+            <h2>Family Dashboard Web</h2>
+            <span class="wip-badge">🔨 In development</span>
+            <p>Web version of the Family Dashboard as a PWA: main panel with clock, weather widget and countdown timer, Kanban board with drag &amp; drop (Pending / In Progress / Done), categorised shopping list and calendar with .ics file support. Full admin panel with user management, shared calendars and permission controls. No frameworks — plain HTML, CSS and vanilla JS.</p>
+            <ul class="tech-stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA</li></ul>
+            <ul class="detail-list"><li>Kanban drag &amp; drop</li><li>.ics calendar sync</li><li>Full admin panel</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/Mario1322/Dashboard_Familiar_Web" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card-full">
+          <img src="../imagenes/placeholder-stream-deck.svg" alt="My Stream Deck — phone as controller with Python and Flask" loading="lazy" width="600" height="460" />
+          <div class="project-meta">
+            <span class="tag">Personal project · 2024</span>
+            <h2>My Stream Deck</h2>
+            <p>Turn your phone or tablet into a Stream Deck with no extra hardware: a Python + Flask server exposes a web interface with keyboard shortcuts (Copy, Paste, Save), volume controls, screenshot capture and app launchers. The phone connects over local Wi-Fi and triggers actions on the PC or Mac via PyAutoGUI. Works on iOS, Android and tablets. Can be added to the home screen as a native-like app.</p>
+            <ul class="tech-stack"><li>Python</li><li>Flask</li><li>PyAutoGUI</li><li>HTML</li><li>CSS</li></ul>
+            <ul class="detail-list"><li>Remote control over local Wi-Fi</li><li>iOS, Android and tablet support</li><li>No extra hardware needed</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/Mario1322/Mi_Stream_Deck" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card-full">
+          <img src="../imagenes/arkanoid.webp" alt="Arkanoid 2021" loading="lazy" width="206" height="206" style="object-fit: contain; background: #0a1422;" />
+          <div class="project-meta">
+            <span class="tag">Academic project · 2021</span>
             <h2>Arkanoid 2021</h2>
-            <p>Classic arcade reinterpretation built to work on physics, rebounds, levels and object-oriented organization with a fully functional result.</p>
-            <ul class="tech-stack"><li>Java</li><li>Swing</li><li>OOP</li><li>Game Logic</li></ul>
-            <ul class="detail-list"><li>Lives system</li><li>Scoring</li><li>Level handling</li></ul>
+            <p>Classic arcade reinterpretation built in 3 weeks as a final module project. Collision engine, 3 difficulty levels, and score tracking. 400+ lines of object-oriented code.</p>
+            <ul class="tech-stack"><li>Java</li><li>Swing</li><li>OOP</li></ul>
+            <ul class="detail-list"><li>3 difficulty levels</li><li>Lives and scoring</li><li>Precise collisions</li></ul>
             <div class="project-links"><a href="https://github.com/Mario1322/Arkanoid_2021" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a></div>
           </div>
         </article>
 
         <article class="project-card-full">
-          <img src="../imagenes/senor-licenciado-660.webp" alt="Secure management" />
+          <img src="../imagenes/placeholder-gestion-segura.svg" alt="Secure Management — C# desktop app" loading="lazy" width="600" height="460" />
           <div class="project-meta">
-            <span class="tag">Security and product</span>
+            <span class="tag">Security and product · 2022</span>
             <h2>Secure Management</h2>
-            <p>Application concept focused on organizing sensitive information with access control, clean structure and a foundation designed to scale safely.</p>
-            <ul class="tech-stack"><li>Security</li><li>Architecture</li><li>Data Flow</li><li>UI</li></ul>
-            <ul class="detail-list"><li>Access control</li><li>Scalable structure</li><li>Clean design</li></ul>
-            <div class="project-links"><a href="/en/index.html#contacto"><i class="bx bx-message-dots"></i> Talk about this project</a></div>
+            <p>C# desktop application (WinForms) for veterinary clinic management with a security focus: login screen with authentication, client and patient management with database connectivity. Modern UI with MetroFramework.</p>
+            <ul class="tech-stack"><li>C#</li><li>WinForms</li><li>MetroFramework</li><li>CRUD</li></ul>
+            <ul class="detail-list"><li>Login with access control</li><li>Client and patient management</li><li>Connected database</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/Mario1322/Veterinario" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
           </div>
         </article>
       </section>
+
+      <!-- All repositories -->
+      <section aria-label="All repositories">
+        <div class="section-header">
+          <h2>All repositories</h2>
+          <p>Academic projects and exercises (2021–2022) available on GitHub.</p>
+        </div>
+
+        <!-- Category: Academic exercises -->
+        <div class="repo-category-header">
+          <span class="repo-category-label">🎓 Academic exercises · 2021–2022</span>
+          <p class="repo-category-desc">Coursework that built the programming foundations I rely on today.</p>
+        </div>
+        <div class="repo-grid">
+
+          <article class="repo-card">
+            <div class="repo-icon">🎮</div>
+            <div class="repo-content">
+              <span class="tag">C# · 2022</span>
+              <h3>Pokédex</h3>
+              <p>C# desktop app to browse the Pokémon catalogue: main window with a full listing and a detail card screen per creature. Data managed through a local database connection.</p>
+              <ul class="tech-stack"><li>C#</li><li>WinForms</li><li>.NET</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/Pokedex" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">🔊</div>
+            <div class="repo-content">
+              <span class="tag">Java · Android</span>
+              <h3>iSonidos</h3>
+              <p>Android app for sound playback and management. Practice with Activity lifecycle and multimedia APIs.</p>
+              <ul class="tech-stack"><li>Java</li><li>Android</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/iSonidos" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">📡</div>
+            <div class="repo-content">
+              <span class="tag">HTML · 2021</span>
+              <h3>Telefónica Open Day</h3>
+              <p>Static web page built for the Telefónica Open Day during the company internship period.</p>
+              <ul class="tech-stack"><li>HTML</li><li>CSS</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/Telefonica_2021" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">✏️</div>
+            <div class="repo-content">
+              <span class="tag">C# · 2021</span>
+              <h3>Hangman</h3>
+              <p>Hangman game with a graphical interface, attempt tracking and letter-by-letter guessing logic.</p>
+              <ul class="tech-stack"><li>C#</li><li>WinForms</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/Ahorcado" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">🔡</div>
+            <div class="repo-content">
+              <span class="tag">Java · 2021</span>
+              <h3>Hangman (Java)</h3>
+              <p>Second implementation of the hangman game, this time in Java with a graphical interface built in NetBeans. Same letter-guessing and attempt logic, different language and environment.</p>
+              <ul class="tech-stack"><li>Java</li><li>Swing</li><li>NetBeans</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/Ahorcado_2021_Java" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">🧮</div>
+            <div class="repo-content">
+              <span class="tag">Java · 2021</span>
+              <h3>Calculator</h3>
+              <p>Java calculator with a graphical interface. Practice with events, math operations and Swing components.</p>
+              <ul class="tech-stack"><li>Java</li><li>Swing</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/Calculadora_2021_Java" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">☕</div>
+            <div class="repo-content">
+              <span class="tag">Java · 2021</span>
+              <h3>Basic Java Exercises</h3>
+              <p>Exercise repository to strengthen fundamentals: control structures, arrays, functions and basic OOP.</p>
+              <ul class="tech-stack"><li>Java</li><li>OOP</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/EjerciciosBasicos_2021" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">🌐</div>
+            <div class="repo-content">
+              <span class="tag">JS · CSS · HTML</span>
+              <h3>Interface Development</h3>
+              <p>Frontend examples and exercises: from Hello World to interactive projects with JS and CSS.</p>
+              <ul class="tech-stack"><li>JavaScript</li><li>CSS</li><li>HTML</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/Desarrollo-de-Interfaces" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">🖼️</div>
+            <div class="repo-content">
+              <span class="tag">C# · WinForms</span>
+              <h3>Ejemplo01Form</h3>
+              <p>First part of an introductory Windows Forms exercise in C#. Practice creating and configuring forms with basic UI components.</p>
+              <ul class="tech-stack"><li>C#</li><li>WinForms</li><li>.NET</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/Ejemplo01Form" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">📱</div>
+            <div class="repo-content">
+              <span class="tag">Java · Android · 2022</span>
+              <h3>Hello World Android</h3>
+              <p>First Android app in Java. Starting point for learning the Activity lifecycle and the basic structure of an Android Studio project.</p>
+              <ul class="tech-stack"><li>Java</li><li>Android</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/HolaMundo" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+          <article class="repo-card">
+            <div class="repo-icon">🐘</div>
+            <div class="repo-content">
+              <span class="tag">PHP · JS · CSS</span>
+              <h3>htdocs1 — PHP</h3>
+              <p>Introductory PHP exercises: Hello World, an interactive quiz with scoring, and basic server-side examples. First hands-on experience with server-side programming.</p>
+              <ul class="tech-stack"><li>PHP</li><li>JavaScript</li><li>CSS</li></ul>
+              <a class="repo-link" href="https://github.com/Mario1322/htdocs1" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i> View repository</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
     </main>
 
+    <button id="back-to-top" aria-label="Back to top"><i class="bx bx-chevron-up" aria-hidden="true"></i></button>
+
     <script type="module" src="../js/main.js"></script>
+    <script>
+      // Carousel: clicks, touch swipe and keyboard
+      document.querySelectorAll('[data-carousel]').forEach(function(carousel) {
+        var slides = carousel.querySelectorAll('.carousel-slide');
+        var dots = carousel.querySelectorAll('.dot');
+        var current = 0;
+        var touchStartX = 0;
+
+        function goTo(n) {
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+        }
+
+        carousel.querySelector('.carousel-prev').addEventListener('click', function() { goTo(current - 1); });
+        carousel.querySelector('.carousel-next').addEventListener('click', function() { goTo(current + 1); });
+        dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
+
+        // Touch / swipe
+        carousel.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        carousel.addEventListener('touchend', function(e) {
+          var diff = touchStartX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+        }, { passive: true });
+
+        // Keyboard (← →)
+        carousel.setAttribute('tabindex', '0');
+        carousel.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+          if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+        });
+      });
+
+      // Back to top button
+      var btt = document.getElementById('back-to-top');
+      window.addEventListener('scroll', function() {
+        btt.classList.toggle('visible', window.scrollY > 400);
+      }, { passive: true });
+      btt.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>

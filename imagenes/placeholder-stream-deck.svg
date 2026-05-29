@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460">
+  <defs>
+    <linearGradient id="bgs" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1628"/>
+      <stop offset="100%" stop-color="#0F1E3A"/>
+    </linearGradient>
+    <filter id="blurs"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="460" fill="url(#bgs)"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="300" cy="190" rx="180" ry="110" fill="#D4A63A" opacity="0.06" filter="url(#blurs)"/>
+
+  <!-- Gold border -->
+  <rect x="1" y="1" width="598" height="458" fill="none" stroke="#D4A63A" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Phone (left) -->
+  <rect x="60" y="70" width="130" height="240" rx="20" fill="#0E1A2F" stroke="#D4A63A" stroke-width="1.8" stroke-opacity="0.5"/>
+  <rect x="70" y="88" width="110" height="206" rx="12" fill="#0A1422"/>
+  <!-- Dynamic island -->
+  <rect x="112" y="92" width="26" height="8" rx="4" fill="#0B1628"/>
+
+  <!-- Stream deck buttons grid on phone -->
+  <text x="125" y="116" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#D4A63A" font-weight="700" letter-spacing="0.05em">MI STREAM DECK</text>
+
+  <!-- Row 1 buttons -->
+  <rect x="76" y="122" width="44" height="38" rx="8" fill="#142038" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="98" y="136" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">📋</text>
+  <text x="98" y="154" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Copiar</text>
+
+  <rect x="128" y="122" width="44" height="38" rx="8" fill="#142038" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="150" y="136" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">📌</text>
+  <text x="150" y="154" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Pegar</text>
+
+  <!-- Row 2 -->
+  <rect x="76" y="168" width="44" height="38" rx="8" fill="#142038" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="98" y="182" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">🔊</text>
+  <text x="98" y="200" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Vol +</text>
+
+  <rect x="128" y="168" width="44" height="38" rx="8" fill="#142038" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="150" y="182" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">🔇</text>
+  <text x="150" y="200" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Mute</text>
+
+  <!-- Row 3 -->
+  <rect x="76" y="214" width="44" height="38" rx="8" fill="#D4A63A" opacity="0.18" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="98" y="228" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">📸</text>
+  <text x="98" y="246" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#D4A63A">Screenshot</text>
+
+  <rect x="128" y="214" width="44" height="38" rx="8" fill="#142038" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="150" y="228" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="16">💾</text>
+  <text x="150" y="246" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="#5A7090">Guardar</text>
+
+  <!-- Row 4 -->
+  <rect x="76" y="260" width="44" height="28" rx="8" fill="#142038" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="98" y="278" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5A7090">YouTube</text>
+
+  <rect x="128" y="260" width="44" height="28" rx="8" fill="#142038" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="150" y="278" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5A7090">Calc</text>
+
+  <!-- Home indicator -->
+  <rect x="107" y="290" width="36" height="3" rx="2" fill="#3A5070" opacity="0.5"/>
+
+  <!-- Wi-Fi connection line -->
+  <line x1="195" y1="190" x2="280" y2="190" stroke="#D4A63A" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
+  <text x="237" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#D4A63A" opacity="0.7">Wi-Fi</text>
+  <!-- Wifi icon -->
+  <text x="237" y="204" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="14">📶</text>
+
+  <!-- Desktop / laptop (right) -->
+  <rect x="280" y="100" width="260" height="175" rx="10" fill="#0E1A2F" stroke="#D4A63A" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Screen -->
+  <rect x="290" y="110" width="240" height="150" rx="6" fill="#0A1422"/>
+  <!-- Desktop content -->
+  <rect x="298" y="118" width="224" height="16" rx="4" fill="#142038"/>
+  <text x="410" y="130" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#5A7090">macOS / Windows</text>
+  <!-- Simulated keypress indicator -->
+  <rect x="298" y="142" width="105" height="55" rx="6" fill="#112035"/>
+  <text x="350" y="162" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#7A90B0">Comando recibido:</text>
+  <rect x="310" y="170" width="82" height="20" rx="5" fill="#D4A63A" opacity="0.2" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="351" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#D4A63A" font-weight="700">⌘ + C</text>
+
+  <!-- PyAutoGUI label -->
+  <rect x="412" y="142" width="110" height="55" rx="6" fill="#112035"/>
+  <text x="467" y="160" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#7A90B0">PyAutoGUI</text>
+  <text x="467" y="175" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="20">🖥️</text>
+
+  <!-- Flask server -->
+  <rect x="298" y="205" width="224" height="40" rx="6" fill="#0E1A2F" stroke="#D4A63A" stroke-width="0.8" stroke-opacity="0.25"/>
+  <text x="308" y="220" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#D4A63A" font-weight="700">🐍 Flask server</text>
+  <text x="308" y="234" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#5A7090">http://192.168.1.x:5000  ·  PyAutoGUI</text>
+
+  <!-- Laptop stand -->
+  <rect x="370" y="275" width="120" height="8" rx="4" fill="#0E1A2F" stroke="#D4A63A" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="400" y="283" width="60" height="5" rx="2" fill="#0A1524"/>
+
+  <!-- Tech badges -->
+  <rect x="108" y="358" width="66" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="141" y="373" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">Python</text>
+
+  <rect x="182" y="358" width="52" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="208" y="373" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">Flask</text>
+
+  <rect x="242" y="358" width="88" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="286" y="373" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">PyAutoGUI</text>
+
+  <rect x="338" y="358" width="50" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="363" y="373" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">HTML</text>
+
+  <rect x="396" y="358" width="40" height="22" rx="11" fill="#D4A63A" opacity="0.12"/>
+  <text x="416" y="373" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#D4A63A" font-weight="700">CSS</text>
+
+  <!-- Title -->
+  <text x="300" y="416" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="25" fill="#FFFFFF" font-weight="800" letter-spacing="-0.5">Mi Stream Deck</text>
+  <text x="300" y="438" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#7A90B0">Móvil como controlador · Python · Flask · PyAutoGUI</text>
+</svg>

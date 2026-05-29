@@ -35,7 +35,7 @@
   align-items: center;
   text-align: center;
   width: 35rem;
-  height: 33rem;
+  min-height: 33rem;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -53,7 +53,6 @@
 }
 
 .contenedorcartas .cartas:hover {
-  transform: translateY(-4px);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
 
@@ -330,3 +329,17 @@
 body.no-scroll {
   overflow: hidden;
 }
+
+.skill-level-label {
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 1.2rem 0 0.3rem;
+}
+
+.skill-level-label.level-alto { color: var(--accent-gold); }
+.skill-level-label.level-medio { color: #8eefd0; }
+.skill-level-label.level-dev { color: #9ba8b5; }
