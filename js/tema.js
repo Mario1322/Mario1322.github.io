@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function aplicarTema(tema) {
     if (tema === 'oscuro') {
       body.classList.add('cambiocolor');
+      document.documentElement.classList.add('cambiocolor');
       label_toggle.innerHTML = "<i class='bx bx-sun' aria-hidden='true'></i>";
       label_toggle.setAttribute('aria-pressed', 'true');
     } else {
       body.classList.remove('cambiocolor');
+      document.documentElement.classList.remove('cambiocolor');
       label_toggle.innerHTML = "<i class='bx bx-moon' aria-hidden='true'></i>";
       label_toggle.setAttribute('aria-pressed', 'false');
     }
@@ -22,9 +24,30 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   }
 
+  // Exponer globalmente
+  window.aplicarTema = aplicarTema;
+
+  // ─── Helper para localStorage seguro ─────────────────────────────────────────
+  function safeGetItem(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      console.warn("Storage access restricted:", e);
+      return null;
+    }
+  }
+
+  function safeSetItem(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      console.warn("Storage write restricted:", e);
+    }
+  }
+
   // ─── 1. Decidir tema inicial ─────────────────────────────────────────────────
-  const temaGuardado   = localStorage.getItem('tema');
-  const elegidoManual  = localStorage.getItem('temaManual') === 'true';
+  const temaGuardado   = safeGetItem('tema');
+  const elegidoManual  = safeGetItem('temaManual') === 'true';
 
   if (temaGuardado) {
     // Ya tiene preferencia guardada → usarla
@@ -33,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Primera visita → detectar sistema
     const prefiereDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const temaInicial  = prefiereDark ? 'oscuro' : 'claro';
-    localStorage.setItem('tema', temaInicial);
+    safeSetItem('tema', temaInicial);
     // No marcamos temaManual → sigue "auto"
     aplicarTema(temaInicial);
   }
@@ -43,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const isDark   = body.classList.contains('cambiocolor');
     const nuevoTema = isDark ? 'claro' : 'oscuro';
 
-    localStorage.setItem('tema', nuevoTema);
-    localStorage.setItem('temaManual', 'true'); // Marcar como elección consciente
+    safeSetItem('tema', nuevoTema);
+    safeSetItem('temaManual', 'true'); // Marcar como elección consciente
     aplicarTema(nuevoTema);
 
     // UX: cerrar menú móvil si estaba abierto
@@ -57,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ─── 3. Cambio del sistema en tiempo real (solo si no eligió manualmente) ────
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-    const esManual = localStorage.getItem('temaManual') === 'true';
+    const esManual = safeGetItem('temaManual') === 'true';
     if (!esManual) {
       const nuevoTema = e.matches ? 'oscuro' : 'claro';
-      localStorage.setItem('tema', nuevoTema);
+      safeSetItem('tema', nuevoTema);
       aplicarTema(nuevoTema);
     }
   });

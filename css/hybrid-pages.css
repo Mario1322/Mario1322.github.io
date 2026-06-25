@@ -57,6 +57,9 @@
     var(--surface-card);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(12px);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .preview-card::before,

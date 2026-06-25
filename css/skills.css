@@ -39,6 +39,9 @@
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .contenedorcartas .cartas h3,

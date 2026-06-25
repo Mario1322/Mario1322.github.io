@@ -5,7 +5,12 @@ const textoES = "Soy un joven apasionado con un constante anhelo de aprender y e
 const textoEN = "I am a young man passionate about learning and expressing my knowledge. My thirst for knowledge drives me to continuously explore new technologies and tools, seeking to improve and refine my skills every step of the way.";
 
 const getLang = () => {
-    const stored = localStorage.getItem('siteLang');
+    let stored = null;
+    try {
+        stored = localStorage.getItem('siteLang');
+    } catch (e) {
+        console.warn("Storage read restricted:", e);
+    }
     if (stored === 'en' || stored === 'es') return stored;
     return document.documentElement.lang?.toLowerCase().startsWith('en') ? 'en' : 'es';
 };
@@ -13,6 +18,7 @@ const getLang = () => {
 const output = document.getElementById("textosobremi");
 let index = 0;
 let timeoutId = null;
+let hasStarted = false;
 
 function getTexto() {
     return getLang() === 'en' ? textoEN : textoES;
@@ -23,7 +29,7 @@ function typeWriter(texto) {
     if (index < texto.length) {
         output.innerHTML += texto.charAt(index);
         index++;
-        timeoutId = setTimeout(() => typeWriter(texto), Math.floor(Math.random() * 100) + 20);
+        timeoutId = setTimeout(() => typeWriter(texto), Math.floor(Math.random() * 40) + 10);
     }
 }
 
@@ -35,5 +41,23 @@ function resetTyping() {
     typeWriter(getTexto());
 }
 
-document.addEventListener('DOMContentLoaded', resetTyping);
-document.addEventListener('i18n:changed', resetTyping);
+// Escuchar cambios de idioma
+document.addEventListener('i18n:changed', () => {
+    if (hasStarted) {
+        resetTyping();
+    }
+});
+
+// Inicializar IntersectionObserver para disparar al entrar al viewport
+if (output) {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                hasStarted = true;
+                obs.unobserve(entry.target);
+                resetTyping();
+            }
+        });
+    }, { threshold: 0.1 });
+    observer.observe(output);
+}

@@ -229,7 +229,11 @@ function updateLangButtons(lang) {
 
 function setLanguage(lang) {
   if (lang !== "en" && lang !== "es") return;
-  localStorage.setItem(LANG_KEY, lang);
+  try {
+    localStorage.setItem(LANG_KEY, lang);
+  } catch (e) {
+    console.warn("Storage write restricted:", e);
+  }
 
   // Efecto de salida suave
   document.body.classList.add("page-fade-out");
@@ -238,6 +242,9 @@ function setLanguage(lang) {
     window.location.href = buildLocalizedUrl(lang);
   }, 400); // Coincide con la duración del CSS (0.4s)
 }
+
+// Exponer globalmente
+window.setLanguage = setLanguage;
 
 document.addEventListener("DOMContentLoaded", () => {
   // Efecto de entrada suave
@@ -253,12 +260,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // ─── Auto-detección de idioma en primera visita ──────────────────────────────
   // Solo actúa si el usuario nunca ha elegido idioma manualmente.
   // Si el navegador/sistema está en inglés y estamos en la versión española → redirigir.
-  const savedLang = localStorage.getItem(LANG_KEY);
+  let savedLang = null;
+  try {
+    savedLang = localStorage.getItem(LANG_KEY);
+  } catch (e) {
+    console.warn("Storage read restricted:", e);
+  }
   if (!savedLang) {
     const browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
     if (browserLang.startsWith("en") && lang === "es") {
       // Guardamos 'en' antes de redirigir para que la elección se respete en siguientes visitas
-      localStorage.setItem(LANG_KEY, "en");
+      try {
+        localStorage.setItem(LANG_KEY, "en");
+      } catch (e) {
+        console.warn("Storage write restricted:", e);
+      }
       window.location.href = buildLocalizedUrl("en");
       return; // Detenemos ejecución — la página va a cambiar
     }

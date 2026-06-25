@@ -3,7 +3,7 @@
  * Phantom CLI - Terminal Interactiva para el Portfolio.
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+function setupTerminal() {
     const isEn = document.documentElement.lang === "en";
 
     // 1. Inyectar HTML de la terminal dinámicamente
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="terminal-content" id="terminal-output">
           <canvas id="t-canvas"></canvas>
           <div class="terminal-line">${isEn ? "[SYSTEM] Welcome to Mario De La Rosa's Terminal." : "[SISTEMA] Bienvenido a la terminal de Mario De La Rosa."}</div>
-          <div class="terminal-line">${isEn ? "[SYSTEM] Type 'help' to see available commands." : "[SISTEMA] Escribe 'help' para ver los comandos disponibles."}</div>
+          <div class="terminal-line">${isEn ? "[SYSTEM] Type 'help' to see available commands." : "[SISTEMA] Escribe 'ayuda' para ver los comandos disponibles."}</div>
         </div>
         <div class="terminal-input-line">
           <span class="t-prompt">visitor@phantom:~$ </span>
@@ -44,6 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let xOffset = 0;
     let yOffset = 0;
 
+    // Escuchar el evento de traducción i18n
+    document.addEventListener("i18n:changed", (e) => {
+        const lang = e.detail.lang;
+        const isEnglish = lang === "en";
+        if (toggle) toggle.setAttribute("title", isEnglish ? "Open Security Console" : "Abrir Consola de Seguridad");
+        if (minBtn) minBtn.setAttribute("title", isEnglish ? "Minimize" : "Minimizar");
+        if (closeBtn) closeBtn.setAttribute("title", isEnglish ? "Close / Reset" : "Cerrar / Reset");
+    });
+
     const toggleTerminal = () => {
         const isVisible = terminal.style.display === "flex";
         terminal.style.display = isVisible ? "none" : "flex";
@@ -56,9 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
             playTick(300, 0.1); 
 
             // Auto-Scan por primera vez en la sesión
-            if (!sessionStorage.getItem("terminal_scanned")) {
+            let isScanned = false;
+            try {
+                isScanned = sessionStorage.getItem("terminal_scanned") === "true";
+            } catch (e) {
+                console.warn("Storage read failed:", e);
+            }
+            if (!isScanned) {
                 runAutoScan();
-                sessionStorage.setItem("terminal_scanned", "true");
+                try {
+                    sessionStorage.setItem("terminal_scanned", "true");
+                } catch (e) {
+                    console.warn("Storage write failed:", e);
+                }
             }
         }
     };
@@ -143,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         addLine(
             _isEn
                 ? '[SYSTEM] Type "help" to see commands.'
-                : '[SISTEMA] Escribe "help" para ver los comandos.',
+                : '[SISTEMA] Escribe "ayuda" para ver los comandos.',
         );
 
         // Reiniciar Matrix
@@ -159,17 +178,21 @@ document.addEventListener("DOMContentLoaded", () => {
                       "help - Show this list",
                       "whoami - About Mario",
                       "projects - List key projects",
+                      "theme [light/dark] - Change theme style",
+                      "lang [es/en] - Switch language",
                       "integrity - Fake security scan",
                       "clear - Clean terminal",
                       "exit - Close CLI",
                   ]
                 : [
-                      "help - Muestra esta lista",
-                      "whoami - Sobre Mario",
-                      "projects - Lista proyectos clave",
-                      "integrity - Simular escaneo de seguridad",
-                      "clear - Limpiar terminal",
-                      "exit - Cerrar consola",
+                      "ayuda - Muestra esta lista",
+                      "quiensoy - Sobre Mario",
+                      "proyectos - Lista proyectos clave",
+                      "tema [claro/oscuro] - Cambiar tema",
+                      "idioma [es/en] - Cambiar idioma",
+                      "integridad - Simular escaneo de seguridad",
+                      "limpiar - Limpiar terminal",
+                      "salir - Cerrar consola",
                   ];
         },
         whoami: () => {
@@ -188,19 +211,91 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         projects: () => {
             const _isEn = document.documentElement.lang === "en";
+            setTimeout(() => {
+                window.location.href = "proyectos.html";
+            }, 1000);
             return _isEn
                 ? [
                       "> Family Dashboard (Phantom Protocol)",
                       "> Arkanoid 2021 (Java Engine)",
                       "> Secure Management (Cryptography/C)",
-                      'Type "exit" to close the terminal.',
+                      "[SYSTEM] Redirecting to projects page...",
                   ]
                 : [
                       "> Family Dashboard (Phantom Protocol)",
                       "> Arkanoid 2021 (Java Engine)",
                       "> Secure Management (Cryptography/C)",
-                      'Escribe "exit" para cerrar la terminal.',
+                      "[SISTEMA] Redirigiendo a la página de proyectos...",
                   ];
+        },
+        theme: (arg) => {
+            const _isEn = document.documentElement.lang === "en";
+            if (!arg) {
+                return _isEn
+                    ? [
+                          "theme [light/dark] - Change theme style",
+                          `Current: ${document.body.classList.contains("cambiocolor") ? "dark" : "light"}`
+                      ]
+                    : [
+                          "tema [claro/oscuro] - Cambiar estilo de tema",
+                          `Actual: ${document.body.classList.contains("cambiocolor") ? "oscuro" : "claro"}`
+                      ];
+            }
+            const mode = arg.toLowerCase();
+            if (mode === "dark" || mode === "oscuro") {
+                if (window.aplicarTema) {
+                    window.aplicarTema("oscuro");
+                    try {
+                        localStorage.setItem("tema", "oscuro");
+                        localStorage.setItem("temaManual", "true");
+                    } catch (e) {}
+                }
+                return _isEn ? ["[SYSTEM] Theme set to: DARK"] : ["[SISTEMA] Tema configurado en: OSCURO"];
+            } else if (mode === "light" || mode === "claro") {
+                if (window.aplicarTema) {
+                    window.aplicarTema("claro");
+                    try {
+                        localStorage.setItem("tema", "claro");
+                        localStorage.setItem("temaManual", "true");
+                    } catch (e) {}
+                }
+                return _isEn ? ["[SYSTEM] Theme set to: LIGHT"] : ["[SISTEMA] Tema configurado en: CLARO"];
+            } else {
+                return _isEn
+                    ? ["[ERROR] Invalid argument. Choose 'light' or 'dark'."]
+                    : ["[ERROR] Argumento no válido. Elige 'claro' u 'oscuro'."];
+            }
+        },
+        lang: (arg) => {
+            const _isEn = document.documentElement.lang === "en";
+            if (!arg) {
+                return _isEn
+                    ? [
+                          "lang [en/es] - Switch language",
+                          `Current: ${document.documentElement.lang}`
+                      ]
+                    : [
+                          "idioma [es/en] - Cambiar idioma",
+                          `Actual: ${document.documentElement.lang}`
+                      ];
+            }
+            const nextLang = arg.toLowerCase();
+            if (nextLang === "en" || nextLang === "es") {
+                if (window.setLanguage) {
+                    setTimeout(() => {
+                        window.setLanguage(nextLang);
+                    }, 500);
+                    return nextLang === "en"
+                        ? ["[SYSTEM] Language set to: English. Redirecting..."]
+                        : ["[SISTEMA] Idioma configurado en: Español. Redirigiendo..."];
+                } else {
+                    return ["[ERROR] Translation engine not loaded."];
+                }
+            } else {
+                return _isEn
+                    ? ["[ERROR] Invalid argument. Choose 'es' or 'en'."]
+                    : ["[ERROR] Argumento no válido. Elige 'es' o 'en'."];
+            }
         },
         integrity: () => {
             const _isEn = document.documentElement.lang === "en";
@@ -243,18 +338,38 @@ document.addEventListener("DOMContentLoaded", () => {
         playTick(450, 0.015);
 
         if (e.key === "Enter") {
-            const val = input.value.trim().toLowerCase();
-            addLine(`visitor@phantom:~$ ${val}`, "t-prompt");
+            const trimmed = input.value.trim();
+            const parts = trimmed.split(/\s+/);
+            const rawCmd = parts[0].toLowerCase();
+            const arg = parts.slice(1).join(" ");
+            addLine(`visitor@phantom:~$ ${trimmed}`, "t-prompt");
 
-            if (commands[val]) {
-                const results = commands[val]();
+            let cmd = rawCmd;
+            const _isEn = document.documentElement.lang === "en";
+
+            const esToEnMap = {
+                ayuda: "help",
+                quiensoy: "whoami",
+                proyectos: "projects",
+                tema: "theme",
+                idioma: "lang",
+                integridad: "integrity",
+                limpiar: "clear",
+                salir: "exit"
+            };
+
+            if (!_isEn && esToEnMap[rawCmd]) {
+                cmd = esToEnMap[rawCmd];
+            }
+
+            if (commands[cmd]) {
+                const results = commands[cmd](arg);
                 results.forEach((res) => addLine(res));
-            } else if (val !== "") {
-                const _isEn = document.documentElement.lang === "en";
+            } else if (rawCmd !== "") {
                 addLine(
                     _isEn
-                        ? `[ERROR] Command not found: ${val}`
-                        : `[ERROR] Comando no encontrado: ${val}`,
+                        ? `[ERROR] Command not found: ${rawCmd}`
+                        : `[ERROR] Comando no encontrado: ${rawCmd}`,
                 );
             }
 
@@ -296,7 +411,14 @@ document.addEventListener("DOMContentLoaded", () => {
             terminal.style.transform = `translate(${currentX}px, ${currentY}px)`;
         }
     }
-});
+}
+
+// Ejecutar inmediatamente si el DOM ya está listo (evitar fallos con scripts de tipo module)
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupTerminal);
+} else {
+    setupTerminal();
+}
 
 /**
  * Efecto de lluvia digital (Matrix) en tonos dorados.
