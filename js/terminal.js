@@ -17,13 +17,13 @@ function setupTerminal() {
           </div>
         </div>
         <div class="terminal-content" id="terminal-output">
-          <canvas id="t-canvas"></canvas>
+          <canvas id="t-canvas" class="t-canvas"></canvas>
           <div class="terminal-line">${isEn ? "[SYSTEM] Welcome to Mario De La Rosa's Terminal." : "[SISTEMA] Bienvenido a la terminal de Mario De La Rosa."}</div>
           <div class="terminal-line">${isEn ? "[SYSTEM] Type 'help' to see available commands." : "[SISTEMA] Escribe 'ayuda' para ver los comandos disponibles."}</div>
         </div>
         <div class="terminal-input-line">
           <span class="t-prompt">visitor@phantom:~$ </span>
-          <input type="text" id="t-input" autocomplete="off" spellcheck="false" autofocus>
+          <input type="text" id="t-input" class="t-input" autocomplete="off" spellcheck="false" autofocus>
         </div>
       </div>
       <div id="t-toggle" class="terminal-toggle" title="${isEn ? "Open Security Console" : "Abrir Consola de Seguridad"}">
@@ -58,10 +58,7 @@ function setupTerminal() {
         terminal.style.display = isVisible ? "none" : "flex";
         if (!isVisible) {
             input.focus();
-            if (!matrixStarted) {
-                startMatrix("t-canvas");
-                matrixStarted = true;
-            }
+            startMatrix("t-canvas");
             playTick(300, 0.1); 
 
             // Auto-Scan por primera vez en la sesión
@@ -153,7 +150,7 @@ function setupTerminal() {
         terminal.style.transform = `translate(0,0)`;
 
         // Limpiar Contenido (A estado inicial)
-        output.innerHTML = '<canvas id="t-canvas"></canvas>';
+        output.innerHTML = '<canvas id="t-canvas" class="t-canvas"></canvas>';
         addLine(
             _isEn
                 ? "[SYSTEM] Terminal reset. Temporary data purged."
@@ -316,7 +313,8 @@ function setupTerminal() {
                   ];
         },
         clear: () => {
-            output.innerHTML = '<canvas id="t-canvas"></canvas>';
+            const lines = output.querySelectorAll(".terminal-line, .terminal-input-line");
+            lines.forEach(line => line.remove());
             return [];
         },
         exit: () => {
@@ -427,6 +425,7 @@ function startMatrix(canvasId) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    const terminal = canvas.closest('.phantom-terminal') || document.getElementById('phantom-terminal');
 
     const resize = () => {
         canvas.width = canvas.parentElement.offsetWidth;
@@ -441,7 +440,24 @@ function startMatrix(canvasId) {
     const columns = canvas.width / fontSize;
     const drops = Array(Math.floor(columns)).fill(1);
 
-    function draw() {
+    let lastTime = 0;
+    const interval = 35;
+    let frameId = null;
+
+    function draw(timestamp) {
+        // Detener animación si el canvas no está en el DOM o la terminal está oculta
+        if (!document.body.contains(canvas) || (terminal && terminal.style.display === 'none')) {
+            frameId = null;
+            return;
+        }
+
+        frameId = requestAnimationFrame(draw);
+
+        if (!timestamp) timestamp = 0;
+        const elapsed = timestamp - lastTime;
+        if (elapsed < interval) return;
+        lastTime = timestamp;
+
         ctx.fillStyle = 'rgba(11, 15, 26, 0.15)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -461,5 +477,6 @@ function startMatrix(canvasId) {
             drops[i]++;
         }
     }
-    setInterval(draw, 35);
+
+    frameId = requestAnimationFrame(draw);
 }

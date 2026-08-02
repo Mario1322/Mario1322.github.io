@@ -1,18 +1,21 @@
 /* Phantom CLI Style */
+:root {
+  --terminal-bg: rgba(11, 15, 26, 0.95);
+  --terminal-border: var(--accent-gold);
+  --terminal-text: #ffffff;
+}
+
 .phantom-terminal {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 450px; /* Un poco más espacioso */
+  width: 450px;
   height: 320px;
-  background: rgba(11, 15, 26, 0.95);
-  border: 1px solid #d4a63a;
+  background: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
   border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
-  font-family:
-    "Roboto Mono",
-    "Courier New",
-    monospace;
+  font-family: "Roboto Mono", monospace;
   z-index: 9999;
   display: none;
   flex-direction: column;
@@ -22,7 +25,7 @@
 }
 
 .terminal-header {
-  background: #d4a63a;
+  background: var(--accent-gold);
   color: #0b0f1a;
   padding: 8px 15px;
   font-size: 14px;
@@ -55,31 +58,31 @@
 .terminal-content {
   flex: 1;
   padding: 15px;
-  color: #fff; /* Texto blanco para mejor contraste sobre fondo animado */
+  color: var(--terminal-text);
   font-size: 14px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #d4a63a transparent;
+  scrollbar-color: var(--accent-gold) transparent;
   position: relative;
-  background: transparent; /* Permitir ver el canvas */
+  background: transparent;
 }
 
 /* Canvas de fondo Matrix */
-#t-canvas {
+.t-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Detrás del texto */
-  opacity: 0.25; /* Sencillo pero efectivo */
-  pointer-events: none; /* No interferir con el click/drag */
+  z-index: 0;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 .terminal-line, .terminal-input-line {
   position: relative;
-  z-index: 10; /* Encima del canvas */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  z-index: 10;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Custom scrollbar for terminal */
@@ -87,7 +90,7 @@
   width: 6px;
 }
 .terminal-content::-webkit-scrollbar-thumb {
-  background: #d4a63a;
+  background: var(--accent-gold);
 }
 
 .terminal-line {
@@ -100,13 +103,13 @@
 }
 
 .t-prompt {
-  color: #d4a63a;
+  color: var(--accent-gold);
 }
 
-#t-input {
+.t-input {
   background: transparent;
   border: none;
-  color: #eee;
+  color: var(--terminal-text);
   font-family: inherit;
   font-size: inherit;
   flex: 1;
@@ -120,7 +123,7 @@
   right: 25px;
   width: 60px;
   height: 60px;
-  background: #d4a63a;
+  background: var(--accent-gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -128,7 +131,7 @@
   color: #0b0f1a;
   font-size: 28px;
   cursor: pointer;
-  box-shadow: 0 5px 20px rgba(212, 166, 58, 0.4);
+  box-shadow: 0 5px 20px var(--accent-glow);
   z-index: 9998;
   transition: all 0.3s ease;
 }

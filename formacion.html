@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Archivo:wght@400;500&family=Nunito+Sans:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem("tema");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (savedTheme === "oscuro" || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add("cambiocolor");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="utf-8" />
     <title>Formación | Mario De La Rosa García</title>
     <meta
