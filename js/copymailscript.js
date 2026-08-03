@@ -25,19 +25,44 @@ if (copyButton && popup && closePopup && emailNode) {
     // Asegurarse de tener el mail actualizado
     if (!fullEmail) fullEmail = decodeEmail();
 
-    // 1. Copiar al portapapeles
-    navigator.clipboard.writeText(fullEmail).then(() => {
-      // 2. Mostrar popup de éxito
+    const proceedWithMailto = () => {
+      // Mostrar popup de éxito
       popup.style.display = "flex";
       setTimeout(() => {
         popup.style.display = "none";
       }, 2000);
 
-      // 3. Abrir la aplicación de correo del sistema (opcionalmente con pequeño delay para no interrumpir el portapapeles)
+      // Abrir la aplicación de correo del sistema (opcionalmente con pequeño delay)
       setTimeout(() => {
         window.location.href = `mailto:${fullEmail}`;
       }, 100);
-    });
+    };
+
+    // Copiar al portapapeles con fallback seguro para local/HTTP
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(fullEmail)
+        .then(proceedWithMailto)
+        .catch((err) => {
+          console.warn("Clipboard API write failed:", err);
+          proceedWithMailto();
+        });
+    } else {
+      // Fallback usando el método clásico
+      const textArea = document.createElement("textarea");
+      textArea.value = fullEmail;
+      textArea.style.position = "fixed"; // Evitar scroll no deseado
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand("copy");
+      } catch (err) {
+        console.warn("Fallback copy method failed:", err);
+      }
+      document.body.removeChild(textArea);
+      proceedWithMailto();
+    }
   });
 
   // Evento para cerrar el popup

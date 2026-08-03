@@ -1,4 +1,4 @@
-const STATIC_CACHE = "portfolio-static-v15";
+const STATIC_CACHE = "portfolio-static-v16";
 const RUNTIME_CACHE = "portfolio-runtime-v1";
 const IMAGE_CACHE = "portfolio-images-v1";
 const PDF_CACHE = "portfolio-pdfs-v1";
@@ -10,7 +10,12 @@ const CORE_ASSETS = [
   "/index.html",
   "/en/",
   "/en/index.html",
-// ... (rest of core assets)
+  "/proyectos.html",
+  "/en/proyectos.html",
+  "/certificados.html",
+  "/en/certificados.html",
+  "/formacion.html",
+  "/en/formacion.html",
   "/en/manifest.json",
   "/manifest.json",
   "/css/Idioma.css",

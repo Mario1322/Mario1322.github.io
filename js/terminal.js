@@ -427,18 +427,25 @@ function startMatrix(canvasId) {
     const ctx = canvas.getContext('2d');
     const terminal = canvas.closest('.phantom-terminal') || document.getElementById('phantom-terminal');
 
-    const resize = () => {
-        canvas.width = canvas.parentElement.offsetWidth;
-        canvas.height = canvas.parentElement.offsetHeight;
-    };
-    window.addEventListener('resize', resize);
-    resize();
-
     const katakana = '01ABCDEFΣΩΔΨΦΠ$#@';
     const alphabet = katakana.split('');
     const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
+    let drops = [];
+
+    const resize = () => {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+        const columns = Math.floor(canvas.width / fontSize);
+        if (drops.length < columns) {
+            const oldLength = drops.length;
+            drops.length = columns;
+            drops.fill(1, oldLength);
+        } else if (drops.length > columns) {
+            drops.length = columns;
+        }
+    };
+    window.addEventListener('resize', resize);
+    resize();
 
     let lastTime = 0;
     const interval = 35;

@@ -1040,6 +1040,15 @@
                       required
                     ></textarea>
 
+                     <!-- Honeypot (Security measure against spam bots) -->
+                    <input
+                      type="text"
+                      name="_phantom_trap"
+                      style="display: none"
+                      tabindex="-1"
+                      autocomplete="off"
+                    />
+
                     <input type="hidden" name="_gotcha" />
                   </div>
                   <button id="send" class="botondatos">Enviar</button>
